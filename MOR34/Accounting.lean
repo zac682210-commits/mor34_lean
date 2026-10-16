@@ -9,7 +9,7 @@ theorem sum_eq_indicator {α : Type*} [Fintype α] [DecidableEq α]
   have he : Finset.univ.filter (fun i => i ∈ S) = S := by ext i; simp
   calc
     (∑ i ∈ S, f i) = ∑ i ∈ Finset.univ.filter (fun i => i ∈ S), f i := by rw [he]
-    _ = ∑ i, if i ∈ S then f i else 0 := Finset.sum_filter _ _ _
+    _ = ∑ i, if i ∈ S then f i else 0 := Finset.sum_filter _ _
     _ = _ := by
       apply Finset.sum_congr rfl
       intro i _

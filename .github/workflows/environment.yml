@@ -16,13 +16,20 @@ jobs:
           curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
           sh /tmp/elan-init.sh -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-      - name: Cache Lean dependencies
-        uses: actions/cache@v4
+      - name: Restore Lean dependencies
+        id: dependencies-cache
+        uses: actions/cache/restore@v4
         with:
           path: .lake/packages
           key: mor34-linux-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}
       - name: Run four readiness gates
         run: python3 scripts/environment_gate.py
+      - name: Save Lean dependencies
+        if: always() && steps.dependencies-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .lake/packages
+          key: mor34-linux-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}
       - name: Retain actual logs and resolved dependency manifest
         if: always()
         uses: actions/upload-artifact@v4

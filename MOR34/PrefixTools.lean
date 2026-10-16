@@ -44,7 +44,7 @@ theorem counts_assemble {q : ℕ} {m : Fin q → ℕ}
     counts (assemble F) j = (F j).card := by
   unfold counts assemble
   rw [Finset.card_eq_sum_ones, Finset.sum_filter, Finset.sum_sigma]
-  simp
+  simp [apply_ite]
 
 theorem prefixSet_assemble {q : ℕ} {m : Fin q → ℕ} (z : Counts q) :
     prefixSet (m := m) z = assemble (fun j => classPrefix (m j) (z j)) := by
