@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.retained_row_cast',
+    'MOR34.retained_row_span',
+    'MOR34.retained_matrix_real_rank',
+    'MOR34.retained_matrix_rational_rank',
+
     'MOR34.selected_dimension',
     'MOR34.small_selected_dimension',
 

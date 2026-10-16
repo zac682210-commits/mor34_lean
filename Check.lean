@@ -150,3 +150,8 @@ import MOR34
 
 #print axioms MOR34.selected_dimension
 #print axioms MOR34.small_selected_dimension
+
+#print axioms MOR34.retained_row_cast
+#print axioms MOR34.retained_row_span
+#print axioms MOR34.retained_matrix_real_rank
+#print axioms MOR34.retained_matrix_rational_rank

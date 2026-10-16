@@ -42,3 +42,5 @@ import MOR34.AugmentedDimension
 import MOR34.RankScalar
 
 import MOR34.StructuralTheorem
+
+import MOR34.RetainedMatrix
