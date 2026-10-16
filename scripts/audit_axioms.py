@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.affine_on_set_span_image',
+    'MOR34.actual_cell_span_image',
+
+    'MOR34.cellCondition_unique',
+    'MOR34.parity_cell_cover',
+    'MOR34.cell_index_card',
+    'MOR34.parity_cell_decomposition',
+    'MOR34.tight_has_parity',
+
     'MOR34.tightParity_profile',
     'MOR34.parityExtrema_exists',
     'MOR34.cell_bounds',

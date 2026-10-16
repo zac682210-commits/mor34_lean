@@ -107,3 +107,13 @@ import MOR34
 #print axioms MOR34.cell_bounds
 #print axioms MOR34.actual_cell_slopes
 #print axioms MOR34.actual_cell_affine
+
+#print axioms MOR34.parity_cell_cover
+#print axioms MOR34.cell_index_card
+#print axioms MOR34.parity_cell_decomposition
+#print axioms MOR34.tight_has_parity
+
+#print axioms MOR34.cellCondition_unique
+
+#print axioms MOR34.affine_on_set_span_image
+#print axioms MOR34.actual_cell_span_image

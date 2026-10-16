@@ -61,7 +61,7 @@ theorem parityExtrema_exists (P : Model m) (ε : Parity q)
 
 def CellCondition (l h : Counts q) (mode : CellMode q) (z : Counts q) : Prop :=
   ∀ j, if mode j = 0 then z j = l j else
-    if mode j = 1 then l j + 2 ≤ z j ∧ z j + 2 ≤ h j else z j = h j
+    if mode j = 1 then l j + 2 ≤ z j ∧ z j + 2 ≤ h j else l j < h j ∧ z j = h j
 
 def cellLow (l h : Counts q) (mode : CellMode q) : Counts q :=
   fun j => if mode j = 0 then l j else if mode j = 1 then l j + 2 else h j
@@ -130,5 +130,58 @@ theorem actual_cell_affine (P : Model m) (hWF : WellFormed P) (ε : Parity q)
     (cellLow e.low e.high mode) s, ?_⟩
   intro z hz hc
   exact prefix_affine_on_box P _ _ s hs z hz.1 (cell_bounds hc).1 (cell_bounds hc).2
+
+/-- The high endpoint is omitted when the two extrema coincide. -/
+theorem parity_cell_cover (P : Model m) (ε : Parity q) (e : ParityExtrema P ε)
+    {z : Counts q} (hz : TightParity P ε z) :
+    ∃ mode : CellMode q, CellCondition e.low e.high mode z := by
+  classical
+  let mode : CellMode q := fun j => if z j = e.low j then 0 else
+    if z j = e.high j then 2 else 1
+  refine ⟨mode, ?_⟩
+  intro j
+  have hb := e.bounds z hz j
+  have hlp := (e.lower_mem j).2.2 j
+  have hhp := (e.upper_mem j).2.2 j
+  rw [e.lower_eq] at hlp
+  rw [e.upper_eq] at hhp
+  have hzp := hz.2.2 j
+  by_cases hl : z j = e.low j
+  · simp [mode, hl]
+  · by_cases hh : z j = e.high j
+    · simp [mode, hl, hh]
+      omega
+    · simp [mode, hl, hh]
+      omega
+
+theorem cellCondition_unique {l h z : Counts q} {a b : CellMode q}
+    (ha : CellCondition l h a z) (hb : CellCondition l h b z) : a = b := by
+  funext j
+  have hj := ha j
+  have hk := hb j
+  fin_cases hja : a j <;> fin_cases hjb : b j <;>
+    simp [hja, hjb] at hj hk ⊢ <;> omega
+
+abbrev CellIndex (q : ℕ) := Parity q × CellMode q
+
+theorem cell_index_card (q : ℕ) : Fintype.card (CellIndex q) = 6 ^ q := by
+  simp [CellIndex, Parity, CellMode, Fintype.card_fun, ← mul_pow]
+
+/-- Every nonempty full parity class has the paper's bounded affine-cell decomposition. -/
+theorem parity_cell_decomposition (P : Model m) (hWF : WellFormed P) (ε : Parity q)
+    (hne : ∃ z, TightParity P ε z) :
+    ∃ e : ParityExtrema P ε,
+      (∀ z, TightParity P ε z → ∃ mode : CellMode q, CellCondition e.low e.high mode z) ∧
+      (∀ mode : CellMode q, ∃ f : (Fin q → ℝ) →ᵃ[ℝ] (ExchangeComponent P → ℝ),
+        ∀ z, TightParity P ε z → CellCondition e.low e.high mode z →
+          f (countReal z) = componentCountMap P (pointVector (prefixSet z))) := by
+  obtain ⟨e⟩ := parityExtrema_exists P ε hne
+  exact ⟨e, fun _ hz => parity_cell_cover P ε e hz, actual_cell_affine P hWF ε e⟩
+
+/-- Every bounded tight count vector has a full parity label. -/
+theorem tight_has_parity (P : Model m) {z : Counts q}
+    (hz : BoundedCounts (m := m) z) (ht : Tight P (prefixSet z)) :
+    ∃ ε : Parity q, TightParity P ε z := by
+  exact ⟨fun j => ⟨z j % 2, Nat.mod_lt _ (by decide)⟩, hz, ht, fun _ => rfl⟩
 
 end MOR34

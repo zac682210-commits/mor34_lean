@@ -27,3 +27,4 @@ import MOR34.PrefixQuotient
 import MOR34.PrefixAffine
 
 import MOR34.ParityCells
+import MOR34.CellSpan
