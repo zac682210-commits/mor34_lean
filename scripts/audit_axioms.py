@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.selectionFinset_coe',
+    'MOR34.selectionFinset_card',
+    'MOR34.small_selected_span',
+
+    'MOR34.small_cellBasisSelection_exists',
+    'MOR34.countReal_injective',
+    'MOR34.finite_count_affine_basis',
+    'MOR34.cellBasisSelection_exists',
+
     'MOR34.selectedPoints_tight',
     'MOR34.selectedPoints_quotient_spans',
     'MOR34.selected_augmented_span',

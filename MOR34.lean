@@ -34,3 +34,5 @@ import MOR34.AdjacentSpan
 import MOR34.AugmentedSpan
 
 import MOR34.SelectedSpan
+
+import MOR34.FiniteCellBases

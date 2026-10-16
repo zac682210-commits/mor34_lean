@@ -48,7 +48,7 @@ theorem augmented_span_lift (f : V →ₗ[ℝ] W) (T B : Set V) (hB : B ⊆ T)
     have hmap : augmentedSpan (f '' B) ≤ N.map Q := by
       apply Submodule.span_le.mpr
       rintro _ ⟨_, ⟨b, hb, rfl⟩, rfl⟩
-      exact ⟨pointAugment b, le_sup_left (Submodule.subset_span ⟨b, hb, rfl⟩), rfl⟩
+      exact ⟨pointAugment b, (show augmentedSpan B ≤ N from le_sup_left) (Submodule.subset_span ⟨b, hb, rfl⟩), rfl⟩
     have hm := hmap (augment_mem_of_affineSpan (himage x hx))
     obtain ⟨y, hy, he⟩ := hm
     have hfst : y.1 = 1 := congrArg Prod.fst he
@@ -59,7 +59,7 @@ theorem augmented_span_lift (f : V →ₗ[ℝ] W) (T B : Set V) (hB : B ⊆ T)
       ext <;> simp [pointAugment, zeroAugment, hfst]
     have hn : pointAugment x - y ∈ N := by
       rw [hd]
-      exact le_sup_right (show zeroAugment (x - y.2) ∈ (LinearMap.ker f).map zeroAugment from
+      exact (show (LinearMap.ker f).map zeroAugment ≤ N from le_sup_right) (show zeroAugment (x - y.2) ∈ (LinearMap.ker f).map zeroAugment from
         ⟨x - y.2, hk, rfl⟩)
     have hh := N.add_mem hn hy
     simpa using hh

@@ -129,3 +129,13 @@ import MOR34
 #print axioms MOR34.selectedPoints_tight
 #print axioms MOR34.selectedPoints_quotient_spans
 #print axioms MOR34.selected_augmented_span
+
+#print axioms MOR34.countReal_injective
+#print axioms MOR34.finite_count_affine_basis
+#print axioms MOR34.cellBasisSelection_exists
+
+#print axioms MOR34.small_cellBasisSelection_exists
+
+#print axioms MOR34.selectionFinset_coe
+#print axioms MOR34.selectionFinset_card
+#print axioms MOR34.small_selected_span
