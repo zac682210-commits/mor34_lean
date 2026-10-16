@@ -1,0 +1,30 @@
+'MOR34.one_feasible_of_pair_sum' depends on axioms: [propext, Quot.sound]
+'MOR34.balanced_values_are_tight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.interior_cut_arithmetic' depends on axioms: [propext, Classical.choice, Quot.sound]
+MOR34.BalancedSplitGoal : Prop
+MOR34.PairingAtCutGoal {q : ℕ} {m : Fin q → ℕ} : Prop
+MOR34.InteriorExchangeGoal {q : ℕ} {m : Fin q → ℕ} (P : MOR34.Model m) : Prop
+MOR34.PaperInterface.PrefixMinimality {q : ℕ} {m : Fin q → ℕ} (P : MOR34.Model m) : Prop
+MOR34.PaperInterface.IntervalExchange {q : ℕ} {m : Fin q → ℕ} (P : MOR34.Model m) : Prop
+MOR34.PaperInterface.ParityInterior {q : ℕ} {m : Fin q → ℕ} (P : MOR34.Model m) : Prop
+'MOR34.balancedSplit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.mem_classPrefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.card_classPrefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.classPrefix_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.mem_assemble' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.counts_assemble' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.prefixSet_assemble' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.split_prescribed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.classPairSpec_comm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.ordered_pair_prescribed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.class_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.class_pair_cross' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.pairingAtCut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.tight_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.intervalExchange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.sum_eq_indicator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.repartition_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.candidateValue_counts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.one_tight_of_repartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.adjacent_of_crosses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.interiorExchange' depends on axioms: [propext, Classical.choice, Quot.sound]

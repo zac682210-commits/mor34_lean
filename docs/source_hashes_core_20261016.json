@@ -1,0 +1,28 @@
+{
+  "commit": "8ac25e0cc6a5c28693b4f05c34e4bfff222896aa",
+  "run": 38919230112,
+  "kernel_checked_named_theorems": 24,
+  "files": {
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "lakefile.toml": "dca40fdb82e063403e7feb07082b8b0cb9839290dfafe6059500d5927c9265e8",
+    "lake-manifest.json": "4de4096d0390d314c8f0cfac8eca1f69446e3415bfdd514b0837aff858055236",
+    "MOR34.lean": "289fed1bab980c987eb7eddde214299ea5e195109e36b3b2925d49bbb22a68a7",
+    "Check.lean": "e880541bb4b70b7034b2e970b204836aca456faadcba0a7ac6e54f4f113cdadf",
+    "scripts/audit_axioms.py": "90ced6bc44fc1e87baccebbf24b57689547043bdbb46e5028a6ab9552b1fb50b",
+    "scripts/environment_gate.py": "81fb6ba1c036b9eb562e689ef010d063860c22bfa0b98b0cd50159bb5e0a3973",
+    ".github/workflows/environment.yml": "d213eae118ae6af691bd22c870d1b8f5982afadc7464a135027b833edef0f199",
+    "MOR34/Accounting.lean": "5d2c3b14fa4c5d9373ec2340197cbd0a51436301330590d686808b7b2657d87e",
+    "MOR34/BalancedSplit.lean": "1dbcb33688ccd3c64a576595499fa53199d60f63b5a676297054f25f41bf508a",
+    "MOR34/ClassPairing.lean": "ffd6885d7d69b1cdadd04e2013646f3b92b6d37115389aad9d8ced0e805dd312",
+    "MOR34/Exchange.lean": "e1ba9c13475bd0b010af6a543da0c0ac181331a2ef467513961fea5bb2b9e4e7",
+    "MOR34/InteriorExchange.lean": "fa39fecd0b4a73351bae564c6f1d1df1b1673090a624a6c3fc8c97a978be9f4a",
+    "MOR34/Model.lean": "79ff192b1334ae2717367fa06ffa23f76df00c703d7460db4778dc35156ca594",
+    "MOR34/PairingArithmetic.lean": "ea25834c3a1d66fb441a2360ba0594f73f9b34c3c42e36bc3b368f4d5779b03d",
+    "MOR34/PairingAtCut.lean": "72448a8e9c137f8fc5de4539252cee6b29712e9be7740a50943b8a3d7ceb346a",
+    "MOR34/PaperInterface.lean": "0e0c834fd39c0ca4f87aba5f3c46c6f6431f774a00dcf4eded776452aa75248f",
+    "MOR34/PrefixTools.lean": "cdf4b7bb829c9888b35de1a20bc61962a4b0aa66acd6248a83e58c72ef546860",
+    "MOR34/Targets.lean": "24cd5c27dad9826ccf71c9e1e41a5737ba4415c5d0ad11d87f21c67dcdb3a73b"
+  },
+  "artifact_sha256": "a0886ef480d01a71fc3b021ef16a9e5dab768f9f2ab22cfa9f6362d1d1201c58",
+  "meaning": "Actual remote Lean build and axiom audit. Main theorem and complexity remain open."
+}

@@ -27,7 +27,8 @@
       "contract": "An exchange edge r<s forces each u<v inside [r,s]; components are intervals determined by adjacent edges.",
       "depends_on": [],
       "lean_target": "MOR34.PaperInterface.IntervalExchange (edge assertion only)",
-      "status": "open; not kernel checked"
+      "status": "edge-closure assertion kernel checked on commit 8ac25e0cc6a5c28693b4f05c34e4bfff222896aa; component consequences remain open",
+      "lean_theorem": "MOR34.intervalExchange"
     },
     {
       "id": "split",
@@ -46,7 +47,8 @@
         "split"
       ],
       "lean_target": "MOR34.PairingAtCutGoal",
-      "status": "open; not kernel checked"
+      "status": "kernel checked on commit 8ac25e0cc6a5c28693b4f05c34e4bfff222896aa",
+      "lean_theorem": "MOR34.pairingAtCut"
     },
     {
       "id": "L4",
@@ -57,7 +59,8 @@
         "L2"
       ],
       "lean_target": "MOR34.PaperInterface.ParityInterior",
-      "status": "open; not kernel checked"
+      "status": "adjacent-cut assertion kernel checked on commit 8ac25e0cc6a5c28693b4f05c34e4bfff222896aa; paper component corollary remains open",
+      "lean_theorem": "MOR34.interiorExchange"
     },
     {
       "id": "L3",

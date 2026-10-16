@@ -1,0 +1,62 @@
+info: mathlib: cloning https://github.com/leanprover-community/mathlib4.git
+info: mathlib: checking out revision 'c44e0c8ee63ca166450922a373c7409c5d26b00b'
+info: toolchain not updated; already up-to-date
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision '77e08eddc486491d7b9e470926b3dbe50319451a'
+info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision '25078369972d295301f5a1e53c3e5850cf6d9d4c'
+info: importGraph: cloning https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision 'e6a9f0f5ee3ccf7443a0070f92b62f8db12ae82b'
+info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision 'c4919189477c3221e6a204008998b0d724f49904'
+info: aesop: cloning https://github.com/leanprover-community/aesop
+info: aesop: checking out revision '5d50b08dedd7d69b3d9b3176e0d58a23af228884'
+info: Qq: cloning https://github.com/leanprover-community/quote4
+info: Qq: checking out revision 'fa4f7f15d97591a9cf3aa7724ba371c7fc6dda02'
+info: batteries: cloning https://github.com/leanprover-community/batteries
+info: batteries: checking out revision 'f5d04a9c4973d401c8c92500711518f7c656f034'
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision '02dbd02bc00ec4916e99b04b2245b30200e200d0'
+info: mathlib: running post-update hooks
+✔ [2/12] Built Cache.Lean
+✔ [3/12] Built Cache.Lean:c.o
+✔ [4/12] Built Cache.IO
+✔ [5/12] Built Cache.Hashing
+✔ [6/12] Built Cache.Hashing:c.o
+✔ [7/12] Built Cache.IO:c.o
+✔ [8/12] Built Cache.Requests
+✔ [9/12] Built Cache.Main
+✔ [10/12] Built Cache.Requests:c.o
+✔ [11/12] Built Cache.Main:c.o
+✔ [12/12] Built cache
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+
+100 1075k  100 1075k    0     0  3857k      0 --:--:-- --:--:-- --:--:-- 3857k
+
+installing leantar 0.1.15
+Attempting to download 6641 file(s)
+
+Downloaded: 1 file(s) [attempted 1/6641 = 0%]
+Downloaded: 135 file(s) [attempted 135/6641 = 2%]
+Downloaded: 560 file(s) [attempted 560/6641 = 8%]
+Downloaded: 828 file(s) [attempted 828/6641 = 12%]
+Downloaded: 1315 file(s) [attempted 1315/6641 = 19%]
+Downloaded: 1829 file(s) [attempted 1829/6641 = 27%]
+Downloaded: 2330 file(s) [attempted 2330/6641 = 35%]
+Downloaded: 2849 file(s) [attempted 2849/6641 = 42%]
+Downloaded: 3315 file(s) [attempted 3315/6641 = 49%]
+Downloaded: 3788 file(s) [attempted 3788/6641 = 57%]
+Downloaded: 4288 file(s) [attempted 4288/6641 = 64%]
+Downloaded: 4797 file(s) [attempted 4797/6641 = 72%]
+Downloaded: 5288 file(s) [attempted 5288/6641 = 79%]
+Downloaded: 5797 file(s) [attempted 5797/6641 = 87%]
+Downloaded: 6261 file(s) [attempted 6261/6641 = 94%]
+Downloaded: 6637 file(s) [attempted 6637/6641 = 99%]
+Downloaded: 6641 file(s) [attempted 6641/6641 = 100%] (100% success)
+Decompressing 6641 file(s)
+Unpacked in 53087 ms
+Completed successfully!

@@ -1,0 +1,50 @@
+{
+  "started_utc": "2026-10-16T14:38:15+00:00",
+  "ended_utc": "2026-10-16T14:59:30.870464+00:00",
+  "active_minutes": 21.265,
+  "pure_wait_seconds": 0,
+  "time_method": "Wall interval spent on proof construction, Mathlib lookup, CI diagnosis, paper alignment and checkpoint preparation; useful work continued while CI ran. Subsequent upload overhead is excluded.",
+  "prior_recorded_active_minutes": 12.838,
+  "cumulative_recorded_active_minutes": 34.103,
+  "historical_formalization_minutes": null,
+  "cumulative_is_complete": false,
+  "history_note": "Earlier preparation time was not logged; do not infer it from file dates. Inter-turn idle time excluded.",
+  "verified_commit": "8ac25e0cc6a5c28693b4f05c34e4bfff222896aa",
+  "verified_run": 38919230112,
+  "verified_named_theorems": 24,
+  "attempts": [
+    {
+      "commit": "20ec4c21d02dc6b9482cc7ec51921a7cc46094a0",
+      "run": 38917813058,
+      "result": "failed: simplifier recursion in counts_assemble"
+    },
+    {
+      "commit": "e7f407756d8c515c9e344fa9edb68bb18c6e3a02",
+      "run": 38918269655,
+      "result": "failed: cardinality-to-sum rewrite ordering"
+    },
+    {
+      "commit": "00f42ee3ddefddbc1724cc54af8e0c8fef90a53c",
+      "run": 38918795237,
+      "result": "failed: counts_assemble conditional-card sum; Exchange module compiled"
+    },
+    {
+      "commit": "8ac25e0cc6a5c28693b4f05c34e4bfff222896aa",
+      "run": 38919230112,
+      "result": "all eight gates passed; 24 named theorem axiom audit passed"
+    }
+  ],
+  "results": [
+    "Exact PairingAtCutGoal proved",
+    "Paper Lemma 2 edge-closure assertion proved",
+    "Exact InteriorExchangeGoal proved",
+    "Frozen model and target hashes unchanged"
+  ],
+  "remaining": [
+    "Component consequences of Lemmas 2 and 4",
+    "Prefix minimality and quotient/dimension bridge",
+    "Affine cells and span identity",
+    "Algorithm correctness and FPT complexity"
+  ],
+  "next": "Define graph connectivity and establish component interval consequences; proceed to prefix sorting and quotient linear algebra."
+}
