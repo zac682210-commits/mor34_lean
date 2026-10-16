@@ -81,3 +81,8 @@ import MOR34
 #print axioms MOR34.fiberSumMap_surjective
 #print axioms MOR34.componentCountMap_surjective
 #print axioms MOR34.exchangeDirectionSpan_finrank
+
+#print axioms MOR34.pointVector_swap_difference
+#print axioms MOR34.exchangeDirectionSpan_le_tightVectorSpan
+#print axioms MOR34.finrank_subspace_map
+#print axioms MOR34.tight_dimension_quotient

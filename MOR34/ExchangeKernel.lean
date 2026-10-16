@@ -53,7 +53,7 @@ theorem globalExchangeAdj_symm (P : Model m) : Symmetric (GlobalExchangeAdj P) :
 def exchangeSetoid (P : Model m) : Setoid (Item m) where
   r := Relation.ReflTransGen (GlobalExchangeAdj P)
   iseqv := ⟨fun _ => .refl,
-    Relation.ReflTransGen.symmetric (globalExchangeAdj_symm P),
+    fun h => Relation.ReflTransGen.symmetric (globalExchangeAdj_symm P) h,
     fun h h' => h.trans h'⟩
 
 abbrev ExchangeComponent (P : Model m) := Quotient (exchangeSetoid P)
@@ -97,7 +97,11 @@ theorem exchangeDirectionSpan_eq_ker (P : Model m) :
   apply edgeDifferenceSpan_eq_ker (GlobalExchangeAdj P) (componentLabel P)
   · exact Quotient.mk_surjective
   · intro i k
-    exact ⟨Quotient.exact, Quotient.sound⟩
+    constructor
+    · intro h
+      exact Quotient.exact h
+    · intro h
+      exact @Quotient.sound (Item m) (exchangeSetoid P) i k h
 
 theorem componentCountMap_surjective (P : Model m) :
     Function.Surjective (componentCountMap P) := by
@@ -110,7 +114,7 @@ theorem exchangeDirectionSpan_finrank (P : Model m) :
       Fintype.card (Item m) := by
   have h := (componentCountMap P).finrank_range_add_finrank_ker
   rw [LinearMap.range_eq_top.mpr (componentCountMap_surjective P),
-    Module.finrank_top, ← exchangeDirectionSpan_eq_ker] at h
+    finrank_top, ← exchangeDirectionSpan_eq_ker] at h
   simpa only [Module.finrank_fintype_fun_eq_card, Nat.add_comm] using h
 
 end MOR34

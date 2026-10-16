@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.pointVector_swap_difference',
+    'MOR34.exchangeDirectionSpan_le_tightVectorSpan',
+    'MOR34.finrank_subspace_map',
+    'MOR34.tight_dimension_quotient',
+
     'MOR34.fiberSumMap_surjective',
     'MOR34.componentCountMap_surjective',
     'MOR34.exchangeDirectionSpan_finrank',
