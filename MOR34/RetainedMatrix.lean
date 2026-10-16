@@ -67,8 +67,8 @@ theorem retained_row_span (P : Model m) (S : CellBasisSelection P) :
 
 theorem retained_matrix_real_rank (P : Model m) (S : CellBasisSelection P) :
     ((retainedMatrix P S).map (Int.castRingHom ℝ)).rank =
-      Module.finrank ℝ (augmentedSpan (selectedPoints P S) ⊔
-        (adjacentDirectionSpan P).map zeroAugment) := by
+      Module.finrank ℝ ((augmentedSpan (selectedPoints P S) ⊔
+        (adjacentDirectionSpan P).map zeroAugment : Submodule ℝ (ℝ × (Item m → ℝ)))) := by
   classical
   let e : (Option (Item m) → ℝ) ≃ₗ[ℝ] ℝ × (Item m → ℝ) := LinearEquiv.piOptionEquivProd ℝ
   rw [Matrix.rank_eq_finrank_span_row]
