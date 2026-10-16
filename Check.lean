@@ -40,3 +40,15 @@ import MOR34
 #print axioms MOR34.one_tight_of_repartition
 #print axioms MOR34.adjacent_of_crosses
 #print axioms MOR34.interiorExchange
+
+#print axioms MOR34.exchangeConnected_refl
+#print axioms MOR34.exchangeConnected_symm
+#print axioms MOR34.exchangeConnected_trans
+#print axioms MOR34.path_crosses_cut
+#print axioms MOR34.adjacent_chain
+#print axioms MOR34.connected_forces_cut
+#print axioms MOR34.adjacent_cut_exchange
+#print axioms MOR34.cuts_give_connected
+#print axioms MOR34.connected_iff_cuts
+#print axioms MOR34.component_interval
+#print axioms MOR34.parity_interior_connected

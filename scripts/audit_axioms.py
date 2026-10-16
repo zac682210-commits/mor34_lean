@@ -7,6 +7,18 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.exchangeConnected_refl',
+    'MOR34.exchangeConnected_symm',
+    'MOR34.exchangeConnected_trans',
+    'MOR34.path_crosses_cut',
+    'MOR34.adjacent_chain',
+    'MOR34.connected_forces_cut',
+    'MOR34.adjacent_cut_exchange',
+    'MOR34.cuts_give_connected',
+    'MOR34.connected_iff_cuts',
+    'MOR34.component_interval',
+    'MOR34.parity_interior_connected',
+
     'MOR34.tight_swap',
     'MOR34.intervalExchange',
     'MOR34.sum_eq_indicator',
