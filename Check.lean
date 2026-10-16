@@ -71,3 +71,13 @@ import MOR34
 #print axioms MOR34.anchor_sum_zero
 #print axioms MOR34.fiberDifferenceSpan_eq_ker_of_section
 #print axioms MOR34.fiberDifferenceSpan_eq_ker
+
+#print axioms MOR34.path_difference_mem
+#print axioms MOR34.edgeDifferenceSpan_eq_ker
+#print axioms MOR34.globalExchangeAdj_symm
+#print axioms MOR34.exchangeDirectionSpan_eq_global
+#print axioms MOR34.exchangeDirectionSpan_eq_ker
+
+#print axioms MOR34.fiberSumMap_surjective
+#print axioms MOR34.componentCountMap_surjective
+#print axioms MOR34.exchangeDirectionSpan_finrank

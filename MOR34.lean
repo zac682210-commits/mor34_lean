@@ -17,3 +17,5 @@ import MOR34.Components
 import MOR34.PrefixMinimality
 
 import MOR34.PartitionKernel
+
+import MOR34.ExchangeKernel

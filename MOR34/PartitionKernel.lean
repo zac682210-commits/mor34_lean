@@ -35,7 +35,8 @@ theorem fiberDifferenceSpan_le_ker (f : α → β) :
     fiberDifferenceSpan f ≤ LinearMap.ker (fiberSumMap f) := by
   apply Submodule.span_le.mpr
   rintro v ⟨i, j, hij, rfl⟩
-  rw [LinearMap.mem_ker, map_sub, fiberSumMap_unit, fiberSumMap_unit, hij, sub_self]
+  change fiberSumMap f (unitVector i - unitVector j) = 0
+  rw [map_sub, fiberSumMap_unit, fiberSumMap_unit, hij, sub_self]
 
 /-- Regrouping by labels annihilates the anchored part of a kernel vector. -/
 theorem anchor_sum_zero (f : α → β) (g : β → α) (x : α → ℝ)
@@ -76,6 +77,16 @@ theorem fiberDifferenceSpan_eq_ker (f : α → β) (hf : Function.Surjective f) 
   classical
   choose g hg using hf
   exact fiberDifferenceSpan_eq_ker_of_section f g hg
+
+theorem fiberSumMap_surjective (f : α → β) (hf : Function.Surjective f) :
+    Function.Surjective (fiberSumMap f) := by
+  classical
+  choose g hg using hf
+  intro y
+  refine ⟨∑ b : β, y b • unitVector (g b), ?_⟩
+  rw [map_sum]
+  simp_rw [map_smul, fiberSumMap_unit, hg]
+  exact unitVector_expansion y
 
 end PartitionKernel
 end MOR34
