@@ -12,14 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Lean toolchain manager
-        uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
-        with:
-          auto-config: 'false'
-          build: 'false'
-          test: 'false'
-          lint: 'false'
-          use-mathlib-cache: 'false'
-          use-github-cache: 'false'
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - name: Run four readiness gates
         run: python3 scripts/environment_gate.py
       - name: Retain actual logs and resolved dependency manifest
