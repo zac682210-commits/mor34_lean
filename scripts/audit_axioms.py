@@ -7,6 +7,18 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.selectedPoints_tight',
+    'MOR34.selectedPoints_quotient_spans',
+    'MOR34.selected_augmented_span',
+
+    'MOR34.augment_mem_of_affineSpan',
+    'MOR34.zero_vectorSpan_le_augmentedSpan',
+    'MOR34.augmented_span_lift',
+
+    'MOR34.adjacent_path_difference_mem',
+    'MOR34.adjacentDirectionSpan_eq_exchange',
+    'MOR34.adjacentDirectionSpan_eq_ker',
+
     'MOR34.affine_on_set_span_image',
     'MOR34.actual_cell_span_image',
 

@@ -117,3 +117,15 @@ import MOR34
 
 #print axioms MOR34.affine_on_set_span_image
 #print axioms MOR34.actual_cell_span_image
+
+#print axioms MOR34.adjacent_path_difference_mem
+#print axioms MOR34.adjacentDirectionSpan_eq_exchange
+#print axioms MOR34.adjacentDirectionSpan_eq_ker
+
+#print axioms MOR34.augment_mem_of_affineSpan
+#print axioms MOR34.zero_vectorSpan_le_augmentedSpan
+#print axioms MOR34.augmented_span_lift
+
+#print axioms MOR34.selectedPoints_tight
+#print axioms MOR34.selectedPoints_quotient_spans
+#print axioms MOR34.selected_augmented_span

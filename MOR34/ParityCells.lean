@@ -147,20 +147,24 @@ theorem parity_cell_cover (P : Model m) (ε : Parity q) (e : ParityExtrema P ε)
   rw [e.upper_eq] at hhp
   have hzp := hz.2.2 j
   by_cases hl : z j = e.low j
-  · simp [mode, hl]
+  · have hm : mode j = 0 := by simp only [mode, if_pos hl]
+    simpa only [hm, if_true] using hl
   · by_cases hh : z j = e.high j
-    · simp [mode, hl, hh]
-      omega
-    · simp [mode, hl, hh]
-      omega
+    · have hm : mode j = 2 := by simp only [mode, if_neg hl, if_pos hh]
+      simp only [hm, show (2 : Fin 3) ≠ 0 by decide, show (2 : Fin 3) ≠ 1 by decide, if_false]
+      exact ⟨by omega, hh⟩
+    · have hm : mode j = 1 := by simp only [mode, if_neg hl, if_neg hh]
+      simp only [hm, show (1 : Fin 3) ≠ 0 by decide, if_false, if_true]
+      constructor <;> omega
 
 theorem cellCondition_unique {l h z : Counts q} {a b : CellMode q}
     (ha : CellCondition l h a z) (hb : CellCondition l h b z) : a = b := by
   funext j
   have hj := ha j
   have hk := hb j
-  fin_cases hja : a j <;> fin_cases hjb : b j <;>
-    simp [hja, hjb] at hj hk ⊢ <;> omega
+  generalize hja : a j = aj at hj ⊢
+  generalize hjb : b j = bj at hk ⊢
+  fin_cases aj <;> fin_cases bj <;> simp at hj hk ⊢ <;> omega
 
 abbrev CellIndex (q : ℕ) := Parity q × CellMode q
 

@@ -28,3 +28,9 @@ import MOR34.PrefixAffine
 
 import MOR34.ParityCells
 import MOR34.CellSpan
+
+import MOR34.AdjacentSpan
+
+import MOR34.AugmentedSpan
+
+import MOR34.SelectedSpan
