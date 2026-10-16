@@ -1,0 +1,38 @@
+{
+  "stage": "preparation",
+  "compiler_gate": false,
+  "interface_elaboration_gate": false,
+  "paper_alignment": "manually reviewed draft, needs elaborated-type review",
+  "accepted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "required_final_goals": [
+    "L2",
+    "L4",
+    "L3",
+    "L5",
+    "T8span",
+    "rankbridge",
+    "T8correct"
+  ],
+  "separate_complexity_goals": [
+    "L1",
+    "L7",
+    "T8time",
+    "C9"
+  ],
+  "optional": [
+    "C6"
+  ],
+  "reject": [
+    "sorryAx",
+    "project axioms",
+    "assuming desired conclusion in Model",
+    "proving altered weaker statements",
+    "counting Prop definitions as proofs"
+  ],
+  "comparator_status": "not configured or run",
+  "independent_kernel_replay": false
+}

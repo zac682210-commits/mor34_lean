@@ -1,0 +1,33 @@
+name: MOR34 environment gates
+on:
+  push:
+    branches: ['codex/mor34-formalization']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean toolchain manager
+        uses: leanprover/lean-action@38fbc41a8c28c4cbaec22d7f7de508ec2e7c0dd9
+        with:
+          auto-config: 'false'
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'false'
+          use-github-cache: 'false'
+      - name: Run four readiness gates
+        run: python3 scripts/environment_gate.py
+      - name: Retain actual logs and resolved dependency manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mor34-environment-results
+          path: |
+            logs/environment_gate/
+            lake-manifest.json
+          if-no-files-found: warn

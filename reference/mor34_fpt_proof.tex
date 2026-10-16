@@ -1,0 +1,259 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
+\usepackage{xurl}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue,pdftitle={Fixed-Parameter Recognition of Knapsack Facets},pdfauthor={Zhiyan Lin}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Z}{\mathbb Z}\newcommand{\R}{\mathbb R}
+\newcommand{\aff}{\operatorname{aff}}\newcommand{\spn}{\operatorname{span}}
+\title{Fixed-Parameter Recognition of Knapsack Facets\\via Parity and Feasible Exchanges}
+\author{Zhiyan Lin}
+\date{October 13, 2026\\\small Research preprint, version 0.1}
+\begin{document}\maketitle
+\begin{abstract}
+Given a binary knapsack polytope and a nonnegative candidate inequality, let $K$ be the number of distinct positive candidate coefficients. Chen and Zhu gave an $n^{K+O(1)}$ recognition algorithm and asked whether the problem is fixed-parameter tractable in $K$. We give an affirmative answer, and compute the dimension of every nonempty supporting face in time $2^{O((K+1)\log(K+2))}\operatorname{poly}(n,L)$, where $L$ is the binary input length. The structural step pairs tight prefix solutions whose class counts have the same parity. Repartitioning their symmetric differences forces all but two endpoint items in each varying class interval into one feasible-exchange component. As a result, the component-count map is affine on at most $6^{K+1}$ explicitly describable regions. Affine bases of their integer count sets are computed by fixed-dimensional integer programming. The algorithm does not require integer-point counting.
+\end{abstract}
+
+\section{Introduction}
+A binary knapsack polytope is the convex hull of subsets whose total weight does not exceed a prescribed capacity. Its valid inequalities describe restrictions satisfied by all feasible subsets. Facets, the faces of codimension one, form the irredundant boundary description of a full-dimensional polytope. Recognizing whether a proposed inequality defines a facet is a basic question in the structural study of integer programming and in the development of cutting planes.
+
+Chen and Zhu \cite{CZ} prove that general knapsack-facet recognition is DP-complete. They also give an $n^{K+O(1)}$ algorithm when a nonnegative candidate inequality has $K$ distinct positive coefficients, extending earlier polynomial-time results for one positive coefficient, including Balas \cite{Balas}. Their concluding question is whether the exponent of the input size can be made independent of $K$.
+
+Grouping items by their candidate coefficient gives only $K$ integer count variables. This immediately helps to test validity: the cheapest realization of a count vector consists of the lightest items in each class. The corresponding prefix-cost functions are convex. However, the prefix vector itself depends on the counts through a discontinuous unary encoding. Computing an affine basis of the count vectors does not in general compute an affine basis of the original binary points. A public progress note \cite{progress} gives explicit failures of an anchor approach and reduces the correct rank calculation to low-dimensional integer-point counting. That reduction leaves open the uniform parameterized running time of the counting step.
+
+We instead quotient out feasible exchanges between equal-coefficient items. Our main structural lemma uses two tight prefixes with the same count parity. Their symmetric differences can be repartitioned into two new points with equal class counts and unchanged total weight. At least one is feasible. By making both new points contain an inversion across a chosen interior cut, we force that cut to lie inside a single exchange component. This yields a partition into at most $6^q$ regions on which the quotient of the unary encoding is affine; here $q\le K+1$ also includes a possible zero-coefficient class.
+
+The resulting algorithm computes the exact supporting-face dimension in fixed-parameter time, and hence recognizes facets. Standard Frank--Tardos weight compression also gives a bound of $2^{O((K+1)\log(K+2))}\operatorname{poly}(n)$ arithmetic operations in the unit-cost model used by Chen and Zhu. A related structural consequence bounds the number of exchange components of any facet by $(3q+1)2^q$. Fixed-dimensional integer programming, weight compression, convex-prefix epigraphs, rational affine-hull computation, and parity arguments are established tools. The contribution here is the exchange-forcing pairing lemma and the resulting affine-region decomposition for binary knapsack faces. Parity-based structural bounds in a different mixed-integer knapsack model occur, for example, in Dash, G\"unl\"uk, and Wolsey \cite{DGW}; their continuous-variable coefficient bound does not give the binary recognition algorithm proved here.
+
+Section 2 introduces the count formulation and its integer-programming oracle. Section 3 treats exchanges and the quotient map. Section 4 proves the parity structure. Section 5 gives the algorithm and its complexity. Section 6 explains a small obstruction that distinguishes the method from retaining one parity representative. Section 7 concludes. All proofs follow their statements.
+
+\section{Preliminaries and the count oracle}
+Let $n\ge1$, $a\in\Z_{>0}^n$, $b\in\Z_{>0}$, and $\max_i a_i\le b$. Put
+\[
+ P=\operatorname{conv}\{x\in\{0,1\}^n:a^\top x\le b\}.
+\]
+Thus $0,e_1,\ldots,e_n\in P$, where $e_i$ is the $i$th unit vector, and $\dim P=n$. Consider $c^\top x\le d$ with $c\in\Z_{\ge0}^n$ and $d\in\Z$. Let $K$ be the number of distinct positive entries of $c$, $q$ the number of all distinct entries, and $L$ the binary encoding length of the input. Thus $q\le K+1$; the case $c=0$ has $q=1$. Negative $d$ is immediately invalid since $0\in P$.
+
+Partition the items into nonempty classes $I_1,\ldots,I_q$ on which $c$ takes the respective values $\gamma_1,\ldots,\gamma_q$. Write $m_j=|I_j|$ and order class $j$ as $i_{j1},\ldots,i_{jm_j}$ with weights $w_{jr}=a_{i_{jr}}$ nondecreasing in $r$. Ties are ordered arbitrarily and consistently. Define
+\[
+ F_j(t)=\sum_{r=1}^{t}w_{jr}\quad(0\le t\le m_j),\qquad
+ F(z)=\sum_{j=1}^q F_j(z_j).
+\]
+For an integer count vector $z$, the binary prefix $p(z)$ selects the first $z_j$ items in every class. It is a cheapest realization of those counts. The tight count set is
+\begin{equation}\label{eq:Z}
+ Z=\{z\in\Z^q:0\le z_j\le m_j,\ \gamma^\top z=d,\ F(z)\le b\}.
+\end{equation}
+After validity and support are checked, let
+\[
+ T=\{x\in\{0,1\}^n:a^\top x\le b,\ c^\top x=d\}.
+\]
+The supporting face is $\operatorname{conv}(T)$. Its dimension is $\dim\aff(T)$.
+
+We use the standard fixed-dimensional integer-programming theorem: an integer linear feasibility problem with $r$ variables and encoding length $B$ can be solved, with a feasible witness if one exists, in $r^{O(r)}\operatorname{poly}(B)$ time. This is the Lenstra--Kannan framework; see \cite{Lenstra,Kannan} and the formulation in \cite[Theorem 1]{Bredereck}.
+
+The following formulation makes the number of integer variables explicit.
+\begin{lemma}\label{lem:oracle}
+Membership in $Z$ together with rational linear constraints on $z$ can be tested by integer programming with $2q$ variables. A prescribed parity $z\equiv\epsilon\pmod2$ does not increase this number. The formulation has $O(n+q)$ inequalities in addition to the prescribed linear constraints, with polynomial encoding length.
+\end{lemma}
+\begin{proof}
+For each $j$, introduce an integer epigraph variable $y_j$ and impose
+\[
+ y_j\ge F_j(t)+w_{j,t+1}(z_j-t)\quad(0\le t<m_j),
+ \qquad \sum_{j=1}^q y_j\le b.
+\]
+The maximum of the displayed affine functions is the linear interpolation of $F_j$, because its successive slopes are nondecreasing. At an integer $z_j$, it equals $F_j(z_j)$. Hence integer $y$ exists exactly when $F(z)\le b$. Use $z_j=2v_j+\epsilon_j$ to impose parity, replacing the $q$ integer variables $z$ by $q$ integer variables $v$. All coefficients and bounds have polynomial bit length. Convex piecewise-linear epigraph formulations of this kind are standard; see also \cite[Theorem 2]{Bredereck}.
+\end{proof}
+
+Replacing the equality $\gamma^\top z=d$ by $\gamma^\top z\ge d+1$ tests invalidity. If no violation exists, a feasibility test for \eqref{eq:Z} checks support. Coordinate extrema in a nonempty restricted count set are found by binary search on $0,\ldots,m_j$, using $O(\log(n+1))$ such tests.
+
+\section{Feasible exchanges and component counts}
+For $r<s$ in class $j$, call $\{r,s\}$ a feasible exchange edge if some $x\in T$ has $x_{i_{jr}}=0$ and $x_{i_{js}}=1$. Exchanging these coordinates preserves $c^\top x$ and does not increase weight. The exchange graph has all $n$ items as vertices, with edges only inside a class. Let its connected components be $B_1,\ldots,B_C$. Define the linear map $A:\R^n\to\R^C$ by
+\[
+ (Ax)_\ell=\sum_{i\in B_\ell}x_i.
+\]
+The symbol $A$ denotes this component-count map, not the weight vector $a$.
+
+An exchange crossing a cut forces the adjacent exchange at that cut.
+\begin{lemma}\label{lem:interval}
+If $r<s$ is an exchange edge in a class, every $u<v$ with $r\le u<v\le s$ is an exchange edge. Thus components are intervals in the sorted class order, and adjacent exchange edges determine the complete component partition.
+\end{lemma}
+\begin{proof}
+Take a witness with $x_r=0,x_s=1$, suppressing the class index. If $x_u=0,x_v=1$, it is already a witness. If both coordinates are zero, replace $s$ by $v$. If both are one, replace $u$ by $r$. In the remaining case $x_u=1,x_v=0$, replace $u,s$ by $r,v$; those four indices are distinct and $a_r+a_v\le a_u+a_s$. All replacements preserve tightness and feasibility. Finally, any graph path crossing an adjacent cut contains an edge crossing it, so the adjacent pair is an edge as well.
+\end{proof}
+
+There are at most $n-q$ adjacent edge tests. For a test $r,r+1$ in class $j$, force item $r$ out and item $r+1$ in. At count $t\in\{1,\ldots,m_j-1\}$, the minimum class cost is
+\[
+ H_{jr}(t)=w_{j,r+1}+\text{sum of the $t-1$ cheapest weights after deleting $r,r+1$}.
+\]
+It is convex on that integer interval. Replace $F_j$ by $H_{jr}$ in Lemma~\ref{lem:oracle}, with the restricted domain. A singleton domain is represented by a fixed count and a constant cost. This tests the edge in fixed-parameter time and supplies a tight witness when successful.
+
+The next statement includes the swap-completion observation of \cite[Lemma 3.1]{progress}; we give its proof to specify exactly what is preserved.
+\begin{lemma}\label{lem:quotient}
+Let $E$ be the span of all feasible exchange directions $e_r-e_s$. Then $E=\ker A$, and
+\begin{equation}\label{eq:quotient}
+ A(T)=\{Ap(z):z\in Z\}.
+\end{equation}
+For any nonempty $T$,
+\begin{equation}\label{eq:dimension}
+ \dim\aff(T)=n-C+\dim\aff(A(T)).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Within each connected component, edge differences span the subspace whose coordinate sum is zero. Summing over components proves $E=\ker A$ and $\dim E=n-C$.
+
+Given $x\in T$, repeatedly exchange a selected heavier item for an unselected lighter item in the same coefficient class until a prefix is reached. Each exchange is feasible, as witnessed by the point before the exchange. Thus $x-p(z)\in E$ for its count vector $z$, proving \eqref{eq:quotient}; the reverse inclusion holds since every $p(z)$ is tight and feasible.
+
+Fix $x^0\in T$ and let $D=\spn(T-x^0)$. Each edge direction is the difference of two tight feasible points, so $\ker A\subseteq D$. Rank-nullity for the restriction of $A$ to $D$ gives \eqref{eq:dimension}.
+\end{proof}
+
+\section{Parity forces exchanges in interior intervals}
+Write $Z_\epsilon=\{z\in Z:z\equiv\epsilon\pmod2\}$ for $\epsilon\in\{0,1\}^q$. The following pairing argument is the structural step.
+\begin{lemma}\label{lem:pair}
+Let $z,w\in Z_\epsilon$. In some class $j$, suppose $z_j=l<h=w_j$. Then every adjacent cut $r$ with $l+2\le r\le h-2$ is a feasible exchange cut. Consequently, if $h-l\ge4$, all items at positions $l+2,\ldots,h-1$ belong to one exchange component.
+\end{lemma}
+\begin{proof}
+Start with the tight feasible prefixes $p(z)$ and $p(w)$. In every class, their common selected items will be selected in each of two new binary vectors $x',x''$. Their symmetric difference has even cardinality, since $z,w$ have the same parity. Partition that symmetric difference into two sets of equal size, selecting one in $x'$ and the other in $x''$. Each new vector then has class counts $(z+w)/2$, and hence candidate value $d$. Coordinatewise,
+\[
+ x'+x''=p(z)+p(w),\qquad a^\top x'+a^\top x''\le2b.
+\]
+At least one new vector is feasible; we do not require both to be feasible.
+
+Fix the cut $r$ in the assertion. In class $j$, the symmetric difference consists of the positions $l+1,\ldots,h$, with at least two on each side of $r$. Choose two distinct positions on each side. Put one chosen position from each side in each of the two parts. Distribute the remaining positions to make the two part sizes equal; this is possible because each desired part size is $(h-l)/2\ge2$.
+
+Whichever of $x',x''$ is feasible, it selects a position above $r$ and omits a position at or below $r$, the latter belonging to the other part. Thus a feasible exchange edge crosses $r$. Lemma~\ref{lem:interval} makes the adjacent pair at $r$ an edge. Repeating for every indicated cut proves the claim.
+\end{proof}
+
+For a nonempty parity class define its coordinate extrema
+\[
+ l_{\epsilon j}=\min_{z\in Z_\epsilon}z_j,\qquad
+ h_{\epsilon j}=\max_{z\in Z_\epsilon}z_j.
+\]
+The extrema are attained by possibly different profiles for different coordinates. For each fixed coordinate the two witnessing profiles have the same full parity vector, so Lemma~\ref{lem:pair} applies. The extrema have equal parity.
+
+Split each coordinate range into the following alternatives, intersected throughout with its prescribed parity:
+\begin{equation}\label{eq:cells}
+ z_j=l_{\epsilon j},\qquad
+ l_{\epsilon j}+2\le z_j\le h_{\epsilon j}-2,\qquad
+ z_j=h_{\epsilon j}.
+\end{equation}
+When the extrema coincide, retain just the first alternative; discard an empty middle interval. Together with \eqref{eq:Z}, a choice of alternatives in every coordinate defines a cell. There are at most $3^q$ cells for each parity and at most $6^q$ overall.
+
+The unary prefix map need not be affine, but its component-count image is affine on every cell.
+\begin{lemma}\label{lem:affine}
+On the feasible count vectors of each cell, the map $z\mapsto Ap(z)$ agrees with an affine map from $\R^q$ to $\R^C$.
+\end{lemma}
+\begin{proof}
+For a component occupying positions $s+1,\ldots,t$ in class $j$, its count in $p(z)$ is
+\[
+ \min\{\max\{z_j-s,0\},t-s\}.
+\]
+In either endpoint alternative of \eqref{eq:cells}, $z_j$ is fixed, so all these counts are constant. If the middle alternative is nonempty, $h_{\epsilon j}-l_{\epsilon j}\ge4$. By Lemma~\ref{lem:pair}, positions $l_{\epsilon j}+2,\ldots,h_{\epsilon j}-1$ lie in one component, say $s+1,\ldots,t$. Then $s\le l_{\epsilon j}+1$ and $t\ge h_{\epsilon j}-1$. For every middle count $z_j$, the count in this component is $z_j-s$, and all earlier and later component counts are constant. Applying this to all classes proves the result.
+\end{proof}
+
+The same argument also bounds the total number of components on a facet.
+\begin{corollary}\label{cor:C}
+If $c^\top x\le d$ defines a facet, then $C\le(3q+1)2^q$.
+\end{corollary}
+\begin{proof}
+In a fixed parity class, counts in class $j$ vary only at positions $l_{\epsilon j}+1,\ldots,h_{\epsilon j}$. These positions meet at most three exchange components: one contains the entire interior by Lemma~\ref{lem:pair}, and the two endpoint items contribute at most two others. If the interval has length zero or two, the assertion also holds. Thus the affine dimension of $\{Ap(z):z\in Z_\epsilon\}$ is at most $3q$. The affine hull of a union of $s$ nonempty sets of dimensions at most $3q$ has dimension at most $s(3q+1)-1$. Use $s\le2^q$, \eqref{eq:quotient}, and \eqref{eq:dimension}. A facet has dimension $n-1$, which gives the asserted bound.
+\end{proof}
+
+\section{The recognition algorithm}
+We first specify a standard affine-basis subroutine, including its bit complexity.
+\begin{lemma}\label{lem:basis}
+An affine basis of a nonempty restricted count set in $\{0,\ldots,n\}^q$, described as in Lemma~\ref{lem:oracle}, can be found using $O(q^2)$ integer-feasibility calls with at most one additional linear inequality per call.
+\end{lemma}
+\begin{proof}
+Find one point $z^0$ and maintain the rational span $W$ of the differences of points collected so far. Compute a basis of $W^\perp$ and scale each vector to an integer vector $v$. For every such $v$, test for a feasible $z$ satisfying either
+\[
+ v^\top(z-z^0)\ge1\qquad\text{or}\qquad v^\top(z-z^0)\le-1.
+\]
+A successful call adds a difference outside $W$; its dimension increases. If all calls fail, every feasible point lies in $z^0+W$, since all scalar products are integers. There are at most $q$ increases and at most $2q$ tests per stage. The collected points number at most $q+1$. Integer normals of polynomial bit length are obtained from rational elimination: the input differences have magnitude at most $n$, and their minors have $O(q\log(q(n+1)))$ bits. Hence all added constraints have polynomial encoding length.
+\end{proof}
+
+We can now settle the parameterized recognition question.
+\begin{theorem}\label{thm:main}
+For the binary knapsack polytope and nonnegative candidate inequality defined in Section 2, validity and facetness can be decided in
+\[
+ 2^{O((K+1)\log(K+2))}\operatorname{poly}(n,L)
+\]
+time. If the inequality is valid, the algorithm returns the dimension of its tight face, with the convention $\dim\varnothing=-1$. For a nonempty face it can also produce an affine basis of tight binary points.
+\end{theorem}
+\begin{proof}
+Use Lemma~\ref{lem:oracle} to check validity and support. Return the corresponding outcome if the inequality is invalid or the face is empty. In the remaining case, perform the $n-q$ adjacent edge tests of Section 3 and compute the components. Retain their feasible edge directions.
+
+For every $\epsilon\in\{0,1\}^q$, check whether $Z_\epsilon$ is nonempty. In each nonempty class compute all coordinate extrema by binary search. Enumerate the cells in \eqref{eq:cells}. Each is described by the original convex-prefix constraints, parity, and coordinate bounds; it has the formulation of Lemma~\ref{lem:oracle}. For each nonempty cell, use Lemma~\ref{lem:basis} to find an affine basis $z^0,\ldots,z^s$, with $s\le q$, and retain the tight binary prefixes $p(z^0),\ldots,p(z^s)$.
+
+Let $\mathcal R$ consist of their augmented rows $(1,p(z^i))$, together with the rows $(0,e_r-e_s)$ for feasible adjacent edges. We claim
+\begin{equation}\label{eq:span}
+ \spn\mathcal R=\spn\{(1,x):x\in T\}.
+\end{equation}
+Each retained prefix is tight and feasible. Each edge direction is a difference of two tight feasible points. Therefore the left side is contained in the right side.
+
+Conversely, take any $x\in T$, and let $z$ be its class-count vector. Sorting within classes gives $x-p(z)\in\ker A$, by Lemma~\ref{lem:quotient}. The adjacent edge directions span $\ker A$ by Lemma~\ref{lem:interval}. The vector $z$ belongs to a cell and is an affine combination $\sum_i\lambda_i z^i$ of that cell's selected basis, with $\sum_i\lambda_i=1$. By Lemma~\ref{lem:affine},
+\[
+ A p(z)=\sum_i\lambda_i A p(z^i).
+\]
+Hence $p(z)-\sum_i\lambda_i p(z^i)\in\ker A$. This expresses $(1,x)$ in $\spn\mathcal R$ and proves \eqref{eq:span}.
+
+Exact rational elimination now gives $\dim\aff(T)=\operatorname{rank}(\mathcal R)-1$. Facetness is equivalent to this dimension being $n-1$. To return an affine basis of actual tight points, replace every retained edge direction by its witnessing tight point and the point after the exchange. Both points are available from the edge oracle and explicit minimum-cost realization. Their difference is the edge direction. The augmented span remains the full tight-point span, so extracting independent augmented point rows gives the requested basis.
+
+The number of oracle calls is
+\[
+ O\bigl(n+2^q q\log(n+1)+6^q(q+1)^2\bigr).
+\]
+Every call uses at most $2q$ integer variables and has encoding length polynomial in $n,L$. The fixed-dimensional integer-programming bound makes their total cost $2^{O(q\log(q+1))}\operatorname{poly}(n,L)$. The final matrix has $n+1$ columns and $O(n+(q+1)6^q)$ rows with entries in $\{-1,0,1\}$. Its exact rank, and the bit complexity of all other rational linear algebra, fit within the same parameterized bound. Since $q\le K+1$, the stated running time follows.
+
+Zero coefficients require no additional argument: they constitute one class with $\gamma_j=0$, and every exchange, pairing, and formulation above preserves the candidate value in that class too. If $c=0,d=0$, the computed face is all of $P$ and has dimension $n$, so it is correctly rejected as a facet. The cases $c=0,d\ne0$ are handled by the validity and support checks.
+\end{proof}
+
+For completeness, the next consequence matches the numerical model of the original question. The compression ingredient is existing work.
+\begin{corollary}\label{cor:compression}
+The conclusions of Theorem~\ref{thm:main} can be obtained with
+\[
+ 2^{O((K+1)\log(K+2))}\operatorname{poly}(n)
+\]
+arithmetic operations, independently of the magnitudes of $a,b,c,d$.
+\end{corollary}
+\begin{proof}
+The Frank--Tardos theorem \cite{FT}, in the form stated in \cite[Theorem 1]{EKMR}, transforms a rational vector $w\in\mathbb Q^r$ and positive integer $N$ into an integer vector $\bar w$ such that
+\[
+ \|\bar w\|_\infty\le 2^{4r^3}N^{r(r+2)},\qquad
+ \operatorname{sign}(w^\top u)=\operatorname{sign}(\bar w^\top u)
+ \quad\text{for all }u\in\Z^r,\ \|u\|_1\le N-1.
+\]
+The transformation uses strongly polynomially many arithmetic operations. Apply it separately to $(a,b)$ and $(c,d)$, with $r=n+1$ and $N=n+2$.
+
+For every binary $x$, the vector $(x,-1)$ has $\ell_1$ norm at most $n+1$. Thus the transformed instance has exactly the same feasible binary set and exactly the same tight binary set; candidate validity is preserved as well. The tests with unit vectors preserve positivity of $a,b$, nonnegativity of $c$, and its zero entries. The tests with $e_i-e_j$ preserve equality and ordering of candidate coefficients, so the parameter $K$ is unchanged. The tests with $e_i-e_{n+1}$ applied to $(a,b)$ preserve $a_i\le b$.
+
+The total encoding length after compression is $O(n^4)$. Apply Theorem~\ref{thm:main} to that instance. Its bit-operation bound is now $2^{O((K+1)\log(K+2))}\operatorname{poly}(n)$, which also bounds its arithmetic operations. Combining this with the strongly polynomial preprocessing proves the assertion. The rational numbers used during preprocessing have bit lengths polynomial in the original input length, as required by the weight-compression theorem.
+\end{proof}
+
+\section{Why a single representative per parity is insufficient}
+The use of all endpoint/middle cells matters even for a genuine facet. Consider
+\[
+ a=(5,8,3,3,3,3),\quad b=13,\quad c=(2,2,1,1,1,1),\quad d=4.
+\]
+The tight points are $(1,1,0,0,0,0)$, $(0,0,1,1,1,1)$, and the six vectors $(1,0,y)$ with $y\in\{0,1\}^4$ of coordinate sum two. The inequality is valid: one coefficient-two item and three coefficient-one items weigh at least $14$, and both coefficient-two items with any further item weigh at least $16$. The tight face has dimension five. Indeed, the six middle points have affine dimension three, and the two remaining points each add a dimension by their first and second coordinates, respectively.
+
+The tight count profiles are $(0,4),(1,2),(2,0)$, of minimum costs $12,11,13$. The profiles $(0,4)$ and $(2,0)$ have the same parity. Keeping only the minimum-cost representative omits $(2,0)$. There is no exchange edge between the first two items, since selecting only the heavier one together with two coefficient-one items costs $14$. Thus all retained representative points and all feasible exchange directions have second coordinate zero; they miss the full tight span. Our cells retain both endpoint profiles and therefore recover the facet.
+
+The accompanying exact reference code checks the rank algorithm against complete binary enumeration on small instances, including zero coefficients, invalid candidates, and empty faces. It uses an exhaustive count oracle to validate the combinatorial logic and exact rational ranks. It is not an implementation or empirical timing verification of the fixed-parameter integer-programming theorem. The analytic proof, rather than these finite experiments, establishes the running time and correctness for arbitrary inputs.
+
+\section{Conclusion}
+We answer the fixed-parameter question for knapsack-facet recognition with few distinct positive candidate coefficients. The method computes the entire tight-face dimension. Its central structural fact is that equal-parity prefix solutions force interior feasible exchanges. Quotienting by those exchanges makes the prefix encoding affine on a parameter-bounded family of count regions, so ordinary fixed-dimensional feasibility replaces integer-point counting. The six-variable example shows why parity compression alone would be insufficient. Determining sharper component bounds or more practical implementations remains a separate algorithmic question.
+
+\begin{thebibliography}{10}\small
+\bibitem{CZ} R. Chen and H. Zhu, \emph{The Complexity of Recognizing Facets for the Knapsack Polytope}, Mathematics of Operations Research, published online November 17, 2025. \href{https://doi.org/10.1287/moor.2024.0481}{doi:10.1287/moor.2024.0481}. Author manuscript: \href{https://arxiv.org/abs/2211.03311v3}{arXiv:2211.03311v3}, October 20, 2025.
+\bibitem{Balas} E. Balas, \emph{Facets of the knapsack polytope}, Mathematical Programming 8 (1975), 146--164.
+\bibitem{Lenstra} H. W. Lenstra, Jr., \emph{Integer programming with a fixed number of variables}, Mathematics of Operations Research 8(4) (1983), 538--548. \href{https://doi.org/10.1287/moor.8.4.538}{doi:10.1287/moor.8.4.538}.
+\bibitem{Kannan} R. Kannan, \emph{Minkowski's convex body theorem and integer programming}, Mathematics of Operations Research 12(3) (1987), 415--440. \href{https://doi.org/10.1287/moor.12.3.415}{doi:10.1287/moor.12.3.415}.
+\bibitem{Bredereck} R. Bredereck, P. Faliszewski, R. Niedermeier, P. Skowron, and N. Talmon, \emph{Mixed Integer Programming with Convex/Concave Constraints: Fixed-Parameter Tractability and Applications to Multicovering and Voting}, \href{https://arxiv.org/abs/1709.02850v2}{arXiv:1709.02850v2}, November 20, 2017.
+\bibitem{DGW} S. Dash, O. G\"unl\"uk, and L. Wolsey, \emph{The continuous knapsack set}, author manuscript, December 18, 2014. \url{https://optimization-online.org/wp-content/uploads/2014/02/4227.pdf}.
+\bibitem{FT} A. Frank and \'E. Tardos, \emph{An application of simultaneous diophantine approximation in combinatorial optimization}, Combinatorica 7 (1987), 49--65. \href{https://doi.org/10.1007/BF02579200}{doi:10.1007/BF02579200}.
+\bibitem{EKMR} M. Etscheid, S. Kratsch, M. Mnich, and H. R\"oglin, \emph{Polynomial Kernels for Weighted Problems}, \href{https://arxiv.org/abs/1507.03439v1}{arXiv:1507.03439v1}, July 13, 2015.
+\bibitem{progress} Author not identified, \emph{A Rank-Counting Reduction for Knapsack Facet Recognition with Few Candidate Coefficients: Corrected progress and an obstruction to two-anchor spanning}, June 25, 2026. Repository \texttt{AI-in-Math-OR/open-problems-in-or}, commit \texttt{3b2de3237c29623f479c52c31db54fd60b97fd3c}; file \texttt{data/llm\_math\_export/solution\_progress/}\\\texttt{W4416295153\_p0/partial\_progress/34.pdf}. \href{https://github.com/AI-in-Math-OR/open-problems-in-or/blob/3b2de3237c29623f479c52c31db54fd60b97fd3c/data/llm_math_export/solution_progress/W4416295153_p0/partial_progress/34.pdf}{Fixed-version source}.
+\end{thebibliography}
+\end{document}

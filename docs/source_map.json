@@ -1,0 +1,158 @@
+{
+  "schema": "MOR34 source map 1",
+  "source_pdf_sha256": "245e77fc9f9613ebb5ae1bfef7ae013412507002c3cac1b8eedb76d60b31645d",
+  "all_project_goals_open": true,
+  "entries": [
+    {
+      "id": "prefix",
+      "paper": "Preliminaries",
+      "contract": "For every finite selected set S, prefix(counts S) has the same counts and no greater weight.",
+      "depends_on": [],
+      "lean_target": "MOR34.PaperInterface.PrefixMinimality; count identity still to specify",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "L1",
+      "paper": "Lemma 1",
+      "contract": "Integer epigraph feasibility iff count feasibility, including arbitrary rational linear restrictions; parity substitution retains 2q integer variables.",
+      "depends_on": [
+        "prefix"
+      ],
+      "lean_target": "not yet encoded",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "L2",
+      "paper": "Lemma 2",
+      "contract": "An exchange edge r<s forces each u<v inside [r,s]; components are intervals determined by adjacent edges.",
+      "depends_on": [],
+      "lean_target": "MOR34.PaperInterface.IntervalExchange (edge assertion only)",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "split",
+      "paper": "Auxiliary for Lemma 4",
+      "contract": "D of size 2k, k>=2; disjoint two-element subsets P,N can be put into opposite halves of size k.",
+      "depends_on": [],
+      "lean_target": "MOR34.BalancedSplitGoal",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "pair",
+      "paper": "Auxiliary for Lemma 4",
+      "contract": "All class counts have equal parity. For each fixed interior cut, repartition both prefixes into balanced outputs, both crossing that cut.",
+      "depends_on": [
+        "split"
+      ],
+      "lean_target": "MOR34.PairingAtCutGoal",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "L4",
+      "paper": "Lemma 4",
+      "contract": "For all bounded z,w with tight feasible prefixes and full coordinatewise parity agreement, each cut z_j+2<=r<=w_j-2 is an adjacent feasible exchange.",
+      "depends_on": [
+        "pair",
+        "L2"
+      ],
+      "lean_target": "MOR34.PaperInterface.ParityInterior",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "L3",
+      "paper": "Lemma 3",
+      "contract": "For component-count map A, exchange-direction span E=ker A; A(T)=A(prefix(Z)); nonempty T has dim aff(T)=n-C+dim aff(A(T)).",
+      "depends_on": [
+        "prefix",
+        "L2"
+      ],
+      "lean_target": "not yet encoded",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "L5",
+      "paper": "Lemma 5",
+      "contract": "Each parity/endpoint/middle cell admits an affine map agreeing with A(prefix(z)) on its feasible counts; at most 6^q cells.",
+      "depends_on": [
+        "L4",
+        "L2"
+      ],
+      "lean_target": "not yet encoded",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "C6",
+      "paper": "Corollary 6",
+      "contract": "For a facet, number of exchange components C<=(3q+1)*2^q.",
+      "depends_on": [
+        "L3",
+        "L4"
+      ],
+      "lean_target": "not yet encoded; optional branch",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "L7",
+      "paper": "Lemma 7",
+      "contract": "Nonempty restricted count sets admit an affine basis of <=q+1 points computable with O(q^2) integer feasibility calls; added normals have polynomial bit length.",
+      "depends_on": [
+        "L1"
+      ],
+      "lean_target": "not yet encoded",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "T8span",
+      "paper": "Theorem 8, span identity",
+      "contract": "Rows (1,p(z)) from an affine basis of every nonempty cell, together with (0,e_r-e_s) for all adjacent exchange edges, span exactly {(1,x):x in T}.",
+      "depends_on": [
+        "L3",
+        "L5"
+      ],
+      "lean_target": "not yet encoded; structural acceptance target",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "rankbridge",
+      "paper": "Theorem 8, scalar bridge",
+      "contract": "Finite integer matrices have the same rank over Q and R; augmented rank minus one gives nonempty real affine dimension.",
+      "depends_on": [],
+      "lean_target": "not yet encoded",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "T8correct",
+      "paper": "Theorem 8, correctness",
+      "contract": "With valid input, return empty-face dimension -1 or correct nonempty dimension and an affine basis of actual tight points; facet iff valid and dimension n-1.",
+      "depends_on": [
+        "T8span",
+        "rankbridge",
+        "L1",
+        "L7"
+      ],
+      "lean_target": "not yet encoded",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "T8time",
+      "paper": "Theorem 8, FPT time",
+      "contract": "Executable algorithms, input encoding and cost model yield 2^{O((K+1)log(K+2))} poly(n,L), q<=K+1.",
+      "depends_on": [
+        "T8correct",
+        "L7"
+      ],
+      "lean_target": "not yet encoded; fixed-dimensional ILP dependency unresolved",
+      "status": "open; not kernel checked"
+    },
+    {
+      "id": "C9",
+      "paper": "Corollary 9",
+      "contract": "Frank-Tardos compression preserves feasibility, equality levels and coefficient classes; unit-cost FPT bound independent of integer magnitudes.",
+      "depends_on": [
+        "T8time"
+      ],
+      "lean_target": "not yet encoded; compression dependency unresolved",
+      "status": "open; not kernel checked"
+    }
+  ]
+}
