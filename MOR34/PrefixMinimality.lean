@@ -21,7 +21,7 @@ theorem counts_classSlice (S : Finset (Item m)) (j : Fin q) :
     counts S j = (classSlice S j).card := by
   rw [← counts_assemble, assemble_classSlice]
 
-theorem counts_bounded (S : Finset (Item m)) : BoundedCounts (counts S) := by
+theorem counts_bounded (S : Finset (Item m)) : BoundedCounts (m := m) (counts S) := by
   intro j
   rw [counts_classSlice]
   simpa using Finset.card_le_univ (classSlice S j)
@@ -49,7 +49,7 @@ theorem orderEmbedding_index_le {k s : ℕ} (e : Fin k ↪o Fin s) (i : Fin k) :
       have hji : j < i := by change j.val < i.val; dsimp [j]; omega
       have he := e.strictMono hji
       change (e j).val < (e i).val at he
-      dsimp [j] at hj
+      change n ≤ (e j).val at hj
       omega
   exact aux i.val i rfl
 

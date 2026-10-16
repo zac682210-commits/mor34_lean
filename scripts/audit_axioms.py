@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.fiberSumMap_unit',
+    'MOR34.unitVector_expansion',
+    'MOR34.fiberDifferenceSpan_le_ker',
+    'MOR34.anchor_sum_zero',
+    'MOR34.fiberDifferenceSpan_eq_ker_of_section',
+    'MOR34.fiberDifferenceSpan_eq_ker',
+
     'MOR34.mem_classSlice',
     'MOR34.assemble_classSlice',
     'MOR34.counts_classSlice',

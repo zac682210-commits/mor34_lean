@@ -64,3 +64,10 @@ import MOR34
 #print axioms MOR34.classPrefix_minimal
 #print axioms MOR34.prefixMinimality
 #print axioms MOR34.prefix_tight
+
+#print axioms MOR34.fiberSumMap_unit
+#print axioms MOR34.unitVector_expansion
+#print axioms MOR34.fiberDifferenceSpan_le_ker
+#print axioms MOR34.anchor_sum_zero
+#print axioms MOR34.fiberDifferenceSpan_eq_ker_of_section
+#print axioms MOR34.fiberDifferenceSpan_eq_ker
