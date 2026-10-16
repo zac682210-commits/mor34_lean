@@ -20,7 +20,7 @@ theorem augmentedSpan_anchor {T : Set V} {a : V} (ha : a ∈ T) :
     rw [he]
     exact N.add_mem hp hm
   · apply sup_le
-    · exact Submodule.span_singleton_le_iff_mem.mpr (Submodule.subset_span ⟨a, ha, rfl⟩)
+    · exact (Submodule.span_singleton_le_iff_mem _ _).mpr (Submodule.subset_span ⟨a, ha, rfl⟩)
     · exact zero_vectorSpan_le_augmentedSpan T
 
 theorem augment_anchor_disjoint (a : V) (D : Submodule ℝ V) :

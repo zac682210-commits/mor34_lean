@@ -143,3 +143,10 @@ import MOR34
 #print axioms MOR34.augmentedSpan_anchor
 #print axioms MOR34.augment_anchor_disjoint
 #print axioms MOR34.augmentedSpan_finrank
+
+#print axioms MOR34.square_matrix_rank_map
+#print axioms MOR34.rational_matrix_rank
+#print axioms MOR34.integer_matrix_rank
+
+#print axioms MOR34.selected_dimension
+#print axioms MOR34.small_selected_dimension

@@ -101,7 +101,7 @@ theorem selectionFinset_card (P : Model m) (S : CellBasisSelection P)
     (selectionFinset P S).card ≤ ∑ i : CellIndex q, (selectionCell P S i).card :=
       Finset.card_biUnion_le
     _ ≤ ∑ _i : CellIndex q, (q + 1) := Finset.sum_le_sum (fun i _ => hc i)
-    _ = (q + 1) * 6 ^ q := by simp only [Finset.sum_const, Finset.card_univ, cell_index_card, nsmul_eq_mul, mul_comm]
+    _ = (q + 1) * 6 ^ q := by simp only [Finset.sum_const, Finset.card_univ, cell_index_card, nsmul_eq_mul, Nat.cast_id, mul_comm]
 
 /-- Parameter-bounded retained prefixes exist and, with adjacent directions, recover all tight rows. -/
 theorem small_selected_span (P : Model m) (hWF : WellFormed P) :

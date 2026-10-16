@@ -38,3 +38,7 @@ import MOR34.SelectedSpan
 import MOR34.FiniteCellBases
 
 import MOR34.AugmentedDimension
+
+import MOR34.RankScalar
+
+import MOR34.StructuralTheorem
