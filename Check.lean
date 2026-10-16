@@ -25,3 +25,9 @@ import MOR34
 #print axioms MOR34.counts_assemble
 #print axioms MOR34.prefixSet_assemble
 #print axioms MOR34.split_prescribed
+
+#print axioms MOR34.classPairSpec_comm
+#print axioms MOR34.ordered_pair_prescribed
+#print axioms MOR34.class_pair
+#print axioms MOR34.class_pair_cross
+#print axioms MOR34.pairingAtCut

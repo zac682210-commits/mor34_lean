@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.classPairSpec_comm',
+    'MOR34.ordered_pair_prescribed',
+    'MOR34.class_pair',
+    'MOR34.class_pair_cross',
+    'MOR34.pairingAtCut',
+
     'MOR34.mem_classPrefix',
     'MOR34.card_classPrefix',
     'MOR34.classPrefix_mono',
