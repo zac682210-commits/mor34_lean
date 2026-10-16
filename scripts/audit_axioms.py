@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.tight_swap',
+    'MOR34.intervalExchange',
+    'MOR34.sum_eq_indicator',
+    'MOR34.repartition_sum',
+    'MOR34.candidateValue_counts',
+    'MOR34.one_tight_of_repartition',
+    'MOR34.adjacent_of_crosses',
+    'MOR34.interiorExchange',
+
     'MOR34.classPairSpec_comm',
     'MOR34.ordered_pair_prescribed',
     'MOR34.class_pair',

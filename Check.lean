@@ -31,3 +31,12 @@ import MOR34
 #print axioms MOR34.class_pair
 #print axioms MOR34.class_pair_cross
 #print axioms MOR34.pairingAtCut
+
+#print axioms MOR34.tight_swap
+#print axioms MOR34.intervalExchange
+#print axioms MOR34.sum_eq_indicator
+#print axioms MOR34.repartition_sum
+#print axioms MOR34.candidateValue_counts
+#print axioms MOR34.one_tight_of_repartition
+#print axioms MOR34.adjacent_of_crosses
+#print axioms MOR34.interiorExchange
