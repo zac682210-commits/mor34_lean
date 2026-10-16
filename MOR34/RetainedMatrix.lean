@@ -93,4 +93,36 @@ theorem retained_matrix_rational_rank (P : Model m) (hWF : WellFormed P)
   rw [← integer_matrix_rank, retained_matrix_real_rank]
   exact selected_dimension P hWF S hT
 
+theorem adjacentEdge_card (P : Model m) :
+    Fintype.card (AdjacentEdge P) ≤ Fintype.card (Item m) := by
+  classical
+  let f : AdjacentEdge P → Item m := fun e => ⟨e.val.1, e.val.2.1⟩
+  apply Fintype.card_le_of_injective f
+  rintro ⟨⟨j, u, v⟩, h⟩ ⟨⟨k, w, t⟩, h'⟩ he
+  change (⟨j, u⟩ : Item m) = ⟨k, w⟩ at he
+  obtain ⟨rfl, he⟩ := Sigma.mk.inj_iff.mp he
+  cases he
+  have hv : v = t := Fin.ext (by have h1 := h.1; have h2 := h'.1; omega)
+  subst t
+  rfl
+
+theorem retainedRowIndex_card (P : Model m) (S : CellBasisSelection P)
+    (hsmall : ∀ ε hn mode, (S.basis ε hn mode).card ≤ q + 1) :
+    Fintype.card (RetainedRowIndex P S) ≤ Fintype.card (Item m) + (q + 1) * 6 ^ q := by
+  classical
+  have hb := selectionFinset_card P S hsmall
+  have he := adjacentEdge_card P
+  simp only [RetainedRowIndex, Fintype.card_sum, Fintype.card_coe]
+  omega
+
+/-- Bounded finite integer matrix certificate for the nonempty tight-face dimension. -/
+theorem small_retained_matrix (P : Model m) (hWF : WellFormed P)
+    (hT : (tightPointSet P).Nonempty) :
+    ∃ S : CellBasisSelection P,
+      Fintype.card (RetainedRowIndex P S) ≤ Fintype.card (Item m) + (q + 1) * 6 ^ q ∧
+      ((retainedMatrix P S).map (Int.castRingHom ℚ)).rank =
+        Module.finrank ℝ (vectorSpan ℝ (tightPointSet P)) + 1 := by
+  obtain ⟨S, hs⟩ := small_cellBasisSelection_exists P
+  exact ⟨S, retainedRowIndex_card P S hs, retained_matrix_rational_rank P hWF S hT⟩
+
 end MOR34

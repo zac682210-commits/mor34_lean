@@ -15,9 +15,9 @@ theorem square_matrix_rank_map {ι K L : Type*} [Fintype ι]
   have hu : U.det = 1 := Matrix.TransvectionStruct.det_toMatrix_prod ls
   have hv : V.det = 1 := Matrix.TransvectionStruct.det_toMatrix_prod rs
   have hum : (U.map f).det = 1 := by
-    rw [← f.map_det, hu, map_one]
+    simpa only [RingHom.mapMatrix_apply, hu, map_one] using (f.map_det U).symm
   have hvm : (V.map f).det = 1 := by
-    rw [← f.map_det, hv, map_one]
+    simpa only [RingHom.mapMatrix_apply, hv, map_one] using (f.map_det V).symm
   have he' : A = U * Matrix.diagonal d * V := he
   have hk : A.rank = (Matrix.diagonal d).rank := by
     rw [he', Matrix.rank_mul_eq_left_of_isUnit_det V _ (by rw [hv]; exact isUnit_one),

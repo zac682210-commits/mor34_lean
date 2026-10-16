@@ -155,3 +155,7 @@ import MOR34
 #print axioms MOR34.retained_row_span
 #print axioms MOR34.retained_matrix_real_rank
 #print axioms MOR34.retained_matrix_rational_rank
+
+#print axioms MOR34.adjacentEdge_card
+#print axioms MOR34.retainedRowIndex_card
+#print axioms MOR34.small_retained_matrix

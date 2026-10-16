@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.adjacentEdge_card',
+    'MOR34.retainedRowIndex_card',
+    'MOR34.small_retained_matrix',
+
     'MOR34.retained_row_cast',
     'MOR34.retained_row_span',
     'MOR34.retained_matrix_real_rank',
