@@ -1,0 +1,73 @@
+{
+  "started_utc": "2026-10-16T16:06:54+00:00",
+  "ended_utc": "2026-10-16T16:28:46.799791+00:00",
+  "started_shanghai": "2026-10-17T00:06:54+08:00",
+  "ended_shanghai": "2026-10-17T00:28:46.799791+08:00",
+  "active_minutes": 21.88,
+  "pure_wait_seconds": 0,
+  "time_method": "Actual wall interval of proof construction, source lookup, compilation diagnosis, mathematical alignment and checkpoint preparation. Useful work continued during CI. No sleeps or inter-session idle; subsequent metadata-upload overhead excluded.",
+  "prior_recorded_active_minutes": 34.103,
+  "cumulative_recorded_active_minutes": 55.983,
+  "cumulative_is_complete": false,
+  "historical_formalization_minutes": null,
+  "history_note": "Older preparation had no time ledger. Do not infer actual work from timestamps or trigger counts.",
+  "attempts": [
+    {
+      "commit": "8a885ae102c18468937d8c1d9ed1e57613082e4e",
+      "run": 38929639678,
+      "result": "success: all 35 theorem audits, connectivity"
+    },
+    {
+      "commit": "2cf2e1bc8e2f3f4a4d8f35ad7ef9471731d4deba",
+      "run": 38930014124,
+      "result": "failed: dependent count parameter and finite-index alias arithmetic"
+    },
+    {
+      "commit": "8744d5eac19fdf1b7f2d5852eaa81798e96deadb",
+      "run": 38930355631,
+      "result": "prefix module compiled; partition kernel failed at coerced-set membership rewrite"
+    },
+    {
+      "commit": "c7c77da780958d47b5f69d251e8406dfed76ded7",
+      "run": 38930709750,
+      "result": "partition module compiled; exchange quotient elaboration and finrank namespace failed"
+    },
+    {
+      "commit": "da5891238f0fcb25edc8b5977021c97063197582",
+      "run": 38931144716,
+      "result": "success: all 64 theorem audits, real kernel and dimension formulas"
+    },
+    {
+      "commit": "1ab49f5e6de4be6ad59dd31c2f34f09ebdbc6211",
+      "run": 38931568115,
+      "result": "success: all 73 theorem audits, local/global bridge and tight-prefix image identity"
+    }
+  ],
+  "verified_commit": "1ab49f5e6de4be6ad59dd31c2f34f09ebdbc6211",
+  "verified_run": 38931568115,
+  "kernel_checked_named_theorems": 73,
+  "complete_paper": false,
+  "complete_lemma2": true,
+  "complete_lemma3": true,
+  "complete_lemma4": true,
+  "results": [
+    "Prefix count preservation and minimum weight",
+    "Adjacent-cut characterization and interval components",
+    "Actual exchange graph quotient and E = ker A over Real",
+    "dim E = n-C and nonempty tight-set affine dimension formula",
+    "A(T) = A(tight feasible prefixes)"
+  ],
+  "next": "Prove actual parity-cell AffineMaps and at most 6^q cells; follow docs/NEXT_AFFINE_CELLS.md.",
+  "remaining": [
+    "Lemma 5 affine cells",
+    "Augmented span theorem",
+    "Rational/real rank bridge",
+    "Explicit recognition algorithm correctness",
+    "ILP FPT complexity and compression"
+  ],
+  "observed_build_warnings": [
+    "Unused finite-type instance in fiberSumMap_unit",
+    "Unused finite-type instance in path_difference_mem"
+  ],
+  "independent_review": false
+}

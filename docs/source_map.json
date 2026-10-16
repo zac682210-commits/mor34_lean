@@ -8,8 +8,14 @@
       "paper": "Preliminaries",
       "contract": "For every finite selected set S, prefix(counts S) has the same counts and no greater weight.",
       "depends_on": [],
-      "lean_target": "MOR34.PaperInterface.PrefixMinimality; count identity still to specify",
-      "status": "open; not kernel checked"
+      "lean_target": "MOR34.PaperInterface.PrefixMinimality plus counts_prefixSet and counts_bounded",
+      "status": "kernel checked on commit 1ab49f5e6de4be6ad59dd31c2f34f09ebdbc6211",
+      "lean_theorems": [
+        "MOR34.prefixMinimality",
+        "MOR34.counts_prefixSet",
+        "MOR34.counts_bounded",
+        "MOR34.prefix_tight"
+      ]
     },
     {
       "id": "L1",
@@ -26,9 +32,16 @@
       "paper": "Lemma 2",
       "contract": "An exchange edge r<s forces each u<v inside [r,s]; components are intervals determined by adjacent edges.",
       "depends_on": [],
-      "lean_target": "MOR34.PaperInterface.IntervalExchange (edge assertion only)",
-      "status": "edge-closure assertion kernel checked on commit 8ac25e0cc6a5c28693b4f05c34e4bfff222896aa; component consequences remain open",
-      "lean_theorem": "MOR34.intervalExchange"
+      "lean_target": "Edge closure, adjacent-cut connectivity, and interval property of actual global component labels",
+      "status": "kernel checked on commit 1ab49f5e6de4be6ad59dd31c2f34f09ebdbc6211",
+      "lean_theorem": "MOR34.intervalExchange",
+      "lean_theorems": [
+        "MOR34.intervalExchange",
+        "MOR34.connected_iff_cuts",
+        "MOR34.component_interval",
+        "MOR34.componentLabel_eq_iff_class_connected",
+        "MOR34.componentLabel_interval"
+      ]
     },
     {
       "id": "split",
@@ -58,9 +71,14 @@
         "pair",
         "L2"
       ],
-      "lean_target": "MOR34.PaperInterface.ParityInterior",
-      "status": "adjacent-cut assertion kernel checked on commit 8ac25e0cc6a5c28693b4f05c34e4bfff222896aa; paper component corollary remains open",
-      "lean_theorem": "MOR34.interiorExchange"
+      "lean_target": "MOR34.InteriorExchangeGoal plus parity_interior_connected and actual component-label bridge",
+      "status": "kernel checked on commit 1ab49f5e6de4be6ad59dd31c2f34f09ebdbc6211",
+      "lean_theorem": "MOR34.interiorExchange",
+      "lean_theorems": [
+        "MOR34.interiorExchange",
+        "MOR34.parity_interior_connected",
+        "MOR34.componentLabel_eq_iff_class_connected"
+      ]
     },
     {
       "id": "L3",
@@ -70,8 +88,14 @@
         "prefix",
         "L2"
       ],
-      "lean_target": "not yet encoded",
-      "status": "open; not kernel checked"
+      "lean_target": "Actual path-quotient components; real vectorSpan dimension; tightPrefixPointSet represents bounded feasible tight prefixes",
+      "status": "kernel checked on commit 1ab49f5e6de4be6ad59dd31c2f34f09ebdbc6211",
+      "lean_theorems": [
+        "MOR34.exchangeDirectionSpan_eq_ker",
+        "MOR34.exchangeDirectionSpan_finrank",
+        "MOR34.tight_image_eq_prefix_image",
+        "MOR34.tight_dimension_quotient"
+      ]
     },
     {
       "id": "L5",

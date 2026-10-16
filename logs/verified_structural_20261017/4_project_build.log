@@ -1,0 +1,29 @@
+✔ [2187/2420] Built MOR34.Model
+✔ [2794/2811] Built MOR34.Targets
+✔ [2795/2811] Built MOR34.PairingArithmetic
+⚠ [2796/2811] Built MOR34.PartitionKernel
+warning: ././././MOR34/PartitionKernel.lean:24:0: automatically included section variable(s) unused in theorem 'MOR34.fiberSumMap_unit':
+  [Fintype β]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype β] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2797/2811] Built MOR34.PaperInterface
+✔ [2798/2811] Built MOR34.BalancedSplit
+✔ [2799/2811] Built MOR34.Exchange
+✔ [2800/2811] Built MOR34.PrefixTools
+✔ [2801/2811] Built MOR34.Accounting
+✔ [2802/2811] Built MOR34.ClassPairing
+✔ [2803/2811] Built MOR34.PrefixMinimality
+✔ [2804/2811] Built MOR34.PairingAtCut
+✔ [2805/2811] Built MOR34.InteriorExchange
+✔ [2806/2811] Built MOR34.Components
+⚠ [2807/2811] Built MOR34.ExchangeKernel
+warning: ././././MOR34/ExchangeKernel.lean:14:0: automatically included section variable(s) unused in theorem 'MOR34.path_difference_mem':
+  [Fintype α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype α] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2808/2811] Built MOR34.TightDimension
+✔ [2809/2811] Built MOR34.PrefixQuotient
+✔ [2810/2811] Built MOR34
+Build completed successfully.

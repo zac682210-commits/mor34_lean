@@ -8,7 +8,7 @@ Reference: Zhiyan Lin, *Fixed-Parameter Recognition of Knapsack Facets via Parit
 
 `Tight P S` means feasible and at equality. It does not assume validity of the inequality. `WellFormed` records positive sorted weights and the other input hypotheses, and contains no parity, exchange, rank or algorithm conclusion. Zero candidate coefficients and equal weights are allowed. Full coordinatewise parity is required, not only parity in the selected class. The other coordinates of z and w need not have a common ordering.
 
-## Verified proof chain
+## First verified proof chain (earlier October 16 checkpoint)
 
 1. `balancedSplit` and the more general `split_prescribed` extend a prescribed subset inside the complement of the opposite prescribed subset, using Mathlib's existing finite-set extension lemma.
 2. `class_pair` partitions the symmetric difference in each class into equal halves, restoring common selected items to both outputs.
@@ -20,10 +20,22 @@ Reference: Zhiyan Lin, *Fixed-Parameter Recognition of Knapsack Facets via Parit
 
 All 24 named theorem dependencies were checked in GitHub Actions run 38919230112 on commit 8ac25e0cc6a5c28693b4f05c34e4bfff222896aa. No target definitions were weakened in this stage. The original frozen interface files retain their previous hashes. Only standard Lean axioms propext, Classical.choice, and Quot.sound occur.
 
+## Additional verified structure (October 17 checkpoint)
+
+`Components.lean` completes the finite-path characterization by adjacent cuts and the interval-component and parity-interior consequences. `ExchangeKernel.lean` formally identifies local class connectivity with the actual global exchange quotient.
+
+`PrefixMinimality.lean` proves the exact frozen prefix-minimality contract by the increasing enumeration of selected positions, and proves both count preservation and tight-prefix preservation.
+
+`PartitionKernel.lean` proves the finite partition kernel identity over Real. `ExchangeKernel.lean` instantiates it with the quotient by actual exchange paths, identifies the original oriented exchange span, proves component-map surjectivity and dim E + C = n.
+
+`TightDimension.lean` realizes finite sets as real 0/1 vectors, proves each exchange direction lies in the tight-point vector span, and applies rank-nullity on that subspace. Its dimension formula has an explicit nonempty-tight-set hypothesis, consistent with affine dimension; no assertion about empty-face dimension -1 is made here.
+
+`PrefixQuotient.lean` proves the exact component image identity for tight points and bounded feasible tight prefixes. Together these complete the mathematical statements of paper Lemmas 2, 3 and 4 in the grouped finite-set model.
+
+All 73 named theorem dependencies passed on commit 1ab49f5e6de4be6ad59dd31c2f34f09ebdbc6211, run 38931568115. The original model and frozen interfaces have unchanged hashes. Logs and source hashes are retained separately from earlier checkpoints.
+
 ## Outstanding scope
 
-The adjacent-cut assertion is the main assertion of paper Lemma 4; its consequent statement about all interior items lying in one graph component is not yet encoded. Similarly, the component-interval consequences of Lemma 2 remain open despite its proved edge assertion.
+Next is Lemma 5: construct actual AffineMaps for the actual parity cells, prove the label-constancy premise from the verified parity lemma, and count the cells. See NEXT_AFFINE_CELLS.md. The augmented tight-point span identity, rank over Q versus R, explicit algorithm correctness, ILP complexity and compression remain open. Noncomputable component infrastructure does not supply an executable FPT algorithm.
 
-Next: encode connected components and prove the interval consequences, then prefix sorting and the exchange quotient. The substantive remaining chain is E = ker A, the affine dimension identity, affine behavior on the parity cells, and the tight-point span identity. Integer-programming and compression complexity require separately specified algorithms, encoding and cost bounds. These are not consequences certified by the current build.
-
-Successful compilation proves the submitted Lean statements; correspondence to the full paper still requires review. No independent formal audit or main-theorem completion is claimed.
+Successful compilation proves the submitted Lean statements. Correspondence to the paper is reviewed by the same assistant, without independent formal audit. The complete MOR34 theorem is not yet certified.
