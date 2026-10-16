@@ -102,7 +102,9 @@ theorem adjacentEdge_card (P : Model m) :
   change (⟨j, u⟩ : Item m) = ⟨k, w⟩ at he
   obtain ⟨rfl, he⟩ := Sigma.mk.inj_iff.mp he
   cases he
-  have hv : v = t := Fin.ext (by have h1 := h.1; have h2 := h'.1; omega)
+  have h1 : u.val + 1 = v.val := h.1
+  have h2 : u.val + 1 = t.val := h'.1
+  have hv : v = t := Fin.ext (by omega)
   subst t
   rfl
 
