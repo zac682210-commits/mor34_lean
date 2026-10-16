@@ -13,7 +13,7 @@ LOGS = ROOT / 'logs' / 'environment_gate'
 LOGS.mkdir(parents=True, exist_ok=True)
 os.chdir(ROOT)
 result = {'started_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-          'ready': False, 'steps': [], 'scope': 'Environment and three arithmetic scripts only; not MOR34 proof'}
+          'ready': False, 'steps': [], 'scope': 'Project build and explicit named-theorem axiom audit; consult docs/ACCEPTANCE.json for verified paper scope'}
 
 def save():
     result['updated_utc'] = datetime.datetime.now(datetime.timezone.utc).isoformat()

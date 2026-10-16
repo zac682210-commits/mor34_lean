@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed audit of the three named #print axioms outputs.
+"""Fail-closed audit of all explicitly listed #print axioms outputs.
 This is a log check, not a substitute for Lean or independent replay.
 """
 import pathlib
@@ -7,6 +7,18 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.mem_classSlice',
+    'MOR34.assemble_classSlice',
+    'MOR34.counts_classSlice',
+    'MOR34.counts_bounded',
+    'MOR34.counts_prefixSet',
+    'MOR34.sum_assemble',
+    'MOR34.orderEmbedding_index_le',
+    'MOR34.classPrefix_map',
+    'MOR34.classPrefix_minimal',
+    'MOR34.prefixMinimality',
+    'MOR34.prefix_tight',
+
     'MOR34.exchangeConnected_refl',
     'MOR34.exchangeConnected_symm',
     'MOR34.exchangeConnected_trans',

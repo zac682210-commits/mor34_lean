@@ -13,3 +13,5 @@ import MOR34.PairingAtCut
 import MOR34.InteriorExchange
 
 import MOR34.Components
+
+import MOR34.PrefixMinimality
