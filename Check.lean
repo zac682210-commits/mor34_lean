@@ -101,3 +101,9 @@ import MOR34
 #print axioms MOR34.prefix_sum_increment
 #print axioms MOR34.component_prefix_sum
 #print axioms MOR34.prefix_affine_on_box
+
+#print axioms MOR34.tightParity_profile
+#print axioms MOR34.parityExtrema_exists
+#print axioms MOR34.cell_bounds
+#print axioms MOR34.actual_cell_slopes
+#print axioms MOR34.actual_cell_affine

@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.tightParity_profile',
+    'MOR34.parityExtrema_exists',
+    'MOR34.cell_bounds',
+    'MOR34.actual_cell_slopes',
+    'MOR34.actual_cell_affine',
+
     'MOR34.prefix_sum_increment',
     'MOR34.component_prefix_sum',
     'MOR34.prefix_affine_on_box',

@@ -12,7 +12,7 @@ def slopeMap (s : Fin q → V) : (Fin q → ℝ) →ₗ[ℝ] V where
   map_add' x y := by simp [add_smul, Finset.sum_add_distrib]
   map_smul' c x := by simp [Finset.smul_sum, smul_smul]
 
-def affineBoxMap (base : V) (low : Counts q) (s : Fin q → V) : (Fin q → ℝ) →ᵃ[ℝ] V where
+noncomputable def affineBoxMap (base : V) (low : Counts q) (s : Fin q → V) : (Fin q → ℝ) →ᵃ[ℝ] V where
   toFun x := base + ∑ j, (x j - (low j : ℝ)) • s j
   linear := slopeMap s
   map_vadd' p v := by
@@ -42,7 +42,7 @@ theorem prefix_sum_increment {n l z : ℕ} (hlz : l ≤ z) (hz : z ≤ n)
       _ = _ := by simp [hc]
   rw [hd] at hsum
   have hcast : ((z - l : ℕ) : ℝ) = (z : ℝ) - l := Nat.cast_sub hlz
-  rw [← hcast, natCast_smul]
+  rw [← hcast, Nat.cast_smul_eq_nsmul]
   exact hsum.symm.trans (add_comm _ _)
 end AffineSums
 
