@@ -1,0 +1,35 @@
+{
+  "started_utc": "2026-10-16T14:23:57Z",
+  "ended_utc": "2026-10-16T14:37:07.258260+00:00",
+  "active_minutes": 12.838,
+  "historical_formalization_minutes": null,
+  "historical_time_note": "Preparation checkpoint has no actual-work time ledger; do not infer work time from its timestamp span.",
+  "repo": "zac682210-commits/mor34_lean",
+  "branch": "codex/mor34-formalization",
+  "attempts": [
+    {
+      "commit": "016b674b8b6ecfbfc62a296be2b39c0052ae0c31",
+      "run": 38915649645,
+      "result": "Lean started, action configuration failed because manifest absent"
+    },
+    {
+      "commit": "2b1e51d8fde848789b70cbc47d7c38d9ad4b5858",
+      "run": 38915782300,
+      "result": "Core and Mathlib smoke passed; model failed at reserved identifier prefix and missing finite-type instance"
+    },
+    {
+      "commit": "620d17f4048a9536a0050e6ad5de05f1832a81fe",
+      "run": 38916236177,
+      "result": "Reserved identifier fixed; missing finite-type instance remained"
+    },
+    {
+      "commit": "16888b3874da42274d9287f9731d6c67a61c0f8e",
+      "run": 38916719328,
+      "result": "all gates passed, including balancedSplit and all four axiom checks"
+    }
+  ],
+  "pure_ci_wait_seconds": 20,
+  "cumulative_recorded_active_minutes": 12.838,
+  "cumulative_is_complete": false,
+  "next": "Prove PairingAtCutGoal, then combine feasible-output and interval-exchange arguments for paper Lemma 4."
+}

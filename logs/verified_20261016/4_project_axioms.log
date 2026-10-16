@@ -1,0 +1,10 @@
+'MOR34.one_feasible_of_pair_sum' depends on axioms: [propext, Quot.sound]
+'MOR34.balanced_values_are_tight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MOR34.interior_cut_arithmetic' depends on axioms: [propext, Classical.choice, Quot.sound]
+MOR34.BalancedSplitGoal : Prop
+MOR34.PairingAtCutGoal {q : ℕ} {m : Fin q → ℕ} : Prop
+MOR34.InteriorExchangeGoal {q : ℕ} {m : Fin q → ℕ} (P : MOR34.Model m) : Prop
+MOR34.PaperInterface.PrefixMinimality {q : ℕ} {m : Fin q → ℕ} (P : MOR34.Model m) : Prop
+MOR34.PaperInterface.IntervalExchange {q : ℕ} {m : Fin q → ℕ} (P : MOR34.Model m) : Prop
+MOR34.PaperInterface.ParityInterior {q : ℕ} {m : Fin q → ℕ} (P : MOR34.Model m) : Prop
+'MOR34.balancedSplit' depends on axioms: [propext, Classical.choice, Quot.sound]

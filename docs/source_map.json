@@ -1,7 +1,7 @@
 {
   "schema": "MOR34 source map 1",
   "source_pdf_sha256": "245e77fc9f9613ebb5ae1bfef7ae013412507002c3cac1b8eedb76d60b31645d",
-  "all_project_goals_open": true,
+  "all_project_goals_open": false,
   "entries": [
     {
       "id": "prefix",
@@ -35,7 +35,8 @@
       "contract": "D of size 2k, k>=2; disjoint two-element subsets P,N can be put into opposite halves of size k.",
       "depends_on": [],
       "lean_target": "MOR34.BalancedSplitGoal",
-      "status": "open; not kernel checked"
+      "status": "kernel checked on commit 16888b3874da42274d9287f9731d6c67a61c0f8e",
+      "lean_theorem": "MOR34.balancedSplit"
     },
     {
       "id": "pair",

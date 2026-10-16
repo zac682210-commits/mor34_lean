@@ -1,7 +1,7 @@
 {
-  "stage": "preparation",
-  "compiler_gate": false,
-  "interface_elaboration_gate": false,
+  "stage": "first_combinatorial_lemma_verified",
+  "compiler_gate": true,
+  "interface_elaboration_gate": true,
   "paper_alignment": "manually reviewed draft, needs elaborated-type review",
   "accepted_axioms": [
     "propext",
@@ -34,5 +34,15 @@
     "counting Prop definitions as proofs"
   ],
   "comparator_status": "not configured or run",
-  "independent_kernel_replay": false
+  "independent_kernel_replay": false,
+  "mathlib_smoke_gate": true,
+  "compiler_evidence": "GitHub Actions run 38916719328; all eight commands exited 0. Raw logs are in logs/verified_20261016.",
+  "project_build_gate": true,
+  "axiom_audit_gate": true,
+  "verified_commit": "16888b3874da42274d9287f9731d6c67a61c0f8e",
+  "verified_run": 38916719328,
+  "kernel_checked_project_theorems": 4,
+  "complete_lemma4": false,
+  "complete_structural_proof": false,
+  "complete_FPT_complexity": false
 }

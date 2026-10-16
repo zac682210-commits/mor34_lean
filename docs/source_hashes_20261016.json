@@ -1,0 +1,16 @@
+{
+  "commit": "16888b3874da42274d9287f9731d6c67a61c0f8e",
+  "certified": true,
+  "files": {
+    "lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "lakefile.toml": "dca40fdb82e063403e7feb07082b8b0cb9839290dfafe6059500d5927c9265e8",
+    "MOR34.lean": "2401a8747e78cb71c9598d970d2bcec89d484412fbc5ed86f938ddce2c9be7c1",
+    "Check.lean": "9107e9e5e4dbe08172138297a2c6c2f914e8058331ac185b14e7a62d48aa1872",
+    "MOR34/BalancedSplit.lean": "1dbcb33688ccd3c64a576595499fa53199d60f63b5a676297054f25f41bf508a",
+    "MOR34/PairingArithmetic.lean": "ea25834c3a1d66fb441a2360ba0594f73f9b34c3c42e36bc3b368f4d5779b03d",
+    "MOR34/PaperInterface.lean": "0e0c834fd39c0ca4f87aba5f3c46c6f6431f774a00dcf4eded776452aa75248f",
+    "MOR34/Targets.lean": "24cd5c27dad9826ccf71c9e1e41a5737ba4415c5d0ad11d87f21c67dcdb3a73b",
+    "MOR34/Model.lean": "79ff192b1334ae2717367fa06ffa23f76df00c703d7460db4778dc35156ca594"
+  },
+  "meaning": "Project build and four named theorem axiom audits passed; this does not certify open target propositions."
+}
