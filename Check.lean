@@ -139,3 +139,7 @@ import MOR34
 #print axioms MOR34.selectionFinset_coe
 #print axioms MOR34.selectionFinset_card
 #print axioms MOR34.small_selected_span
+
+#print axioms MOR34.augmentedSpan_anchor
+#print axioms MOR34.augment_anchor_disjoint
+#print axioms MOR34.augmentedSpan_finrank

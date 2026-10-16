@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.augmentedSpan_anchor',
+    'MOR34.augment_anchor_disjoint',
+    'MOR34.augmentedSpan_finrank',
+
     'MOR34.selectionFinset_coe',
     'MOR34.selectionFinset_card',
     'MOR34.small_selected_span',
