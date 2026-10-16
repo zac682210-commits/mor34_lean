@@ -97,3 +97,7 @@ import MOR34
 #print axioms MOR34.global_connected_class_iff
 #print axioms MOR34.componentLabel_eq_iff_class_connected
 #print axioms MOR34.componentLabel_interval
+
+#print axioms MOR34.prefix_sum_increment
+#print axioms MOR34.component_prefix_sum
+#print axioms MOR34.prefix_affine_on_box

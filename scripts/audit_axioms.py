@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.prefix_sum_increment',
+    'MOR34.component_prefix_sum',
+    'MOR34.prefix_affine_on_box',
+
     'MOR34.global_connected_class_iff',
     'MOR34.componentLabel_eq_iff_class_connected',
     'MOR34.componentLabel_interval',

@@ -23,3 +23,5 @@ import MOR34.ExchangeKernel
 import MOR34.TightDimension
 
 import MOR34.PrefixQuotient
+
+import MOR34.PrefixAffine
