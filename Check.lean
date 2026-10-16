@@ -15,3 +15,5 @@ import MOR34
 #check MOR34.PaperInterface.PrefixMinimality
 #check MOR34.PaperInterface.IntervalExchange
 #check MOR34.PaperInterface.ParityInterior
+
+#print axioms MOR34.balancedSplit

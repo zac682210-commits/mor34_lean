@@ -3,3 +3,5 @@ import MOR34.PairingArithmetic
 import MOR34.Targets
 
 import MOR34.PaperInterface
+
+import MOR34.BalancedSplit

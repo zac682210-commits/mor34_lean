@@ -7,6 +7,7 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.balancedSplit',
     'MOR34.one_feasible_of_pair_sum',
     'MOR34.balanced_values_are_tight',
     'MOR34.interior_cut_arithmetic',
