@@ -7,6 +7,14 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.mem_classPrefix',
+    'MOR34.card_classPrefix',
+    'MOR34.classPrefix_mono',
+    'MOR34.mem_assemble',
+    'MOR34.counts_assemble',
+    'MOR34.prefixSet_assemble',
+    'MOR34.split_prescribed',
+
     'MOR34.balancedSplit',
     'MOR34.one_feasible_of_pair_sum',
     'MOR34.balanced_values_are_tight',

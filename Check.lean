@@ -17,3 +17,11 @@ import MOR34
 #check MOR34.PaperInterface.ParityInterior
 
 #print axioms MOR34.balancedSplit
+
+#print axioms MOR34.mem_classPrefix
+#print axioms MOR34.card_classPrefix
+#print axioms MOR34.classPrefix_mono
+#print axioms MOR34.mem_assemble
+#print axioms MOR34.counts_assemble
+#print axioms MOR34.prefixSet_assemble
+#print axioms MOR34.split_prescribed
