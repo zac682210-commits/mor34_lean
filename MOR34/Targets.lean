@@ -23,14 +23,14 @@ def PairingAtCutGoal : Prop :=
     SameParity z w → ∀ (j : Fin q) (r : ℕ),
     z j + 2 ≤ r → r + 2 ≤ w j →
     ∃ U V : Finset (Item m),
-      Repartitions (prefix z) (prefix w) U V ∧ BalancedCounts z w U V ∧
+      Repartitions (prefixSet z) (prefixSet w) U V ∧ BalancedCounts z w U V ∧
       Crosses j r U ∧ Crosses j r V
 
 /-- Target corresponding to the adjacent-cut conclusion of paper Lemma 4. -/
 def InteriorExchangeGoal (P : Model m) : Prop :=
   WellFormed P → ∀ (z w : Counts q),
     BoundedCounts (m := m) z → BoundedCounts (m := m) w →
-    Tight P (prefix z) → Tight P (prefix w) → SameParity z w →
+    Tight P (prefixSet z) → Tight P (prefixSet w) → SameParity z w →
     ∀ (j : Fin q) (r : ℕ), z j + 2 ≤ r → r + 2 ≤ w j →
       AdjacentExchangeCut P j r
 

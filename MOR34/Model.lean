@@ -51,7 +51,7 @@ def counts (S : Finset (Item m)) (j : Fin q) : ℕ :=
 
 def BoundedCounts (z : Counts q) : Prop := ∀ j, z j ≤ m j
 
-def prefix (z : Counts q) : Finset (Item m) :=
+def prefixSet (z : Counts q) : Finset (Item m) :=
   Finset.univ.filter fun i => i.2.val < z i.1
 
 def SameParity (z w : Counts q) : Prop := ∀ j, z j % 2 = w j % 2

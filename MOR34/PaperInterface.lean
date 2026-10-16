@@ -11,7 +11,7 @@ variable {q : ℕ} {m : Fin q → ℕ}
 /-- Prefixes minimize weight among sets with the same class counts. -/
 def PrefixMinimality (P : Model m) : Prop :=
   WellFormed P → ∀ S : Finset (Item m),
-    weightSum P (prefix (counts S)) ≤ weightSum P S
+    weightSum P (prefixSet (counts S)) ≤ weightSum P S
 
 /-- Paper Lemma 2, edge-closure assertion; component consequences are separate. -/
 def IntervalExchange (P : Model m) : Prop :=
