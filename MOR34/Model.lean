@@ -1,4 +1,5 @@
 import Mathlib.Data.Fintype.Sigma
+import Mathlib.Data.Fintype.Fin
 import Mathlib.Data.Finset.Card
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Int.Basic
