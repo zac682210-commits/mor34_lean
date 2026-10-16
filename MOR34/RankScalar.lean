@@ -9,7 +9,7 @@ theorem square_matrix_rank_map {ι K L : Type*} [Fintype ι]
     [Field K] [Field L] (f : K →+* L) (A : Matrix ι ι K) :
     (A.map f).rank = A.rank := by
   classical
-  obtain ⟨ls, rs, d, he⟩ := Matrix.TransvectionStruct.exists_list_transvec_mul_diagonal_mul_list_transvec A
+  obtain ⟨ls, rs, d, he⟩ := Matrix.Pivot.exists_list_transvec_mul_diagonal_mul_list_transvec A
   let U := (ls.map Matrix.TransvectionStruct.toMatrix).prod
   let V := (rs.map Matrix.TransvectionStruct.toMatrix).prod
   have hu : U.det = 1 := Matrix.TransvectionStruct.det_toMatrix_prod ls
