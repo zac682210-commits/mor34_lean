@@ -1,3 +1,5 @@
+> Historical plan: completed at the cells checkpoint. Continue with NEXT_ALGORITHM_20261017.md.
+
 # Next obligation: actual parity cells, not an assumed affine model
 
 This is a development plan, not a proved theorem.

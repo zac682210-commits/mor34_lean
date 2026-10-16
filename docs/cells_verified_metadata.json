@@ -1,0 +1,79 @@
+{
+  "commit": "859936cd9876dd9b696e5112eb5a0d6cc0b033ed",
+  "run": 38937836257,
+  "artifact_sha256": "1fc43d7e901f7308142ebece46fc1f2f72f80b106122dfec316fe8d87e80ed7f",
+  "attempts": [
+    {
+      "commit": "728e618d1b4820373ee1c98afef233c7ef316a2a",
+      "run": 38932664933,
+      "result": "failure",
+      "started": "2026-10-16T16:31:47Z"
+    },
+    {
+      "commit": "51dd23e7c3ece851674c5cb3949d1c5a632ddb2f",
+      "run": 38933289666,
+      "result": "success",
+      "started": "2026-10-16T16:36:33Z"
+    },
+    {
+      "commit": "200cb1dd4c95198ee0550a565e9542ae3baa0c0b",
+      "run": 38933726172,
+      "result": "failure",
+      "started": "2026-10-16T16:39:56Z"
+    },
+    {
+      "commit": "fdba5c8472b333b863bde8aecd0201191a7ec29a",
+      "run": 38934207054,
+      "result": "failure",
+      "started": "2026-10-16T16:43:38Z"
+    },
+    {
+      "commit": "7a88ec04b9113e5e1b59e5923b3c84c8378c22e2",
+      "run": 38934684273,
+      "result": "failure",
+      "started": "2026-10-16T16:47:27Z"
+    },
+    {
+      "commit": "c0b4838c4a2bdc118bf0f25cacd8dfc69f6fabca",
+      "run": 38935197466,
+      "result": "failure",
+      "started": "2026-10-16T16:51:31Z"
+    },
+    {
+      "commit": "5fc549a40f278c9bbaa9bdf144af2bdcf5edaf64",
+      "run": 38935678592,
+      "result": "failure",
+      "started": "2026-10-16T16:55:16Z"
+    },
+    {
+      "commit": "d0f5903891eedf5928523fdb6dd2433c53bf1fa8",
+      "run": 38936170043,
+      "result": "failure",
+      "started": "2026-10-16T16:59:08Z"
+    },
+    {
+      "commit": "d23dadbbd05afc819eac7adf77c4254b66c09094",
+      "run": 38936222209,
+      "result": "failure",
+      "started": "2026-10-16T16:59:34Z"
+    },
+    {
+      "commit": "790f2064ac3d6d628386081da5ff1b581237dcf6",
+      "run": 38936681604,
+      "result": "failure",
+      "started": "2026-10-16T17:03:06Z"
+    },
+    {
+      "commit": "9c4a65a489ebe9cdcac41fa92f80b258466bd54f",
+      "run": 38937164253,
+      "result": "failure",
+      "started": "2026-10-16T17:06:47Z"
+    },
+    {
+      "commit": "859936cd9876dd9b696e5112eb5a0d6cc0b033ed",
+      "run": 38937836257,
+      "result": "success",
+      "started": "2026-10-16T17:12:04Z"
+    }
+  ]
+}

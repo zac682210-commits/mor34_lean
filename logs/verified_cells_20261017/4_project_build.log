@@ -1,0 +1,46 @@
+✔ [2272/2467] Built MOR34.Model
+✔ [2793/2818] Built MOR34.Targets
+✔ [2794/2818] Built MOR34.PairingArithmetic
+⚠ [2795/2818] Built MOR34.PartitionKernel
+warning: ././././MOR34/PartitionKernel.lean:24:0: automatically included section variable(s) unused in theorem 'MOR34.fiberSumMap_unit':
+  [Fintype β]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype β] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2797/2826] Built MOR34.BalancedSplit
+✔ [2799/2826] Built MOR34.PaperInterface
+✔ [2802/2826] Built MOR34.Exchange
+✔ [2804/2826] Built MOR34.PrefixTools
+✔ [2805/2826] Built MOR34.RankScalar
+✔ [2806/2826] Built MOR34.Accounting
+✔ [2807/2826] Built MOR34.PrefixMinimality
+✔ [2808/2826] Built MOR34.ClassPairing
+✔ [2809/2826] Built MOR34.PairingAtCut
+✔ [2810/2826] Built MOR34.InteriorExchange
+✔ [2811/2826] Built MOR34.Components
+⚠ [2812/2826] Built MOR34.ExchangeKernel
+warning: ././././MOR34/ExchangeKernel.lean:14:0: automatically included section variable(s) unused in theorem 'MOR34.path_difference_mem':
+  [Fintype α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype α] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2813/2826] Built MOR34.TightDimension
+⚠ [2814/2826] Built MOR34.AdjacentSpan
+warning: ././././MOR34/AdjacentSpan.lean:22:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2815/2826] Built MOR34.PrefixQuotient
+✔ [2816/2826] Built MOR34.PrefixAffine
+✔ [2817/2826] Built MOR34.ParityCells
+✔ [2818/2826] Built MOR34.CellSpan
+⚠ [2819/2826] Built MOR34.AugmentedSpan
+warning: ././././MOR34/AugmentedSpan.lean:35:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2820/2826] Built MOR34.SelectedSpan
+⚠ [2821/2826] Built MOR34.AugmentedDimension
+warning: ././././MOR34/AugmentedDimension.lean:43:4: try 'simp at h'' instead of 'simpa using h''
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [2822/2826] Built MOR34.FiniteCellBases
+✔ [2823/2826] Built MOR34.StructuralTheorem
+✔ [2824/2826] Built MOR34.RetainedMatrix
+✔ [2825/2826] Built MOR34
+Build completed successfully.

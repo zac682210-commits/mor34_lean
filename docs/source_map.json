@@ -105,8 +105,16 @@
         "L4",
         "L2"
       ],
-      "lean_target": "not yet encoded",
-      "status": "open; not kernel checked"
+      "lean_target": "Actual full-parity cells with endpoint degeneracies removed; real AffineMap and 6^q index count",
+      "status": "kernel checked on commit 859936cd9876dd9b696e5112eb5a0d6cc0b033ed",
+      "lean_theorems": [
+        "MOR34.parityExtrema_exists",
+        "MOR34.actual_cell_affine",
+        "MOR34.parity_cell_cover",
+        "MOR34.cellCondition_unique",
+        "MOR34.cell_index_card",
+        "MOR34.parity_cell_decomposition"
+      ]
     },
     {
       "id": "C6",
@@ -126,27 +134,44 @@
       "depends_on": [
         "L1"
       ],
-      "lean_target": "not yet encoded",
-      "status": "open; not kernel checked"
+      "lean_target": "finite_count_affine_basis proves containment, spanning and <=q+1 cardinality; not the full oracle procedure",
+      "status": "partial: small finite generating set existence checked; algorithm, affine-independent output and query/bit bounds open",
+      "lean_theorems": [
+        "MOR34.finite_count_affine_basis",
+        "MOR34.small_cellBasisSelection_exists"
+      ]
     },
     {
       "id": "T8span",
       "paper": "Theorem 8, span identity",
-      "contract": "Rows (1,p(z)) from an affine basis of every nonempty cell, together with (0,e_r-e_s) for all adjacent exchange edges, span exactly {(1,x):x in T}.",
+      "contract": "The span of retained augmented tight prefixes and adjacent exchange directions equals the span of all augmented tight points.",
       "depends_on": [
         "L3",
         "L5"
       ],
-      "lean_target": "not yet encoded; structural acceptance target",
-      "status": "open; not kernel checked"
+      "lean_target": "Actual adjacent direction span; finite cell selection contract is proved inhabited; explicit integer row matrix",
+      "status": "kernel checked on commit 859936cd9876dd9b696e5112eb5a0d6cc0b033ed",
+      "lean_theorems": [
+        "MOR34.adjacentDirectionSpan_eq_ker",
+        "MOR34.selected_augmented_span",
+        "MOR34.small_selected_span",
+        "MOR34.retained_row_span",
+        "MOR34.small_retained_matrix"
+      ]
     },
     {
       "id": "rankbridge",
       "paper": "Theorem 8, scalar bridge",
       "contract": "Finite integer matrices have the same rank over Q and R; augmented rank minus one gives nonempty real affine dimension.",
       "depends_on": [],
-      "lean_target": "not yet encoded",
-      "status": "open; not kernel checked"
+      "lean_target": "Actual finite integer retained matrix and real augmented dimension",
+      "status": "kernel checked on commit 859936cd9876dd9b696e5112eb5a0d6cc0b033ed",
+      "lean_theorems": [
+        "MOR34.augmentedSpan_finrank",
+        "MOR34.rational_matrix_rank",
+        "MOR34.integer_matrix_rank",
+        "MOR34.retained_matrix_rational_rank"
+      ]
     },
     {
       "id": "T8correct",

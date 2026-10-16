@@ -1,0 +1,98 @@
+{
+  "started_utc": "2026-10-16T16:29:57+00:00",
+  "ended_utc": "2026-10-16T17:15:49.208796+00:00",
+  "started_shanghai": "2026-10-17T00:29:57+08:00",
+  "ended_shanghai": "2026-10-17T01:15:49.208796+08:00",
+  "active_minutes": 45.87,
+  "prior_recorded_active_minutes": 55.983,
+  "cumulative_recorded_active_minutes": 101.853,
+  "cumulative_is_complete": false,
+  "historical_formalization_minutes": null,
+  "pure_wait_seconds": 0,
+  "time_method": "Actual interval of proof writing, source lookup, CI diagnosis, mathematical correspondence review and checkpoint work. Useful work continued during CI; no sleeps or inter-session idle. Final upload overhead excluded.",
+  "history_note": "Earlier preparation has no recoverable actual-work ledger; do not infer it from wall-clock gaps.",
+  "attempts": [
+    {
+      "commit": "728e618d1b4820373ee1c98afef233c7ef316a2a",
+      "run": 38932664933,
+      "result": "failure",
+      "started": "2026-10-16T16:31:47Z"
+    },
+    {
+      "commit": "51dd23e7c3ece851674c5cb3949d1c5a632ddb2f",
+      "run": 38933289666,
+      "result": "success",
+      "started": "2026-10-16T16:36:33Z"
+    },
+    {
+      "commit": "200cb1dd4c95198ee0550a565e9542ae3baa0c0b",
+      "run": 38933726172,
+      "result": "failure",
+      "started": "2026-10-16T16:39:56Z"
+    },
+    {
+      "commit": "fdba5c8472b333b863bde8aecd0201191a7ec29a",
+      "run": 38934207054,
+      "result": "failure",
+      "started": "2026-10-16T16:43:38Z"
+    },
+    {
+      "commit": "7a88ec04b9113e5e1b59e5923b3c84c8378c22e2",
+      "run": 38934684273,
+      "result": "failure",
+      "started": "2026-10-16T16:47:27Z"
+    },
+    {
+      "commit": "c0b4838c4a2bdc118bf0f25cacd8dfc69f6fabca",
+      "run": 38935197466,
+      "result": "failure",
+      "started": "2026-10-16T16:51:31Z"
+    },
+    {
+      "commit": "5fc549a40f278c9bbaa9bdf144af2bdcf5edaf64",
+      "run": 38935678592,
+      "result": "failure",
+      "started": "2026-10-16T16:55:16Z"
+    },
+    {
+      "commit": "d0f5903891eedf5928523fdb6dd2433c53bf1fa8",
+      "run": 38936170043,
+      "result": "failure",
+      "started": "2026-10-16T16:59:08Z"
+    },
+    {
+      "commit": "d23dadbbd05afc819eac7adf77c4254b66c09094",
+      "run": 38936222209,
+      "result": "failure",
+      "started": "2026-10-16T16:59:34Z"
+    },
+    {
+      "commit": "790f2064ac3d6d628386081da5ff1b581237dcf6",
+      "run": 38936681604,
+      "result": "failure",
+      "started": "2026-10-16T17:03:06Z"
+    },
+    {
+      "commit": "9c4a65a489ebe9cdcac41fa92f80b258466bd54f",
+      "run": 38937164253,
+      "result": "failure",
+      "started": "2026-10-16T17:06:47Z"
+    },
+    {
+      "commit": "859936cd9876dd9b696e5112eb5a0d6cc0b033ed",
+      "run": 38937836257,
+      "result": "success",
+      "started": "2026-10-16T17:12:04Z"
+    }
+  ],
+  "verified_commit": "859936cd9876dd9b696e5112eb5a0d6cc0b033ed",
+  "verified_run": 38937836257,
+  "kernel_checked_named_theorems": 119,
+  "complete_paper": false,
+  "complete_structural_proof": true,
+  "complete_algorithm_correctness": false,
+  "complete_FPT_complexity": false,
+  "results": "Lemmas 2–5, prefixes, Theorem 8 augmented-span identity, finite small selection existence, integer retained matrix and its rational-rank/real-dimension identity. Algorithm construction and complexity excluded.",
+  "next": "docs/NEXT_ALGORITHM_20261017.md; begin exact convex-prefix epigraph equivalence.",
+  "independent_review": false
+}
