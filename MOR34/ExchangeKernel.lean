@@ -58,6 +58,9 @@ def exchangeSetoid (P : Model m) : Setoid (Item m) where
 
 abbrev ExchangeComponent (P : Model m) := Quotient (exchangeSetoid P)
 
+noncomputable instance componentDecidableEq (P : Model m) : DecidableEq (ExchangeComponent P) :=
+  Classical.decEq _
+
 noncomputable instance componentFintype (P : Model m) : Fintype (ExchangeComponent P) := by
   classical
   exact Fintype.ofSurjective (Quotient.mk (exchangeSetoid P)) Quotient.mk_surjective
@@ -102,6 +105,44 @@ theorem exchangeDirectionSpan_eq_ker (P : Model m) :
       exact Quotient.exact h
     · intro h
       exact @Quotient.sound (Item m) (exchangeSetoid P) i k h
+
+theorem global_connected_class_iff (P : Model m) (j : Fin q) (a b : Fin (m j)) :
+    Relation.ReflTransGen (GlobalExchangeAdj P) (⟨j, a⟩ : Item m) ⟨j, b⟩ ↔
+      ExchangeConnected P j a b := by
+  classical
+  constructor
+  · intro h
+    let project : Item m → Fin (m j) := fun i => if he : i.1 = j then he ▸ i.2 else a
+    have step : ∀ i k, GlobalExchangeAdj P i k →
+        Relation.ReflTransGen (ExchangeAdj P j) (project i) (project k) := by
+      rintro i k ⟨c, u, v, rfl, rfl, he⟩
+      by_cases hc : c = j
+      · subst c
+        simpa [project] using Relation.ReflTransGen.single he
+      · simp only [project, dif_neg hc]
+        exact .refl
+    have hp := h.lift' project step
+    simpa [project] using hp
+  · intro h
+    exact h.lift (fun u => (⟨j, u⟩ : Item m)) (fun u v he => ⟨j, u, v, rfl, rfl, he⟩)
+
+theorem componentLabel_eq_iff_class_connected (P : Model m) (j : Fin q) (a b : Fin (m j)) :
+    componentLabel P (⟨j, a⟩ : Item m) = componentLabel P (⟨j, b⟩ : Item m) ↔
+      ExchangeConnected P j a b := by
+  constructor
+  · intro h
+    exact (global_connected_class_iff P j a b).mp (Quotient.exact h)
+  · intro h
+    apply @Quotient.sound (Item m) (exchangeSetoid P)
+    exact (global_connected_class_iff P j a b).mpr h
+
+theorem componentLabel_interval (P : Model m) (hWF : WellFormed P) (j : Fin q)
+    (a b t : Fin (m j))
+    (h : componentLabel P (⟨j, a⟩ : Item m) = componentLabel P (⟨j, b⟩ : Item m))
+    (hat : a ≤ t) (htb : t ≤ b) :
+    componentLabel P (⟨j, a⟩ : Item m) = componentLabel P (⟨j, t⟩ : Item m) := by
+  apply (componentLabel_eq_iff_class_connected P j a t).mpr
+  exact component_interval P hWF j ((componentLabel_eq_iff_class_connected P j a b).mp h) hat htb
 
 theorem componentCountMap_surjective (P : Model m) :
     Function.Surjective (componentCountMap P) := by

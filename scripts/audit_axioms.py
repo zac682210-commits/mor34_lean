@@ -7,6 +7,17 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.global_connected_class_iff',
+    'MOR34.componentLabel_eq_iff_class_connected',
+    'MOR34.componentLabel_interval',
+
+    'MOR34.sum_eq_of_cross_equal',
+    'MOR34.pointVector_sum_units',
+    'MOR34.componentCountMap_pointVector',
+    'MOR34.prefix_component_class_sum',
+    'MOR34.componentCountMap_prefix',
+    'MOR34.tight_image_eq_prefix_image',
+
     'MOR34.pointVector_swap_difference',
     'MOR34.exchangeDirectionSpan_le_tightVectorSpan',
     'MOR34.finrank_subspace_map',

@@ -86,3 +86,14 @@ import MOR34
 #print axioms MOR34.exchangeDirectionSpan_le_tightVectorSpan
 #print axioms MOR34.finrank_subspace_map
 #print axioms MOR34.tight_dimension_quotient
+
+#print axioms MOR34.sum_eq_of_cross_equal
+#print axioms MOR34.pointVector_sum_units
+#print axioms MOR34.componentCountMap_pointVector
+#print axioms MOR34.prefix_component_class_sum
+#print axioms MOR34.componentCountMap_prefix
+#print axioms MOR34.tight_image_eq_prefix_image
+
+#print axioms MOR34.global_connected_class_iff
+#print axioms MOR34.componentLabel_eq_iff_class_connected
+#print axioms MOR34.componentLabel_interval
