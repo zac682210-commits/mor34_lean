@@ -302,3 +302,12 @@ import MOR34
 #print axioms MOR34.feasibleEpigraph_decode
 #print axioms MOR34.invalid_iff_violation_rows
 #print axioms MOR34.violationRow_card
+
+#print axioms MOR34.violationRows_witness
+#print axioms MOR34.violationSolver_none_iff
+#print axioms MOR34.parityList_mem
+#print axioms MOR34.parityList_length
+#print axioms MOR34.supportSearch_some
+#print axioms MOR34.supportSearch_none_iff
+#print axioms MOR34.supportSearch_calls_le
+#print axioms MOR34.recognitionBranch_correct

@@ -86,3 +86,5 @@ import MOR34.ParitySolver
 import MOR34.RowSolverPipeline
 
 import MOR34.ViolationEncoding
+
+import MOR34.RecognitionBranches

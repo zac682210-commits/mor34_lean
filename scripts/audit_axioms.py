@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.violationRows_witness',
+    'MOR34.violationSolver_none_iff',
+    'MOR34.parityList_mem',
+    'MOR34.parityList_length',
+    'MOR34.supportSearch_some',
+    'MOR34.supportSearch_none_iff',
+    'MOR34.supportSearch_calls_le',
+    'MOR34.recognitionBranch_correct',
+
     'MOR34.feasibleRows_iff',
     'MOR34.violationInequality_iff',
     'MOR34.violationRows_iff',
