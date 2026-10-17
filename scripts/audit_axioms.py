@@ -7,6 +7,7 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.normalized_model_exists',
     'MOR34.sortItems_class',
     'MOR34.sortGrouped_wellFormed',
     'MOR34.sortGrouped_weightSum',

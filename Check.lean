@@ -504,3 +504,5 @@ import MOR34
 #print axioms MOR34.sortGrouped_feasible
 #print axioms MOR34.sortGrouped_tight
 #print axioms MOR34.sortGrouped_valid
+
+#print axioms MOR34.normalized_model_exists
