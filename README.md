@@ -6,34 +6,31 @@ Development branch: `codex/mor34-formalization`.
 
 ## Verified checkpoint — October 17, 2026
 
-[Successful CI](https://github.com/zac682210-commits/mor34_lean/actions/runs/39004885856), source `c37a5e28cfb3d5e642d4608aa0aaeaac10f1745d`. The full project builds and **282 named theorems** pass the transitive axiom allowlist (`propext`, `Classical.choice`, `Quot.sound` only). No `sorryAx` or project axiom. Frozen model and targets are unchanged.
+[Successful CI](https://github.com/zac682210-commits/mor34_lean/actions/runs/39008232389), source `0f93ca83fdc01aea389c1a5fbf969799d092c794`. All eight gates pass; **356 named theorems** pass the transitive axiom allowlist (`propext`, `Classical.choice`, `Quot.sound` only). No `sorryAx` or project axiom. Frozen model and targets are unchanged.
 
-Here n is the item count and q counts candidate-coefficient classes, including a possible zero class.
+The normalized-input output contract is now proved: invalid candidates return a binary counterexample; valid empty faces have dimension -1; supported faces return their dimension, a geometric facet decision and a searched affine basis of actual tight binary points. This is relative to explicit integer-feasibility and exact-rank contracts. Normal forms are still classically chosen.
 
 | Obligation | Verified scope |
 | --- | --- |
 | Structural proof | Pairing, exchange kernel, quotient dimension, affine cells, augmented span |
-| Count ILP | Explicit exact rows, 2q integer variables, exact parity substitution |
-| Attained extrema | Actual maximum/minimum scans; at most 2(n+q)2^q calls |
-| Cell search | Exact 3q cell rows; actual search supplies the original real affine-basis contract |
-| Validity/support | Separate violation rows; sound original invalid/empty/supported branches |
-| Exchange edges | Explicit forced rows, actual tight binary witnesses, exact finite adjacent-edge list |
-| Computed matrix | At most n+(q+1)6^q rows; rational rank equals nonempty tight-set affine dimension plus one |
-| Full dimension | Feasible binary points and their convex-hull polytope have full affine span and dimension n |
-| Call accounting | Validity/support/extrema/cells: <=1+2*2^q+2(n+q)2^q+2(q+1)^2 6^q; <=n further edge calls |
-| Complete algorithm | Still open: one returned certificate, actual tight-point basis, facet bridge and rank implementation |
-| Full FPT time | Still open: normal bit bounds, costed linear algebra, ILP foundations and compression |
+| Count/exchange ILP | Exact explicit integer rows, parity substitution, actual extrema and exchange witnesses |
+| Actual point basis | Small returned tight-point family, rank-guided extraction, independence, full spanning and exact cardinality |
+| Geometry | Supporting equality face is the hull of tight points; convexity, extremeness, full ambient dimension and codimension-one facet/rank equivalence |
+| One output record | Correct invalid/empty/supported outcomes, signed dimension and actual binary affine basis |
+| Bounded normals | Original-column nonsingular minor existence for independent rows; given a pivot block, explicit integer kernel basis and logarithmic coefficient-bit bound |
+| Parameter | q<=K+1 for actual distinct positive coefficients on normalized items |
+| Remaining | General bounded normal generator, original-input preprocessing, executable/costed rank and ILP, full FPT theorem and compression |
 
-Row-solver soundness/completeness remain explicit theorem hypotheses; the solvers are not certified by defining their contracts. Normal generation still uses classical choice. A call count is not total runtime. The linear extrema scans and redundant exchange rows are documented variations of the manuscript implementation. Same-session review only; theorem counts are not completion percentages.
+The rank and ILP contracts are assumptions, not verified implementations. The bounded pivot normals have not yet replaced the older unrestricted classical normal choice. Call counts are not total runtime. Same-session review only; theorem counts are not completion percentages. `complete_paper` and `complete_FPT_complexity` remain false.
 
 ## Evidence and continuation
 
-- Raw successful logs: `logs/verified_search_20261017/`.
-- Source/artifact hashes: `docs/source_hashes_search_20261017.json`.
+- Exact successful logs: `logs/verified_basis_20261017/`.
+- Source/artifact hashes: `docs/source_hashes_basis_20261017.json`.
 - Scope: `docs/ACCEPTANCE.json`, `docs/source_map.json`.
-- Statement review: `docs/REVIEW_SEARCH_20261017.md`.
-- Next: `docs/NEXT_AFTER_SEARCH_20261017.md`.
-- Chinese report: `docs/PROGRESS_SEARCH_20261017.md`.
-- Ledger: `docs/session_search_20261017.json`; active 40.25 minutes this round, cumulative recorded 182.38. Earlier unlogged preparation is unknown; session gaps are excluded.
+- Statement review: `docs/REVIEW_BASIS_20261017.md`.
+- Next: `docs/NEXT_AFTER_BASIS_20261017.md`; detailed integration plan: `docs/PIVOT_INTEGRATION_PLAN_20261017.md`.
+- Chinese report: `docs/PROGRESS_BASIS_20261017.md`.
+- Ledger: `docs/session_basis_20261017.json`; active 41.35 minutes this round, cumulative recorded 223.74. Earlier unlogged preparation is unknown; session gaps are excluded.
 
-Run `python3 scripts/environment_gate.py` for the eight verification commands. All earlier checkpoints remain preserved. Historical preparation comments in frozen files do not describe current acceptance. The original manuscript is `reference/mor34_fpt_proof.tex`.
+Run `python3 scripts/environment_gate.py` for all eight verification commands. Earlier checkpoints remain preserved. Historical comments in frozen preparation files do not describe current acceptance. The original manuscript is `reference/mor34_fpt_proof.tex`.

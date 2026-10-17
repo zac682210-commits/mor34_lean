@@ -1,0 +1,126 @@
+✔ [1999/2340] Built MOR34.Model
+✔ [2795/2865] Built MOR34.Targets
+✔ [2797/2877] Built MOR34.PairingArithmetic
+⚠ [2800/2877] Built MOR34.PartitionKernel
+warning: ././././MOR34/PartitionKernel.lean:24:0: automatically included section variable(s) unused in theorem 'MOR34.fiberSumMap_unit':
+  [Fintype β]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype β] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2801/2877] Built MOR34.PaperInterface
+✔ [2804/2877] Built MOR34.BalancedSplit
+✔ [2805/2877] Built MOR34.ParameterCount
+✔ [2806/2877] Built MOR34.SupportingHull
+✔ [2807/2877] Built MOR34.Exchange
+✔ [2809/2877] Built MOR34.RankScalar
+✔ [2810/2877] Built MOR34.PrefixTools
+✔ [2811/2877] Built MOR34.CramerBounds
+✔ [2812/2877] Built MOR34.Accounting
+✔ [2813/2877] Built MOR34.BoundedPivotNormals
+✔ [2814/2877] Built MOR34.ClassPairing
+✔ [2815/2877] Built MOR34.PrefixMinimality
+✔ [2816/2877] Built MOR34.PivotNormalBits
+✔ [2817/2877] Built MOR34.PivotNormalSpan
+✔ [2818/2877] Built MOR34.PairingAtCut
+✔ [2819/2877] Built MOR34.PrefixEpigraph
+✔ [2820/2877] Built MOR34.PivotMinorExistence
+✔ [2821/2877] Built MOR34.RestrictedPrefix
+✔ [2822/2877] Built MOR34.InteriorExchange
+✔ [2823/2877] Built MOR34.CountEncoding
+✔ [2824/2877] Built MOR34.ForcedPairPrefix
+✔ [2825/2877] Built MOR34.Components
+✔ [2826/2877] Built MOR34.CountValidation
+⚠ [2827/2877] Built MOR34.ExchangeEncoding
+warning: ././././MOR34/ExchangeEncoding.lean:57:33: `Function.update_same` has been deprecated: use `Function.update_self` instead
+warning: ././././MOR34/ExchangeEncoding.lean:60:33: `Function.update_noteq` has been deprecated: use `Function.update_of_ne` instead
+⚠ [2828/2877] Built MOR34.LinearEncoding
+warning: ././././MOR34/LinearEncoding.lean:90:6: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [2829/2877] Built MOR34.ExchangeKernel
+warning: ././././MOR34/ExchangeKernel.lean:14:0: automatically included section variable(s) unused in theorem 'MOR34.path_difference_mem':
+  [Fintype α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype α] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2830/2877] Built MOR34.ForcedLinearEncoding
+✔ [2831/2877] Built MOR34.ParityLinearEncoding
+✔ [2832/2877] Built MOR34.ViolationEncoding
+✔ [2833/2877] Built MOR34.TightDimension
+✔ [2834/2877] Built MOR34.ForcedRows
+⚠ [2835/2877] Built MOR34.AdjacentSpan
+warning: ././././MOR34/AdjacentSpan.lean:22:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2836/2877] Built MOR34.PrefixQuotient
+✔ [2837/2877] Built MOR34.PrefixAffine
+✔ [2838/2877] Built MOR34.ParityCells
+✔ [2839/2877] Built MOR34.CellSpan
+⚠ [2840/2877] Built MOR34.AugmentedSpan
+warning: ././././MOR34/AugmentedSpan.lean:35:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2841/2877] Built MOR34.SelectedSpan
+⚠ [2842/2877] Built MOR34.AugmentedDimension
+warning: ././././MOR34/AugmentedDimension.lean:43:4: try 'simp at h'' instead of 'simpa using h''
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [2843/2877] Built MOR34.FiniteCellBases
+✔ [2844/2877] Built MOR34.FeasibleDimension
+⚠ [2845/2877] Built MOR34.OracleBasis
+warning: ././././MOR34/OracleBasis.lean:55:0: automatically included section variable(s) unused in theorem 'MOR34.basisSearch_subset':
+  [FiniteDimensional K V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional K V] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ././././MOR34/OracleBasis.lean:71:0: automatically included section variable(s) unused in theorem 'MOR34.selectedSpan_insert_strict':
+  [FiniteDimensional K V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional K V] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2846/2877] Built MOR34.StructuralTheorem
+⚠ [2847/2877] Built MOR34.LinearOracle
+warning: ././././MOR34/LinearOracle.lean:54:56: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2848/2877] Built MOR34.RetainedMatrix
+⚠ [2849/2877] Built MOR34.ThresholdSearch
+warning: ././././MOR34/ThresholdSearch.lean:30:77: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2850/2877] Built MOR34.IntegerNormals
+✔ [2851/2877] Built MOR34.CoordinateSearch
+⚠ [2852/2877] Built MOR34.CountBasisBridge
+warning: ././././MOR34/CountBasisBridge.lean:65:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2853/2877] Built MOR34.CellQueries
+✔ [2854/2877] Built MOR34.BasisIndependence
+✔ [2855/2877] Built MOR34.ParitySolver
+✔ [2856/2877] Built MOR34.OracleCellBases
+⚠ [2857/2877] Built MOR34.FiniteBasisSearch
+warning: ././././MOR34/FiniteBasisSearch.lean:13:0: automatically included section variable(s) unused in theorem 'MOR34.finiteSpanOracle_spec':
+  [FiniteDimensional K V]
+  [DecidableEq α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional K V] [DecidableEq α] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2858/2877] Built MOR34.ForcedSolver
+✔ [2859/2877] Built MOR34.RecognitionBranches
+✔ [2860/2877] Built MOR34.ComputedEdges
+✔ [2861/2877] Built MOR34.SearchedExtrema
+✔ [2862/2877] Built MOR34.RowSolverPipeline
+⚠ [2863/2877] Built MOR34.ComputedMatrix
+warning: ././././MOR34/ComputedMatrix.lean:23:12: unused variable `z`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+warning: ././././MOR34/ComputedMatrix.lean:25:12: unused variable `e`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+✔ [2864/2877] Built MOR34.QueryAccounting
+✔ [2865/2877] Built MOR34.FacetBridge
+✔ [2866/2877] Built MOR34.EdgeWitnesses
+✔ [2867/2877] Built MOR34.ExecutedCells
+✔ [2868/2877] Built MOR34.FaceEdgeCases
+✔ [2869/2877] Built MOR34.ReturnedPoints
+✔ [2870/2877] Built MOR34.RecognitionCertificate
+⚠ [2871/2877] Built MOR34.BinaryPointBasis
+warning: ././././MOR34/BinaryPointBasis.lean:9:4: unused variable `t`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+✔ [2872/2877] Built MOR34.ReturnedBasisSize
+✔ [2873/2877] Built MOR34.BasisRankCalls
+✔ [2874/2877] Built MOR34.NormalizedPipeline
+✔ [2875/2877] Built MOR34.SignedDimension
+✔ [2876/2877] Built MOR34
+Build completed successfully.

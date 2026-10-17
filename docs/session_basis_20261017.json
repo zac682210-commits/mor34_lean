@@ -1,0 +1,170 @@
+{
+  "started_utc": "2026-10-17T05:23:58+00:00",
+  "ended_utc": "2026-10-17T06:05:19.294600+00:00",
+  "started_shanghai": "2026-10-17T13:23:58+08:00",
+  "ended_shanghai": "2026-10-17T14:05:19.294600+08:00",
+  "active_minutes": 41.355,
+  "prior_recorded_active_minutes": 182.385,
+  "cumulative_recorded_active_minutes": 223.74,
+  "cumulative_is_complete": false,
+  "historical_formalization_minutes": null,
+  "pure_wait_seconds": 0,
+  "time_method": "Active proof development, pinned-source inspection, compiler diagnosis, dependency and statement review, evidence capture and checkpoint work. Useful work continued during CI. No sleeps and no inter-session gaps. Final upload overhead excluded.",
+  "attempts": [
+    {
+      "id": 39006290622,
+      "sha": "9f36e7a8924eee4886715ea23169ece7ce4e98eb",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:26:55Z",
+      "updated_at": "2026-10-17T05:30:26Z"
+    },
+    {
+      "id": 39006351780,
+      "sha": "e1be57fd57489d7ac2df2f2a83a8df5e0e1d6c3b",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:27:55Z",
+      "updated_at": "2026-10-17T05:31:45Z"
+    },
+    {
+      "id": 39006404468,
+      "sha": "0077be3c54b108c56d326c205c557a52c5e62cce",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:28:49Z",
+      "updated_at": "2026-10-17T05:32:32Z"
+    },
+    {
+      "id": 39006516866,
+      "sha": "2f4f223abde3410b1c56ce98de1524e0ca0e31a9",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:30:35Z",
+      "updated_at": "2026-10-17T05:34:14Z"
+    },
+    {
+      "id": 39006668941,
+      "sha": "56bc8e03b6a543d4ab807cbf929f3fa9fd112c80",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:33:03Z",
+      "updated_at": "2026-10-17T05:36:39Z"
+    },
+    {
+      "id": 39006818944,
+      "sha": "d6e3ae00251c7c84a7e52b0cde1b260ce8ae8301",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:35:28Z",
+      "updated_at": "2026-10-17T05:39:12Z"
+    },
+    {
+      "id": 39006952059,
+      "sha": "97da9ad6ff3c5ab8629e2733eb2b5b3f5342b7cf",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:37:42Z",
+      "updated_at": "2026-10-17T05:41:42Z"
+    },
+    {
+      "id": 39007064266,
+      "sha": "3e8f803117d4d121cc762b0adaf7d4f5e93be474",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:39:34Z",
+      "updated_at": "2026-10-17T05:43:20Z"
+    },
+    {
+      "id": 39007097964,
+      "sha": "e51d43bd29025fe288ff173d342f3e459603c2cb",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-17T05:40:06Z",
+      "updated_at": "2026-10-17T05:44:57Z"
+    },
+    {
+      "id": 39007179271,
+      "sha": "e4524ff0d9a1463c4b09eef87e5d978355cce504",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-17T05:41:24Z",
+      "updated_at": "2026-10-17T05:46:28Z"
+    },
+    {
+      "id": 39007278875,
+      "sha": "0bf7a4c7372d3bcf33de72fabea1c1fdc468391b",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:43:02Z",
+      "updated_at": "2026-10-17T05:46:49Z"
+    },
+    {
+      "id": 39007475718,
+      "sha": "6736a6cd6f44c9f1158719376b1618cfde832674",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:46:16Z",
+      "updated_at": "2026-10-17T05:50:23Z"
+    },
+    {
+      "id": 39007531209,
+      "sha": "615afb265757798f877ab73efd9b0936915d0982",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:47:12Z",
+      "updated_at": "2026-10-17T05:51:33Z"
+    },
+    {
+      "id": 39007598591,
+      "sha": "6aea7f623c4beeaa97f38350e96e85822a66537b",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:48:21Z",
+      "updated_at": "2026-10-17T05:52:46Z"
+    },
+    {
+      "id": 39007804467,
+      "sha": "633d3af2d888f6d938b1c6e45ac61fcdc9f11958",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:51:47Z",
+      "updated_at": "2026-10-17T05:55:51Z"
+    },
+    {
+      "id": 39007855736,
+      "sha": "4ad6714b57ced047ee49edb3c851a999a1600878",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-17T05:52:40Z",
+      "updated_at": "2026-10-17T05:57:01Z"
+    },
+    {
+      "id": 39008148797,
+      "sha": "923b6400695dc639fbd84fac3cc15bfc68f87f49",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-17T05:57:51Z",
+      "updated_at": "2026-10-17T06:03:06Z"
+    },
+    {
+      "id": 39008232389,
+      "sha": "0f93ca83fdc01aea389c1a5fbf969799d092c794",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-17T05:59:24Z",
+      "updated_at": "2026-10-17T06:04:25Z"
+    }
+  ],
+  "verified_commit": "0f93ca83fdc01aea389c1a5fbf969799d092c794",
+  "verified_run": 39008232389,
+  "kernel_checked_named_theorems": 356,
+  "complete_paper": false,
+  "complete_FPT_complexity": false,
+  "complete_algorithm_correctness": false,
+  "normalized_output_contract_solver_relative": true,
+  "results": "Complete normalized-input output contract relative to parity/violation/forced row ILP solvers and exact rational rank: invalid binary witness, valid empty face with signed dimension -1, supported face dimension and geometric facet decision, searched affine basis of actual tight binary points with exact cardinality. Classical normal choice remains. A separate bounded pivot normal family has kernel spanning and coefficient-bit bounds but is not yet connected to general count selections. Original-input normalization and full FPT runtime remain open.",
+  "next": "docs/NEXT_AFTER_BASIS_20261017.md",
+  "independent_review": false,
+  "remaining_estimate": "Normalized output interface closed in this round. Next-stage bounded normal integration and grouping/sorting transport are tentatively 3–8 active hours; full ILP/rank/compression complexity foundations remain weeks or longer, with substantial uncertainty."
+}

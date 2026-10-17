@@ -142,12 +142,16 @@
         "L1"
       ],
       "lean_target": "Actual recursive basis search with a one-inequality feasibility interface; bounded integer normal families proved to exist",
-      "status": "oracle-relative real affine basis and quadratic query count checked at 4f88fe34dac90c933406986163f5f3cd634d8d07; normal computation and bit bounds open",
+      "status": "query-bounded basis search verified; bounded normals for a GIVEN pivot block and their explicit coefficient-bit bounds verified at 0f93ca83fdc01aea389c1a5fbf969799d092c794; pivot selection and replacement of general FormsDescribe normal generator remain open",
       "lean_theorems": [
         "MOR34.bounded_integer_forms_exist",
         "MOR34.linear_count_basis_correct",
         "MOR34.real_affine_basis_from_linear_oracle",
-        "MOR34.oracle_cell_basis_selection"
+        "MOR34.oracle_cell_basis_selection",
+        "MOR34.pivotNormal_independent",
+        "MOR34.pivotNormals_span",
+        "MOR34.pivotNormal_logarithmic_bits",
+        "MOR34.independent_rows_pivot_minor"
       ]
     },
     {
@@ -192,20 +196,17 @@
         "L1",
         "L7"
       ],
-      "lean_target": "Solver-relative concrete searches and computed integer matrix, original semantic branches and full feasible affine span",
-      "status": "partial, verified at c37a5e28cfb3d5e642d4608aa0aaeaac10f1745d: exact solver rows, actual extrema, cells, validity/support branches, forced exchange witnesses, computed edges and matrix; single returned certificate, affine point-basis and facet bridge open",
+      "lean_target": "One returned normalized output: invalid witness / valid empty face / dimension, geometric facet Boolean and searched actual tight-point affine basis",
+      "status": "normalized output contract verified at 0f93ca83fdc01aea389c1a5fbf969799d092c794, relative to explicit ILP/rank interfaces and classical normal-family choice; original-input preprocessing and executable foundations remain open",
       "lean_theorems": [
-        "MOR34.searchedParityExtrema_lower_result",
-        "MOR34.searchedParityExtrema_upper_result",
-        "MOR34.row_solver_cell_selection",
-        "MOR34.recognitionBranch_correct",
-        "MOR34.exchange_iff_forced_rows",
-        "MOR34.exchangeWitness_some",
-        "MOR34.computedEdges_span",
-        "MOR34.computed_matrix_rank",
-        "MOR34.computedEdgeWitness_pair",
-        "MOR34.knapsackPolytope_affineSpan",
-        "MOR34.feasiblePointSet_affineSpan"
+        "MOR34.normalizedPipeline_correct",
+        "MOR34.normalizedPipeline_dimension",
+        "MOR34.computedRecognition_facet",
+        "MOR34.searched_returned_basis",
+        "MOR34.searched_returned_basis_card",
+        "MOR34.candidateFace_eq_hull",
+        "MOR34.candidate_facet_iff_computed_rank",
+        "MOR34.executedSelection_eq"
       ]
     },
     {
@@ -217,12 +218,15 @@
         "L7"
       ],
       "lean_target": "not yet encoded; fixed-dimensional ILP dependency unresolved",
-      "status": "query accounting verified at c37a5e28cfb3d5e642d4608aa0aaeaac10f1745d; full cost model, bit complexity, ILP foundations and executable rank open",
+      "status": "ILP and rank-call accounting, normalized q<=K+1 and local pivot-normal bit bounds verified at 0f93ca83fdc01aea389c1a5fbf969799d092c794; full operation/bit model, general normal generation, ILP foundations and executable rank open",
       "lean_theorems": [
         "MOR34.rowSearchCalls_le",
         "MOR34.cell_solver_row_count",
         "MOR34.adjacentPair_card",
-        "MOR34.forcedRow_card"
+        "MOR34.forcedRow_card",
+        "MOR34.returned_basis_rank_calls",
+        "MOR34.coefficient_class_parameter_bound",
+        "MOR34.pivotNormal_logarithmic_bits"
       ]
     },
     {
