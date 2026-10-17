@@ -51,13 +51,14 @@ theorem all_rowCellCalls_le (P : Model m) (hWF : WellFormed P)
       ring
 
 /-- An upper budget for the validity, support, extrema and cell phases.
+It includes an additional nonemptiness query for each parity class.
 It excludes edge discovery, normal construction, matrix rank and the work inside an ILP call.
 The extrema term scans all parities, safely overcounting empty ones. -/
 noncomputable def rowSearchCalls (P : Model m) (hWF : WellFormed P)
     (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
     (hs : ParityRowSolverSpec P solve)
     (forms : Finset (Counts q) → List (IntegerForm q)) : ℕ :=
-  1 + firstWitnessCalls (fun ε => parityListSolver solve ε []) (parityList q) +
+  1 + firstWitnessCalls (fun ε => parityListSolver solve ε []) (parityList q) + 2 ^ q +
     (∑ ε : Parity q, extremaSearchCalls (m := m) (rowBaseOracle solve ε)) +
     ∑ ε : Parity q, rowCellCalls P hWF solve hs forms ε
 
@@ -67,7 +68,7 @@ theorem rowSearchCalls_le (P : Model m) (hWF : WellFormed P)
     (forms : Finset (Counts q) → List (IntegerForm q))
     (hsize : ∀ B, (forms B).length ≤ q + 1) :
     rowSearchCalls P hWF solve hs forms ≤
-      1 + 2 ^ q + 2 * (Fintype.card (Item m) + q) * 2 ^ q + 2 * (q + 1) ^ 2 * 6 ^ q := by
+      1 + 2 * 2 ^ q + 2 * (Fintype.card (Item m) + q) * 2 ^ q + 2 * (q + 1) ^ 2 * 6 ^ q := by
   have h₁ := supportSearch_calls_le solve
   have h₂ := all_parity_extrema_calls_le (m := m) (rowBaseOracle solve)
   have h₃ := all_rowCellCalls_le P hWF solve hs forms hsize
