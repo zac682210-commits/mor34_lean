@@ -142,7 +142,7 @@
         "L1"
       ],
       "lean_target": "Actual recursive basis search with a one-inequality feasibility interface; bounded integer normal families proved to exist",
-      "status": "query-bounded basis search verified; bounded normals for a GIVEN pivot block and their explicit coefficient-bit bounds verified at 0f93ca83fdc01aea389c1a5fbf969799d092c794; pivot selection and replacement of general FormsDescribe normal generator remain open",
+      "status": "query-bounded count-basis search and actual added-constraint coefficient-bit bound verified at 4fa9921b96a39227868c5957b0f6491eb9f05491; all recursive states and parity substitution included. Executable generator and total bit-operation complexity remain open",
       "lean_theorems": [
         "MOR34.bounded_integer_forms_exist",
         "MOR34.linear_count_basis_correct",
@@ -151,7 +151,12 @@
         "MOR34.pivotNormal_independent",
         "MOR34.pivotNormals_span",
         "MOR34.pivotNormal_logarithmic_bits",
-        "MOR34.independent_rows_pivot_minor"
+        "MOR34.independent_rows_pivot_minor",
+        "MOR34.bounded_count_forms_exist",
+        "MOR34.boundedCountForms_bits",
+        "MOR34.boundedCellSelection_query_bounds",
+        "MOR34.boundedParityQueries_bound",
+        "MOR34.pivotSearch_calls"
       ]
     },
     {
@@ -197,7 +202,7 @@
         "L7"
       ],
       "lean_target": "One returned normalized output: invalid witness / valid empty face / dimension, geometric facet Boolean and searched actual tight-point affine basis",
-      "status": "normalized output contract verified at 0f93ca83fdc01aea389c1a5fbf969799d092c794, relative to explicit ILP/rank interfaces and classical normal-family choice; original-input preprocessing and executable foundations remain open",
+      "status": "bounded normalized output contract verified at 4fa9921b96a39227868c5957b0f6491eb9f05491, relative to ILP/rank interfaces and bounded classical normal-family choice. Raw grouping, predicate and dimension bridges proved; complete raw result wrapper remains open",
       "lean_theorems": [
         "MOR34.normalizedPipeline_correct",
         "MOR34.normalizedPipeline_dimension",
@@ -206,7 +211,13 @@
         "MOR34.searched_returned_basis_card",
         "MOR34.candidateFace_eq_hull",
         "MOR34.candidate_facet_iff_computed_rank",
-        "MOR34.executedSelection_eq"
+        "MOR34.executedSelection_eq",
+        "MOR34.boundedPipeline_correct",
+        "MOR34.boundedPipeline_dimension",
+        "MOR34.boundedPipeline_facet",
+        "MOR34.normalized_model_exists",
+        "MOR34.relabel_tight_finrank",
+        "MOR34.boundedPipeline_raw_dimension"
       ]
     },
     {
@@ -218,7 +229,7 @@
         "L7"
       ],
       "lean_target": "not yet encoded; fixed-dimensional ILP dependency unresolved",
-      "status": "ILP and rank-call accounting, normalized q<=K+1 and local pivot-normal bit bounds verified at 0f93ca83fdc01aea389c1a5fbf969799d092c794; full operation/bit model, general normal generation, ILP foundations and executable rank open",
+      "status": "query/rank-call accounting, raw q<=K+1 and actual normal coefficient bits verified at 4fa9921b96a39227868c5957b0f6491eb9f05491; full operation/encoding model, ILP/rank foundations and costed normal generator remain open",
       "lean_theorems": [
         "MOR34.rowSearchCalls_le",
         "MOR34.cell_solver_row_count",
@@ -226,7 +237,11 @@
         "MOR34.forcedRow_card",
         "MOR34.returned_basis_rank_calls",
         "MOR34.coefficient_class_parameter_bound",
-        "MOR34.pivotNormal_logarithmic_bits"
+        "MOR34.pivotNormal_logarithmic_bits",
+        "MOR34.raw_parameter_bound",
+        "MOR34.raw_classes_le_items",
+        "MOR34.boundedCountForms_bits",
+        "MOR34.pivotSearch_calls"
       ]
     },
     {

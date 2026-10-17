@@ -34,8 +34,8 @@ All 24 named theorem dependencies were checked in GitHub Actions run 38919230112
 
 All 73 named theorem dependencies passed on commit 1ab49f5e6de4be6ad59dd31c2f34f09ebdbc6211, run 38931568115. The original model and frozen interfaces have unchanged hashes. Logs and source hashes are retained separately from earlier checkpoints.
 
-## Outstanding scope
+## Current scope after the bounded-normal checkpoint
 
-Next is Lemma 5: construct actual AffineMaps for the actual parity cells, prove the label-constancy premise from the verified parity lemma, and count the cells. See NEXT_AFFINE_CELLS.md. The augmented tight-point span identity, rank over Q versus R, explicit algorithm correctness, ILP complexity and compression remain open. Noncomputable component infrastructure does not supply an executable FPT algorithm.
+The earlier sections above are historical checkpoints. Affine cells, augmented span, rational/real rank bridge and the full normalized solver-relative output contract have since been proved. Bounded normals now describe arbitrary finite count selections and are integrated into boundedPipeline; raw grouping/sorting and discrete/dimension transport are also proved. See ACCEPTANCE.json and REVIEW_NORMALS_20261017.md for exact current coverage.
 
-Successful compilation proves the submitted Lean statements. Correspondence to the paper is reviewed by the same assistant, without independent formal audit. The complete MOR34 theorem is not yet certified.
+Remaining: raw output/basis/geometric-facet wrapper, executable normal generator, complete row encoding/cost model, exact rank and fixed-dimensional ILP foundations, FPT runtime and compression. Classical choices and explicit solver contracts remain. Complete paper certification is not claimed. Same-session review only.
