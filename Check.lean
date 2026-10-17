@@ -290,3 +290,8 @@ import MOR34
 #print axioms MOR34.parityRows_decode
 #print axioms MOR34.parityRows_exists_iff
 #print axioms MOR34.parityListSolver_spec
+
+#print axioms MOR34.rowBaseOracle_spec
+#print axioms MOR34.rowCellOracle_spec
+#print axioms MOR34.row_solver_cell_selection
+#print axioms MOR34.row_solver_retained_matrix

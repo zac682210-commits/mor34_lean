@@ -82,3 +82,5 @@ import MOR34.SearchedExtrema
 import MOR34.CellQueries
 
 import MOR34.ParitySolver
+
+import MOR34.RowSolverPipeline

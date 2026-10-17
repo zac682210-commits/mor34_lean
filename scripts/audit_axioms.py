@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.rowBaseOracle_spec',
+    'MOR34.rowCellOracle_spec',
+    'MOR34.row_solver_cell_selection',
+    'MOR34.row_solver_retained_matrix',
+
     'MOR34.queryRestrictions_iff',
     'MOR34.parityRows_decode',
     'MOR34.parityRows_exists_iff',
