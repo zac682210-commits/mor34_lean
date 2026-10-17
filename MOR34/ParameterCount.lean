@@ -50,7 +50,8 @@ theorem coefficient_class_parameter_bound (P : Model m) (hWF : WellFormed P) :
       omega
     have hh := Finset.filter_card_add_filter_neg_card_eq_card
       (s := Finset.univ) (fun j : Fin q => 0 < P.coefficient j)
-    simpa [positiveClassIndices, hn] using hh
+    rw [hn] at hh
+    simpa only [positiveClassIndices, Finset.card_univ, Fintype.card_fin] using hh
   rw [positiveCandidateValues_card P hWF]
   omega
 
