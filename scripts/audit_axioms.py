@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.boundedPipeline_dimension',
+    'MOR34.boundedPipeline_facet',
+    'MOR34.boundedCellSelection_executed',
+
     'MOR34.positiveQuery_bound',
     'MOR34.negativeQuery_bound',
     'MOR34.outsideQueries_bound',

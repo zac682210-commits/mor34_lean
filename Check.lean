@@ -488,3 +488,7 @@ import MOR34
 #print axioms MOR34.outsideQueries_bound
 #print axioms MOR34.query_parity_row
 #print axioms MOR34.query_parity_bound
+
+#print axioms MOR34.boundedPipeline_dimension
+#print axioms MOR34.boundedPipeline_facet
+#print axioms MOR34.boundedCellSelection_executed
