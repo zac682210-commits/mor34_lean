@@ -7,6 +7,7 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.oracle_cell_basis_selection',
     'MOR34.exchange_iff_forced_epigraph',
     'MOR34.forced_feasible_epigraph',
     'MOR34.forcedSet_pattern',
