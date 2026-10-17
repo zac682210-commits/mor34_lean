@@ -24,8 +24,15 @@
       "depends_on": [
         "prefix"
       ],
-      "lean_target": "not yet encoded",
-      "status": "open; not kernel checked"
+      "lean_target": "Explicit rational inequalities with integer counts and costs; exact parity substitution",
+      "status": "exact formulation checked at 4f88fe34dac90c933406986163f5f3cd634d8d07; construction and coefficient bit bounds open",
+      "lean_theorems": [
+        "MOR34.prefix_epigraph_iff",
+        "MOR34.exact_linear_count_encoding",
+        "MOR34.exact_parity_linear_count_encoding",
+        "MOR34.epigraph_variable_count",
+        "MOR34.countRow_card"
+      ]
     },
     {
       "id": "L2",
@@ -134,11 +141,13 @@
       "depends_on": [
         "L1"
       ],
-      "lean_target": "finite_count_affine_basis proves containment, spanning and <=q+1 cardinality; not the full oracle procedure",
-      "status": "partial: small finite generating set existence checked; algorithm, affine-independent output and query/bit bounds open",
+      "lean_target": "Actual recursive basis search with a one-inequality feasibility interface; bounded integer normal families proved to exist",
+      "status": "oracle-relative real affine basis and quadratic query count checked at 4f88fe34dac90c933406986163f5f3cd634d8d07; normal computation and bit bounds open",
       "lean_theorems": [
-        "MOR34.finite_count_affine_basis",
-        "MOR34.small_cellBasisSelection_exists"
+        "MOR34.bounded_integer_forms_exist",
+        "MOR34.linear_count_basis_correct",
+        "MOR34.real_affine_basis_from_linear_oracle",
+        "MOR34.oracle_cell_basis_selection"
       ]
     },
     {
@@ -183,8 +192,17 @@
         "L1",
         "L7"
       ],
-      "lean_target": "not yet encoded",
-      "status": "open; not kernel checked"
+      "lean_target": "Exact validation/support and Exchange reductions; recursive cell-basis selection under attained-extrema and linear-solver contracts",
+      "status": "partial: count validation/support reductions, relative count-basis routine, global forced-pair minimum and exact Exchange epigraph checked; row translation and whole recognition procedure open",
+      "lean_theorems": [
+        "MOR34.valid_iff_count_prefixes",
+        "MOR34.invalid_iff_count_violation",
+        "MOR34.support_iff_count_epigraph",
+        "MOR34.forcedPairPrefix_minimal",
+        "MOR34.forcedPairPrefix_epigraph",
+        "MOR34.exchange_iff_forced_counts",
+        "MOR34.exchange_iff_forced_epigraph"
+      ]
     },
     {
       "id": "T8time",

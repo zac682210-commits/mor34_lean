@@ -1,0 +1,78 @@
+✔ [2216/2375] Built MOR34.Model
+✔ [2796/2840] Built MOR34.Targets
+⚠ [2797/2840] Built MOR34.PartitionKernel
+warning: ././././MOR34/PartitionKernel.lean:24:0: automatically included section variable(s) unused in theorem 'MOR34.fiberSumMap_unit':
+  [Fintype β]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype β] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2799/2840] Built MOR34.PairingArithmetic
+✔ [2800/2840] Built MOR34.PaperInterface
+✔ [2802/2840] Built MOR34.BalancedSplit
+✔ [2803/2840] Built MOR34.Exchange
+✔ [2804/2840] Built MOR34.RankScalar
+✔ [2805/2840] Built MOR34.PrefixTools
+✔ [2806/2840] Built MOR34.Accounting
+✔ [2807/2840] Built MOR34.ClassPairing
+✔ [2808/2840] Built MOR34.PrefixMinimality
+✔ [2809/2840] Built MOR34.PairingAtCut
+✔ [2810/2840] Built MOR34.PrefixEpigraph
+✔ [2811/2840] Built MOR34.InteriorExchange
+✔ [2812/2840] Built MOR34.RestrictedPrefix
+✔ [2813/2840] Built MOR34.CountEncoding
+✔ [2814/2840] Built MOR34.Components
+✔ [2815/2840] Built MOR34.CountValidation
+✔ [2816/2840] Built MOR34.ForcedPairPrefix
+⚠ [2817/2840] Built MOR34.ExchangeKernel
+warning: ././././MOR34/ExchangeKernel.lean:14:0: automatically included section variable(s) unused in theorem 'MOR34.path_difference_mem':
+  [Fintype α]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype α] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [2818/2840] Built MOR34.LinearEncoding
+warning: ././././MOR34/LinearEncoding.lean:90:6: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [2819/2840] Built MOR34.ExchangeEncoding
+warning: ././././MOR34/ExchangeEncoding.lean:57:33: `Function.update_same` has been deprecated: use `Function.update_self` instead
+warning: ././././MOR34/ExchangeEncoding.lean:60:33: `Function.update_noteq` has been deprecated: use `Function.update_of_ne` instead
+✔ [2820/2840] Built MOR34.TightDimension
+✔ [2821/2840] Built MOR34.ParityLinearEncoding
+⚠ [2822/2840] Built MOR34.AdjacentSpan
+warning: ././././MOR34/AdjacentSpan.lean:22:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2823/2840] Built MOR34.PrefixQuotient
+✔ [2824/2840] Built MOR34.PrefixAffine
+✔ [2825/2840] Built MOR34.ParityCells
+✔ [2826/2840] Built MOR34.CellSpan
+⚠ [2827/2840] Built MOR34.AugmentedSpan
+warning: ././././MOR34/AugmentedSpan.lean:35:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2828/2840] Built MOR34.SelectedSpan
+⚠ [2829/2840] Built MOR34.AugmentedDimension
+warning: ././././MOR34/AugmentedDimension.lean:43:4: try 'simp at h'' instead of 'simpa using h''
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+✔ [2830/2840] Built MOR34.FiniteCellBases
+✔ [2831/2840] Built MOR34.StructuralTheorem
+⚠ [2832/2840] Built MOR34.OracleBasis
+warning: ././././MOR34/OracleBasis.lean:55:0: automatically included section variable(s) unused in theorem 'MOR34.basisSearch_subset':
+  [FiniteDimensional K V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional K V] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ././././MOR34/OracleBasis.lean:71:0: automatically included section variable(s) unused in theorem 'MOR34.selectedSpan_insert_strict':
+  [FiniteDimensional K V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional K V] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [2833/2840] Built MOR34.RetainedMatrix
+⚠ [2834/2840] Built MOR34.LinearOracle
+warning: ././././MOR34/LinearOracle.lean:54:56: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2835/2840] Built MOR34.IntegerNormals
+⚠ [2836/2840] Built MOR34.CountBasisBridge
+warning: ././././MOR34/CountBasisBridge.lean:65:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [2837/2840] Built MOR34.BasisIndependence
+✔ [2838/2840] Built MOR34.OracleCellBases
+✔ [2839/2840] Built MOR34
+Build completed successfully.
