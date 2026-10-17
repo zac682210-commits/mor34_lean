@@ -73,14 +73,14 @@ theorem bounded_integer_forms_exist {q : ℕ} (B : Finset (Counts q)) :
   have hmem (z : Counts q) : rationalCountPoint z ∈ W ↔ ∀ i, f i (rationalCountPoint z) = 0 := by
     constructor
     · intro hz i
-      have hh : W.mkQ (rationalCountPoint z) = 0 := Submodule.Quotient.mk_eq_zero.mpr hz
+      have hh : W.mkQ (rationalCountPoint z) = 0 := (Submodule.Quotient.mk_eq_zero W).mpr hz
       simp [f, hh]
     · intro hz
       have hr : b.repr (W.mkQ (rationalCountPoint z)) = 0 := by
         ext i
         exact hz i
       have hh : W.mkQ (rationalCountPoint z) = 0 := b.repr.injective (by simpa using hr)
-      exact Submodule.Quotient.mk_eq_zero.mp hh
+      exact (Submodule.Quotient.mk_eq_zero W).mp hh
   choose a ha using fun i => integer_form_of_functional (f i)
   refine ⟨List.ofFn a, ?_, ?_⟩
   · intro z
