@@ -104,3 +104,5 @@ import MOR34.ExecutedCells
 import MOR34.RecognitionCertificate
 import MOR34.FiniteBasisSearch
 import MOR34.BinaryPointBasis
+import MOR34.ReturnedBasisSize
+import MOR34.NormalizedPipeline

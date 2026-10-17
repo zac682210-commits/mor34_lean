@@ -393,3 +393,10 @@ import MOR34
 #print axioms MOR34.binaryPointMatrix_rank
 #print axioms MOR34.binaryBasisSearch_correct
 #print axioms MOR34.searched_returned_basis
+
+#print axioms MOR34.tight_basis_card
+#print axioms MOR34.searched_returned_basis_card
+#print axioms MOR34.facet_returned_basis_card
+
+#print axioms MOR34.builtSelection_exists
+#print axioms MOR34.normalizedPipeline_correct

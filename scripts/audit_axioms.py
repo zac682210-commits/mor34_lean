@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.builtSelection_exists',
+    'MOR34.normalizedPipeline_correct',
+
+    'MOR34.tight_basis_card',
+    'MOR34.searched_returned_basis_card',
+    'MOR34.facet_returned_basis_card',
+
     'MOR34.binaryPointMatrix_cast',
     'MOR34.binaryPointMatrix_rank',
     'MOR34.binaryBasisSearch_correct',
