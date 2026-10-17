@@ -413,3 +413,8 @@ import MOR34
 #print axioms MOR34.cramerNormal_kernel
 #print axioms MOR34.cramerNormal_nonzero
 #print axioms MOR34.cramerNormal_bound
+
+#print axioms MOR34.pivotNormal_kernel
+#print axioms MOR34.pivotNormal_bound
+#print axioms MOR34.pivotNormal_independent
+#print axioms MOR34.factorial_power_bound

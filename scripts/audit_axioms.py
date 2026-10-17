@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.pivotNormal_kernel',
+    'MOR34.pivotNormal_bound',
+    'MOR34.pivotNormal_independent',
+    'MOR34.factorial_power_bound',
+
     'MOR34.integer_det_bound',
     'MOR34.integer_cramer_bound',
     'MOR34.cramerNormal_kernel',
