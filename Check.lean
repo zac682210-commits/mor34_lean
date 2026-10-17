@@ -334,3 +334,7 @@ import MOR34
 #print axioms MOR34.exchangeWitness_some
 #print axioms MOR34.exchangeWitness_none_iff
 #print axioms MOR34.exchangeDecision_iff
+#print axioms MOR34.computedEdges_mem
+#print axioms MOR34.adjacentPair_card
+#print axioms MOR34.computedEdges_card
+#print axioms MOR34.computedEdges_span

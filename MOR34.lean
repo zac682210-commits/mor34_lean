@@ -93,3 +93,4 @@ import MOR34.QueryAccounting
 import MOR34.ForcedLinearEncoding
 import MOR34.ForcedRows
 import MOR34.ForcedSolver
+import MOR34.ComputedEdges

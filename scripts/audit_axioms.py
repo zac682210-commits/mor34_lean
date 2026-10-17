@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.computedEdges_mem',
+    'MOR34.adjacentPair_card',
+    'MOR34.computedEdges_card',
+    'MOR34.computedEdges_span',
+
     'MOR34.forcedRows_witness',
     'MOR34.exchangeWitness_some',
     'MOR34.exchangeWitness_none_iff',
