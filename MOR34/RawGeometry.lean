@@ -9,7 +9,7 @@ def rawPointVector (S : Finset (Fin n)) : Fin n → ℝ := fun i => if i ∈ S t
 def rawTightPointSet (a c : Fin n → ℤ) (b d : ℤ) : Set (Fin n → ℝ) :=
   {x | ∃ S, RawTight a c b d S ∧ x = rawPointVector S}
 
-def relabelLinear (e : Item m ≃ Fin n) : (Item m → ℝ) ≃ₗ[ℝ] (Fin n → ℝ) where
+noncomputable def relabelLinear (e : Item m ≃ Fin n) : (Item m → ℝ) ≃ₗ[ℝ] (Fin n → ℝ) where
   toFun x i := x (e.symm i)
   invFun y i := y (e i)
   left_inv x := by funext i; simp
@@ -47,6 +47,7 @@ theorem relabel_tight_finrank (P : Model m) (e : Item m ≃ Fin n) (a c : Fin n 
   rw [relabel_tightPointSet P e a c ha hc]
   have he := (relabelLinear e).toAffineEquiv.toAffineMap.vectorSpan_image_eq_submodule_map
     (s := tightPointSet P)
+  simp only [AffineEquiv.coe_toAffineMap, LinearEquiv.coe_toAffineEquiv] at he
   rw [← he]
   exact LinearEquiv.finrank_map_eq (relabelLinear e) _
 
