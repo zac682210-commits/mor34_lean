@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.augmentedCountRow_cast',
+    'MOR34.countMatrix_span_iff',
+    'MOR34.vectorIntegerForm_pairing',
+    'MOR34.bounded_count_forms_exist',
+
     'MOR34.independent_rows_pivot_columns',
     'MOR34.independent_integer_rows_pivot',
     'MOR34.bounded_matrix_normals',

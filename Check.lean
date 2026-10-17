@@ -453,3 +453,8 @@ import MOR34
 #print axioms MOR34.independent_rows_pivot_columns
 #print axioms MOR34.independent_integer_rows_pivot
 #print axioms MOR34.bounded_matrix_normals
+
+#print axioms MOR34.augmentedCountRow_cast
+#print axioms MOR34.countMatrix_span_iff
+#print axioms MOR34.vectorIntegerForm_pairing
+#print axioms MOR34.bounded_count_forms_exist
