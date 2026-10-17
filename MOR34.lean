@@ -80,3 +80,5 @@ import MOR34.CoordinateSearch
 import MOR34.SearchedExtrema
 
 import MOR34.CellQueries
+
+import MOR34.ParitySolver

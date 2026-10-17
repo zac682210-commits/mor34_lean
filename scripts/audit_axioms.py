@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.queryRestrictions_iff',
+    'MOR34.parityRows_decode',
+    'MOR34.parityRows_exists_iff',
+    'MOR34.parityListSolver_spec',
+
     'MOR34.cellCoordinateQueries_iff',
     'MOR34.cellQueries_iff',
     'MOR34.cellQueries_length',

@@ -285,3 +285,8 @@ import MOR34
 #print axioms MOR34.restrictedQueryOracle_spec
 #print axioms MOR34.parityCellOracle_spec
 #print axioms MOR34.unrestrictedQueryOracle_spec
+
+#print axioms MOR34.queryRestrictions_iff
+#print axioms MOR34.parityRows_decode
+#print axioms MOR34.parityRows_exists_iff
+#print axioms MOR34.parityListSolver_spec
