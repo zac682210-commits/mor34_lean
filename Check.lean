@@ -435,3 +435,6 @@ import MOR34
 #print axioms MOR34.magnitudeBits_le_of_power_bound
 #print axioms MOR34.pivotNormal_magnitudeBits
 #print axioms MOR34.pivotNormal_logarithmic_bits
+
+#print axioms MOR34.correct_output_dimension
+#print axioms MOR34.normalizedPipeline_dimension

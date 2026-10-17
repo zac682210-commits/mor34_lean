@@ -113,3 +113,4 @@ import MOR34.PivotNormalSpan
 import MOR34.BasisRankCalls
 import MOR34.ParameterCount
 import MOR34.PivotNormalBits
+import MOR34.SignedDimension

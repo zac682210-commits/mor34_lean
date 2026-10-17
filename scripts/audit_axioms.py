@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.correct_output_dimension',
+    'MOR34.normalizedPipeline_dimension',
+
     'MOR34.magnitudeBits_le_of_power_bound',
     'MOR34.pivotNormal_magnitudeBits',
     'MOR34.pivotNormal_logarithmic_bits',
