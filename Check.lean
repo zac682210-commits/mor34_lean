@@ -272,3 +272,9 @@ import MOR34
 #print axioms MOR34.maximumSearch_exists
 #print axioms MOR34.minimumSearch_exists
 #print axioms MOR34.extremaSearchCalls_le
+
+#print axioms MOR34.maximumWitness_result
+#print axioms MOR34.minimumWitness_result
+#print axioms MOR34.searchedParityExtrema_lower_result
+#print axioms MOR34.searchedParityExtrema_upper_result
+#print axioms MOR34.all_parity_extrema_calls_le

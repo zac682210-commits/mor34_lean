@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.maximumWitness_result',
+    'MOR34.minimumWitness_result',
+    'MOR34.searchedParityExtrema_lower_result',
+    'MOR34.searchedParityExtrema_upper_result',
+    'MOR34.all_parity_extrema_calls_le',
+
     'MOR34.coordinateLower_iff',
     'MOR34.coordinateUpper_iff',
     'MOR34.maximumThreshold_spec',
