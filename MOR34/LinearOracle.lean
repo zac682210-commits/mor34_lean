@@ -84,6 +84,7 @@ theorem positiveQuery_iff {q : ℕ} (f : IntegerForm q) (z : Counts q) :
 theorem negativeQuery_iff {q : ℕ} (f : IntegerForm q) (z : Counts q) :
     f.negativeQuery.Holds z ↔ f.eval z ≤ -1 := by
   unfold IntegerQuery.Holds IntegerForm.negativeQuery IntegerForm.eval
+  dsimp only
   omega
 
 def outsideQueries {q : ℕ} (forms : List (IntegerForm q)) : List (IntegerQuery q) :=
