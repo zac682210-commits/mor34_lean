@@ -35,7 +35,7 @@ def run(name, args):
     save()
     print(f'{name}: {"PASS" if code == 0 else "FAIL"}', flush=True)
     if code:
-        print((LOGS / f'{name}.log').read_text(errors='replace')[-6000:])
+        print((LOGS / f'{name}.log').read_text(errors='replace'))
         raise SystemExit(1)
 
 save()

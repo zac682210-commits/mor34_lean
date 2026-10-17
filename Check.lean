@@ -377,3 +377,9 @@ import MOR34
 #print axioms MOR34.executedSelection_eq
 
 #print axioms MOR34.executedParity_eq_cells
+
+#print axioms MOR34.computedRecognition_correct
+#print axioms MOR34.correct_output_facet
+#print axioms MOR34.computedRecognition_facet
+
+#print axioms MOR34.weighted_support_equality

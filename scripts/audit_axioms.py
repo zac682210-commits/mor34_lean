@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.weighted_support_equality',
+    'MOR34.computedRecognition_correct',
+    'MOR34.correct_output_facet',
+    'MOR34.computedRecognition_facet',
+
     'MOR34.executedParity_eq_cells',
     'MOR34.executedCell_eq_selectionCell',
     'MOR34.executedSelection_eq',

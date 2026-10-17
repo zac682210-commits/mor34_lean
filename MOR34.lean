@@ -101,3 +101,4 @@ import MOR34.ReturnedPoints
 import MOR34.SupportingHull
 import MOR34.FacetBridge
 import MOR34.ExecutedCells
+import MOR34.RecognitionCertificate

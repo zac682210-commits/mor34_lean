@@ -62,11 +62,11 @@ theorem returnedSets_card (P : Model m) (hWF : WellFormed P) (S : CellBasisSelec
     (hsmall : ∀ ε hn mode, (S.basis ε hn mode).card ≤ q + 1) :
     (returnedSets P hWF S solve hs).card ≤ (q + 1) * 6 ^ q + 2 * Fintype.card (Item m) := by
   classical
-  have hp := Finset.card_image_le (s := selectionFinset P S) (f := prefixSet)
+  have hp := Finset.card_image_le (s := selectionFinset P S) (f := prefixSet (m := m))
   have hw := Finset.card_image_le (s := Finset.univ) (f := computedEdgeWitness P hWF solve hs)
   have hv := Finset.card_image_le (s := Finset.univ) (f := computedEdgeSwap P hWF solve hs)
   have hu := Finset.card_union_le
-    ((selectionFinset P S).image prefixSet)
+    ((selectionFinset P S).image (prefixSet (m := m)))
     (Finset.univ.image (computedEdgeWitness P hWF solve hs))
   have hu' := Finset.card_union_le
     ((selectionFinset P S).image prefixSet ∪ Finset.univ.image (computedEdgeWitness P hWF solve hs))
