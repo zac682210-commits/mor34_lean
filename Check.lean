@@ -372,3 +372,8 @@ import MOR34
 #print axioms MOR34.candidateFace_vectorSpan
 #print axioms MOR34.candidate_facet_iff_dimension
 #print axioms MOR34.candidate_facet_iff_computed_rank
+
+#print axioms MOR34.executedCell_eq_selectionCell
+#print axioms MOR34.executedSelection_eq
+
+#print axioms MOR34.executedParity_eq_cells

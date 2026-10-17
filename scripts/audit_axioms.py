@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.executedParity_eq_cells',
+    'MOR34.executedCell_eq_selectionCell',
+    'MOR34.executedSelection_eq',
+
     'MOR34.candidateLinear_point',
     'MOR34.valid_linear_bound',
     'MOR34.valid_polytope_bound',
