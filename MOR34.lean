@@ -50,3 +50,7 @@ import MOR34.PrefixEpigraph
 import MOR34.CountEncoding
 
 import MOR34.LinearEncoding
+
+import MOR34.ParityLinearEncoding
+
+import MOR34.OracleBasis

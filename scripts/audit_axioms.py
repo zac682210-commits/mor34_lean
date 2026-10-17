@@ -7,6 +7,17 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.basisSearch_card',
+    'MOR34.basisSearch_calls_le',
+    'MOR34.basisSearch_subset',
+    'MOR34.selectedSpan_insert_strict',
+    'MOR34.basisSearch_spans',
+    'MOR34.basisSearch_from_empty',
+    'MOR34.countBasisSearch_correct',
+
+    'MOR34.row_parity_iff',
+    'MOR34.exact_parity_linear_count_encoding',
+
     'MOR34.pickCoeff_sum',
     'MOR34.prefixLine_rational_iff',
     'MOR34.countRows_iff',

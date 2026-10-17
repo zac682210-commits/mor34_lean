@@ -184,3 +184,14 @@ import MOR34
 #print axioms MOR34.countRows_iff
 #print axioms MOR34.countRow_card
 #print axioms MOR34.exact_linear_count_encoding
+
+#print axioms MOR34.row_parity_iff
+#print axioms MOR34.exact_parity_linear_count_encoding
+
+#print axioms MOR34.basisSearch_card
+#print axioms MOR34.basisSearch_calls_le
+#print axioms MOR34.basisSearch_subset
+#print axioms MOR34.selectedSpan_insert_strict
+#print axioms MOR34.basisSearch_spans
+#print axioms MOR34.basisSearch_from_empty
+#print axioms MOR34.countBasisSearch_correct
