@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.feasibleRows_iff',
+    'MOR34.violationInequality_iff',
+    'MOR34.violationRows_iff',
+    'MOR34.feasibleEpigraph_decode',
+    'MOR34.invalid_iff_violation_rows',
+    'MOR34.violationRow_card',
+
     'MOR34.rowBaseOracle_spec',
     'MOR34.rowCellOracle_spec',
     'MOR34.row_solver_cell_selection',

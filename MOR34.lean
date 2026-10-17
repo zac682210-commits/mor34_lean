@@ -84,3 +84,5 @@ import MOR34.CellQueries
 import MOR34.ParitySolver
 
 import MOR34.RowSolverPipeline
+
+import MOR34.ViolationEncoding

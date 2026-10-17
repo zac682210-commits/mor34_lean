@@ -295,3 +295,10 @@ import MOR34
 #print axioms MOR34.rowCellOracle_spec
 #print axioms MOR34.row_solver_cell_selection
 #print axioms MOR34.row_solver_retained_matrix
+
+#print axioms MOR34.feasibleRows_iff
+#print axioms MOR34.violationInequality_iff
+#print axioms MOR34.violationRows_iff
+#print axioms MOR34.feasibleEpigraph_decode
+#print axioms MOR34.invalid_iff_violation_rows
+#print axioms MOR34.violationRow_card
