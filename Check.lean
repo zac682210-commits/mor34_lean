@@ -159,3 +159,11 @@ import MOR34
 #print axioms MOR34.adjacentEdge_card
 #print axioms MOR34.retainedRowIndex_card
 #print axioms MOR34.small_retained_matrix
+
+#print axioms MOR34.prefixCost_shift
+#print axioms MOR34.prefixLine_le
+#print axioms MOR34.prefixCost_succ
+#print axioms MOR34.prefixLine_attained
+#print axioms MOR34.prefix_epigraph_iff
+#print axioms MOR34.weightSum_prefixCost
+#print axioms MOR34.prefix_feasible_epigraph

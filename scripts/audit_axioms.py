@@ -7,6 +7,14 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.prefixCost_shift',
+    'MOR34.prefixLine_le',
+    'MOR34.prefixCost_succ',
+    'MOR34.prefixLine_attained',
+    'MOR34.prefix_epigraph_iff',
+    'MOR34.weightSum_prefixCost',
+    'MOR34.prefix_feasible_epigraph',
+
     'MOR34.adjacentEdge_card',
     'MOR34.retainedRowIndex_card',
     'MOR34.small_retained_matrix',
