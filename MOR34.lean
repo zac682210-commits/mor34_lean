@@ -119,3 +119,4 @@ import MOR34.ColumnNormals
 import MOR34.ColumnNormalBounds
 import MOR34.BoundedMatrixNormals
 import MOR34.BoundedCountForms
+import MOR34.BoundedNormalFamily

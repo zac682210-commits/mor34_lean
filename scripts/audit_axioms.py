@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.countRadius_pos',
+    'MOR34.countRadius_bounds',
+    'MOR34.countRadius_le',
+    'MOR34.normalCoefficientBound_mono',
+    'MOR34.boundedCountForms_spec',
+    'MOR34.boundedCountForms_length',
+    'MOR34.boundedCountForms_bound',
+    'MOR34.normalCoefficient_magnitudeBits',
+
     'MOR34.augmentedCountRow_cast',
     'MOR34.countMatrix_span_iff',
     'MOR34.vectorIntegerForm_pairing',

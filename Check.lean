@@ -458,3 +458,12 @@ import MOR34
 #print axioms MOR34.countMatrix_span_iff
 #print axioms MOR34.vectorIntegerForm_pairing
 #print axioms MOR34.bounded_count_forms_exist
+
+#print axioms MOR34.countRadius_pos
+#print axioms MOR34.countRadius_bounds
+#print axioms MOR34.countRadius_le
+#print axioms MOR34.normalCoefficientBound_mono
+#print axioms MOR34.boundedCountForms_spec
+#print axioms MOR34.boundedCountForms_length
+#print axioms MOR34.boundedCountForms_bound
+#print axioms MOR34.normalCoefficient_magnitudeBits
