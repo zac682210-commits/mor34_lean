@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.basisSearch_independent',
+    'MOR34.rational_row_independent',
+    'MOR34.rational_augmented_independent_to_real',
+    'MOR34.affineIndependent_of_augmented',
+    'MOR34.real_count_search_independent',
+
     'MOR34.valid_iff_count_prefixes',
     'MOR34.invalid_iff_count_violation',
     'MOR34.support_iff_tight_prefix',

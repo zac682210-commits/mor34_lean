@@ -223,3 +223,9 @@ import MOR34
 #print axioms MOR34.invalid_iff_count_violation
 #print axioms MOR34.support_iff_tight_prefix
 #print axioms MOR34.support_iff_count_epigraph
+
+#print axioms MOR34.basisSearch_independent
+#print axioms MOR34.rational_row_independent
+#print axioms MOR34.rational_augmented_independent_to_real
+#print axioms MOR34.affineIndependent_of_augmented
+#print axioms MOR34.real_count_search_independent
