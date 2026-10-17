@@ -57,14 +57,15 @@ theorem searchedParityExtrema_lower_result (P : Model m) (ε : Parity q)
     (hs : LinearOracleSpec {z | TightParity P ε z} solve)
     (hn : ∃ z, TightParity P ε z) (j : Fin q) :
     minimumSearch solve j (m j) = some ((searchedParityExtrema P ε solve hs hn).lowerWitness j) := by
-  exact minimumWitness_result _ _ _ _ _ _ _
+  exact minimumWitness_result {z | TightParity P ε z} solve hs hn j (m j)
+    (fun z hz => hz.1 j)
 
 theorem searchedParityExtrema_upper_result (P : Model m) (ε : Parity q)
     (solve : IntegerQuery q → Option (Counts q))
     (hs : LinearOracleSpec {z | TightParity P ε z} solve)
     (hn : ∃ z, TightParity P ε z) (j : Fin q) :
     maximumSearch solve j (m j) = some ((searchedParityExtrema P ε solve hs hn).upperWitness j) := by
-  exact maximumWitness_result _ _ _ _ _ _
+  exact maximumWitness_result {z | TightParity P ε z} solve hs hn j (m j)
 
 /-- Across all full parity classes, the coordinate-search query count is singly exponential. -/
 theorem all_parity_extrema_calls_le (solve : Parity q → IntegerQuery q → Option (Counts q)) :
