@@ -1,4 +1,5 @@
 import MOR34.InputGrouping
+import MOR34.ParameterCount
 
 namespace MOR34
 variable {q n : ℕ} {m : Fin q → ℕ}
@@ -54,5 +55,32 @@ theorem relabel_valid (P : Model m) (e : Item m ≃ Fin n) (a c : Fin n → ℤ)
   · intro h S hS
     have hh := h _ ((relabel_feasible P e a ha S).mp hS)
     rwa [← relabel_candidate_sum P e c hc] at hh
+
+/-- The paper parameter is preserved by the actual item bijection. -/
+theorem relabel_positive_values (P : Model m) (e : Item m ≃ Fin n) (c : Fin n → ℤ)
+    (hc : ∀ i, P.coefficient i.1 = c (e i)) :
+    positiveCandidateValues P = (Finset.univ.image c).filter (fun v => 0 < v) := by
+  classical
+  ext v
+  simp only [positiveCandidateValues, Finset.mem_filter, Finset.mem_image,
+    Finset.mem_univ, true_and]
+  constructor
+  · rintro ⟨⟨i, hi⟩, hv⟩
+    exact ⟨⟨e i, (hc i).symm.trans hi⟩, hv⟩
+  · rintro ⟨⟨i, hi⟩, hv⟩
+    refine ⟨⟨e.symm i, ?_⟩, hv⟩
+    simpa using (hc (e.symm i)).trans (by simpa using hi)
+
+theorem raw_parameter_bound (P : Model m) (hWF : WellFormed P)
+    (e : Item m ≃ Fin n) (c : Fin n → ℤ)
+    (hc : ∀ i, P.coefficient i.1 = c (e i)) :
+    q ≤ ((Finset.univ.image c).filter (fun v => 0 < v)).card + 1 := by
+  rw [← relabel_positive_values P e c hc]
+  exact coefficient_class_parameter_bound P hWF
+
+theorem raw_classes_le_items (P : Model m) (hWF : WellFormed P)
+    (e : Item m ≃ Fin n) : q ≤ n := by
+  have he : Fintype.card (Item m) = n := by simpa using Fintype.card_congr e
+  simpa only [he] using coefficient_classes_le_items P hWF
 
 end MOR34

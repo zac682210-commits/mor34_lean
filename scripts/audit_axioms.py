@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.relabel_positive_values',
+    'MOR34.raw_parameter_bound',
+    'MOR34.raw_classes_le_items',
+
     'MOR34.relabel_pointVector',
     'MOR34.relabel_tightPointSet',
     'MOR34.relabel_tight_finrank',

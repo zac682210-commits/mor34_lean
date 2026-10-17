@@ -516,3 +516,7 @@ import MOR34
 #print axioms MOR34.relabel_pointVector
 #print axioms MOR34.relabel_tightPointSet
 #print axioms MOR34.relabel_tight_finrank
+
+#print axioms MOR34.relabel_positive_values
+#print axioms MOR34.raw_parameter_bound
+#print axioms MOR34.raw_classes_le_items
