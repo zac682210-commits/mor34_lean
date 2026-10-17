@@ -30,10 +30,14 @@ theorem rational_row_independent {ι κ : Type*} [Fintype ι] [Fintype κ]
   classical
   apply linearIndependent_iff_card_eq_finrank_span.mpr
   change Fintype.card ι = Module.finrank ℝ (Submodule.span ℝ (Set.range (A.map (Rat.castHom ℝ))))
-  rw [← Matrix.rank_eq_finrank_span_row (A.map (Rat.castHom ℝ)), rational_matrix_rank]
   have h := linearIndependent_iff_card_eq_finrank_span.mp hA
   change Fintype.card ι = Module.finrank ℚ (Submodule.span ℚ (Set.range A)) at h
-  simpa only [Matrix.rank_eq_finrank_span_row, Matrix.row] using h
+  calc
+    Fintype.card ι = A.rank := by
+      simpa only [Matrix.rank_eq_finrank_span_row, Matrix.row] using h
+    _ = (A.map (Rat.castHom ℝ)).rank := (rational_matrix_rank A).symm
+    _ = Module.finrank ℝ (Submodule.span ℝ (Set.range (A.map (Rat.castHom ℝ)))) := by
+      simpa only [Matrix.row] using Matrix.rank_eq_finrank_span_row (A.map (Rat.castHom ℝ))
 
 theorem rational_augmented_independent_to_real {q : ℕ} (B : Finset (Counts q))
     (hB : LinearIndepOn ℚ rationalCountPoint (B : Set (Counts q))) :

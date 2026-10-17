@@ -13,6 +13,7 @@ theorem pairAllowed_card (u v : Fin s) (huv : u ≠ v) :
     (pairAllowed u v).card = s - 2 := by
   have hv : v ∈ Finset.univ.erase u := by simp [huv.symm]
   simp [pairAllowed, Finset.card_erase_of_mem hv, Finset.card_erase_of_mem (Finset.mem_univ u)]
+  omega
 
 theorem forcedPairPrefix_pattern (u v : Fin s) (huv : u ≠ v) (t : ℕ) :
     u ∉ forcedPairPrefix u v t ∧ v ∈ forcedPairPrefix u v t := by
