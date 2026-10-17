@@ -467,3 +467,10 @@ import MOR34
 #print axioms MOR34.boundedCountForms_length
 #print axioms MOR34.boundedCountForms_bound
 #print axioms MOR34.normalCoefficient_magnitudeBits
+
+#print axioms MOR34.countSearch_forms_bounded
+#print axioms MOR34.boundedCellSelection_basis
+#print axioms MOR34.boundedCellSelection_small
+#print axioms MOR34.boundedCellSelection_query_calls
+#print axioms MOR34.class_size_le_items
+#print axioms MOR34.boundedCellSelection_query_bounds

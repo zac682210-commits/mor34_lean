@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.countSearch_forms_bounded',
+    'MOR34.boundedCellSelection_basis',
+    'MOR34.boundedCellSelection_small',
+    'MOR34.boundedCellSelection_query_calls',
+    'MOR34.class_size_le_items',
+    'MOR34.boundedCellSelection_query_bounds',
+
     'MOR34.countRadius_pos',
     'MOR34.countRadius_bounds',
     'MOR34.countRadius_le',
