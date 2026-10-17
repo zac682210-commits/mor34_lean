@@ -11,6 +11,7 @@ def integerRow (a b : Fin q → ℤ) (c : ℤ) : CountInequality q :=
 theorem integerRow_iff (a b : Fin q → ℤ) (c : ℤ) (z y : Fin q → ℤ) :
     (integerRow a b c).Holds z y ↔ (∑ k, a k * z k) + (∑ k, b k * y k) ≤ c := by
   unfold integerRow CountInequality.Holds
+  dsimp
   constructor <;> intro h <;> exact_mod_cast h
 
 def integerPick (j : Fin q) (c : ℤ) : Fin q → ℤ := fun k => if k = j then c else 0
@@ -75,5 +76,6 @@ theorem integerForcedEpigraph_encode (P : Model m) (j : Fin q) (u v : Fin (m j))
   have he : ((z j - 1 : ℕ) : ℤ) = (z j : ℤ) - 1 := by omega
   simp only [IntegerForcedEpigraph, ForcedEpigraph, forcedResidualWeights, encodeCounts, he,
     and_assoc]
+  rfl
 
 end MOR34
