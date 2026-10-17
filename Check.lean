@@ -520,3 +520,7 @@ import MOR34
 #print axioms MOR34.relabel_positive_values
 #print axioms MOR34.raw_parameter_bound
 #print axioms MOR34.raw_classes_le_items
+
+#print axioms MOR34.prefixCost_abs_bound
+#print axioms MOR34.prefixIntercept_abs_bound
+#print axioms MOR34.shiftedPrefixIntercept_abs_bound

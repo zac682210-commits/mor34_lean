@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.prefixCost_abs_bound',
+    'MOR34.prefixIntercept_abs_bound',
+    'MOR34.shiftedPrefixIntercept_abs_bound',
+
     'MOR34.relabel_positive_values',
     'MOR34.raw_parameter_bound',
     'MOR34.raw_classes_le_items',
