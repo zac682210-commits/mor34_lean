@@ -218,3 +218,8 @@ import MOR34
 #print axioms MOR34.rational_selectedSpan_to_real
 #print axioms MOR34.countReal_affineSpan_of_rational_span
 #print axioms MOR34.real_count_basis_from_linear_oracle
+
+#print axioms MOR34.valid_iff_count_prefixes
+#print axioms MOR34.invalid_iff_count_violation
+#print axioms MOR34.support_iff_tight_prefix
+#print axioms MOR34.support_iff_count_epigraph

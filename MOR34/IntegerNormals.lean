@@ -15,7 +15,7 @@ theorem finite_rational_integer_multiple {ι : Type*} [Finite ι] (c : ι → �
   choose a ha using hd
   refine ⟨d, nonZeroDivisors.coe_ne_zero d, a, ?_⟩
   intro i
-  simpa only [Algebra.smul_def, Int.algebraMap_eq_intCast] using ha i
+  simpa [Algebra.smul_def] using ha i
 
 /-- A rational linear functional on augmented counts is an affine expression in the counts. -/
 theorem count_functional_coefficients {q : ℕ} (f : (ℚ × (Fin q → ℚ)) →ₗ[ℚ] ℚ) :

@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.valid_iff_count_prefixes',
+    'MOR34.invalid_iff_count_violation',
+    'MOR34.support_iff_tight_prefix',
+    'MOR34.support_iff_count_epigraph',
+
     'MOR34.affineSpan_of_augment_mem',
     'MOR34.rational_selectedSpan_to_real',
     'MOR34.countReal_affineSpan_of_rational_span',
