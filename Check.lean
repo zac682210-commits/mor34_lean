@@ -512,3 +512,7 @@ import MOR34
 #print axioms MOR34.relabel_feasible
 #print axioms MOR34.relabel_tight
 #print axioms MOR34.relabel_valid
+
+#print axioms MOR34.relabel_pointVector
+#print axioms MOR34.relabel_tightPointSet
+#print axioms MOR34.relabel_tight_finrank

@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.relabel_pointVector',
+    'MOR34.relabel_tightPointSet',
+    'MOR34.relabel_tight_finrank',
+
     'MOR34.relabel_weight_sum',
     'MOR34.relabel_candidate_sum',
     'MOR34.relabel_feasible',
