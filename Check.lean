@@ -359,3 +359,16 @@ import MOR34
 #print axioms MOR34.linear_bound_convexHull
 #print axioms MOR34.supporting_hull_eq
 #print axioms MOR34.supporting_level_extreme
+
+#print axioms MOR34.candidateLinear_point
+#print axioms MOR34.valid_linear_bound
+#print axioms MOR34.valid_polytope_bound
+#print axioms MOR34.tightPointSet_level
+#print axioms MOR34.candidateFace_eq_hull
+#print axioms MOR34.candidateFace_convex
+#print axioms MOR34.candidateFace_extreme
+#print axioms MOR34.candidateFace_nonempty_iff
+#print axioms MOR34.candidateFace_affineSpan
+#print axioms MOR34.candidateFace_vectorSpan
+#print axioms MOR34.candidate_facet_iff_dimension
+#print axioms MOR34.candidate_facet_iff_computed_rank

@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.candidateLinear_point',
+    'MOR34.valid_linear_bound',
+    'MOR34.valid_polytope_bound',
+    'MOR34.tightPointSet_level',
+    'MOR34.candidateFace_eq_hull',
+    'MOR34.candidateFace_convex',
+    'MOR34.candidateFace_extreme',
+    'MOR34.candidateFace_nonempty_iff',
+    'MOR34.candidateFace_affineSpan',
+    'MOR34.candidateFace_vectorSpan',
+    'MOR34.candidate_facet_iff_dimension',
+    'MOR34.candidate_facet_iff_computed_rank',
+
     'MOR34.linear_bound_convexHull',
     'MOR34.supporting_hull_eq',
     'MOR34.supporting_level_extreme',
