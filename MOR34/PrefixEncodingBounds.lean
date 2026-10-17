@@ -16,6 +16,7 @@ theorem prefixIntercept_abs_bound {s : ℕ} (w : Fin s → ℤ) (M : ℤ)
     |w t * (t.val : ℤ) - prefixCost w t.val| ≤ 2 * (s : ℤ) * M := by
   have hp := prefixCost_abs_bound w M hw t.val (Nat.le_of_lt t.isLt)
   have ht : (t.val : ℤ) ≤ s := by exact_mod_cast Nat.le_of_lt t.isLt
+  have hprod := mul_le_mul_of_nonneg_right ht hM
   have hm : |w t * (t.val : ℤ)| ≤ M * (t.val : ℤ) := by
     rw [abs_mul, abs_of_nonneg (by positivity : (0 : ℤ) ≤ t.val)]
     exact mul_le_mul_of_nonneg_right (hw t) (by positivity)
@@ -29,6 +30,7 @@ theorem shiftedPrefixIntercept_abs_bound {s : ℕ} (w : Fin s → ℤ) (v M : �
     |((t.val : ℤ) + 1) * w t - prefixCost w t.val - v| ≤ (2 * (s : ℤ) + 2) * M := by
   have hp := prefixCost_abs_bound w M hw t.val (Nat.le_of_lt t.isLt)
   have ht : (t.val : ℤ) ≤ s := by exact_mod_cast Nat.le_of_lt t.isLt
+  have hprod := mul_le_mul_of_nonneg_right ht hM
   have hm : |((t.val : ℤ) + 1) * w t| ≤ ((t.val : ℤ) + 1) * M := by
     rw [abs_mul, abs_of_nonneg (by positivity : (0 : ℤ) ≤ (t.val : ℤ) + 1)]
     exact mul_le_mul_of_nonneg_left (hw t) (by positivity)
