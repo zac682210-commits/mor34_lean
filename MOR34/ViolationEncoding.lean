@@ -76,7 +76,7 @@ def violationRow (P : Model m) : ViolationRow m → CountInequality q
 theorem violationRows_iff (P : Model m) (z y : Fin q → ℤ) :
     (∀ k : ViolationRow m, (violationRow P k).Holds z y) ↔
       FeasibleCountEpigraph P z y ∧ P.rhs + 1 ≤ ∑ j, P.coefficient j * z j := by
-  simp only [Sum.forall, violationRow, Unit.forall, feasibleRows_iff, violationInequality_iff]
+  simp only [Sum.forall, violationRow, forall_const, feasibleRows_iff, violationInequality_iff]
 
 theorem feasibleEpigraph_decode (P : Model m) (hWF : WellFormed P) (z y : Fin q → ℤ)
     (h : FeasibleCountEpigraph P z y) :
@@ -104,7 +104,9 @@ theorem invalid_iff_violation_rows (P : Model m) (hWF : WellFormed P) :
     obtain ⟨hb, hf⟩ := feasibleEpigraph_decode P hWF z y he
     have hid := encode_decodeCounts z he.1
     refine ⟨decodeCounts z, hb, hf, ?_⟩
-    simpa only [← hid] using hv
+    change P.rhs + 1 ≤ ∑ j, P.coefficient j * encodeCounts (decodeCounts z) j
+    rw [hid]
+    exact hv
 
 theorem violationRow_card (m : Fin q → ℕ) :
     Fintype.card (ViolationRow m) = Fintype.card (Item m) + 2 * q + 2 := by

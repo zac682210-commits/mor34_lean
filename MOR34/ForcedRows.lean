@@ -47,7 +47,7 @@ theorem forcedRows_iff (P : Model m) (j : Fin q) (u v : Fin (m j)) (z y : Fin q 
     one_ne_zero, integerRow_iff, integerPick_sum, Pi.zero_apply, zero_mul,
     Finset.sum_const_zero, add_zero, zero_add, neg_one_mul, one_mul,
     neg_mul, Finset.sum_neg_distrib, Sigma.forall, forcedOrdinaryRow_iff,
-    forcedSlopeRow_iff, Unit.forall, forcedEmptyRow_iff]
+    forcedSlopeRow_iff, forall_const, forcedEmptyRow_iff]
   constructor
   · rintro ⟨⟨⟨hl, hu⟩, ⟨he, hf⟩⟩, ⟨ho, hs, hzero, hc⟩⟩
     refine ⟨(fun k => ⟨by have h := hl k; omega, hu k⟩), ?_, hf.2, ?_,

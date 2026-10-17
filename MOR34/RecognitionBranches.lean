@@ -16,7 +16,9 @@ theorem violationRows_witness (P : Model m) (hWF : WellFormed P)
   obtain ⟨hb, hf⟩ := feasibleEpigraph_decode P hWF z y he
   have hid := encode_decodeCounts z he.1
   have hv' : P.rhs + 1 ≤ ∑ j, P.coefficient j * (decodeCounts z j : ℤ) := by
-    simpa only [← hid] using hv
+    change P.rhs + 1 ≤ ∑ j, P.coefficient j * encodeCounts (decodeCounts z) j
+    rw [hid]
+    exact hv
   refine ⟨hf, ?_⟩
   rw [candidateValue_counts, counts_prefixSet _ hb]
   simp only [mul_comm] at hv'
