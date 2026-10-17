@@ -71,3 +71,46 @@ theorem forcedPairPrefix_cost (u v : Fin s) (t : ℕ) (w : Fin s → ℤ) :
   rw [forcedPairPrefix, Finset.sum_insert hn, restrictedPrefix_cost]
 
 end MOR34
+
+namespace MOR34
+
+/-- The constant condition handles the zero-size residual class. -/
+theorem prefix_epigraph_all_sizes {s z : ℕ} (w : Fin s → ℤ) (hw : Monotone w)
+    (hz : z ≤ s) (y : ℤ) : prefixCost w z ≤ y ↔
+      (s = 0 → 0 ≤ y) ∧ ∀ t : Fin s, prefixLine w t (z : ℤ) ≤ y := by
+  by_cases hs : s = 0
+  · subst s
+    have hz0 : z = 0 := by omega
+    subst z
+    simp [prefixCost, classPrefix]
+  · have hs' : 0 < s := by omega
+    rw [prefix_epigraph_iff w hw hs' hz y]
+    simp [hs]
+
+/-- Exact cost epigraph for the forced pair, including a two-item original class. -/
+theorem forcedPairPrefix_epigraph {s : ℕ} (u v : Fin s) (huv : u ≠ v) (t : ℕ)
+    (ht : 1 ≤ t) (hb : t ≤ s - 1) (w : Fin s → ℤ) (hw : Monotone w) (y : ℤ) :
+    (∑ i ∈ forcedPairPrefix u v t, w i) ≤ y ↔
+      ((pairAllowed u v).card = 0 → w v ≤ y) ∧
+      ∀ a : Fin (pairAllowed u v).card,
+        w v + prefixLine (fun i => w ((pairAllowed u v).orderEmbOfFin rfl i)) a ((t - 1 : ℕ) : ℤ) ≤ y := by
+  have hs : 2 ≤ s := by
+    have h1 := u.isLt
+    have h2 := v.isLt
+    have hn : u.val ≠ v.val := fun he => huv (Fin.ext he)
+    omega
+  have hk : t - 1 ≤ (pairAllowed u v).card := by rw [pairAllowed_card u v huv]; omega
+  rw [forcedPairPrefix_cost]
+  have he := prefix_epigraph_all_sizes
+    (fun i => w ((pairAllowed u v).orderEmbOfFin rfl i))
+    (hw.comp ((pairAllowed u v).orderEmbOfFin rfl).monotone) hk (y - w v)
+  constructor
+  · intro h
+    obtain ⟨h0, ha⟩ := he.mp (by omega)
+    exact ⟨fun hh => by have hi := h0 hh; omega, fun a => by have hi := ha a; omega⟩
+  · rintro ⟨h0, ha⟩
+    have h := he.mpr ⟨fun hh => by have hi := h0 hh; omega,
+      fun a => by have hi := ha a; omega⟩
+    omega
+
+end MOR34

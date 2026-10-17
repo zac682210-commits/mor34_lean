@@ -21,7 +21,7 @@ theorem basisSearch_independent {K V α : Type*} [Field K] [AddCommGroup V] [Mod
       have ha : a ∉ (B : Set α) := by
         intro ha
         exact hn (Submodule.subset_span ⟨a, ha, rfl⟩)
-      exact (linearIndepOn_insert ha).mpr ⟨hb, hn⟩
+      simpa only [Finset.coe_insert] using (linearIndepOn_insert ha).mpr ⟨hb, hn⟩
 
 /-- Rational row independence survives the specific entrywise embedding into the reals. -/
 theorem rational_row_independent {ι κ : Type*} [Fintype ι] [Fintype κ]
@@ -29,8 +29,10 @@ theorem rational_row_independent {ι κ : Type*} [Fintype ι] [Fintype κ]
     LinearIndependent ℝ (A.map (Rat.castHom ℝ)) := by
   classical
   apply linearIndependent_iff_card_eq_finrank_span.mpr
+  change Fintype.card ι = Module.finrank ℝ (Submodule.span ℝ (Set.range (A.map (Rat.castHom ℝ))))
   rw [← Matrix.rank_eq_finrank_span_row, rational_matrix_rank]
   have h := linearIndependent_iff_card_eq_finrank_span.mp hA
+  change Fintype.card ι = Module.finrank ℚ (Submodule.span ℚ (Set.range A)) at h
   simpa only [Matrix.rank_eq_finrank_span_row] using h
 
 theorem rational_augmented_independent_to_real {q : ℕ} (B : Finset (Counts q))
@@ -56,8 +58,8 @@ theorem affineIndependent_of_augmented {ι V : Type*} [AddCommGroup V] [Module �
   intro s w hw hs i hi
   have he : ∑ j ∈ s, w j • pointAugment (p j) = 0 := by
     apply Prod.ext
-    · simpa [pointAugment] using hw
-    · simpa [pointAugment] using hs
+    · simpa [pointAugment, Prod.fst_sum] using hw
+    · simpa [pointAugment, Prod.snd_sum] using hs
   exact (linearIndependent_iff'.mp hp) s w he i hi
 
 /-- The actual count procedure returns an affinely independent real generating set. -/

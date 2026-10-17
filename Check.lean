@@ -242,3 +242,6 @@ import MOR34
 #print axioms MOR34.forcedPairPrefix_card
 #print axioms MOR34.forcedPairPrefix_minimal
 #print axioms MOR34.forcedPairPrefix_cost
+
+#print axioms MOR34.prefix_epigraph_all_sizes
+#print axioms MOR34.forcedPairPrefix_epigraph

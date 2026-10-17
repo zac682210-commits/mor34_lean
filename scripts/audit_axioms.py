@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.prefix_epigraph_all_sizes',
+    'MOR34.forcedPairPrefix_epigraph',
+
     'MOR34.pairAllowed_card',
     'MOR34.forcedPairPrefix_pattern',
     'MOR34.forcedPairPrefix_card',
