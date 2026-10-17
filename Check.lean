@@ -338,3 +338,6 @@ import MOR34
 #print axioms MOR34.adjacentPair_card
 #print axioms MOR34.computedEdges_card
 #print axioms MOR34.computedEdges_span
+#print axioms MOR34.computedMatrix_eq_submatrix
+#print axioms MOR34.computed_matrix_rank
+#print axioms MOR34.computedRowIndex_card

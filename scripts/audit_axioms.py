@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.computedMatrix_eq_submatrix',
+    'MOR34.computed_matrix_rank',
+    'MOR34.computedRowIndex_card',
+
     'MOR34.computedEdges_mem',
     'MOR34.adjacentPair_card',
     'MOR34.computedEdges_card',

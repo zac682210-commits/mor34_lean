@@ -94,3 +94,4 @@ import MOR34.ForcedLinearEncoding
 import MOR34.ForcedRows
 import MOR34.ForcedSolver
 import MOR34.ComputedEdges
+import MOR34.ComputedMatrix
