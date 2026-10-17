@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.boundedCountForms_bits',
+    'MOR34.boundedCountQueries_bound',
+    'MOR34.boundedParityQueries_bound',
+
     'MOR34.boundedPipeline_dimension',
     'MOR34.boundedPipeline_facet',
     'MOR34.boundedCellSelection_executed',

@@ -72,4 +72,35 @@ theorem query_parity_bound (a : IntegerQuery q) (ε : Fin q → Fin 2)
     simp only [sub_zero, zero_sub, abs_neg] at hh
     linarith [ha.2]
 
+/-- Direct coefficient-bit guarantee for the selected family used by the pipeline. -/
+theorem boundedCountForms_bits (B : Finset (Counts q)) (N : ℕ) (hN : 1 ≤ N)
+    (hB : ∀ z ∈ B, ∀ j, z j ≤ N) :
+    ∀ f ∈ boundedCountForms B,
+      magnitudeBits f.constant ≤ (Nat.clog 2 (q + 1) + Nat.clog 2 N) * (q + 1) + 2 ∧
+      ∀ j, magnitudeBits (f.coefficient j) ≤
+        (Nat.clog 2 (q + 1) + Nat.clog 2 N) * (q + 1) + 2 := by
+  intro f hf
+  have hb := boundedCountForms_bound B N hN hB f hf
+  exact ⟨normalCoefficient_magnitudeBits _ q N hb.1,
+    fun j => normalCoefficient_magnitudeBits _ q N (hb.2 j)⟩
+
+/-- Both strict sides of each normal are bounded, including the integer offset. -/
+theorem boundedCountQueries_bound (B : Finset (Counts q)) (N : ℕ) (hN : 1 ≤ N)
+    (hB : ∀ z ∈ B, ∀ j, z j ≤ N) :
+    ∀ a ∈ outsideQueries (boundedCountForms B),
+      a.Bounded (normalCoefficientBound q N) (normalCoefficientBound q N + 1) :=
+  outsideQueries_bound _ _ (boundedCountForms_bound B N hN hB)
+
+/-- The same generated queries remain bounded after the actual parity substitution. -/
+theorem boundedParityQueries_bound (B : Finset (Counts q)) (N : ℕ) (hN : 1 ≤ N)
+    (hB : ∀ z ∈ B, ∀ j, z j ≤ N) (ε : Fin q → Fin 2) :
+    ∀ a ∈ outsideQueries (boundedCountForms B),
+      (a.parityTransform ε).Bounded (2 * normalCoefficientBound q N)
+        (normalCoefficientBound q N + 1 + q * normalCoefficientBound q N) := by
+  intro a ha
+  apply query_parity_bound
+  · unfold normalCoefficientBound
+    positivity
+  · exact boundedCountQueries_bound B N hN hB a ha
+
 end MOR34

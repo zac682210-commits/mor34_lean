@@ -492,3 +492,7 @@ import MOR34
 #print axioms MOR34.boundedPipeline_dimension
 #print axioms MOR34.boundedPipeline_facet
 #print axioms MOR34.boundedCellSelection_executed
+
+#print axioms MOR34.boundedCountForms_bits
+#print axioms MOR34.boundedCountQueries_bound
+#print axioms MOR34.boundedParityQueries_bound
