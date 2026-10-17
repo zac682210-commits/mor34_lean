@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.returnedSets_tight',
+    'MOR34.returnedPointSet_subset',
+    'MOR34.selectedPoints_returned',
+    'MOR34.returnedSets_card',
+    'MOR34.returned_direction_span',
+    'MOR34.returned_augmented_span',
+    'MOR34.returned_affineSpan',
+    'MOR34.returned_affine_basis_exists',
+
     'MOR34.knapsackPolytope_affineSpan',
     'MOR34.knapsackPolytope_finrank',
 

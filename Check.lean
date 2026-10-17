@@ -346,3 +346,12 @@ import MOR34
 #print axioms MOR34.computedEdgeWitness_pair
 #print axioms MOR34.knapsackPolytope_affineSpan
 #print axioms MOR34.knapsackPolytope_finrank
+
+#print axioms MOR34.returnedSets_tight
+#print axioms MOR34.returnedPointSet_subset
+#print axioms MOR34.selectedPoints_returned
+#print axioms MOR34.returnedSets_card
+#print axioms MOR34.returned_direction_span
+#print axioms MOR34.returned_augmented_span
+#print axioms MOR34.returned_affineSpan
+#print axioms MOR34.returned_affine_basis_exists
