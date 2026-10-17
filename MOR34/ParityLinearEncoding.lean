@@ -21,6 +21,7 @@ theorem row_parity_iff (L : CountInequality q) (ε : Fin q → Fin 2) (v y : Fin
     ring
   unfold CountInequality.Holds CountInequality.withParity
   rw [he]
+  dsimp only
   constructor <;> intro h <;> linarith
 
 theorem exact_parity_linear_count_encoding (P : Model m) (hWF : WellFormed P)

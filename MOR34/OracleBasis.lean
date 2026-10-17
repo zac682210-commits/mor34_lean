@@ -65,7 +65,7 @@ theorem basisSearch_subset (C : Set α) (v : α → V) (oracle : Finset α → O
       apply ih (insert a B)
       intro x hx
       rcases Finset.mem_insert.mp hx with rfl | hx
-      · exact (ho.found B a h).1
+      · exact (ho.found B x h).1
       · exact hb hx
 
 theorem selectedSpan_insert_strict (v : α → V) (B : Finset α) (a : α)
