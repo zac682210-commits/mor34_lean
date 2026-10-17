@@ -524,3 +524,6 @@ import MOR34
 #print axioms MOR34.prefixCost_abs_bound
 #print axioms MOR34.prefixIntercept_abs_bound
 #print axioms MOR34.shiftedPrefixIntercept_abs_bound
+
+#print axioms MOR34.relabel_tight_nonempty
+#print axioms MOR34.relabel_signed_dimension

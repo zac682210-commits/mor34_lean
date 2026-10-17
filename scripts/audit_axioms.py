@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.relabel_tight_nonempty',
+    'MOR34.relabel_signed_dimension',
+
     'MOR34.prefixCost_abs_bound',
     'MOR34.prefixIntercept_abs_bound',
     'MOR34.shiftedPrefixIntercept_abs_bound',

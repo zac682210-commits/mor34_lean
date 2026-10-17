@@ -1,5 +1,6 @@
 import MOR34.RawTransport
 import MOR34.TightDimension
+import MOR34.SignedDimension
 
 namespace MOR34
 variable {q n : ℕ} {m : Fin q → ℕ}
@@ -50,5 +51,32 @@ theorem relabel_tight_finrank (P : Model m) (e : Item m ≃ Fin n) (a c : Fin n 
   simp only [AffineEquiv.coe_toAffineMap, LinearEquiv.coe_toAffineEquiv] at he
   rw [← he]
   exact LinearEquiv.finrank_map_eq (relabelLinear e) _
+
+noncomputable def rawSignedDimension (a c : Fin n → ℤ) (b d : ℤ) : ℤ := by
+  classical
+  exact if (rawTightPointSet a c b d).Nonempty then
+    (Module.finrank ℝ (vectorSpan ℝ (rawTightPointSet a c b d)) : ℤ) else -1
+
+theorem relabel_tight_nonempty (P : Model m) (e : Item m ≃ Fin n) (a c : Fin n → ℤ)
+    (ha : ∀ i, P.weight i = a (e i)) (hc : ∀ i, P.coefficient i.1 = c (e i)) :
+    (rawTightPointSet a c P.capacity P.rhs).Nonempty ↔ (tightPointSet P).Nonempty := by
+  rw [relabel_tightPointSet P e a c ha hc, Set.image_nonempty]
+
+/-- Empty faces retain dimension -1 after returning to the original item coordinates. -/
+theorem relabel_signed_dimension (P : Model m) (hv : Valid P)
+    (e : Item m ≃ Fin n) (a c : Fin n → ℤ)
+    (ha : ∀ i, P.weight i = a (e i)) (hc : ∀ i, P.coefficient i.1 = c (e i)) :
+    rawSignedDimension a c P.capacity P.rhs = candidateFaceDimension P := by
+  classical
+  have hn := candidateFace_nonempty_iff P hv
+  have hr := relabel_tight_nonempty P e a c ha hc
+  by_cases ht : (tightPointSet P).Nonempty
+  · have hf := hn.mpr ht
+    have hg := hr.mpr ht
+    simp only [rawSignedDimension, candidateFaceDimension, if_pos hf, if_pos hg]
+    rw [relabel_tight_finrank P e a c ha hc, candidateFace_vectorSpan P hv]
+  · have hf : ¬ (candidateFace P).Nonempty := fun h => ht (hn.mp h)
+    have hg : ¬ (rawTightPointSet a c P.capacity P.rhs).Nonempty := fun h => ht (hr.mp h)
+    simp only [rawSignedDimension, candidateFaceDimension, if_neg hf, if_neg hg]
 
 end MOR34
