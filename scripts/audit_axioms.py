@@ -7,6 +7,8 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.boundedPipeline_correct',
+
     'MOR34.countSearch_forms_bounded',
     'MOR34.boundedCellSelection_basis',
     'MOR34.boundedCellSelection_small',

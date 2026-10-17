@@ -474,3 +474,5 @@ import MOR34
 #print axioms MOR34.boundedCellSelection_query_calls
 #print axioms MOR34.class_size_le_items
 #print axioms MOR34.boundedCellSelection_query_bounds
+
+#print axioms MOR34.boundedPipeline_correct
