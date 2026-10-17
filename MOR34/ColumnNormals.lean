@@ -24,7 +24,7 @@ theorem columnNormal_pairing (M : Matrix (Fin r) ι ℤ) (c : Fin r ↪ ι)
 
 theorem integerRowSpan_iff (M : Matrix (Fin r) ι ℤ) (y : ι → ℚ) :
     y ∈ integerRowSpan M ↔ ∃ w : Fin r → ℚ, ∀ k, y k = ∑ i, w i * (M i k : ℚ) := by
-  rw [integerRowSpan, ← Matrix.range_vecMulLinear]
+  rw [integerRowSpan, ← range_vecMulLinear]
   constructor
   · rintro ⟨w, hw⟩
     exact ⟨w, fun k => (congrFun hw k).symm⟩
