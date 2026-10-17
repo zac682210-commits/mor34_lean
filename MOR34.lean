@@ -90,3 +90,4 @@ import MOR34.ViolationEncoding
 import MOR34.RecognitionBranches
 import MOR34.FeasibleDimension
 import MOR34.QueryAccounting
+import MOR34.ForcedLinearEncoding

@@ -320,3 +320,9 @@ import MOR34
 #print axioms MOR34.all_rowCellCalls_le
 #print axioms MOR34.rowSearchCalls_le
 #print axioms MOR34.cell_solver_row_count
+#print axioms MOR34.integerRow_iff
+#print axioms MOR34.integerPick_sum
+#print axioms MOR34.forcedSlopeRow_iff
+#print axioms MOR34.forcedEmptyRow_iff
+#print axioms MOR34.forcedSlopeRow_counts
+#print axioms MOR34.integerForcedEpigraph_encode

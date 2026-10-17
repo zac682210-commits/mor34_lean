@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.integerRow_iff',
+    'MOR34.integerPick_sum',
+    'MOR34.forcedSlopeRow_iff',
+    'MOR34.forcedEmptyRow_iff',
+    'MOR34.forcedSlopeRow_counts',
+    'MOR34.integerForcedEpigraph_encode',
+
     'MOR34.feasiblePointSet_zero',
     'MOR34.feasiblePointSet_unit',
     'MOR34.feasiblePointSet_vectorSpan',
