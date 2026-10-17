@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.linear_bound_convexHull',
+    'MOR34.supporting_hull_eq',
+    'MOR34.supporting_level_extreme',
+
     'MOR34.returnedSets_tight',
     'MOR34.returnedPointSet_subset',
     'MOR34.selectedPoints_returned',

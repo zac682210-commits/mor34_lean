@@ -355,3 +355,7 @@ import MOR34
 #print axioms MOR34.returned_augmented_span
 #print axioms MOR34.returned_affineSpan
 #print axioms MOR34.returned_affine_basis_exists
+
+#print axioms MOR34.linear_bound_convexHull
+#print axioms MOR34.supporting_hull_eq
+#print axioms MOR34.supporting_level_extreme
