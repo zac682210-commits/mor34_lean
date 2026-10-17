@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.positiveCandidateValues_image',
+    'MOR34.positiveCandidateValues_card',
+    'MOR34.zeroClass_card_le_one',
+    'MOR34.coefficient_class_parameter_bound',
+    'MOR34.coefficient_classes_le_items',
+
+    'MOR34.finiteBasisRankCalls_le',
+    'MOR34.returned_basis_rank_calls',
+
     'MOR34.pivotNormal_mem_ker',
     'MOR34.pivot_kernel_free_injective',
     'MOR34.pivotNormals_span',

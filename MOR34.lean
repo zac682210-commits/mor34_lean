@@ -110,3 +110,5 @@ import MOR34.FaceEdgeCases
 import MOR34.CramerBounds
 import MOR34.BoundedPivotNormals
 import MOR34.PivotNormalSpan
+import MOR34.BasisRankCalls
+import MOR34.ParameterCount

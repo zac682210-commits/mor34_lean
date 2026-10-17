@@ -422,3 +422,12 @@ import MOR34
 #print axioms MOR34.pivotNormal_mem_ker
 #print axioms MOR34.pivot_kernel_free_injective
 #print axioms MOR34.pivotNormals_span
+
+#print axioms MOR34.finiteBasisRankCalls_le
+#print axioms MOR34.returned_basis_rank_calls
+
+#print axioms MOR34.positiveCandidateValues_image
+#print axioms MOR34.positiveCandidateValues_card
+#print axioms MOR34.zeroClass_card_le_one
+#print axioms MOR34.coefficient_class_parameter_bound
+#print axioms MOR34.coefficient_classes_le_items
