@@ -257,3 +257,8 @@ import MOR34
 #print axioms MOR34.exchange_iff_forced_epigraph
 
 #print axioms MOR34.oracle_cell_basis_selection
+
+#print axioms MOR34.descendingSearch_calls_le
+#print axioms MOR34.descendingSearch_none
+#print axioms MOR34.descendingSearch_max
+#print axioms MOR34.descendingSearch_exists

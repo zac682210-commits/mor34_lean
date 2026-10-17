@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.descendingSearch_calls_le',
+    'MOR34.descendingSearch_none',
+    'MOR34.descendingSearch_max',
+    'MOR34.descendingSearch_exists',
+
     'MOR34.oracle_cell_basis_selection',
     'MOR34.exchange_iff_forced_epigraph',
     'MOR34.forced_feasible_epigraph',
