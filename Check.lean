@@ -440,3 +440,8 @@ import MOR34
 #print axioms MOR34.normalizedPipeline_dimension
 
 #print axioms MOR34.independent_rows_pivot_minor
+
+#print axioms MOR34.columnNormal_pairing
+#print axioms MOR34.integerRowSpan_iff
+#print axioms MOR34.column_cramer_pair
+#print axioms MOR34.columnNormals_describe

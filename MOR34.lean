@@ -115,3 +115,4 @@ import MOR34.ParameterCount
 import MOR34.PivotNormalBits
 import MOR34.SignedDimension
 import MOR34.PivotMinorExistence
+import MOR34.ColumnNormals
