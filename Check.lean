@@ -247,3 +247,9 @@ import MOR34
 #print axioms MOR34.forcedPairPrefix_epigraph
 
 #print axioms MOR34.real_affine_basis_from_linear_oracle
+
+#print axioms MOR34.forcedSet_pattern
+#print axioms MOR34.counts_forcedSet
+#print axioms MOR34.forced_count_bounds
+#print axioms MOR34.forcedSet_minimal
+#print axioms MOR34.exchange_iff_forced_counts
