@@ -438,3 +438,5 @@ import MOR34
 
 #print axioms MOR34.correct_output_dimension
 #print axioms MOR34.normalizedPipeline_dimension
+
+#print axioms MOR34.independent_rows_pivot_minor

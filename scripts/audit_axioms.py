@@ -7,6 +7,7 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.independent_rows_pivot_minor',
     'MOR34.correct_output_dimension',
     'MOR34.normalizedPipeline_dimension',
 
