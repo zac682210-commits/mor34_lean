@@ -76,7 +76,14 @@ def violationRow (P : Model m) : ViolationRow m → CountInequality q
 theorem violationRows_iff (P : Model m) (z y : Fin q → ℤ) :
     (∀ k : ViolationRow m, (violationRow P k).Holds z y) ↔
       FeasibleCountEpigraph P z y ∧ P.rhs + 1 ≤ ∑ j, P.coefficient j * z j := by
-  simp only [Sum.forall, violationRow, forall_const, feasibleRows_iff, violationInequality_iff]
+  constructor
+  · intro h
+    exact ⟨(feasibleRows_iff P z y).mp (fun k => h (Sum.inl k)),
+      (violationInequality_iff P z y).mp (h (Sum.inr ()))⟩
+  · rintro ⟨hf, hv⟩ k
+    cases k with
+    | inl k => exact (feasibleRows_iff P z y).mpr hf k
+    | inr u => exact (violationInequality_iff P z y).mpr hv
 
 theorem feasibleEpigraph_decode (P : Model m) (hWF : WellFormed P) (z y : Fin q → ℤ)
     (h : FeasibleCountEpigraph P z y) :
