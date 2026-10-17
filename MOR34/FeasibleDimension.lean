@@ -1,5 +1,6 @@
 import MOR34.AugmentedDimension
 import MOR34.TightDimension
+import Mathlib.Analysis.Convex.Hull
 
 namespace MOR34
 variable {q : ℕ} {m : Fin q → ℕ}
@@ -42,6 +43,20 @@ theorem feasiblePointSet_affineSpan (P : Model m) (hWF : WellFormed P) :
 theorem feasiblePointSet_finrank (P : Model m) (hWF : WellFormed P) :
     Module.finrank ℝ (vectorSpan ℝ (feasiblePointSet P)) = Fintype.card (Item m) := by
   rw [feasiblePointSet_vectorSpan P hWF, finrank_top]
+  simp
+
+/-- The original binary knapsack polytope, as the convex hull of feasible points. -/
+def knapsackPolytope (P : Model m) : Set (Item m → ℝ) := convexHull ℝ (feasiblePointSet P)
+
+theorem knapsackPolytope_affineSpan (P : Model m) (hWF : WellFormed P) :
+    affineSpan ℝ (knapsackPolytope P) = ⊤ := by
+  rw [knapsackPolytope, affineSpan_convexHull, feasiblePointSet_affineSpan P hWF]
+
+theorem knapsackPolytope_finrank (P : Model m) (hWF : WellFormed P) :
+    Module.finrank ℝ (vectorSpan ℝ (knapsackPolytope P)) = Fintype.card (Item m) := by
+  have hh := AffineSubspace.vectorSpan_eq_top_of_affineSpan_eq_top
+    ℝ (Item m → ℝ) (Item m → ℝ) (knapsackPolytope_affineSpan P hWF)
+  rw [hh, finrank_top]
   simp
 
 end MOR34

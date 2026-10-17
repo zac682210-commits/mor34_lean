@@ -344,3 +344,5 @@ import MOR34
 #print axioms MOR34.computed_edge_has_witness
 #print axioms MOR34.computedEdgeWitness_result
 #print axioms MOR34.computedEdgeWitness_pair
+#print axioms MOR34.knapsackPolytope_affineSpan
+#print axioms MOR34.knapsackPolytope_finrank

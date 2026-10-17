@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.knapsackPolytope_affineSpan',
+    'MOR34.knapsackPolytope_finrank',
+
     'MOR34.computed_edge_has_witness',
     'MOR34.computedEdgeWitness_result',
     'MOR34.computedEdgeWitness_pair',
