@@ -1,5 +1,6 @@
 import MOR34.LinearOracle
 import Mathlib.RingTheory.Localization.Integer
+import Mathlib.RingTheory.Localization.FractionRing
 import Mathlib.Algebra.Algebra.Rat
 import Mathlib.LinearAlgebra.Quotient.Basic
 import Mathlib.LinearAlgebra.Pi

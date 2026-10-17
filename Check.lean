@@ -213,3 +213,8 @@ import MOR34
 #print axioms MOR34.bounded_integer_forms_exist
 #print axioms MOR34.bounded_integer_forms_family
 #print axioms MOR34.count_basis_from_linear_oracle
+
+#print axioms MOR34.affineSpan_of_augment_mem
+#print axioms MOR34.rational_selectedSpan_to_real
+#print axioms MOR34.countReal_affineSpan_of_rational_span
+#print axioms MOR34.real_count_basis_from_linear_oracle

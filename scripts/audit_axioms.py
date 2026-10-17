@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.affineSpan_of_augment_mem',
+    'MOR34.rational_selectedSpan_to_real',
+    'MOR34.countReal_affineSpan_of_rational_span',
+    'MOR34.real_count_basis_from_linear_oracle',
+
     'MOR34.finite_rational_integer_multiple',
     'MOR34.count_functional_coefficients',
     'MOR34.integer_form_of_functional',
