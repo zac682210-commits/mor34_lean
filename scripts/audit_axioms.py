@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.mem_allFinFunctions',
+    'MOR34.allFinFunctions_length',
+    'MOR34.pivotSearch_sound',
+    'MOR34.pivotSearch_complete',
+    'MOR34.pivotSearch_calls',
+
     'MOR34.boundedPipeline_correct',
 
     'MOR34.countSearch_forms_bounded',

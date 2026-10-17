@@ -67,7 +67,9 @@ theorem bounded_matrix_normals {κ ι : Type} [Fintype κ] [Fintype ι] [Decidab
         exact ⟨e i, rfl⟩
       · rintro ⟨i, rfl⟩
         refine ⟨e.symm i, ?_⟩
-        simp [R, Matrix.row, Matrix.map, Function.comp_def]
+        funext j
+        change (M (a (e (e.symm i))) j : ℚ) = (M (a i) j : ℚ)
+        rw [e.apply_symm_apply]
     rw [integerRowSpan, he, hspan]
   obtain ⟨c, hc⟩ := independent_integer_rows_pivot R hR
   refine ⟨columnNormal R c, ?_, ?_⟩

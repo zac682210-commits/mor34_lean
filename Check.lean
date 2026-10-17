@@ -476,3 +476,9 @@ import MOR34
 #print axioms MOR34.boundedCellSelection_query_bounds
 
 #print axioms MOR34.boundedPipeline_correct
+
+#print axioms MOR34.mem_allFinFunctions
+#print axioms MOR34.allFinFunctions_length
+#print axioms MOR34.pivotSearch_sound
+#print axioms MOR34.pivotSearch_complete
+#print axioms MOR34.pivotSearch_calls
