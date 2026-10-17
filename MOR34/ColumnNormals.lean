@@ -40,6 +40,8 @@ theorem column_cramer_pair (M : Matrix (Fin r) ι ℤ) (c : Fin r ↪ ι)
       (∑ l, (M i (c l) : ℚ) * ((M.submatrix id c).cramer (fun a => M a j) l : ℚ)) =
         ((M.submatrix id c).det : ℚ) * (M i j : ℚ) := by
     have hh := congrFun (Matrix.mulVec_cramer (M.submatrix id c) (fun a => M a j)) i
+    simp only [Matrix.mulVec, dotProduct, Pi.smul_apply, smul_eq_mul,
+      Matrix.submatrix_apply, id_eq] at hh
     exact_mod_cast hh
   simp only [Finset.sum_mul, mul_assoc]
   rw [Finset.sum_comm]

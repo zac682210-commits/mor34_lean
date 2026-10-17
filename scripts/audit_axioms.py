@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.injective_coordinate_sum_bound',
+    'MOR34.columnNormal_bound',
+    'MOR34.columnNormal_uniform_bound',
+
     'MOR34.columnNormal_pairing',
     'MOR34.integerRowSpan_iff',
     'MOR34.column_cramer_pair',

@@ -445,3 +445,7 @@ import MOR34
 #print axioms MOR34.integerRowSpan_iff
 #print axioms MOR34.column_cramer_pair
 #print axioms MOR34.columnNormals_describe
+
+#print axioms MOR34.injective_coordinate_sum_bound
+#print axioms MOR34.columnNormal_bound
+#print axioms MOR34.columnNormal_uniform_bound
