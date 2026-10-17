@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.independent_rows_pivot_columns',
+    'MOR34.independent_integer_rows_pivot',
+    'MOR34.bounded_matrix_normals',
+
     'MOR34.injective_coordinate_sum_bound',
     'MOR34.columnNormal_bound',
     'MOR34.columnNormal_uniform_bound',

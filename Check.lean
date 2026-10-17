@@ -449,3 +449,7 @@ import MOR34
 #print axioms MOR34.injective_coordinate_sum_bound
 #print axioms MOR34.columnNormal_bound
 #print axioms MOR34.columnNormal_uniform_bound
+
+#print axioms MOR34.independent_rows_pivot_columns
+#print axioms MOR34.independent_integer_rows_pivot
+#print axioms MOR34.bounded_matrix_normals

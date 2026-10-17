@@ -117,3 +117,4 @@ import MOR34.SignedDimension
 import MOR34.PivotMinorExistence
 import MOR34.ColumnNormals
 import MOR34.ColumnNormalBounds
+import MOR34.BoundedMatrixNormals
