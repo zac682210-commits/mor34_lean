@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.magnitudeBits_le_of_power_bound',
+    'MOR34.pivotNormal_magnitudeBits',
+    'MOR34.pivotNormal_logarithmic_bits',
+
     'MOR34.positiveCandidateValues_image',
     'MOR34.positiveCandidateValues_card',
     'MOR34.zeroClass_card_le_one',

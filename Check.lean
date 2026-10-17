@@ -431,3 +431,7 @@ import MOR34
 #print axioms MOR34.zeroClass_card_le_one
 #print axioms MOR34.coefficient_class_parameter_bound
 #print axioms MOR34.coefficient_classes_le_items
+
+#print axioms MOR34.magnitudeBits_le_of_power_bound
+#print axioms MOR34.pivotNormal_magnitudeBits
+#print axioms MOR34.pivotNormal_logarithmic_bits
