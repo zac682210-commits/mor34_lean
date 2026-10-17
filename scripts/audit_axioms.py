@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.positiveQuery_bound',
+    'MOR34.negativeQuery_bound',
+    'MOR34.outsideQueries_bound',
+    'MOR34.query_parity_row',
+    'MOR34.query_parity_bound',
+
     'MOR34.mem_allFinFunctions',
     'MOR34.allFinFunctions_length',
     'MOR34.pivotSearch_sound',

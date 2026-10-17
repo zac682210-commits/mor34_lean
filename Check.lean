@@ -482,3 +482,9 @@ import MOR34
 #print axioms MOR34.pivotSearch_sound
 #print axioms MOR34.pivotSearch_complete
 #print axioms MOR34.pivotSearch_calls
+
+#print axioms MOR34.positiveQuery_bound
+#print axioms MOR34.negativeQuery_bound
+#print axioms MOR34.outsideQueries_bound
+#print axioms MOR34.query_parity_row
+#print axioms MOR34.query_parity_bound
