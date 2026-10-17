@@ -195,3 +195,14 @@ import MOR34
 #print axioms MOR34.basisSearch_spans
 #print axioms MOR34.basisSearch_from_empty
 #print axioms MOR34.countBasisSearch_correct
+
+#print axioms MOR34.firstWitness_some
+#print axioms MOR34.firstWitness_none
+#print axioms MOR34.firstWitness_calls_le
+#print axioms MOR34.positiveQuery_iff
+#print axioms MOR34.negativeQuery_iff
+#print axioms MOR34.outsideQueries_length
+#print axioms MOR34.linearSpanOracle_spec
+#print axioms MOR34.linearSpanOracle_calls_le
+#print axioms MOR34.linearBasisCalls_le
+#print axioms MOR34.linear_count_basis_correct

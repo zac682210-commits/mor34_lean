@@ -54,3 +54,5 @@ import MOR34.LinearEncoding
 import MOR34.ParityLinearEncoding
 
 import MOR34.OracleBasis
+
+import MOR34.LinearOracle

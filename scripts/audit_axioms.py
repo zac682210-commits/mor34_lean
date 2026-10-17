@@ -7,6 +7,17 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.firstWitness_some',
+    'MOR34.firstWitness_none',
+    'MOR34.firstWitness_calls_le',
+    'MOR34.positiveQuery_iff',
+    'MOR34.negativeQuery_iff',
+    'MOR34.outsideQueries_length',
+    'MOR34.linearSpanOracle_spec',
+    'MOR34.linearSpanOracle_calls_le',
+    'MOR34.linearBasisCalls_le',
+    'MOR34.linear_count_basis_correct',
+
     'MOR34.basisSearch_card',
     'MOR34.basisSearch_calls_le',
     'MOR34.basisSearch_subset',
