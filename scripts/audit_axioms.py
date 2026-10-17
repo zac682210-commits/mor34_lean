@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.pairAllowed_card',
+    'MOR34.forcedPairPrefix_pattern',
+    'MOR34.forcedPairPrefix_card',
+    'MOR34.forcedPairPrefix_minimal',
+    'MOR34.forcedPairPrefix_cost',
+
+    'MOR34.restrictionIndices_map',
+    'MOR34.restrictionIndices_card',
+    'MOR34.restrictedPrefix_subset',
+    'MOR34.restrictedPrefix_card',
+    'MOR34.restrictedPrefix_minimal',
+    'MOR34.restrictedPrefix_cost',
+
     'MOR34.basisSearch_independent',
     'MOR34.rational_row_independent',
     'MOR34.rational_augmented_independent_to_real',

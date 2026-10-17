@@ -229,3 +229,16 @@ import MOR34
 #print axioms MOR34.rational_augmented_independent_to_real
 #print axioms MOR34.affineIndependent_of_augmented
 #print axioms MOR34.real_count_search_independent
+
+#print axioms MOR34.restrictionIndices_map
+#print axioms MOR34.restrictionIndices_card
+#print axioms MOR34.restrictedPrefix_subset
+#print axioms MOR34.restrictedPrefix_card
+#print axioms MOR34.restrictedPrefix_minimal
+#print axioms MOR34.restrictedPrefix_cost
+
+#print axioms MOR34.pairAllowed_card
+#print axioms MOR34.forcedPairPrefix_pattern
+#print axioms MOR34.forcedPairPrefix_card
+#print axioms MOR34.forcedPairPrefix_minimal
+#print axioms MOR34.forcedPairPrefix_cost

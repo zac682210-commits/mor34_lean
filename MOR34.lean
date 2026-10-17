@@ -64,3 +64,7 @@ import MOR34.CountBasisBridge
 import MOR34.CountValidation
 
 import MOR34.BasisIndependence
+
+import MOR34.RestrictedPrefix
+
+import MOR34.ForcedPairPrefix
