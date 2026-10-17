@@ -45,7 +45,7 @@ def IntegerQuery.asCountRow (a : IntegerQuery q) : CountInequality q :=
 
 theorem query_parity_row (a : IntegerQuery q) (ε : Fin q → Fin 2) :
     (a.parityTransform ε).asCountRow = a.asCountRow.withParity ε := by
-  ext j <;> simp [IntegerQuery.parityTransform, IntegerQuery.asCountRow,
+  simp [IntegerQuery.parityTransform, IntegerQuery.asCountRow,
     CountInequality.withParity, Int.cast_sum, mul_comm]
 
 theorem query_parity_bound (a : IntegerQuery q) (ε : Fin q → Fin 2)

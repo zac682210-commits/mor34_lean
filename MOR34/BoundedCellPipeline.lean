@@ -28,8 +28,9 @@ theorem countSearch_forms_bounded (C : Set (Counts q))
       simp only [he]
       apply ih
       intro x hx
+      have hz := ((linearSpanOracle_spec C solve hs boundedCountForms boundedCountForms_spec).found B z he).1
       rcases Finset.mem_insert.mp hx with rfl | hx
-      · exact ((linearSpanOracle_spec C solve hs boundedCountForms boundedCountForms_spec).found B z he).1
+      · exact hz
       · exact hB hx
 
 /-- The actual cell searches now use the bounded family, not the earlier quotient-normal choice. -/

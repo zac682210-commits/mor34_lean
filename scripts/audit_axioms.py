@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.relabel_weight_sum',
+    'MOR34.relabel_candidate_sum',
+    'MOR34.relabel_feasible',
+    'MOR34.relabel_tight',
+    'MOR34.relabel_valid',
+
     'MOR34.normalized_model_exists',
     'MOR34.sortItems_class',
     'MOR34.sortGrouped_wellFormed',

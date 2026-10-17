@@ -506,3 +506,9 @@ import MOR34
 #print axioms MOR34.sortGrouped_valid
 
 #print axioms MOR34.normalized_model_exists
+
+#print axioms MOR34.relabel_weight_sum
+#print axioms MOR34.relabel_candidate_sum
+#print axioms MOR34.relabel_feasible
+#print axioms MOR34.relabel_tight
+#print axioms MOR34.relabel_valid
