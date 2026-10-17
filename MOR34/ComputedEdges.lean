@@ -30,6 +30,8 @@ theorem adjacentPair_card (m : Fin q → ℕ) :
   change (⟨j, u⟩ : Item m) = ⟨k, w⟩ at he
   obtain ⟨rfl, he⟩ := Sigma.mk.inj_iff.mp he
   cases he
+  have h1 : u.val + 1 = v.val := h
+  have h2 : u.val + 1 = t.val := h'
   have hv : v = t := Fin.ext (by omega)
   subst t
   rfl
