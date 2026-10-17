@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.coordinateLower_iff',
+    'MOR34.coordinateUpper_iff',
+    'MOR34.maximumThreshold_spec',
+    'MOR34.minimumThreshold_spec',
+    'MOR34.maximumSearch_spec',
+    'MOR34.minimumSearch_spec',
+    'MOR34.maximumSearch_exists',
+    'MOR34.minimumSearch_exists',
+    'MOR34.extremaSearchCalls_le',
+
     'MOR34.descendingSearch_calls_le',
     'MOR34.descendingSearch_none',
     'MOR34.descendingSearch_max',

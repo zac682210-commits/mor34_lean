@@ -74,3 +74,5 @@ import MOR34.ExchangeEncoding
 import MOR34.OracleCellBases
 
 import MOR34.ThresholdSearch
+
+import MOR34.CoordinateSearch

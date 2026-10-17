@@ -262,3 +262,13 @@ import MOR34
 #print axioms MOR34.descendingSearch_none
 #print axioms MOR34.descendingSearch_max
 #print axioms MOR34.descendingSearch_exists
+
+#print axioms MOR34.coordinateLower_iff
+#print axioms MOR34.coordinateUpper_iff
+#print axioms MOR34.maximumThreshold_spec
+#print axioms MOR34.minimumThreshold_spec
+#print axioms MOR34.maximumSearch_spec
+#print axioms MOR34.minimumSearch_spec
+#print axioms MOR34.maximumSearch_exists
+#print axioms MOR34.minimumSearch_exists
+#print axioms MOR34.extremaSearchCalls_le
