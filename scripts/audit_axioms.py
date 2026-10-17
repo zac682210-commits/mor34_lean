@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.finite_rational_integer_multiple',
+    'MOR34.count_functional_coefficients',
+    'MOR34.integer_form_of_functional',
+    'MOR34.bounded_integer_forms_exist',
+    'MOR34.bounded_integer_forms_family',
+    'MOR34.count_basis_from_linear_oracle',
+
     'MOR34.firstWitness_some',
     'MOR34.firstWitness_none',
     'MOR34.firstWitness_calls_le',

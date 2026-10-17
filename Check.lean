@@ -206,3 +206,10 @@ import MOR34
 #print axioms MOR34.linearSpanOracle_calls_le
 #print axioms MOR34.linearBasisCalls_le
 #print axioms MOR34.linear_count_basis_correct
+
+#print axioms MOR34.finite_rational_integer_multiple
+#print axioms MOR34.count_functional_coefficients
+#print axioms MOR34.integer_form_of_functional
+#print axioms MOR34.bounded_integer_forms_exist
+#print axioms MOR34.bounded_integer_forms_family
+#print axioms MOR34.count_basis_from_linear_oracle
