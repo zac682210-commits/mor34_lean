@@ -29,7 +29,7 @@ theorem forced_count_bounds (j : Fin q) (u v : Fin (m j)) (S : Finset (Item m))
     (hu : (⟨j, u⟩ : Item m) ∉ S) (hv : (⟨j, v⟩ : Item m) ∈ S) :
     1 ≤ counts S j ∧ counts S j ≤ m j - 1 := by
   rw [counts_classSlice]
-  have hp : 0 < (classSlice S j).card := Finset.card_pos.mpr ⟨v, mem_classSlice S j v |>.mpr hv⟩
+  have hp : 0 < (classSlice S j).card := Finset.card_pos.mpr ⟨v, (mem_classSlice S j v).mpr hv⟩
   have hsub : classSlice S j ⊆ Finset.univ.erase u := by
     intro x hx
     simp only [Finset.mem_erase, Finset.mem_univ, and_true]
@@ -80,5 +80,62 @@ theorem exchange_iff_forced_counts (P : Model m) (hWF : WellFormed P)
     refine ⟨huv, forcedSet j u v z, ⟨hw, ?_⟩, hp.1, hp.2⟩
     rw [candidateValue_counts, hc]
     exact he
+
+/-- Explicit epigraph inequalities for the original global forced witness. -/
+def ForcedEpigraph (P : Model m) (j : Fin q) (u v : Fin (m j))
+    (z : Counts q) (y : Fin q → ℤ) : Prop :=
+  (((pairAllowed u v).card = 0 → P.weight ⟨j, v⟩ ≤ y j) ∧
+    ∀ a : Fin (pairAllowed u v).card,
+      P.weight ⟨j, v⟩ + prefixLine
+        (fun i => P.weight ⟨j, (pairAllowed u v).orderEmbOfFin rfl i⟩)
+        a ((z j - 1 : ℕ) : ℤ) ≤ y j) ∧
+  (∀ k, k ≠ j → ∀ a : Fin (m k),
+    prefixLine (fun i => P.weight ⟨k, i⟩) a (z k : ℤ) ≤ y k) ∧
+  (∑ k, y k) ≤ P.capacity
+
+theorem forced_feasible_epigraph (P : Model m) (hWF : WellFormed P)
+    (j : Fin q) (u v : Fin (m j)) (huv : u ≠ v) (z : Counts q)
+    (hz : BoundedCounts (m := m) z) (hl : 1 ≤ z j) (hu : z j ≤ m j - 1) :
+    weightSum P (forcedSet j u v z) ≤ P.capacity ↔
+      ∃ y : Fin q → ℤ, ForcedEpigraph P j u v z y := by
+  have hcost : weightSum P (forcedSet j u v z) =
+      ∑ k, ∑ x ∈ forcedFamily j u v z k, P.weight ⟨k, x⟩ := sum_assemble _ _
+  have hj (y : ℤ) := forcedPairPrefix_epigraph u v huv (z j) hl hu
+    (fun x => P.weight ⟨j, x⟩) (hWF.2.2.2.2.2.2.2 j) y
+  rw [hcost]
+  constructor
+  · intro hb
+    refine ⟨fun k => ∑ x ∈ forcedFamily j u v z k, P.weight ⟨k, x⟩, ?_, ?_, hb⟩
+    · apply (hj _).mp
+      simp [forcedFamily]
+    · intro k hk a
+      simpa [forcedFamily, hk, prefixCost] using
+        prefixLine_le (fun i => P.weight ⟨k, i⟩) (hWF.2.2.2.2.2.2.2 k) (hz k) a
+  · rintro ⟨y, hj', hk', hb⟩
+    apply le_trans _ hb
+    apply Finset.sum_le_sum
+    intro k _
+    by_cases hk : k = j
+    · subst k
+      simpa [forcedFamily] using (hj (y j)).mpr hj'
+    · have hh := (prefix_epigraph_iff (fun i => P.weight ⟨k, i⟩)
+        (hWF.2.2.2.2.2.2.2 k) (hWF.2.1 k) (hz k) (y k)).mpr (hk' k hk)
+      simpa [forcedFamily, hk, prefixCost] using hh
+
+/-- Feasibility of the forced epigraph is exactly the original exchange relation. -/
+theorem exchange_iff_forced_epigraph (P : Model m) (hWF : WellFormed P)
+    (j : Fin q) (u v : Fin (m j)) :
+    Exchange P j u v ↔ u < v ∧ ∃ z : Counts q,
+      BoundedCounts (m := m) z ∧ 1 ≤ z j ∧ z j ≤ m j - 1 ∧
+      (∑ k, (z k : ℤ) * P.coefficient k) = P.rhs ∧
+      ∃ y : Fin q → ℤ, ForcedEpigraph P j u v z y := by
+  rw [exchange_iff_forced_counts P hWF j u v]
+  constructor
+  · rintro ⟨huv, z, hz, hl, hu, hw, he⟩
+    exact ⟨huv, z, hz, hl, hu, he,
+      (forced_feasible_epigraph P hWF j u v (ne_of_lt huv) z hz hl hu).mp hw⟩
+  · rintro ⟨huv, z, hz, hl, hu, he, hy⟩
+    exact ⟨huv, z, hz, hl, hu,
+      (forced_feasible_epigraph P hWF j u v (ne_of_lt huv) z hz hl hu).mpr hy, he⟩
 
 end MOR34

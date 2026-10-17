@@ -7,6 +7,8 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.exchange_iff_forced_epigraph',
+    'MOR34.forced_feasible_epigraph',
     'MOR34.forcedSet_pattern',
     'MOR34.counts_forcedSet',
     'MOR34.forced_count_bounds',
