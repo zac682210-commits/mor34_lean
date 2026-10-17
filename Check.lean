@@ -400,3 +400,16 @@ import MOR34
 
 #print axioms MOR34.builtSelection_exists
 #print axioms MOR34.normalizedPipeline_correct
+
+#print axioms MOR34.codimensionOneFace_ne
+#print axioms MOR34.tightPointSet_candidate
+#print axioms MOR34.zero_candidate_all_tight
+#print axioms MOR34.zero_candidate_valid
+#print axioms MOR34.zero_candidate_not_facet
+#print axioms MOR34.valid_empty_not_facet
+
+#print axioms MOR34.integer_det_bound
+#print axioms MOR34.integer_cramer_bound
+#print axioms MOR34.cramerNormal_kernel
+#print axioms MOR34.cramerNormal_nonzero
+#print axioms MOR34.cramerNormal_bound

@@ -106,3 +106,5 @@ import MOR34.FiniteBasisSearch
 import MOR34.BinaryPointBasis
 import MOR34.ReturnedBasisSize
 import MOR34.NormalizedPipeline
+import MOR34.FaceEdgeCases
+import MOR34.CramerBounds

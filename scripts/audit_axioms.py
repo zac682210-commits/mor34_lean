@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.integer_det_bound',
+    'MOR34.integer_cramer_bound',
+    'MOR34.cramerNormal_kernel',
+    'MOR34.cramerNormal_nonzero',
+    'MOR34.cramerNormal_bound',
+
+    'MOR34.codimensionOneFace_ne',
+    'MOR34.tightPointSet_candidate',
+    'MOR34.zero_candidate_all_tight',
+    'MOR34.zero_candidate_valid',
+    'MOR34.zero_candidate_not_facet',
+    'MOR34.valid_empty_not_facet',
+
     'MOR34.builtSelection_exists',
     'MOR34.normalizedPipeline_correct',
 
