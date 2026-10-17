@@ -16,8 +16,14 @@ theorem forcedOrdinaryRow_iff (P : Model m) (j k : Fin q) (a : Fin (m k))
   · simp [forcedOrdinaryRow, hk, integerRow_iff]
   · simp only [forcedOrdinaryRow, hk, ite_false, integerRow_iff,
       integerPick_sum, neg_one_mul, not_false_eq_true, true_implies]
-    unfold prefixLine
-    constructor <;> intro h <;> nlinarith
+    constructor
+    · intro h _
+      dsimp [prefixLine]
+      nlinarith
+    · intro h
+      have hh := h hk
+      dsimp [prefixLine] at hh
+      nlinarith
 
 abbrev ForcedRow (m : Fin q → ℕ) (j : Fin q) (u v : Fin (m j)) :=
   ((Fin q ⊕ Fin q) ⊕ (Fin 2 ⊕ Fin 2)) ⊕
