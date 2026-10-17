@@ -278,3 +278,10 @@ import MOR34
 #print axioms MOR34.searchedParityExtrema_lower_result
 #print axioms MOR34.searchedParityExtrema_upper_result
 #print axioms MOR34.all_parity_extrema_calls_le
+
+#print axioms MOR34.cellCoordinateQueries_iff
+#print axioms MOR34.cellQueries_iff
+#print axioms MOR34.cellQueries_length
+#print axioms MOR34.restrictedQueryOracle_spec
+#print axioms MOR34.parityCellOracle_spec
+#print axioms MOR34.unrestrictedQueryOracle_spec

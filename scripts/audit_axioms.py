@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.cellCoordinateQueries_iff',
+    'MOR34.cellQueries_iff',
+    'MOR34.cellQueries_length',
+    'MOR34.restrictedQueryOracle_spec',
+    'MOR34.parityCellOracle_spec',
+    'MOR34.unrestrictedQueryOracle_spec',
+
     'MOR34.maximumWitness_result',
     'MOR34.minimumWitness_result',
     'MOR34.searchedParityExtrema_lower_result',

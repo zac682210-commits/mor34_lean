@@ -72,7 +72,7 @@ theorem descendingSearch_exists (C : Set α) (score : α → ℕ) (solve : ℕ �
     (hs : ThresholdOracleSpec C score solve) (hn : C.Nonempty) (n : ℕ) :
     ∃ x, descendingSearch solve n = some x := by
   cases h : descendingSearch solve n with
-  | some x => exact ⟨x, h⟩
+  | some x => exact ⟨x, rfl⟩
   | none =>
     obtain ⟨x, hx⟩ := hn
     exact False.elim (descendingSearch_none C score solve hs n h x hx)
