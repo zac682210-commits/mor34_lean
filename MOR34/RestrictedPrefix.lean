@@ -51,7 +51,10 @@ theorem restrictedPrefix_minimal (R S : Finset α) (hS : S ⊆ R)
         ∑ i ∈ classPrefix R.card S.card, w (R.orderEmbOfFin rfl i) := Finset.sum_map _ _ _
     _ ≤ ∑ i ∈ restrictionIndices R S, w (R.orderEmbOfFin rfl i) := h
     _ = ∑ i ∈ S, w i := by
-      rw [← Finset.sum_map, restrictionIndices_map R S hS]
+      calc
+        _ = ∑ i ∈ (restrictionIndices R S).map (R.orderEmbOfFin rfl).toEmbedding, w i :=
+          (Finset.sum_map _ _ _).symm
+        _ = _ := by rw [restrictionIndices_map R S hS]
 
 theorem restrictedPrefix_cost (R : Finset α) (k : ℕ) (w : α → ℤ) :
     (∑ i ∈ restrictedPrefix R k, w i) = prefixCost (fun i => w (R.orderEmbOfFin rfl i)) k := by

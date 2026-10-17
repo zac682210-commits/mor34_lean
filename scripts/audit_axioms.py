@@ -7,6 +7,7 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.real_affine_basis_from_linear_oracle',
     'MOR34.prefix_epigraph_all_sizes',
     'MOR34.forcedPairPrefix_epigraph',
 

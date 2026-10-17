@@ -30,10 +30,10 @@ theorem rational_row_independent {ι κ : Type*} [Fintype ι] [Fintype κ]
   classical
   apply linearIndependent_iff_card_eq_finrank_span.mpr
   change Fintype.card ι = Module.finrank ℝ (Submodule.span ℝ (Set.range (A.map (Rat.castHom ℝ))))
-  rw [← Matrix.rank_eq_finrank_span_row, rational_matrix_rank]
+  rw [← Matrix.rank_eq_finrank_span_row (A.map (Rat.castHom ℝ)), rational_matrix_rank]
   have h := linearIndependent_iff_card_eq_finrank_span.mp hA
   change Fintype.card ι = Module.finrank ℚ (Submodule.span ℚ (Set.range A)) at h
-  simpa only [Matrix.rank_eq_finrank_span_row] using h
+  simpa only [Matrix.rank_eq_finrank_span_row, Matrix.row] using h
 
 theorem rational_augmented_independent_to_real {q : ℕ} (B : Finset (Counts q))
     (hB : LinearIndepOn ℚ rationalCountPoint (B : Set (Counts q))) :
@@ -73,5 +73,26 @@ theorem real_count_search_independent {q : ℕ} (C : Set (Counts q))
   apply rational_augmented_independent_to_real
   apply basisSearch_independent C rationalCountPoint oracle ho
   simp
+
+end MOR34
+
+namespace MOR34
+
+/-- Full real affine-basis output and quadratic query count, relative to linear feasibility. -/
+theorem real_affine_basis_from_linear_oracle {q : ℕ} (C : Set (Counts q))
+    (solve : IntegerQuery q → Option (Counts q)) (hs : LinearOracleSpec C solve) :
+    ∃ forms : Finset (Counts q) → List (IntegerForm q),
+    let B := basisSearch (linearSpanOracle solve forms) (q + 1) ∅
+    (B : Set (Counts q)) ⊆ C ∧ B.card ≤ q + 1 ∧
+      AffineIndependent ℝ (fun z : B => countReal z.val) ∧
+      (∀ z ∈ C, countReal z ∈ affineSpan ℝ (countReal '' (B : Set (Counts q)))) ∧
+      linearBasisCalls solve forms (q + 1) ∅ ≤ 2 * (q + 1) ^ 2 := by
+  obtain ⟨forms, hf, hsize⟩ := bounded_integer_forms_family (q := q)
+  have ho := linearSpanOracle_spec C solve hs forms hf
+  have hc := linear_count_basis_correct C solve hs forms hf hsize
+  dsimp at hc
+  refine ⟨forms, hc.1, hc.2.1, real_count_search_independent C _ ho, ?_, hc.2.2.2⟩
+  intro z hz
+  exact countReal_affineSpan_of_rational_span _ z (hc.2.2.1 z hz)
 
 end MOR34
