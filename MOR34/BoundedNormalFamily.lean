@@ -27,7 +27,6 @@ theorem normalCoefficientBound_mono (q : ℕ) {N M : ℕ} (h : N ≤ M) :
     normalCoefficientBound q N ≤ normalCoefficientBound q M := by
   unfold normalCoefficientBound
   gcongr
-  exact_mod_cast h
 
 /-- A fixed choice of bounded normal forms for every finite count set.
 This retains classical pivot/row choices; an executable generator is separate. -/

@@ -44,13 +44,14 @@ theorem pivotSearch_sound {r d : ℕ} (M : Matrix (Fin r) (Fin d) ℤ)
     (c : Fin r ↪ Fin d) (hc : pivotSearch M detEval = some c) :
     (M.submatrix id c).det ≠ 0 := by
   obtain ⟨f, _, hf⟩ := firstWitness_some (tryPivot M detEval) (allFinFunctions r d) c hc
-  unfold tryPivot at hf
-  split_ifs at hf with hi hz
-  · simp at hf
-  · have he : (⟨f, hi⟩ : Fin r ↪ Fin d) = c := Option.some.inj hf
-    subst c
-    simpa [hd] using hz
-  · simp at hf
+  by_cases hi : Function.Injective f
+  · by_cases hz : detEval (M.submatrix id f) = 0
+    · simp [tryPivot, hi, hz] at hf
+    · have he : (⟨f, hi⟩ : Fin r ↪ Fin d) = c := by
+        simpa [tryPivot, hi, hz] using hf
+      subst c
+      simpa [hd] using hz
+  · simp [tryPivot, hi] at hf
 
 theorem pivotSearch_complete {r d : ℕ} (M : Matrix (Fin r) (Fin d) ℤ)
     (detEval : Matrix (Fin r) (Fin r) ℤ → ℤ) (hd : ∀ A, detEval A = A.det)
