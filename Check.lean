@@ -326,3 +326,7 @@ import MOR34
 #print axioms MOR34.forcedEmptyRow_iff
 #print axioms MOR34.forcedSlopeRow_counts
 #print axioms MOR34.integerForcedEpigraph_encode
+#print axioms MOR34.forcedOrdinaryRow_iff
+#print axioms MOR34.forcedRows_iff
+#print axioms MOR34.exchange_iff_forced_rows
+#print axioms MOR34.forcedRow_card

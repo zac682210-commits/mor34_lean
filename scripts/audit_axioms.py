@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.forcedOrdinaryRow_iff',
+    'MOR34.forcedRows_iff',
+    'MOR34.exchange_iff_forced_rows',
+    'MOR34.forcedRow_card',
+
     'MOR34.integerRow_iff',
     'MOR34.integerPick_sum',
     'MOR34.forcedSlopeRow_iff',
