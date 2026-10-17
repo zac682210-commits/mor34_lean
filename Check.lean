@@ -383,3 +383,13 @@ import MOR34
 #print axioms MOR34.computedRecognition_facet
 
 #print axioms MOR34.weighted_support_equality
+
+#print axioms MOR34.finiteSpanOracle_spec
+#print axioms MOR34.finite_basis_search
+#print axioms MOR34.outside_iff_rank_increases
+#print axioms MOR34.finite_rank_basis_search
+
+#print axioms MOR34.binaryPointMatrix_cast
+#print axioms MOR34.binaryPointMatrix_rank
+#print axioms MOR34.binaryBasisSearch_correct
+#print axioms MOR34.searched_returned_basis

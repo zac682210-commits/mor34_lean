@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.binaryPointMatrix_cast',
+    'MOR34.binaryPointMatrix_rank',
+    'MOR34.binaryBasisSearch_correct',
+    'MOR34.searched_returned_basis',
+
+    'MOR34.finiteSpanOracle_spec',
+    'MOR34.finite_basis_search',
+    'MOR34.outside_iff_rank_increases',
+    'MOR34.finite_rank_basis_search',
+
     'MOR34.weighted_support_equality',
     'MOR34.computedRecognition_correct',
     'MOR34.correct_output_facet',

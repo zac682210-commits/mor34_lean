@@ -102,3 +102,5 @@ import MOR34.SupportingHull
 import MOR34.FacetBridge
 import MOR34.ExecutedCells
 import MOR34.RecognitionCertificate
+import MOR34.FiniteBasisSearch
+import MOR34.BinaryPointBasis

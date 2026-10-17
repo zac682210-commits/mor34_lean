@@ -11,13 +11,13 @@ def executedCell (P : Model m) (hWF : WellFormed P)
     (hs : ParityRowSolverSpec P solve)
     (forms : Finset (Counts q) → List (IntegerForm q))
     (ε : Parity q) (mode : CellMode q) : Finset (Counts q) :=
-  match he : parityListSolver solve ε [] with
-  | none => ∅
-  | some z =>
+  if h : (parityListSolver solve ε []).isSome then
+    let z := (parityListSolver solve ε []).get h
     let hn : ∃ w, TightParity P ε w :=
-      ⟨z, ((parityListSolver_spec P hWF solve hs ε).found [] z he).1⟩
+      ⟨z, ((parityListSolver_spec P hWF solve hs ε).found [] z (Option.some_get h).symm).1⟩
     basisSearch (linearSpanOracle
       (rowCellOracle solve ε (rowSearchedExtrema P hWF solve hs ε hn) mode) forms) (q + 1) ∅
+  else ∅
 
 /-- The executable case split agrees with the structural selection, including empty parities. -/
 theorem executedCell_eq_selectionCell (P : Model m) (hWF : WellFormed P)
@@ -38,22 +38,21 @@ theorem executedCell_eq_selectionCell (P : Model m) (hWF : WellFormed P)
   | some z =>
     have hn : ∃ w, TightParity P i.1 w :=
       ⟨z, ((parityListSolver_spec P hWF solve hs i.1).found [] z he).1⟩
-    simp only [executedCell, he, selectionCell, dif_pos hn]
-    exact (hb i.1 hn i.2).symm
+    simpa [executedCell, he, selectionCell, hn] using (hb i.1 hn i.2).symm
 
 /-- One nonemptiness check per parity, hoisted outside the mode enumeration. -/
 noncomputable def executedParity (P : Model m) (hWF : WellFormed P)
     (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
     (hs : ParityRowSolverSpec P solve)
     (forms : Finset (Counts q) → List (IntegerForm q)) (ε : Parity q) : Finset (Counts q) :=
-  match he : parityListSolver solve ε [] with
-  | none => ∅
-  | some z =>
+  if h : (parityListSolver solve ε []).isSome then
+    let z := (parityListSolver solve ε []).get h
     let hn : ∃ w, TightParity P ε w :=
-      ⟨z, ((parityListSolver_spec P hWF solve hs ε).found [] z he).1⟩
+      ⟨z, ((parityListSolver_spec P hWF solve hs ε).found [] z (Option.some_get h).symm).1⟩
     let e := rowSearchedExtrema P hWF solve hs ε hn
     Finset.univ.biUnion (fun mode : CellMode q => basisSearch
       (linearSpanOracle (rowCellOracle solve ε e mode) forms) (q + 1) ∅)
+  else ∅
 
 theorem executedParity_eq_cells (P : Model m) (hWF : WellFormed P)
     (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
@@ -83,9 +82,9 @@ theorem executedSelection_eq (P : Model m) (hWF : WellFormed P)
     true_and, executedParity_eq_cells]
   constructor
   · rintro ⟨ε, hz⟩
-    obtain ⟨mode, _, hm⟩ := Finset.mem_biUnion.mp hz
+    obtain ⟨mode, hm⟩ := hz
     exact ⟨(ε, mode), by rwa [← executedCell_eq_selectionCell P hWF solve hs forms S hb]⟩
   · rintro ⟨i, hi⟩
-    refine ⟨i.1, Finset.mem_biUnion.mpr ⟨i.2, Finset.mem_univ _, ?_⟩⟩
+    refine ⟨i.1, i.2, ?_⟩
     rwa [executedCell_eq_selectionCell P hWF solve hs forms S hb]
 end MOR34
