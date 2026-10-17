@@ -60,7 +60,10 @@ theorem executedParity_eq_cells (P : Model m) (hWF : WellFormed P)
     (forms : Finset (Counts q) → List (IntegerForm q)) (ε : Parity q) :
     executedParity P hWF solve hs forms ε =
       Finset.univ.biUnion (fun mode : CellMode q => executedCell P hWF solve hs forms ε mode) := by
+  classical
   cases he : parityListSolver solve ε [] <;> simp [executedParity, executedCell, he]
+  ext z
+  simp
 
 noncomputable def executedSelection (P : Model m) (hWF : WellFormed P)
     (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
