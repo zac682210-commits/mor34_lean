@@ -71,6 +71,7 @@ theorem minimumSearch_spec (C : Set (Counts q))
   have hx := hb x hh.1
   have hz' := hb z hz
   have hi := hh.2 z hz
+  change n - z j ≤ n - x j at hi
   omega
 
 theorem maximumSearch_exists (C : Set (Counts q))
@@ -85,8 +86,8 @@ theorem minimumSearch_exists (C : Set (Counts q))
   descendingSearch_exists C _ _ (minimumThreshold_spec C solve hs j n hb) hn n
 
 def extremaSearchCalls {m : Fin q → ℕ} (solve : IntegerQuery q → Option (Counts q)) : ℕ :=
-  ∑ j, descendingSearchCalls (fun k => solve (coordinateLower j k)) (m j) +
-    descendingSearchCalls (fun k => solve (coordinateUpper j ((m j : ℤ) - (k : ℤ)))) (m j)
+  ∑ j, (descendingSearchCalls (fun k => solve (coordinateLower j k)) (m j) +
+    descendingSearchCalls (fun k => solve (coordinateUpper j ((m j : ℤ) - (k : ℤ)))) (m j))
 
 theorem extremaSearchCalls_le {m : Fin q → ℕ}
     (solve : IntegerQuery q → Option (Counts q)) :
