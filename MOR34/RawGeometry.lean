@@ -1,6 +1,7 @@
 import MOR34.RawTransport
 import MOR34.TightDimension
 import MOR34.SignedDimension
+import MOR34.BoundedNormalizedPipeline
 
 namespace MOR34
 variable {q n : ℕ} {m : Fin q → ℕ}
@@ -78,5 +79,20 @@ theorem relabel_signed_dimension (P : Model m) (hv : Valid P)
   · have hf : ¬ (candidateFace P).Nonempty := fun h => ht (hn.mp h)
     have hg : ¬ (rawTightPointSet a c P.capacity P.rhs).Nonempty := fun h => ht (hr.mp h)
     simp only [rawSignedDimension, candidateFaceDimension, if_neg hf, if_neg hg]
+
+/-- The computed signed dimension is now expressed using original binary tight points. -/
+theorem boundedPipeline_raw_dimension (P : Model m) (hWF : WellFormed P) (hv : Valid P)
+    (e : Item m ≃ Fin n) (a c : Fin n → ℤ)
+    (ha : ∀ i, P.weight i = a (e i)) (hc : ∀ i, P.coefficient i.1 = c (e i))
+    (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
+    (hs : ParityRowSolverSpec P solve)
+    (edgeSolve : (j : Fin q) → Fin (m j) → Fin (m j) → Option (IntegerRowSolution q))
+    (he : ForcedRowSolverSpec P edgeSolve)
+    (violate : Option (IntegerRowSolution q)) (hviol : ViolationSolverSpec P violate)
+    (ranker : ExactIntegerRank m) :
+    (boundedPipeline P hWF solve hs edgeSolve he violate ranker).decision.dimension =
+      some (rawSignedDimension a c P.capacity P.rhs) := by
+  rw [relabel_signed_dimension P hv e a c ha hc]
+  exact boundedPipeline_dimension P hWF hv solve hs edgeSolve he violate hviol ranker
 
 end MOR34

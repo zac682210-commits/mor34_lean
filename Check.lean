@@ -527,3 +527,5 @@ import MOR34
 
 #print axioms MOR34.relabel_tight_nonempty
 #print axioms MOR34.relabel_signed_dimension
+
+#print axioms MOR34.boundedPipeline_raw_dimension

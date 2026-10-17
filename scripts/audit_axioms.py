@@ -7,6 +7,7 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.boundedPipeline_raw_dimension',
     'MOR34.relabel_tight_nonempty',
     'MOR34.relabel_signed_dimension',
 
