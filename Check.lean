@@ -167,3 +167,14 @@ import MOR34
 #print axioms MOR34.prefix_epigraph_iff
 #print axioms MOR34.weightSum_prefixCost
 #print axioms MOR34.prefix_feasible_epigraph
+
+#print axioms MOR34.integerCountBounds_encode
+#print axioms MOR34.decodeCounts_bounded
+#print axioms MOR34.encode_decodeCounts
+#print axioms MOR34.decode_encodeCounts
+#print axioms MOR34.tight_prefix_epigraph
+#print axioms MOR34.restricted_count_epigraph
+#print axioms MOR34.restricted_linear_epigraph
+#print axioms MOR34.count_parity_substitution
+#print axioms MOR34.parity_restricted_epigraph
+#print axioms MOR34.epigraph_variable_count

@@ -7,6 +7,17 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.integerCountBounds_encode',
+    'MOR34.decodeCounts_bounded',
+    'MOR34.encode_decodeCounts',
+    'MOR34.decode_encodeCounts',
+    'MOR34.tight_prefix_epigraph',
+    'MOR34.restricted_count_epigraph',
+    'MOR34.restricted_linear_epigraph',
+    'MOR34.count_parity_substitution',
+    'MOR34.parity_restricted_epigraph',
+    'MOR34.epigraph_variable_count',
+
     'MOR34.prefixCost_shift',
     'MOR34.prefixLine_le',
     'MOR34.prefixCost_succ',
