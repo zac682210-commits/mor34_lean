@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.pickCoeff_sum',
+    'MOR34.prefixLine_rational_iff',
+    'MOR34.countRows_iff',
+    'MOR34.countRow_card',
+    'MOR34.exact_linear_count_encoding',
+
     'MOR34.integerCountBounds_encode',
     'MOR34.decodeCounts_bounded',
     'MOR34.encode_decodeCounts',

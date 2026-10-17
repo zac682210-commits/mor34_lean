@@ -48,3 +48,5 @@ import MOR34.RetainedMatrix
 import MOR34.PrefixEpigraph
 
 import MOR34.CountEncoding
+
+import MOR34.LinearEncoding

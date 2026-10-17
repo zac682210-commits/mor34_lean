@@ -178,3 +178,9 @@ import MOR34
 #print axioms MOR34.count_parity_substitution
 #print axioms MOR34.parity_restricted_epigraph
 #print axioms MOR34.epigraph_variable_count
+
+#print axioms MOR34.pickCoeff_sum
+#print axioms MOR34.prefixLine_rational_iff
+#print axioms MOR34.countRows_iff
+#print axioms MOR34.countRow_card
+#print axioms MOR34.exact_linear_count_encoding
