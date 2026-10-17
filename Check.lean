@@ -418,3 +418,7 @@ import MOR34
 #print axioms MOR34.pivotNormal_bound
 #print axioms MOR34.pivotNormal_independent
 #print axioms MOR34.factorial_power_bound
+
+#print axioms MOR34.pivotNormal_mem_ker
+#print axioms MOR34.pivot_kernel_free_injective
+#print axioms MOR34.pivotNormals_span

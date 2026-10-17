@@ -109,3 +109,4 @@ import MOR34.NormalizedPipeline
 import MOR34.FaceEdgeCases
 import MOR34.CramerBounds
 import MOR34.BoundedPivotNormals
+import MOR34.PivotNormalSpan
