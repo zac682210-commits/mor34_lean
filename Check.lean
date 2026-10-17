@@ -496,3 +496,11 @@ import MOR34
 #print axioms MOR34.boundedCountForms_bits
 #print axioms MOR34.boundedCountQueries_bound
 #print axioms MOR34.boundedParityQueries_bound
+
+#print axioms MOR34.sortItems_class
+#print axioms MOR34.sortGrouped_wellFormed
+#print axioms MOR34.sortGrouped_weightSum
+#print axioms MOR34.sortGrouped_candidateValue
+#print axioms MOR34.sortGrouped_feasible
+#print axioms MOR34.sortGrouped_tight
+#print axioms MOR34.sortGrouped_valid

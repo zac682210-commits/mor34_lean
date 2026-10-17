@@ -7,6 +7,14 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.sortItems_class',
+    'MOR34.sortGrouped_wellFormed',
+    'MOR34.sortGrouped_weightSum',
+    'MOR34.sortGrouped_candidateValue',
+    'MOR34.sortGrouped_feasible',
+    'MOR34.sortGrouped_tight',
+    'MOR34.sortGrouped_valid',
+
     'MOR34.boundedCountForms_bits',
     'MOR34.boundedCountQueries_bound',
     'MOR34.boundedParityQueries_bound',
