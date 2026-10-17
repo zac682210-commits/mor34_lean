@@ -311,3 +311,12 @@ import MOR34
 #print axioms MOR34.supportSearch_none_iff
 #print axioms MOR34.supportSearch_calls_le
 #print axioms MOR34.recognitionBranch_correct
+#print axioms MOR34.feasiblePointSet_zero
+#print axioms MOR34.feasiblePointSet_unit
+#print axioms MOR34.feasiblePointSet_vectorSpan
+#print axioms MOR34.feasiblePointSet_affineSpan
+#print axioms MOR34.feasiblePointSet_finrank
+#print axioms MOR34.rowCellCalls_le
+#print axioms MOR34.all_rowCellCalls_le
+#print axioms MOR34.rowSearchCalls_le
+#print axioms MOR34.cell_solver_row_count

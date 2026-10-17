@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.feasiblePointSet_zero',
+    'MOR34.feasiblePointSet_unit',
+    'MOR34.feasiblePointSet_vectorSpan',
+    'MOR34.feasiblePointSet_affineSpan',
+    'MOR34.feasiblePointSet_finrank',
+    'MOR34.rowCellCalls_le',
+    'MOR34.all_rowCellCalls_le',
+    'MOR34.rowSearchCalls_le',
+    'MOR34.cell_solver_row_count',
+
     'MOR34.violationRows_witness',
     'MOR34.violationSolver_none_iff',
     'MOR34.parityList_mem',
