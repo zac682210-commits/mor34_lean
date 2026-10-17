@@ -330,3 +330,7 @@ import MOR34
 #print axioms MOR34.forcedRows_iff
 #print axioms MOR34.exchange_iff_forced_rows
 #print axioms MOR34.forcedRow_card
+#print axioms MOR34.forcedRows_witness
+#print axioms MOR34.exchangeWitness_some
+#print axioms MOR34.exchangeWitness_none_iff
+#print axioms MOR34.exchangeDecision_iff

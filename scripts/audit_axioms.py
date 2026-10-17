@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.forcedRows_witness',
+    'MOR34.exchangeWitness_some',
+    'MOR34.exchangeWitness_none_iff',
+    'MOR34.exchangeDecision_iff',
+
     'MOR34.forcedOrdinaryRow_iff',
     'MOR34.forcedRows_iff',
     'MOR34.exchange_iff_forced_rows',
