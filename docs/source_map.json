@@ -192,16 +192,20 @@
         "L1",
         "L7"
       ],
-      "lean_target": "Exact validation/support and Exchange reductions; recursive cell-basis selection under attained-extrema and linear-solver contracts",
-      "status": "partial: count validation/support reductions, relative count-basis routine, global forced-pair minimum and exact Exchange epigraph checked; row translation and whole recognition procedure open",
+      "lean_target": "Solver-relative concrete searches and computed integer matrix, original semantic branches and full feasible affine span",
+      "status": "partial, verified at c37a5e28cfb3d5e642d4608aa0aaeaac10f1745d: exact solver rows, actual extrema, cells, validity/support branches, forced exchange witnesses, computed edges and matrix; single returned certificate, affine point-basis and facet bridge open",
       "lean_theorems": [
-        "MOR34.valid_iff_count_prefixes",
-        "MOR34.invalid_iff_count_violation",
-        "MOR34.support_iff_count_epigraph",
-        "MOR34.forcedPairPrefix_minimal",
-        "MOR34.forcedPairPrefix_epigraph",
-        "MOR34.exchange_iff_forced_counts",
-        "MOR34.exchange_iff_forced_epigraph"
+        "MOR34.searchedParityExtrema_lower_result",
+        "MOR34.searchedParityExtrema_upper_result",
+        "MOR34.row_solver_cell_selection",
+        "MOR34.recognitionBranch_correct",
+        "MOR34.exchange_iff_forced_rows",
+        "MOR34.exchangeWitness_some",
+        "MOR34.computedEdges_span",
+        "MOR34.computed_matrix_rank",
+        "MOR34.computedEdgeWitness_pair",
+        "MOR34.knapsackPolytope_affineSpan",
+        "MOR34.feasiblePointSet_affineSpan"
       ]
     },
     {
@@ -213,7 +217,13 @@
         "L7"
       ],
       "lean_target": "not yet encoded; fixed-dimensional ILP dependency unresolved",
-      "status": "open; not kernel checked"
+      "status": "query accounting verified at c37a5e28cfb3d5e642d4608aa0aaeaac10f1745d; full cost model, bit complexity, ILP foundations and executable rank open",
+      "lean_theorems": [
+        "MOR34.rowSearchCalls_le",
+        "MOR34.cell_solver_row_count",
+        "MOR34.adjacentPair_card",
+        "MOR34.forcedRow_card"
+      ]
     },
     {
       "id": "C9",

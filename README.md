@@ -6,33 +6,34 @@ Development branch: `codex/mor34-formalization`.
 
 ## Verified checkpoint — October 17, 2026
 
-[Successful CI](https://github.com/zac682210-commits/mor34_lean/actions/runs/39001241694), source commit `4f88fe34dac90c933406986163f5f3cd634d8d07`. The entire project builds, and all **201 named theorems** pass the transitive axiom allowlist. No `sorryAx` or project axiom. Standard axioms allowed: `propext`, `Classical.choice`, `Quot.sound`. Frozen model and target files are unchanged.
+[Successful CI](https://github.com/zac682210-commits/mor34_lean/actions/runs/39004885856), source `c37a5e28cfb3d5e642d4608aa0aaeaac10f1745d`. The full project builds and **282 named theorems** pass the transitive axiom allowlist (`propext`, `Classical.choice`, `Quot.sound` only). No `sorryAx` or project axiom. Frozen model and targets are unchanged.
 
-Here n is the number of items, q is the number of distinct candidate-coefficient classes including a possible zero class, and r is the number of added rational linear inequalities.
+Here n is the item count and q counts candidate-coefficient classes, including a possible zero class.
 
 | Obligation | Verified scope |
 | --- | --- |
-| Main structural proof | Pairing, exchange kernel, quotient dimension, affine cells, augmented span |
-| Concrete integer certificate | At most n+(q+1)6^q rows; rational rank equals nonempty tight-set affine dimension plus one |
-| Count ILP formulation | Exact equivalence, 2q integer variables, n+2q+r+3 inequalities; explicit parity substitution |
-| Count basis search | Real affine independence and spanning, <=q+1 output points, <=2(q+1)^2 feasibility calls under explicit linear-solver contract |
-| Cell-selection bridge | Original CellBasisSelection built from recursive search, conditional on attained extrema and sound/complete cell solvers |
-| Integer normals | Bounded normal family proved to exist by quotient coordinates and denominator clearing |
-| Validity/support | Exact reductions to original count prefixes and tight epigraph feasibility |
-| Exchange reduction | Global witness, minimum cost, exact epigraph equivalent to original Exchange; empty residual set handled |
-| Complete recognition procedure | Still open: edge-row translation, solver/cell/extrema assembly and outputs |
-| Full FPT time | Still open: normal-generation bit cost, ILP foundations, compression and total runtime |
+| Structural proof | Pairing, exchange kernel, quotient dimension, affine cells, augmented span |
+| Count ILP | Explicit exact rows, 2q integer variables, exact parity substitution |
+| Attained extrema | Actual maximum/minimum scans; at most 2(n+q)2^q calls |
+| Cell search | Exact 3q cell rows; actual search supplies the original real affine-basis contract |
+| Validity/support | Separate violation rows; sound original invalid/empty/supported branches |
+| Exchange edges | Explicit forced rows, actual tight binary witnesses, exact finite adjacent-edge list |
+| Computed matrix | At most n+(q+1)6^q rows; rational rank equals nonempty tight-set affine dimension plus one |
+| Full dimension | Feasible binary points and their convex-hull polytope have full affine span and dimension n |
+| Call accounting | Validity/support/extrema/cells: <=1+2*2^q+2(n+q)2^q+2(q+1)^2 6^q; <=n further edge calls |
+| Complete algorithm | Still open: one returned certificate, actual tight-point basis, facet bridge and rank implementation |
+| Full FPT time | Still open: normal bit bounds, costed linear algebra, ILP foundations and compression |
 
-The count-basis theorem uses classical choices for normals. A logical oracle-call bound is **not** a verified executable FPT runtime. This remains a same-session statement review, not independent peer review. Theorem counts are not completion percentages.
+Row-solver soundness/completeness remain explicit theorem hypotheses; the solvers are not certified by defining their contracts. Normal generation still uses classical choice. A call count is not total runtime. The linear extrema scans and redundant exchange rows are documented variations of the manuscript implementation. Same-session review only; theorem counts are not completion percentages.
 
 ## Evidence and continuation
 
-- Raw successful logs: `logs/verified_encoding_20261017/`.
-- Source/artifact hashes: `docs/source_hashes_encoding_20261017.json`.
-- Current scope: `docs/ACCEPTANCE.json` and `docs/source_map.json`.
-- Statement review: `docs/REVIEW_ENCODING_20261017.md`.
-- Next step: `docs/NEXT_AFTER_ENCODING_20261017.md`.
-- Chinese progress report: `docs/PROGRESS_ENCODING_20261017.md`.
-- Time ledger: `docs/session_encoding_20261017.json`; this session 40.28 active minutes, cumulative recorded 142.14. Earlier unlogged preparation is unknown; gaps between sessions are excluded.
+- Raw successful logs: `logs/verified_search_20261017/`.
+- Source/artifact hashes: `docs/source_hashes_search_20261017.json`.
+- Scope: `docs/ACCEPTANCE.json`, `docs/source_map.json`.
+- Statement review: `docs/REVIEW_SEARCH_20261017.md`.
+- Next: `docs/NEXT_AFTER_SEARCH_20261017.md`.
+- Chinese report: `docs/PROGRESS_SEARCH_20261017.md`.
+- Ledger: `docs/session_search_20261017.json`; active 40.25 minutes this round, cumulative recorded 182.38. Earlier unlogged preparation is unknown; session gaps are excluded.
 
-Run `python3 scripts/environment_gate.py` to execute the eight verification commands. Previous successful checkpoints and raw logs are preserved. Historical preparation comments are not the current acceptance status. The original manuscript is `reference/mor34_fpt_proof.tex`.
+Run `python3 scripts/environment_gate.py` for the eight verification commands. All earlier checkpoints remain preserved. Historical preparation comments in frozen files do not describe current acceptance. The original manuscript is `reference/mor34_fpt_proof.tex`.

@@ -1,0 +1,168 @@
+{
+  "started_utc": "2026-10-17T04:31:14+00:00",
+  "ended_utc": "2026-10-17T05:11:28.941316+00:00",
+  "started_shanghai": "2026-10-17T12:31:14+08:00",
+  "ended_shanghai": "2026-10-17T13:11:28.941316+08:00",
+  "active_minutes": 40.249,
+  "prior_recorded_active_minutes": 142.136,
+  "cumulative_recorded_active_minutes": 182.385,
+  "cumulative_is_complete": false,
+  "historical_formalization_minutes": null,
+  "pure_wait_seconds": 0,
+  "time_method": "Actual proof development, pinned-source reading, CI diagnosis, statement review and checkpoint work. Useful work continued during CI. No sleeps or inter-session idle. Final upload overhead excluded.",
+  "attempts": [
+    {
+      "commit": "1d9adcacfe52d243a63509b2a0070633d4154093",
+      "run": 39002948939,
+      "result": "failure",
+      "started": "2026-10-17T04:32:27Z"
+    },
+    {
+      "commit": "fba11909cf926a5d80ba3f8b9f2a586d6b3263fe",
+      "run": 39003013877,
+      "result": "failure",
+      "started": "2026-10-17T04:33:30Z"
+    },
+    {
+      "commit": "8f1f5566740892a134146c4916738e763f87b898",
+      "run": 39003068274,
+      "result": "failure",
+      "started": "2026-10-17T04:34:22Z"
+    },
+    {
+      "commit": "e6f1afc67f32c2b60acbb58df1c5141cde599b2e",
+      "run": 39003358603,
+      "result": "failure",
+      "started": "2026-10-17T04:39:04Z"
+    },
+    {
+      "commit": "30690720e24a5f41b03dbf46b5d422fa36f069f7",
+      "run": 39003419908,
+      "result": "failure",
+      "started": "2026-10-17T04:40:04Z"
+    },
+    {
+      "commit": "ce6abcf4b6e5c0c1f5adbadc1a62ffdd3b189f05",
+      "run": 39003487474,
+      "result": "failure",
+      "started": "2026-10-17T04:41:07Z"
+    },
+    {
+      "commit": "99f9c523bebf0a69a5f3cefd7c699a93b77e0d72",
+      "run": 39003572919,
+      "result": "failure",
+      "started": "2026-10-17T04:42:28Z"
+    },
+    {
+      "commit": "edc5c8f8b84377573ec72eebaeb6d3a4b6f72c30",
+      "run": 39003597109,
+      "result": "failure",
+      "started": "2026-10-17T04:42:53Z"
+    },
+    {
+      "commit": "edfe131441733b028dddfa31ce47f197deb66420",
+      "run": 39003663857,
+      "result": "failure",
+      "started": "2026-10-17T04:43:59Z"
+    },
+    {
+      "commit": "306c32995f9092895299bfa7c6c84bb6b8b881b1",
+      "run": 39003844290,
+      "result": "failure",
+      "started": "2026-10-17T04:46:50Z"
+    },
+    {
+      "commit": "ba799b824a18235abe493528950aec38d0f6b817",
+      "run": 39003969182,
+      "result": "failure",
+      "started": "2026-10-17T04:48:54Z"
+    },
+    {
+      "commit": "7ab3884d81ab8783d8be0153737f6c4a88110977",
+      "run": 39004042443,
+      "result": "failure",
+      "started": "2026-10-17T04:50:06Z"
+    },
+    {
+      "commit": "a9ee4f21cfada22c234b82c34b7adbf1c041b6f2",
+      "run": 39004114855,
+      "result": "failure",
+      "started": "2026-10-17T04:51:14Z"
+    },
+    {
+      "commit": "ac70d6bbed34a0adc50de6b0add787cad9458991",
+      "run": 39004144637,
+      "result": "failure",
+      "started": "2026-10-17T04:51:45Z"
+    },
+    {
+      "commit": "e23f071dab80ef29a20b268714913e74c5d147ee",
+      "run": 39004211492,
+      "result": "failure",
+      "started": "2026-10-17T04:52:52Z"
+    },
+    {
+      "commit": "f666d93a7fa63e4989054270fbbf86521a41e4c4",
+      "run": 39004292219,
+      "result": "failure",
+      "started": "2026-10-17T04:54:12Z"
+    },
+    {
+      "commit": "4e59002e0892a6ade71b14871cb43c16f7870e9b",
+      "run": 39004332572,
+      "result": "failure",
+      "started": "2026-10-17T04:54:51Z"
+    },
+    {
+      "commit": "fdb9b71850fd0ffb7aaa20698f22449e7529155a",
+      "run": 39004398205,
+      "result": "failure",
+      "started": "2026-10-17T04:55:56Z"
+    },
+    {
+      "commit": "b3e7df8ebd1b1030bfbafc357f9e4af59d677dfa",
+      "run": 39004487135,
+      "result": "failure",
+      "started": "2026-10-17T04:57:27Z"
+    },
+    {
+      "commit": "2d0d931d4e9a54cad09221764bbc5241c4528eb3",
+      "run": 39004556389,
+      "result": "failure",
+      "started": "2026-10-17T04:58:39Z"
+    },
+    {
+      "commit": "9f2d2fa65c7ec9944e8d39cf1203c3153e7d2c4b",
+      "run": 39004706516,
+      "result": "failure",
+      "started": "2026-10-17T05:01:03Z"
+    },
+    {
+      "commit": "781adf4da2dbffb45b42a224529d8f57566c45cc",
+      "run": 39004802997,
+      "result": "failure",
+      "started": "2026-10-17T05:02:34Z"
+    },
+    {
+      "commit": "1e001606301950494554ea6e0bb27ca13b1946d2",
+      "run": 39004847971,
+      "result": "failure",
+      "started": "2026-10-17T05:03:17Z"
+    },
+    {
+      "commit": "c37a5e28cfb3d5e642d4608aa0aaeaac10f1745d",
+      "run": 39004885856,
+      "result": "success",
+      "started": "2026-10-17T05:03:54Z"
+    }
+  ],
+  "verified_commit": "c37a5e28cfb3d5e642d4608aa0aaeaac10f1745d",
+  "verified_run": 39004885856,
+  "kernel_checked_named_theorems": 282,
+  "complete_paper": false,
+  "complete_FPT_complexity": false,
+  "complete_algorithm_correctness": false,
+  "results": "Actual attained-extrema scans, exact 3q cell constraints, original cell selections supplied by explicit parity-row solver; validity/support branches return original witnesses. Explicit forced-exchange rows on 2q integer variables, decoded binary witnesses, computed adjacent edge list and finite integer rank certificate. Feasible binary point set has full affine span. Solver soundness/completeness are explicit hypotheses. Classical normal choice remains; complete output/facet, coefficient-bit and total-runtime obligations remain open.",
+  "next": "docs/NEXT_AFTER_SEARCH_20261017.md",
+  "independent_review": false
+}
