@@ -22,7 +22,9 @@ theorem pivotNormal_magnitudeBits {r f : ℕ} (A : Matrix (Fin r) (Fin r) ℤ)
   apply magnitudeBits_le_of_power_bound
   have hb := pivotNormal_bound A C (N : ℤ) (by positivity) hA hC k j
   have hn : (pivotNormal A C k j).natAbs ≤ r.factorial * N ^ r := by
-    exact_mod_cast hb
+    have hi : ((pivotNormal A C k j).natAbs : ℤ) ≤ ((r.factorial * N ^ r : ℕ) : ℤ) := by
+      simpa only [Int.natCast_natAbs, Nat.cast_mul, Nat.cast_pow] using hb
+    exact_mod_cast hi
   exact hn.trans (factorial_power_bound r N D L hr hN)
 
 theorem pivotNormal_logarithmic_bits {r f : ℕ} (A : Matrix (Fin r) (Fin r) ℤ)
