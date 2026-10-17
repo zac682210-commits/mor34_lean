@@ -95,3 +95,4 @@ import MOR34.ForcedRows
 import MOR34.ForcedSolver
 import MOR34.ComputedEdges
 import MOR34.ComputedMatrix
+import MOR34.EdgeWitnesses
