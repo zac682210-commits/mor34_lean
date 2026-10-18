@@ -7,6 +7,14 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.denseProblemSize_polynomial',
+    'MOR34.compiledForcedRequest_length',
+    'MOR34.compiledCountRequest_length',
+    'MOR34.compiledViolationRequest_length',
+    'MOR34.actualForcedSolver_cost',
+    'MOR34.actualViolationSolver_cost',
+    'MOR34.actualCellSolver_cost',
+
     'MOR34.storedList_ofFn',
     'MOR34.densePayload_of_value',
     'MOR34.completeEnumeration_sum',

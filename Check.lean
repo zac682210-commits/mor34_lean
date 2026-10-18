@@ -1215,3 +1215,17 @@ import MOR34
 #print axioms MOR34.compiledForcedRequest_payload_polynomial
 
 #print axioms MOR34.compiledViolationRequest_payload_polynomial
+
+#print axioms MOR34.denseProblemSize_polynomial
+
+#print axioms MOR34.compiledForcedRequest_length
+
+#print axioms MOR34.compiledCountRequest_length
+
+#print axioms MOR34.compiledViolationRequest_length
+
+#print axioms MOR34.actualForcedSolver_cost
+
+#print axioms MOR34.actualViolationSolver_cost
+
+#print axioms MOR34.actualCellSolver_cost

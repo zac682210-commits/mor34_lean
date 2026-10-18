@@ -265,3 +265,5 @@ import MOR34.RowLiteralBounds
 import MOR34.ChargedCellExecution
 import MOR34.DenseRawPipeline
 import MOR34.DensePayloadTransfer
+
+import MOR34.DenseSolverSize
