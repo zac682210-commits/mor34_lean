@@ -1013,3 +1013,13 @@ import MOR34
 #print axioms MOR34.builtCountRow_cost
 
 #print axioms MOR34.builtCountRows_total_cost
+
+#print axioms MOR34.denseQueryTable_read_bound
+
+#print axioms MOR34.builtViolationRow_value
+
+#print axioms MOR34.builtViolationRow_interpret
+
+#print axioms MOR34.builtViolationRow_cost
+
+#print axioms MOR34.builtViolationRows_total_cost

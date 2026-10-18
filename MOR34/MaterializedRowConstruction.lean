@@ -70,7 +70,7 @@ theorem builtForcedRow_value (P : Model m) (j : Fin q) (u v : Fin (m j))
   rcases k with ((k | k) | (b | b)) | (⟨k,a⟩ | (a | (w | w)))
   all_goals simp only [builtForcedRow, forcedRowConstruction, forcedOrdinaryConstruction,
     builtPrefixRow_value, builtForcedSlope_value]
-  all_goals split_ifs <;> rfl
+  all_goals split_ifs <;> simp only [builtPrefixRow_value]
 
 theorem builtForcedRow_cost (P : Model m) (j : Fin q) (u v : Fin (m j))
     (n R : ℕ) (hq : q ≤ n) (hm : ∀ k, m k ≤ n) (hR : R ≤ n+1)

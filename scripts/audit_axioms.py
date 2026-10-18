@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.denseQueryTable_read_bound',
+    'MOR34.builtViolationRow_value',
+    'MOR34.builtViolationRow_interpret',
+    'MOR34.builtViolationRow_cost',
+    'MOR34.builtViolationRows_total_cost',
+
     'MOR34.builtCountRow_value',
     'MOR34.builtCountRow_interpret',
     'MOR34.builtCountRow_cost',
