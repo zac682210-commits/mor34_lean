@@ -869,3 +869,23 @@ import MOR34
 #print axioms MOR34.storedNormalizedPipeline_correct
 #print axioms MOR34.storedRawPipeline_eq
 #print axioms MOR34.storedRawPipeline_correct
+
+#print axioms MOR34.chargedMap_value
+
+#print axioms MOR34.chargedMap_cost
+
+#print axioms MOR34.chargedFlatMap_value
+
+#print axioms MOR34.chargedFlatMap_cost
+
+#print axioms MOR34.chargedFilter_value
+
+#print axioms MOR34.chargedFilter_cost
+
+#print axioms MOR34.chargedFinFunctions_value
+
+#print axioms MOR34.chargedFinFunctions_cost
+
+#print axioms MOR34.functionEnumerationBudget_bound
+
+#print axioms MOR34.chargedFinFunctions_parameter_cost

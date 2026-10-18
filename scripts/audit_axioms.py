@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedFinFunctions_parameter_cost',
+    'MOR34.functionEnumerationBudget_bound',
+    'MOR34.chargedFinFunctions_cost',
+    'MOR34.chargedFinFunctions_value',
+    'MOR34.chargedFilter_cost',
+    'MOR34.chargedFilter_value',
+    'MOR34.chargedFlatMap_cost',
+    'MOR34.chargedFlatMap_value',
+    'MOR34.chargedMap_cost',
+    'MOR34.chargedMap_value',
     'MOR34.storedNormalizedPipeline_eq',
     'MOR34.storedNormalizedPipeline_correct',
     'MOR34.storedRawPipeline_eq',
