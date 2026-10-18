@@ -50,6 +50,7 @@ run('dependencies', ['lake', 'update'])
 run('cache', ['lake', 'exe', 'cache', 'get'])
 run('3_mathlib_smoke', ['lake', 'env', 'lean', 'smoke/Mathlib.lean'])
 run('4_project_build', ['lake', 'build'])
+run('4_computed_normals_smoke', ['lake', 'env', 'lean', 'smoke/ComputedNormals.lean'])
 run('4_project_axioms', ['lake', 'env', 'lean', 'Check.lean'])
 run('4_axiom_allowlist', [sys.executable, 'scripts/audit_axioms.py',
                          str(LOGS / '4_project_axioms.log')])
