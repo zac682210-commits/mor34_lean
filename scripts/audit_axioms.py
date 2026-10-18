@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.parameterMajorant_le",
+    "MOR34.rawReferenceBudget_uniform",
+    "MOR34.original_reference_application",
+    "MOR34.prepend_standard_preprocessing",
     "MOR34.chargedMap_cost_additive",
     "MOR34.weightedRetainedRow_cost_additive",
     "MOR34.weightedViolationRequest_cost",

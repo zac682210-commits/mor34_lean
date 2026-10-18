@@ -52,7 +52,7 @@ theorem chargedRelabelOutput_value (e : Item m ≃ Fin n) (point : RelabelPointO
     relabelOutput,relabelBasis]
   congr 1
   ext S
-  simp only [List.mem_toFinset,List.mem_map,orderedBinarySets_mem,Finset.mem_map,Equiv.finsetCongr]
+  simp [List.mem_toFinset,orderedBinarySets_mem,Finset.mem_map,Equiv.finsetCongr]
   constructor
   · rintro ⟨a,ha,rfl⟩
     simpa using ha

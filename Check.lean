@@ -1485,3 +1485,7 @@ import MOR34
 #print axioms MOR34.weightedViolationRequest_cost
 #print axioms MOR34.weightedForcedRequest_cost
 #print axioms MOR34.weightedRemainingRequests_polynomial
+#print axioms MOR34.parameterMajorant_le
+#print axioms MOR34.rawReferenceBudget_uniform
+#print axioms MOR34.original_reference_application
+#print axioms MOR34.prepend_standard_preprocessing
