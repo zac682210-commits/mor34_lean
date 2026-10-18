@@ -46,7 +46,7 @@ def chargedClassAdjacencies (j : Fin q) : List (AdjacentPair m) × ℕ :=
 theorem chargedClassAdjacencies_length (j : Fin q) :
     (chargedClassAdjacencies j).1.length ≤ m j := by
   simp only [chargedClassAdjacencies, chargedFilterMap_value]
-  exact (List.length_filterMap_le _ _).trans_eq (List.length_finRange _)
+  exact (List.length_filterMap_le _ _).trans_eq List.length_finRange
 
 theorem chargedClassAdjacencies_cost (j : Fin q) :
     (chargedClassAdjacencies j).2 ≤ 4*m j+1 := by

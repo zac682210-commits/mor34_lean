@@ -29,7 +29,7 @@ theorem rankKey_length_bound (s d : ℕ) (hs : s ≤ d) (r : Fin (d+1)) :
     (pow_le_pow_left' (by omega) _).trans (pow_le_pow_right' (by omega) hr)
   rw [chargedRankKeys_value]
   simp only [List.length_flatMap, List.length_map, allFinFunctions_length]
-  simpa using Nat.mul_le_mul ha hc
+  simpa [allFinFunctions_length] using Nat.mul_le_mul ha hc
 
 theorem chargedRankKeys_cost (s d : ℕ) (hs : s ≤ d) (r : Fin (d+1)) :
     (chargedRankKeys s d r).2 ≤ rankKeyBuildBudget d := by

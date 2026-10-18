@@ -68,7 +68,7 @@ theorem chargedResidualWeights_cost (P : Model m) (j : Fin q)
   have hl : (chargedFilter (fun i : Fin (m j) => (decide (i ≠ u ∧ i ≠ v),2))
       (List.finRange (m j))).1.length ≤ m j := by
     rw [chargedFilter_value]
-    exact (List.length_filter_le _ _).trans_eq (List.length_finRange _)
+    exact (List.length_filter_le _ _).trans_eq List.length_finRange
   have hm := chargedMap_cost (fun i : Fin (m j) => (P.weight ⟨j,i⟩,R))
     (chargedFilter (fun i : Fin (m j) => (decide (i ≠ u ∧ i ≠ v),2))
       (List.finRange (m j))).1 R (fun _ _ => le_rfl)
