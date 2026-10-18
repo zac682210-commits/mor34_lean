@@ -249,3 +249,5 @@ import MOR34.MaterializedCountRows
 import MOR34.MaterializedViolationRows
 
 import MOR34.EnumerationParameterBound
+
+import MOR34.ConstructionBudgetAggregation

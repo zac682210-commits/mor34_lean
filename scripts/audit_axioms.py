@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.builtForcedRows_common_budget',
+    'MOR34.allRowConstruction_budget',
+    'MOR34.constructionPhase_budget',
+
     'MOR34.normalKeyBuildBudget_parameter_bound',
     'MOR34.normalEnumerationFactor_parameter_bound',
     'MOR34.builtNormalParameter_bound',

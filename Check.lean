@@ -1029,3 +1029,9 @@ import MOR34
 #print axioms MOR34.normalEnumerationFactor_parameter_bound
 
 #print axioms MOR34.builtNormalParameter_bound
+
+#print axioms MOR34.builtForcedRows_common_budget
+
+#print axioms MOR34.allRowConstruction_budget
+
+#print axioms MOR34.constructionPhase_budget
