@@ -24,7 +24,7 @@ theorem forcedRowIndexList_length (j : Fin q) (u v : Fin (m j)) :
     (forcedRowIndexList j u v).length =
       Fintype.card (Item m)+2*q+(pairAllowed u v).card+6 := by
   simp only [forcedRowIndexList, List.length_append, List.length_map,
-    List.length_finRange, List.length_flatMap, List.map_ofFn, List.sum_ofFn,
+    List.length_finRange, List.length_flatMap, List.map_ofFn, Function.comp_def, List.sum_ofFn,
     List.length_cons, List.length_nil]
   simp only [Item, Fintype.card_sigma, Fintype.card_fin]
   omega

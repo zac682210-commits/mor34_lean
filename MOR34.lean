@@ -256,3 +256,5 @@ import MOR34.RetainedForcedRows
 import MOR34.EvaluatedIntegerRows
 import MOR34.ForcedRowEnumeration
 import MOR34.DenseForcedSolver
+import MOR34.DenseParityRows
+import MOR34.DenseCountSolver

@@ -1099,3 +1099,31 @@ import MOR34
 #print axioms MOR34.chargedDenseForcedSolve_cost
 
 #print axioms MOR34.denseForced_normalized_correct
+
+#print axioms MOR34.denseParityRow_arrays
+
+#print axioms MOR34.denseParityRow_value
+
+#print axioms MOR34.denseParityRow_sized
+
+#print axioms MOR34.denseParityRow_cost
+
+#print axioms MOR34.compileParityRow_value
+
+#print axioms MOR34.compileParityRow_sized
+
+#print axioms MOR34.compiledCountParity_cost
+
+#print axioms MOR34.countRowIndexList_complete
+
+#print axioms MOR34.countRowIndexList_length
+
+#print axioms MOR34.compiledCountRequest_sized
+
+#print axioms MOR34.compiledCountRequest_iff
+
+#print axioms MOR34.compiledCountRequest_cost
+
+#print axioms MOR34.denseCountOracle_spec
+
+#print axioms MOR34.chargedDenseCountSolve_cost

@@ -7,6 +7,21 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.denseParityRow_arrays',
+    'MOR34.denseParityRow_value',
+    'MOR34.denseParityRow_sized',
+    'MOR34.denseParityRow_cost',
+    'MOR34.compileParityRow_value',
+    'MOR34.compileParityRow_sized',
+    'MOR34.compiledCountParity_cost',
+    'MOR34.countRowIndexList_complete',
+    'MOR34.countRowIndexList_length',
+    'MOR34.compiledCountRequest_sized',
+    'MOR34.compiledCountRequest_iff',
+    'MOR34.compiledCountRequest_cost',
+    'MOR34.denseCountOracle_spec',
+    'MOR34.chargedDenseCountSolve_cost',
+
     'MOR34.chargedMap_cost_eq',
     'MOR34.evaluateInteger_value',
     'MOR34.evaluateInteger_cost',

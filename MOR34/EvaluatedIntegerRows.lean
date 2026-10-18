@@ -50,7 +50,7 @@ theorem evaluateConstructedRow_arrays {q : ℕ} (row : ConstructedIntegerRow q) 
     (evaluateConstructedRow row).1 =
       ⟨List.ofFn (fun j => (row.counts j).value),
        List.ofFn (fun j => (row.costs j).value),row.bound.value⟩ := by
-  simp only [evaluateConstructedRow, chargedMap_value, List.map_ofFn, evaluateInteger_value]
+  simp only [evaluateConstructedRow, chargedMap_value, List.map_ofFn, Function.comp_def, evaluateInteger_value]
 
 theorem evaluateConstructedRow_sized {q : ℕ} (row : ConstructedIntegerRow q) :
     (evaluateConstructedRow row).1.WellSized := by
@@ -64,7 +64,7 @@ theorem evaluateConstructedRow_value {q : ℕ} (row : ConstructedIntegerRow q) :
 
 theorem evaluateConstructedRow_cost {q : ℕ} (row : ConstructedIntegerRow q) :
     (evaluateConstructedRow row).2 = row.work+3*q+2 := by
-  simp only [evaluateConstructedRow, chargedMap_cost_eq, List.map_ofFn,
+  simp only [evaluateConstructedRow, chargedMap_cost_eq, List.map_ofFn, Function.comp_def,
     List.sum_ofFn, List.length_ofFn, evaluateInteger_cost, ConstructedIntegerRow.work]
   omega
 
