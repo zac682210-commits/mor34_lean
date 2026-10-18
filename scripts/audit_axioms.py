@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.executableRawPipeline_correct",
+    "MOR34.executableRawPipeline_facet",
+    "MOR34.executable_normalized_original_output_contract",
+
     "MOR34.computedReturnedBasis_correct",
     "MOR34.executableNormalizedPipeline_correct",
     "MOR34.executableNormalizedPipeline_facet",

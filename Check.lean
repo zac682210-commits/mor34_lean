@@ -691,3 +691,6 @@ import MOR34
 #print axioms MOR34.computedReturnedBasis_correct
 #print axioms MOR34.executableNormalizedPipeline_correct
 #print axioms MOR34.executableNormalizedPipeline_facet
+#print axioms MOR34.executableRawPipeline_correct
+#print axioms MOR34.executableRawPipeline_facet
+#print axioms MOR34.executable_normalized_original_output_contract
