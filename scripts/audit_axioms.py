@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.weightedCellLoopBudget_uniform",
+    "MOR34.weightedCellLoopBudget_mono",
+    "MOR34.weightedCellLoopBudget_fpt",
     "MOR34.weightedDenseCountSolve_value",
     "MOR34.weightedDenseCellQuery_value",
     "MOR34.weightedCellQuery_cost_on_states",

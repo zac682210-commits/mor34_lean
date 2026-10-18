@@ -1494,3 +1494,6 @@ import MOR34
 #print axioms MOR34.weightedCellQuery_cost_on_states
 #print axioms MOR34.weightedDenseCellBasis_value
 #print axioms MOR34.weightedDenseCellBasis_cost
+#print axioms MOR34.weightedCellLoopBudget_uniform
+#print axioms MOR34.weightedCellLoopBudget_mono
+#print axioms MOR34.weightedCellLoopBudget_fpt
