@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.boundedCountRequest_payload',
+    'MOR34.boundedCountSolver_cost',
+    'MOR34.simpleQuery_normal_bound',
+    'MOR34.maximumScanQuery_bound',
+    'MOR34.minimumScanQuery_bound',
+
     'MOR34.weightedEvaluateInteger_value',
     'MOR34.weightedEvaluateInteger_cost',
     'MOR34.weightedEvaluateInteger_cost_of_literals',

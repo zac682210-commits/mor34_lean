@@ -271,3 +271,5 @@ import MOR34.DenseSolverSize
 import MOR34.DenseCellCost
 
 import MOR34.WeightedIntegerEvaluation
+
+import MOR34.DenseBasicQueryCost

@@ -1239,3 +1239,13 @@ import MOR34
 #print axioms MOR34.weightedEvaluateInteger_cost
 
 #print axioms MOR34.weightedEvaluateInteger_cost_of_literals
+
+#print axioms MOR34.boundedCountRequest_payload
+
+#print axioms MOR34.boundedCountSolver_cost
+
+#print axioms MOR34.simpleQuery_normal_bound
+
+#print axioms MOR34.maximumScanQuery_bound
+
+#print axioms MOR34.minimumScanQuery_bound
