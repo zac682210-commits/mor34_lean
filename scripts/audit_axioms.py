@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.normalBasisCandidateCalls_bound",
+    "MOR34.computedCellSelection_normal_checks",
+
     "MOR34.computedCountForms_bits",
     "MOR34.forms_cell_queries_bound",
     "MOR34.forms_cell_system_payload",

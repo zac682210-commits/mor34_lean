@@ -680,3 +680,5 @@ import MOR34
 #print axioms MOR34.forms_cell_system_payload
 #print axioms MOR34.computedCellSearch_payload_states
 #print axioms MOR34.computedNormalPipeline_payload_states
+#print axioms MOR34.normalBasisCandidateCalls_bound
+#print axioms MOR34.computedCellSelection_normal_checks
