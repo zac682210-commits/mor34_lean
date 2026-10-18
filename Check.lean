@@ -787,3 +787,6 @@ import MOR34
 #print axioms MOR34.normal_calls_parameter_bound
 #print axioms MOR34.rowCallFactor_parameter_bound
 #print axioms MOR34.normal_calls_original_parameter
+
+#print axioms MOR34.computedReturnedBasis_rank_calls_polynomial
+#print axioms MOR34.counted_rank_cost_bound

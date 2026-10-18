@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.computedReturnedBasis_rank_calls_polynomial',
+    'MOR34.counted_rank_cost_bound',
+
     'MOR34.six_power_parameter_bound',
     'MOR34.normal_calls_parameter_bound',
     'MOR34.rowCallFactor_parameter_bound',

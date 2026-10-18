@@ -67,4 +67,40 @@ theorem binaryBasisSearch_rank_payload_states (L : List (Finset (Item m)))
       (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left 2 hb))
     nlinarith
 
+/-- The concrete rank-call budget is polynomial in n with a separate parameter factor. -/
+theorem computedReturnedBasis_rank_calls_polynomial (P : Model m) (hWF : WellFormed P)
+    (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
+    (hs : ParityRowSolverSpec P solve)
+    (edgeSolve : (j : Fin q) → Fin (m j) → Fin (m j) → Option (IntegerRowSolution q))
+    (he : ForcedRowSolverSpec P edgeSolve) (ranker : ExactIntegerRank m) :
+    finiteBasisRankCalls (orderedBinarySets (computedReturnedSets P hWF solve hs edgeSolve he))
+      (fun B => ranker.evaluate (binaryPointMatrix B)) (Fintype.card (Item m)+1) ∅ ≤
+      (2*((q+1)*6^q+2))*(Fintype.card (Item m)+1)^2 := by
+  have hh := computedReturnedBasis_rank_calls P hWF solve hs edgeSolve he ranker
+  have hb : (q+1)*6^q+2*Fintype.card (Item m) ≤
+      ((q+1)*6^q+2)*(Fintype.card (Item m)+1) := by
+    calc
+      _ ≤ ((q+1)*6^q)*(Fintype.card (Item m)+1)+2*(Fintype.card (Item m)+1) :=
+        Nat.add_le_add (Nat.le_mul_of_pos_right _ (by omega))
+          (Nat.mul_le_mul_left 2 (Nat.le_succ _))
+      _ = _ := by ring
+  exact (hh.trans (Nat.mul_le_mul_left _ hb)).trans_eq (by ring)
+
+/-- Only the rank phase is charged; the primitive's polynomial cost is supplied. -/
+theorem counted_rank_cost_bound (P : Model m) (hWF : WellFormed P)
+    (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
+    (hs : ParityRowSolverSpec P solve)
+    (edgeSolve : (j : Fin q) → Fin (m j) → Fin (m j) → Option (IntegerRowSolution q))
+    (he : ForcedRowSolverSpec P edgeSolve) (ranker : ExactIntegerRank m)
+    (R c perCall : ℕ) (hcost : perCall ≤ R*(2*(Fintype.card (Item m)+2)^2)^c) :
+    finiteBasisRankCalls (orderedBinarySets (computedReturnedSets P hWF solve hs edgeSolve he))
+      (fun B => ranker.evaluate (binaryPointMatrix B)) (Fintype.card (Item m)+1) ∅ * perCall ≤
+      (2*((q+1)*6^q+2)*R*2^c)*(Fintype.card (Item m)+2)^(2*c+2) := by
+  have hh := computedReturnedBasis_rank_calls_polynomial P hWF solve hs edgeSolve he ranker
+  calc
+    _ ≤ (2*((q+1)*6^q+2)*(Fintype.card (Item m)+2)^2)*
+        (R*(2*(Fintype.card (Item m)+2)^2)^c) :=
+      Nat.mul_le_mul (hh.trans (Nat.mul_le_mul_left _ (pow_le_pow_left' (by omega) 2))) hcost
+    _ = _ := by rw [mul_pow, ← pow_mul, pow_add]; ring
+
 end MOR34
