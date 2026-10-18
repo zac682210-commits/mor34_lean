@@ -79,7 +79,7 @@ theorem forcedRowConstruction_value (P : Model m) (j : Fin q) (u v : Fin (m j))
     split_ifs <;> rfl
   · simp only [forcedRowConstruction, forcedRow]
     split_ifs <;> simp only [ConstructedIntegerRow.value, IntegerConstruction.value,
-      atomicIntegerRow_value, sub_eq_add_neg]
+      atomicIntegerRow, sub_eq_add_neg] <;> rfl
   · exact forcedOrdinaryConstruction_value P j k a
   · exact forcedSlopeConstruction_value P j u v a
   · exact forcedEmptyConstruction_value P j u v
@@ -92,10 +92,10 @@ theorem forcedRowConstruction_work (P : Model m) (j : Fin q) (u v : Fin (m j))
   · simp only [forcedRowConstruction, atomicIntegerRow_work]; omega
   · simp only [forcedRowConstruction, atomicIntegerRow_work]; omega
   · simp only [forcedRowConstruction]
-    split_ifs <;> simp [atomicIntegerRow_work, ConstructedIntegerRow.work,
+    split_ifs <;> simp [atomicIntegerRow, ConstructedIntegerRow.work,
       IntegerConstruction.work] <;> omega
   · simp only [forcedRowConstruction]
-    split_ifs <;> simp [atomicIntegerRow_work, ConstructedIntegerRow.work,
+    split_ifs <;> simp [atomicIntegerRow, ConstructedIntegerRow.work,
       IntegerConstruction.work] <;> omega
   · simp only [forcedRowConstruction, forcedOrdinaryConstruction]
     split_ifs
