@@ -343,3 +343,4 @@ import MOR34.ChargedCompressionPreparation
 import MOR34.CompleteCompressedExecution
 import MOR34.StrongPreparationCost
 import MOR34.StandardFactorInstantiation
+import MOR34.ReachedNormalOperands

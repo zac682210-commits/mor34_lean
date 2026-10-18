@@ -1595,3 +1595,6 @@ import MOR34
 #print axioms MOR34.doubled_dimension_factor
 #print axioms MOR34.normal_envelope_from_global
 #print axioms MOR34.normal_instruction_price_polynomial
+#print axioms MOR34.preparedNormalOperands_of_bounded
+#print axioms MOR34.preparedNormalOperands_on_states
+#print axioms MOR34.preparedWeightedCell_normal_states

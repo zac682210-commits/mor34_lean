@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.preparedWeightedCell_normal_states",
+    "MOR34.preparedNormalOperands_on_states",
+    "MOR34.preparedNormalOperands_of_bounded",
     "MOR34.normal_instruction_price_polynomial",
     "MOR34.normal_envelope_from_global",
     "MOR34.doubled_dimension_factor",
