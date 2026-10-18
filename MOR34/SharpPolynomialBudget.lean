@@ -13,14 +13,14 @@ theorem parameterGrowth_mono {f g : ℕ → ℕ} (h : ∀ q, f q ≤ g q)
 
 theorem parameterGrowth_constant (v : ℕ) : ParameterGrowth (fun _ => v) := by
   refine ⟨v,fun q => ?_⟩
-  exact (Nat.le_of_lt (Nat.lt_two_pow_self v)).trans
+  exact (Nat.le_of_lt (show v < 2^v from Nat.lt_two_pow_self)).trans
     ((pow_le_pow_left' (by omega : 2 ≤ q+6) v).trans
       (pow_le_pow_right' (by omega) (by nlinarith : v ≤ v*(q+1))))
 
 theorem parameterGrowth_q : ParameterGrowth (fun q => q) := by
   refine ⟨1,fun q => ?_⟩
   simpa only [one_mul] using (show q ≤ q+6 by omega).trans
-    (le_self_pow₀ (by omega) (by omega : 1 ≤ q+1))
+    (le_self_pow₀ (by omega) (by omega : q+1 ≠ 0))
 
 theorem parameterGrowth_add {f g : ℕ → ℕ} (hf : ParameterGrowth f) (hg : ParameterGrowth g) :
     ParameterGrowth (fun q => f q+g q) := by
@@ -77,8 +77,7 @@ theorem parameterGrowth_builtForms : ParameterGrowth builtCountFormBudget := by
       show ∀ q : ℕ, 2*(q+1)+7=2*q+9 by omega] using parameterGrowth_linearPower 5 2 9 (by decide)
   have hnormal : ParameterGrowth (fun q => normalKeyBudget (q+1)) := by
     apply parameterGrowth_mono (fun q => normalKeyBudget_parameter_bound (q+1))
-    simpa only [show ∀ q : ℕ, q+1+3=q+4 by omega,
-      show ∀ q : ℕ, q+1+8=1*q+9 by omega] using parameterGrowth_linearPower 4 1 9 (by decide)
+    simpa only [Nat.add_assoc,Nat.reduceAdd,one_mul] using parameterGrowth_linearPower 4 1 9 (by decide)
   have hpow : ParameterGrowth (fun q => (q+1)^(2*(q+1))) := by
     simpa only [show ∀ q : ℕ, 2*(q+1)=2*q+2 by omega] using parameterGrowth_linearPower 1 2 2 (by decide)
   unfold builtCountFormBudget
@@ -170,6 +169,8 @@ elab_rules : tactic
 
 /-- The complete derived budget, not an assumed core cost, has q^{O(q)}
 parameter dependence when the standard primitive factors have that dependence. -/
+set_option maxHeartbeats 3000000 in
+set_option maxRecDepth 4000 in
 theorem weightedNormalizedBudget_sharp (I BI H K : ℕ → ℕ) (c bc a d : ℕ)
     (hI : ParameterGrowth I) (hBI : ParameterGrowth BI)
     (hH : ParameterGrowth H) (hK : ParameterGrowth K) :
