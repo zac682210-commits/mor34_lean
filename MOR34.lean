@@ -325,3 +325,5 @@ import MOR34.WeightedCellUniform
 import MOR34.PreparedNormalExecution
 import MOR34.PreparedCellExecution
 import MOR34.WeightedBasicQueries
+import MOR34.WeightedExtrema
+import MOR34.WeightedPipelinePrimitives

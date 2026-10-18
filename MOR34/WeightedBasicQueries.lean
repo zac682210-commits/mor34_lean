@@ -1,5 +1,6 @@
 import MOR34.WeightedCellExecution
 import MOR34.ChargedExtremaTable
+import MOR34.DenseModeComposition
 
 namespace MOR34
 variable {q : ℕ} {m : Fin q → ℕ}

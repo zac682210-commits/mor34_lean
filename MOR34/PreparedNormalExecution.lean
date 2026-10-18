@@ -26,9 +26,17 @@ def preparedCountForms (prep : CountMatrixPreparation q) (unit : ℕ)
 
 theorem preparedCountForms_value (prep : CountMatrixPreparation q) (unit : ℕ)
     (B : Finset (Counts q)) : (preparedCountForms prep unit B).1 = computedCountForms B := by
-  dsimp only [preparedCountForms]
-  rw [prep.value]
-  exact builtCountForms_value B
+  have hg (x y : Option (Fin (q+1) → Fin (q+1) → ℤ))
+      (hx : x.isSome) (hy : y.isSome) (h : x = y) : x.get hx = y.get hy := by
+    cases h
+    rfl
+  have he : (matrixNormalSearchBuilt (prep.emit B).1).1 = matrixNormalSearch (orderedCountMatrix B) := by
+    rw [prep.value,matrixNormalSearchBuilt_value]
+  have hx : (matrixNormalSearchBuilt (prep.emit B).1).1.isSome := by
+    rw [he]
+    exact matrixNormalSearch_isSome _
+  exact congrArg (fun v => List.ofFn (fun j : Fin (q+1) => finVectorIntegerForm (v j)))
+    (hg _ _ hx (matrixNormalSearch_isSome _) he)
 
 theorem preparedCountForms_cost (prep : CountMatrixPreparation q) (unit E : ℕ)
     (B : Finset (Counts q)) (hB : B.card ≤ q+1) (he : (prep.emit B).2 ≤ E) :

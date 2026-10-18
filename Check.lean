@@ -1513,3 +1513,8 @@ import MOR34
 #print axioms MOR34.weightedDenseListQuery_cost
 #print axioms MOR34.weightedCoordinateScan_value
 #print axioms MOR34.weightedCoordinateScan_cost
+#print axioms MOR34.weightedCoordinateWitness_value
+#print axioms MOR34.weightedDenseExtrema_value
+#print axioms MOR34.weightedDenseExtrema_cost
+#print axioms MOR34.preparedWeightedCell_value
+#print axioms MOR34.preparedWeightedCell_cost
