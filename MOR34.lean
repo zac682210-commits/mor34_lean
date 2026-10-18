@@ -187,3 +187,5 @@ import MOR34.ExecutableNormalization
 import MOR34.FiniteTable
 import MOR34.StoredExtrema
 import MOR34.CompressionSigns
+import MOR34.CompressionTransport
+import MOR34.CompressionParameter

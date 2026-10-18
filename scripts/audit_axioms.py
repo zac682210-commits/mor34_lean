@@ -7,6 +7,26 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.image_card_of_equal_fibers",
+    "MOR34.positive_values_as_image",
+    "MOR34.compression_positive_parameter",
+    "MOR34.compression_all_classes",
+    "MOR34.compression_coefficient_order",
+    "MOR34.compression_coefficient_zero",
+    "MOR34.compressed_original_output_contract",
+
+    "MOR34.compression_feasible",
+    "MOR34.compression_tight",
+    "MOR34.compression_valid",
+    "MOR34.compression_tightPointSet",
+    "MOR34.compression_polytope",
+    "MOR34.compression_face",
+    "MOR34.compression_facet",
+    "MOR34.compression_signedDimension",
+    "MOR34.compression_hypotheses",
+    "MOR34.compression_decision",
+    "MOR34.compression_output",
+
     "MOR34.smallSigns_coordinate",
     "MOR34.smallSigns_difference",
     "MOR34.smallSigns_positive",
