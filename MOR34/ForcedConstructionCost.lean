@@ -75,9 +75,9 @@ theorem forcedRowConstruction_value (P : Model m) (j : Fin q) (u v : Fin (m j))
   rcases k with ((k | k) | (b | b)) | (⟨k,a⟩ | (a | (w | w)))
   · rfl
   · rfl
-  · unfold forcedRowConstruction forcedRow
+  · simp only [forcedRowConstruction, forcedRow]
     split_ifs <;> rfl
-  · unfold forcedRowConstruction forcedRow
+  · simp only [forcedRowConstruction, forcedRow]
     split_ifs <;> simp only [ConstructedIntegerRow.value, IntegerConstruction.value,
       atomicIntegerRow_value, sub_eq_add_neg]
   · exact forcedOrdinaryConstruction_value P j k a
@@ -91,13 +91,13 @@ theorem forcedRowConstruction_work (P : Model m) (j : Fin q) (u v : Fin (m j))
   rcases k with ((k | k) | (b | b)) | (⟨k,a⟩ | (a | (w | w)))
   · simp only [forcedRowConstruction, atomicIntegerRow_work]; omega
   · simp only [forcedRowConstruction, atomicIntegerRow_work]; omega
-  · unfold forcedRowConstruction
+  · simp only [forcedRowConstruction]
     split_ifs <;> simp [atomicIntegerRow_work, ConstructedIntegerRow.work,
       IntegerConstruction.work] <;> omega
-  · unfold forcedRowConstruction
+  · simp only [forcedRowConstruction]
     split_ifs <;> simp [atomicIntegerRow_work, ConstructedIntegerRow.work,
       IntegerConstruction.work] <;> omega
-  · unfold forcedRowConstruction forcedOrdinaryConstruction
+  · simp only [forcedRowConstruction, forcedOrdinaryConstruction]
     split_ifs
     · rw [atomicIntegerRow_work]; omega
     · exact (prefixRowConstruction_work P k a).trans (by have hh := hm k; omega)
