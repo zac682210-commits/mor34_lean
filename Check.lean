@@ -771,3 +771,8 @@ import MOR34
 #print axioms MOR34.allNormalCandidateCalls_bound
 
 #print axioms MOR34.external_compression_application
+
+#print axioms MOR34.computedReturnedBasis_rank_calls
+#print axioms MOR34.binaryPointMatrix_entry_bits
+#print axioms MOR34.binaryMatrixPayload_bound
+#print axioms MOR34.binaryBasisSearch_rank_payload_states

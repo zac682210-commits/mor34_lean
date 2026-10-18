@@ -198,3 +198,5 @@ import MOR34.PolynomialPayload
 import MOR34.OracleCostComposition
 
 import MOR34.CompressionApplication
+
+import MOR34.ComputedRankPayload

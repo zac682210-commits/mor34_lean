@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.computedReturnedBasis_rank_calls',
+    'MOR34.binaryPointMatrix_entry_bits',
+    'MOR34.binaryMatrixPayload_bound',
+    'MOR34.binaryBasisSearch_rank_payload_states',
+
     'MOR34.external_compression_application',
     'MOR34.rowSearchCalls_polynomial',
     'MOR34.counted_ilp_cost_bound',
