@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.actualCellRequest_cost',
+    'MOR34.denseCellRequests_cost_on_states',
+
     'MOR34.denseProblemSize_polynomial',
     'MOR34.compiledForcedRequest_length',
     'MOR34.compiledCountRequest_length',

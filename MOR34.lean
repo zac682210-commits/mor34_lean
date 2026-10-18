@@ -267,3 +267,5 @@ import MOR34.DenseRawPipeline
 import MOR34.DensePayloadTransfer
 
 import MOR34.DenseSolverSize
+
+import MOR34.DenseCellCost

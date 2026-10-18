@@ -1229,3 +1229,7 @@ import MOR34
 #print axioms MOR34.actualViolationSolver_cost
 
 #print axioms MOR34.actualCellSolver_cost
+
+#print axioms MOR34.actualCellRequest_cost
+
+#print axioms MOR34.denseCellRequests_cost_on_states
