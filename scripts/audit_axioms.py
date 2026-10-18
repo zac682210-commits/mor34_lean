@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.chargedNormalizedExecution_basis_card",
+    "MOR34.chargedRawExecution_cost",
+    "MOR34.weightedDenseParityRow_value",
+    "MOR34.weightedDenseParityRow_polynomial",
+    "MOR34.weightedCompileParityRow_value",
     "MOR34.chargedRelabelDecision_value",
     "MOR34.chargedRelabelDecision_cost",
     "MOR34.chargedRelabelOutput_value",

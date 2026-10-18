@@ -1434,3 +1434,13 @@ import MOR34
 #print axioms MOR34.chargedRelabelOutput_cost
 
 #print axioms MOR34.chargedRawExecution_correct
+
+#print axioms MOR34.weightedDenseParityRow_value
+
+#print axioms MOR34.weightedDenseParityRow_polynomial
+
+#print axioms MOR34.weightedCompileParityRow_value
+
+#print axioms MOR34.chargedNormalizedExecution_basis_card
+
+#print axioms MOR34.chargedRawExecution_cost

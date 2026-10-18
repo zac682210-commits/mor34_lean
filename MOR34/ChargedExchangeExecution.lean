@@ -94,11 +94,13 @@ theorem chargedDenseEdges_cost (P : Model m) (hWF : WellFormed P) (R : ℕ)
     have hv := chargedDenseForcedSolve_cost P hWF R solve e.val.1 e.val.2.1 e.val.2.2 _ hR hi
     dsimp only [chargedAdjacentWitness]
     split
-    · omega
+    · dsimp only [n] at *
+      omega
     · rename_i s h
       have hb := ((forcedRows_iff P e.val.1 e.val.2.1 e.val.2.2 s.1 s.2).mp
         ((denseForcedOracle_spec P R solve hs).found _ _ _ s h)).1
       have ho := hops.forced e.val.1 e.val.2.1 e.val.2.2 s.1 hb
+      dsimp only [n] at *
       omega
   have hm := chargedMap_cost (fun e => let w := chargedAdjacentWitness P R solve ops e
                                      ((e,w.1),w.2)) (chargedAdjacentIndices m).1
@@ -115,7 +117,9 @@ theorem chargedDenseEdges_cost (P : Model m) (hWF : WellFormed P) (R : ℕ)
   dsimp only [chargedDenseEdges,chargedWitnessTable] at ⊢
   unfold edgeExecutionBudget
   change _ ≤ 8*(n+1)^2+n*(521*(n+1)^3+A.I*(180*(n+A.L+2)^4)^A.c+C+3)+n*(C+4)+2
-  dsimp only [chargedWitnessTable] at hedge'
+  dsimp only [chargedWitnessTable,n] at hedge'
+  dsimp only [n] at *
+  simp only [Nat.add_assoc, Nat.reduceAdd] at *
   omega
 
 end MOR34

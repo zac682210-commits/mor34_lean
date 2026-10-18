@@ -306,3 +306,5 @@ import MOR34.UniformPolynomialBudget
 import MOR34.CompleteReferenceApplication
 
 import MOR34.ChargedRawExecution
+
+import MOR34.WeightedParityCompilation

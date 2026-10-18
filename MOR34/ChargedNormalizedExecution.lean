@@ -47,6 +47,20 @@ theorem chargedNormalizedExecution_correct (P : Model m) (hWF : WellFormed P) (R
   exact constructedNormalizedPipeline_correct P hWF _ (denseCountOracle_spec P A.R solve hs)
     _ (denseForcedOracle_spec P R solve hs) _ (denseViolation_spec P A.R solve hs) ranker
 
+theorem chargedNormalizedExecution_basis_card (P : Model m) (hWF : WellFormed P) (R : ℕ)
+    (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
+    (hs : DenseRowSolverSpec solve) (A : DenseCellPrimitives P solve)
+    (ops : PointOperations m) (ranker : ExactIntegerRank m)
+    (rankOps : BinaryRankOperations ranker) (setOps : BinaryCollectionOperations m) :
+    (chargedNormalizedExecution P hWF R solve hs A ops ranker rankOps setOps).1.basis.card ≤
+      Fintype.card (Item m)+1 := by
+  dsimp only [chargedNormalizedExecution]
+  split
+  · simp
+  · simp
+  · rw [chargedFinalBasis_value]
+    exact (binaryBasisSearch_correct _ _ (fun B => ranker.correct _)).2.1
+
 def normalizedExecutionBudget (q n L N D I c J E C O BJ BE BI bc : ℕ) : ℕ :=
   recognitionBudget q n L D I c C+returnedFamilyBudget q n L N D I c J E C+
     finalBasisBudget n (retainedFamilyLength q n) O BJ BE BI bc+C+n+4
