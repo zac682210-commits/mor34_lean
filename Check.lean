@@ -1005,3 +1005,11 @@ import MOR34
 #print axioms MOR34.builtForcedRows_interpret
 
 #print axioms MOR34.builtForcedRows_total_cost
+
+#print axioms MOR34.builtCountRow_value
+
+#print axioms MOR34.builtCountRow_interpret
+
+#print axioms MOR34.builtCountRow_cost
+
+#print axioms MOR34.builtCountRows_total_cost

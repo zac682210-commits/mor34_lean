@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.builtCountRow_value',
+    'MOR34.builtCountRow_interpret',
+    'MOR34.builtCountRow_cost',
+    'MOR34.builtCountRows_total_cost',
+
     'MOR34.builtPrefixRow_value',
     'MOR34.builtPrefixRow_cost',
     'MOR34.builtForcedSlope_value',

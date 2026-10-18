@@ -243,3 +243,5 @@ import MOR34.StoredListPrimitives
 import MOR34.BuiltNormalBasis
 
 import MOR34.MaterializedRowConstruction
+
+import MOR34.MaterializedCountRows

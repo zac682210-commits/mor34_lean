@@ -12,7 +12,13 @@ def builtCountForms {q : ℕ} (B : Finset (Counts q)) : List (IntegerForm q) × 
 
 theorem builtCountForms_value {q : ℕ} (B : Finset (Counts q)) :
     (builtCountForms B).1 = computedCountForms B := by
-  simp only [builtCountForms, computedCountForms, computedMatrixNormals, matrixNormalSearchBuilt_value]
+  have hg {α : Type*} (a b : Option α) (ha : a.isSome) (hb : b.isSome) (he : a=b) :
+      a.get ha = b.get hb := by cases he; rfl
+  have hsome : (matrixNormalSearchBuilt (orderedCountMatrix B)).1.isSome := by
+    rw [matrixNormalSearchBuilt_value]; exact matrixNormalSearch_isSome _
+  have he := hg _ _ hsome (matrixNormalSearch_isSome (orderedCountMatrix B))
+    (matrixNormalSearchBuilt_value (orderedCountMatrix B))
+  exact congrArg (fun v => List.ofFn (fun j : Fin (q+1) => finVectorIntegerForm (v j))) he
 
 def builtCountFormBudget (q : ℕ) : ℕ :=
   normalKeyBuildBudget (q+1)+((q+2)*(q+1)^(2*(q+1)))*normalKeyBudget (q+1)+(q+1)*(q+2)+1
