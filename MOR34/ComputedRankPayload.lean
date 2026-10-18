@@ -15,12 +15,15 @@ theorem computedReturnedBasis_rank_calls (P : Model m) (hWF : WellFormed P)
     finiteBasisRankCalls (orderedBinarySets (computedReturnedSets P hWF solve hs edgeSolve he))
       (fun B => ranker.evaluate (binaryPointMatrix B)) (Fintype.card (Item m)+1) ∅ ≤
       2*(Fintype.card (Item m)+1)*((q+1)*6^q+2*Fintype.card (Item m)) := by
-  have hh := finiteBasisRankCalls_le
+  have hlen : (orderedBinarySets (computedReturnedSets P hWF solve hs edgeSolve he)).length ≤
+      (q+1)*6^q+2*Fintype.card (Item m) := by
+    rw [orderedBinarySets_length, computedReturnedSets_eq]
+    exact returnedSets_card P hWF (computedCellSelection P hWF solve hs) edgeSolve he
+      (computedCellSelection_small P hWF solve hs)
+  exact (finiteBasisRankCalls_le
     (orderedBinarySets (computedReturnedSets P hWF solve hs edgeSolve he))
-    (fun B => ranker.evaluate (binaryPointMatrix B)) (Fintype.card (Item m)+1) ∅
-  rw [orderedBinarySets_length, computedReturnedSets_eq] at hh
-  exact hh.trans (Nat.mul_le_mul_left _
-    (returnedSets_card P hWF _ edgeSolve he (computedCellSelection_small P hWF solve hs)))
+    (fun B => ranker.evaluate (binaryPointMatrix B)) (Fintype.card (Item m)+1) ∅).trans
+      (Nat.mul_le_mul_left _ hlen)
 
 theorem binaryPointMatrix_entry_bits (B : Finset (Finset (Item m)))
     (t : B) (i : Option (Item m)) : signedIntegerBits (binaryPointMatrix B t i) ≤ 2 := by
