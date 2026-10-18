@@ -176,8 +176,9 @@ theorem storedNormalizedPipeline_eq (P : Model m) (hWF : WellFormed P)
     (violate : Option (IntegerRowSolution q)) (ranker : ExactIntegerRank m) :
     storedNormalizedPipeline P hWF solve hs edgeSolve violate ranker =
       executableNormalizedPipeline P hWF solve hs edgeSolve he violate ranker := by
-  simp only [storedNormalizedPipeline, executableNormalizedPipeline, computedReturnedBasis,
-    storedReturnedSets_eq P hWF solve hs edgeSolve he]
+  cases ho : executableRecognitionBranch (m := m) violate solve <;>
+    simp only [storedNormalizedPipeline, executableNormalizedPipeline, ho, computedReturnedBasis,
+      storedReturnedSets_eq P hWF solve hs edgeSolve he] <;> rfl
 
 theorem storedNormalizedPipeline_correct (P : Model m) (hWF : WellFormed P)
     (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
