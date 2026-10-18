@@ -335,3 +335,6 @@ import MOR34.WeightedExchange
 import MOR34.WeightedReturnedFamily
 import MOR34.WeightedNormalizedExecution
 import MOR34.CompleteWeightedApplication
+import MOR34.WeightedRawExecution
+import MOR34.OriginalWeightedApplication
+import MOR34.SharpPolynomialBudget
