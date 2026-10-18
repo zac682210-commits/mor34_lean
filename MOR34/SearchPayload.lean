@@ -15,7 +15,7 @@ def SearchStates {α : Type*} [DecidableEq α] (oracle : Finset α → Option α
 theorem searchStates_of_containment {α : Type*} [DecidableEq α]
     (C : Set α) (oracle : Finset α → Option α)
     (hf : ∀ B z, oracle B = some z → z ∈ C)
-    (Inv : Finset α → Prop) (hInv : ∀ B, (B : Set α) ⊆ C → Inv B)
+    (Inv : Finset α → Prop) (hInv : ∀ B : Finset α, (B : Set α) ⊆ C → Inv B)
     (fuel : ℕ) (B : Finset α) (hB : (B : Set α) ⊆ C) : SearchStates oracle Inv fuel B := by
   induction fuel generalizing B with
   | zero => trivial

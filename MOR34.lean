@@ -164,3 +164,5 @@ import MOR34.RowPayload
 import MOR34.SearchPayload
 
 import MOR34.DeterminantIntermediates
+
+import MOR34.BasicRowPayload

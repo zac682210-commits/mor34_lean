@@ -633,3 +633,7 @@ import MOR34
 #print axioms MOR34.laplaceTerm_abs_bound
 #print axioms MOR34.laplace_partial_sum_bound
 #print axioms MOR34.laplace_partial_sum_bits
+
+#print axioms MOR34.basicRow_uniform_bound
+#print axioms MOR34.forced_system_payload
+#print axioms MOR34.violation_system_payload

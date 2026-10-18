@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.basicRow_uniform_bound',
+    'MOR34.forced_system_payload',
+    'MOR34.violation_system_payload',
+
     'MOR34.laplaceTerm_abs_bound',
     'MOR34.laplace_partial_sum_bound',
     'MOR34.laplace_partial_sum_bits',
