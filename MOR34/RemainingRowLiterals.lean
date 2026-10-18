@@ -63,8 +63,9 @@ theorem violationRowConstruction_literals (P : Model m) (M : ℕ) (hM : 1 ≤ M)
     (hc : P.capacity.natAbs ≤ M) (k : ViolationRow m) :
     (violationRowConstruction P k).LiteralsBounded M := by
   cases k with
-  | inl k => exact countRowConstruction_literals P _ _ M hM hm hw ha hb hc
-      (fun i => Fin.elim0 i) (fun i => Fin.elim0 i) _
+  | inl k =>
+      exact countRowConstruction_literals P _ _ M hM hm hw ha hb hc
+        (fun i => Fin.elim0 i) (fun i => Fin.elim0 i) _
   | inr u => exact ⟨ha,fun _ => Nat.zero_le _,⟨hb,by simpa using hM⟩⟩
 
 /-- Parity-row arithmetic contains only original dense entries and the constants
@@ -84,6 +85,9 @@ theorem parityRowConstruction_literals (a b : Fin q → ℤ) (d : ℤ) (ε : Par
   apply construction_fold_literals
   intro e he
   obtain ⟨j,rfl⟩ := List.mem_ofFn.mp he
-  exact ⟨ha j,by simp; have hj := (ε j).isLt; omega⟩
+  exact ⟨ha j, by
+    change (ε j).val ≤ M
+    have hj := (ε j).isLt
+    omega⟩
 
 end MOR34

@@ -168,7 +168,10 @@ theorem chargedDenseSelection_polynomial {q : ℕ} {m : Fin q → ℕ}
   change denseParityBudget q (Fintype.card (Item m)) A.L A.N A.D A.I A.c A.J A.E ≤
     cellParityFactor q A.I K A.c*X at hp
   have hi : denseParityBudget q (Fintype.card (Item m)) A.L A.N A.D A.I A.c A.J A.E+3^q*(q+1)+1 ≤
-      (cellParityFactor q A.I K A.c+3^q*(q+1)+1)*X := by nlinarith
+      (cellParityFactor q A.I K A.c+3^q*(q+1)+1)*X := by
+    have ht : 3^q*(q+1)+1 ≤ (3^q*(q+1)+1)*X :=
+      Nat.le_mul_of_pos_right _ (by omega)
+    nlinarith only [hp,ht]
   have hh := Nat.mul_le_mul_left (2^q) hi
   have he : functionEnumerationBudget q 2+1 ≤ (functionEnumerationBudget q 2+1)*X :=
     Nat.le_mul_of_pos_right _ (by omega)
