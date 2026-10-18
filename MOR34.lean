@@ -172,3 +172,6 @@ import MOR34.ConcreteColumnNormals
 import MOR34.ExecutableMatrixNormals
 import MOR34.OrderedCounts
 import MOR34.ExecutableCountForms
+import MOR34.ComputedCellPipeline
+import MOR34.ComputedNormalizedPipeline
+import MOR34.ComputedRawPipeline

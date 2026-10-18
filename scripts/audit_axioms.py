@@ -7,6 +7,20 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.computedRawPipeline_correct",
+    "MOR34.computedRawPipeline_facet",
+    "MOR34.computed_original_input_output_contract",
+
+    "MOR34.computedSearch_forms_bounded",
+    "MOR34.computedCellSelection_basis",
+    "MOR34.computedCellSelection_small",
+    "MOR34.computedCellSelection_query_calls",
+    "MOR34.computedCellSelection_query_bounds",
+    "MOR34.computedNormalPipeline_correct",
+    "MOR34.computedNormalPipeline_dimension",
+    "MOR34.computedNormalPipeline_facet",
+    "MOR34.computedCellSelection_executed",
+
     "MOR34.orderedCounts_mem",
     "MOR34.orderedCounts_length",
     "MOR34.finAugmentedCount_cast",

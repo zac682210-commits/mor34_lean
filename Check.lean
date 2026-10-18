@@ -657,3 +657,15 @@ import MOR34
 #print axioms MOR34.computedCountForms_spec
 #print axioms MOR34.computedCountForms_length
 #print axioms MOR34.computedCountForms_bound
+#print axioms MOR34.computedSearch_forms_bounded
+#print axioms MOR34.computedCellSelection_basis
+#print axioms MOR34.computedCellSelection_small
+#print axioms MOR34.computedCellSelection_query_calls
+#print axioms MOR34.computedCellSelection_query_bounds
+#print axioms MOR34.computedNormalPipeline_correct
+#print axioms MOR34.computedNormalPipeline_dimension
+#print axioms MOR34.computedNormalPipeline_facet
+#print axioms MOR34.computedCellSelection_executed
+#print axioms MOR34.computedRawPipeline_correct
+#print axioms MOR34.computedRawPipeline_facet
+#print axioms MOR34.computed_original_input_output_contract
