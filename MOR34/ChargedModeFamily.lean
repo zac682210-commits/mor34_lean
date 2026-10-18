@@ -47,7 +47,9 @@ theorem chargedModeFamily_cost {q : ℕ}
       (values.1,b.2+values.2+1)) (chargedFinFunctions q 3).1 (C+E+1) M
       (fun mode _ => by dsimp; have h1 := hc mode; have h2 := he mode; omega)
       (fun mode _ => hm mode)
-  rw [chargedFinFunctions_value,allFinFunctions_length] at hh
+  have hlen : (chargedFinFunctions q 3).1.length = 3^q := by
+    rw [chargedFinFunctions_value,allFinFunctions_length]
+  rw [hlen] at hh
   have hf := chargedFinFunctions_cost q 3
   dsimp only [chargedModeFamily]
   nlinarith

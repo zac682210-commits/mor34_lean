@@ -284,3 +284,4 @@ import MOR34.ChargedExtremaTable
 import MOR34.ChargedModeFamily
 import MOR34.DenseModeComposition
 import MOR34.ChargedParityFamily
+import MOR34.CellPhasePolynomial

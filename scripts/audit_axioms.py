@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.denseCellQueryBudget_polynomial",
+    "MOR34.chargedCellStepBudget_scale",
+    "MOR34.denseCellLoopBudget_polynomial",
     "MOR34.chargedCellRestrictions_value",
     "MOR34.chargedCellRestrictions_cost",
     "MOR34.chargedDenseParityFamily_value",

@@ -122,7 +122,9 @@ theorem chargedDenseSelection_cost (P : Model m) (hWF : WellFormed P)
     (denseParityBudget q (Fintype.card (Item m)) A.L A.N A.D A.I A.c A.J A.E) (3^q*(q+1))
     (fun ε _ => chargedDenseParityFamily_cost P hWF solve hs A ε)
     (fun ε _ => chargedDenseParityFamily_length P hWF solve hs A ε)
-  rw [chargedFinFunctions_value,allFinFunctions_length] at hh
+  have hlen : (chargedFinFunctions q 2).1.length = 2^q := by
+    rw [chargedFinFunctions_value,allFinFunctions_length]
+  rw [hlen] at hh
   have hf := chargedFinFunctions_cost q 2
   exact Nat.add_le_add_right (Nat.add_le_add hf hh) 1
 

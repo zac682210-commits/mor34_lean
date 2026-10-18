@@ -1318,3 +1318,9 @@ import MOR34
 #print axioms MOR34.chargedCellRestrictions_value
 
 #print axioms MOR34.chargedCellRestrictions_cost
+
+#print axioms MOR34.denseCellQueryBudget_polynomial
+
+#print axioms MOR34.chargedCellStepBudget_scale
+
+#print axioms MOR34.denseCellLoopBudget_polynomial
