@@ -16,7 +16,7 @@ theorem actualCellRequest_cost (P : Model m) (hWF : WellFormed P) (ε : Parity q
       2048*(Fintype.card (Item m)+1)^4+
         I*(180*(Fintype.card (Item m)+L+2)^4)^c+1 := by
   apply chargedDenseCountSolve_cost P hWF R solve ε _ _ hR
-  · rw [List.length_cons,cellQueries_length]; omega
+  · rw [List.length_cons,cellQueries_length]
   · exact actualCellSolver_cost P hWF ε e mode L B hp t ht R I c solve hcost
 
 /-- All actual reached cell states inherit the concrete request bound. The
