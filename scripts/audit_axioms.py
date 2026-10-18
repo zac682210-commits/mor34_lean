@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.storedList_ofFn',
+    'MOR34.densePayload_of_value',
+    'MOR34.completeEnumeration_sum',
+    'MOR34.denseCompiledList_payload',
+    'MOR34.compiledForcedRequest_payload',
+    'MOR34.compiledCountRequest_payload',
+    'MOR34.compiledViolationRequest_payload',
+    'MOR34.compiledForcedRequest_payload_polynomial',
+    'MOR34.compiledViolationRequest_payload_polynomial',
+
     'MOR34.chargedOutsideQueries_value',
     'MOR34.chargedOutsideQueries_cost',
     'MOR34.chargedCellStep_value',

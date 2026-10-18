@@ -1197,3 +1197,21 @@ import MOR34
 #print axioms MOR34.denseRawPipeline_facet
 
 #print axioms MOR34.dense_original_input_output_contract
+
+#print axioms MOR34.storedList_ofFn
+
+#print axioms MOR34.densePayload_of_value
+
+#print axioms MOR34.completeEnumeration_sum
+
+#print axioms MOR34.denseCompiledList_payload
+
+#print axioms MOR34.compiledForcedRequest_payload
+
+#print axioms MOR34.compiledCountRequest_payload
+
+#print axioms MOR34.compiledViolationRequest_payload
+
+#print axioms MOR34.compiledForcedRequest_payload_polynomial
+
+#print axioms MOR34.compiledViolationRequest_payload_polynomial
