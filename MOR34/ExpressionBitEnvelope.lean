@@ -13,8 +13,10 @@ def IntegerConstruction.LiteralsBounded (M : ℕ) : IntegerConstruction → Prop
 theorem expression_value_magnitude (e : IntegerConstruction) (M : ℕ)
     (h : e.LiteralsBounded M) : e.value.natAbs ≤ (M+2)^e.work := by
   induction e with
-  | atom z => simpa [IntegerConstruction.value, IntegerConstruction.work] using
-      h.trans (show M ≤ M+2 by omega)
+  | atom z =>
+      change z.natAbs ≤ M at h
+      simpa [IntegerConstruction.value, IntegerConstruction.work] using
+        (h.trans (show M ≤ M+2 by omega))
   | add a b ia ib =>
       have ha := ia h.1
       have hb := ib h.2
@@ -52,7 +54,7 @@ theorem constructionSubterm_work {e t : IntegerConstruction} (h : ConstructionSu
 theorem constructionSubterm_literals {e t : IntegerConstruction} (h : ConstructionSubterm e t)
     (M : ℕ) (hM : t.LiteralsBounded M) : e.LiteralsBounded M := by
   induction h with
-  | refl e => exact hM
+  | refl => exact hM
   | addLeft h ih => exact ih hM.1
   | addRight h ih => exact ih hM.2
   | mulLeft h ih => exact ih hM.1

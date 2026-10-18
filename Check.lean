@@ -1153,3 +1153,15 @@ import MOR34
 #print axioms MOR34.constructionSubterm_bits
 
 #print axioms MOR34.constructionSubterm_bits_polynomial
+
+#print axioms MOR34.chargedFirstWitness_value
+
+#print axioms MOR34.chargedFirstWitness_cost
+
+#print axioms MOR34.chargedDescendingSearch_value
+
+#print axioms MOR34.chargedDescendingSearch_cost
+
+#print axioms MOR34.chargedBasisExecution_value
+
+#print axioms MOR34.chargedBasisExecution_cost

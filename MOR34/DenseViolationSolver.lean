@@ -99,20 +99,20 @@ theorem chargedDenseViolationSolve_cost (P : Model m) (hWF : WellFormed P) (R : 
 
 /-- All three solver interfaces are supplied by one established dense integer
 solver. Correctness includes invalid and empty branches, not just supported faces. -/
-def denseNormalizedPipeline (P : Model m) (hWF : WellFormed P) (R : ℕ)
+def denseNormalizedPipeline (P : Model m) (hWF : WellFormed P) (inputRead queryRead : ℕ)
     (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
     (hs : DenseRowSolverSpec solve) (ranker : ExactIntegerRank m) : NormalizedOutput m :=
-  constructedNormalizedPipeline P hWF (denseCountOracle P R solve)
-    (denseCountOracle_spec P R solve hs) (denseForcedOracle P R solve)
-    (chargedDenseViolationSolve P R solve).1 ranker
+  constructedNormalizedPipeline P hWF (denseCountOracle P queryRead solve)
+    (denseCountOracle_spec P queryRead solve hs) (denseForcedOracle P inputRead solve)
+    (chargedDenseViolationSolve P inputRead solve).1 ranker
 
-theorem denseNormalizedPipeline_correct (P : Model m) (hWF : WellFormed P) (R : ℕ)
+theorem denseNormalizedPipeline_correct (P : Model m) (hWF : WellFormed P) (inputRead queryRead : ℕ)
     (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
     (hs : DenseRowSolverSpec solve) (ranker : ExactIntegerRank m) :
-    (denseNormalizedPipeline P hWF R solve hs ranker).Correct P :=
-  constructedNormalizedPipeline_correct P hWF (denseCountOracle P R solve)
-    (denseCountOracle_spec P R solve hs) (denseForcedOracle P R solve)
-    (denseForcedOracle_spec P R solve hs) (chargedDenseViolationSolve P R solve).1
-    (denseViolation_spec P R solve hs) ranker
+    (denseNormalizedPipeline P hWF inputRead queryRead solve hs ranker).Correct P :=
+  constructedNormalizedPipeline_correct P hWF (denseCountOracle P queryRead solve)
+    (denseCountOracle_spec P queryRead solve hs) (denseForcedOracle P inputRead solve)
+    (denseForcedOracle_spec P inputRead solve hs) (chargedDenseViolationSolve P inputRead solve).1
+    (denseViolation_spec P inputRead solve hs) ranker
 
 end MOR34

@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedFirstWitness_value',
+    'MOR34.chargedFirstWitness_cost',
+    'MOR34.chargedDescendingSearch_value',
+    'MOR34.chargedDescendingSearch_cost',
+    'MOR34.chargedBasisExecution_value',
+    'MOR34.chargedBasisExecution_cost',
+
     'MOR34.violationRowIndexList_complete',
     'MOR34.violationRowIndexList_length',
     'MOR34.compiledViolationRequest_sized',
