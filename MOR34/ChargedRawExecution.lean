@@ -52,7 +52,13 @@ theorem chargedRelabelOutput_value (e : Item m ≃ Fin n) (point : RelabelPointO
     relabelOutput,relabelBasis]
   congr 1
   ext S
-  simp [List.mem_toFinset,orderedBinarySets_mem,Finset.mem_map,Equiv.finsetCongr]
+  simp only [List.mem_toFinset,List.mem_map,orderedBinarySets_mem,Finset.mem_map,Equiv.finsetCongr]
+  constructor
+  · rintro ⟨a,ha,rfl⟩
+    simpa using ha
+  · intro h
+    refine ⟨S.map e.symm.toEmbedding,h,?_⟩
+    simp
 
 structure RelabelLocalBounds (e : Item m ≃ Fin n) (point : RelabelPointOperation e)
     (basis : RelabelBasisOperations m n) (C E J : ℕ) : Prop where

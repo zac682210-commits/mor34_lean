@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.chargedMap_cost_additive",
+    "MOR34.weightedRetainedRow_cost_additive",
+    "MOR34.weightedViolationRequest_cost",
+    "MOR34.weightedForcedRequest_cost",
+    "MOR34.weightedRemainingRequests_polynomial",
     "MOR34.forms_cell_query_literals",
     "MOR34.weightedReachedCellRequests_polynomial",
     "MOR34.weightedCompiledCountRequest_polynomial",

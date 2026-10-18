@@ -1480,3 +1480,8 @@ import MOR34
 #print axioms MOR34.forms_cell_query_literals
 
 #print axioms MOR34.weightedReachedCellRequests_polynomial
+#print axioms MOR34.chargedMap_cost_additive
+#print axioms MOR34.weightedRetainedRow_cost_additive
+#print axioms MOR34.weightedViolationRequest_cost
+#print axioms MOR34.weightedForcedRequest_cost
+#print axioms MOR34.weightedRemainingRequests_polynomial
