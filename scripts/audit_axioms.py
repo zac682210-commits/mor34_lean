@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.normalKeyBuildBudget_parameter_bound',
+    'MOR34.normalEnumerationFactor_parameter_bound',
+    'MOR34.builtNormalParameter_bound',
+
     'MOR34.denseQueryTable_read_bound',
     'MOR34.builtViolationRow_value',
     'MOR34.builtViolationRow_interpret',

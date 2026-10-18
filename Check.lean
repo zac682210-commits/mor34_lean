@@ -1023,3 +1023,9 @@ import MOR34
 #print axioms MOR34.builtViolationRow_cost
 
 #print axioms MOR34.builtViolationRows_total_cost
+
+#print axioms MOR34.normalKeyBuildBudget_parameter_bound
+
+#print axioms MOR34.normalEnumerationFactor_parameter_bound
+
+#print axioms MOR34.builtNormalParameter_bound
