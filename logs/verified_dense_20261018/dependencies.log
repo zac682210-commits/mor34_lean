@@ -1,0 +1,46 @@
+info: toolchain not updated; already up-to-date
+info: mathlib: running post-update hooks
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+
+100 1075k  100 1075k    0     0  3577k      0 --:--:-- --:--:-- --:--:-- 3577k
+
+installing leantar 0.1.15
+Attempting to download 6641 file(s)
+
+Downloaded: 1 file(s) [attempted 1/6641 = 0%]
+Downloaded: 176 file(s) [attempted 176/6641 = 2%]
+Downloaded: 405 file(s) [attempted 405/6641 = 6%]
+Downloaded: 647 file(s) [attempted 647/6641 = 9%]
+Downloaded: 886 file(s) [attempted 886/6641 = 13%]
+Downloaded: 1121 file(s) [attempted 1121/6641 = 16%]
+Downloaded: 1362 file(s) [attempted 1362/6641 = 20%]
+Downloaded: 1601 file(s) [attempted 1601/6641 = 24%]
+Downloaded: 1824 file(s) [attempted 1824/6641 = 27%]
+Downloaded: 2065 file(s) [attempted 2065/6641 = 31%]
+Downloaded: 2314 file(s) [attempted 2314/6641 = 34%]
+Downloaded: 2548 file(s) [attempted 2548/6641 = 38%]
+Downloaded: 2796 file(s) [attempted 2796/6641 = 42%]
+Downloaded: 3046 file(s) [attempted 3046/6641 = 45%]
+Downloaded: 3286 file(s) [attempted 3286/6641 = 49%]
+Downloaded: 3534 file(s) [attempted 3534/6641 = 53%]
+Downloaded: 3773 file(s) [attempted 3773/6641 = 56%]
+Downloaded: 4019 file(s) [attempted 4019/6641 = 60%]
+Downloaded: 4251 file(s) [attempted 4251/6641 = 64%]
+Downloaded: 4479 file(s) [attempted 4479/6641 = 67%]
+Downloaded: 4715 file(s) [attempted 4715/6641 = 70%]
+Downloaded: 4948 file(s) [attempted 4948/6641 = 74%]
+Downloaded: 5186 file(s) [attempted 5186/6641 = 78%]
+Downloaded: 5427 file(s) [attempted 5427/6641 = 81%]
+Downloaded: 5669 file(s) [attempted 5669/6641 = 85%]
+Downloaded: 5912 file(s) [attempted 5912/6641 = 89%]
+Downloaded: 6165 file(s) [attempted 6165/6641 = 92%]
+Downloaded: 6395 file(s) [attempted 6395/6641 = 96%]
+Downloaded: 6638 file(s) [attempted 6638/6641 = 99%]
+Downloaded: 6641 file(s) [attempted 6641/6641 = 100%] (100% success)
+Decompressing 6641 file(s)
+Unpacked in 2689 ms
+Completed successfully!

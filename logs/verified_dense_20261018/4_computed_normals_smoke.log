@@ -1,0 +1,17 @@
+PASS empty set rejects all sampled points
+PASS singleton accepts its point
+PASS singleton rejects another point
+PASS full affine line accepts extrapolation
+PASS dependent rows accept extrapolation
+PASS dependent rows reject off-line point
+PASS normal family has exactly q+1 entries
+PASS zero coordinates and empty set
+PASS zero coordinates and singleton
+PASS zero matrix has identity annihilator
+PASS full rank matrix has zero annihilator
+11 computed-normal runtime checks passed
+PASS raw coefficient grouping includes zero class
+PASS raw classes sorted by coefficient
+PASS raw within-class weights sorted
+PASS raw item permutation retains original labels
+4 computed-normalization runtime checks passed

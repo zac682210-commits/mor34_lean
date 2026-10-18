@@ -1,0 +1,1 @@
+'mor34_mathlib_smoke' depends on axioms: [propext, Quot.sound]
