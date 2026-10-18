@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.executableParityList_mem",
+    "MOR34.executableParityList_length",
+    "MOR34.executableSupportSearch_some",
+    "MOR34.executableSupportSearch_none_iff",
+    "MOR34.executableSupportSearch_calls_le",
+    "MOR34.executableRecognitionBranch_correct",
+
     "MOR34.executableNormalizedPipeline_dimension",
     "MOR34.normalCheck_partial_sum_bits",
     "MOR34.concreteColumnNormal_bound",

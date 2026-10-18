@@ -699,3 +699,9 @@ import MOR34
 #print axioms MOR34.normalCheck_partial_sum_bound
 #print axioms MOR34.normalCheck_partial_sum_bits
 #print axioms MOR34.executableNormalizedPipeline_dimension
+#print axioms MOR34.executableParityList_mem
+#print axioms MOR34.executableParityList_length
+#print axioms MOR34.executableSupportSearch_some
+#print axioms MOR34.executableSupportSearch_none_iff
+#print axioms MOR34.executableSupportSearch_calls_le
+#print axioms MOR34.executableRecognitionBranch_correct

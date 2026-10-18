@@ -1,4 +1,5 @@
 import MOR34.ExecutableReturnedSets
+import MOR34.ExecutableRecognitionBranches
 
 namespace MOR34
 variable {q : ℕ} {m : Fin q → ℕ}
@@ -52,7 +53,7 @@ def executableNormalizedPipeline (P : Model m) (hWF : WellFormed P)
     (edgeSolve : (j : Fin q) → Fin (m j) → Fin (m j) → Option (IntegerRowSolution q))
     (he : ForcedRowSolverSpec P edgeSolve)
     (violate : Option (IntegerRowSolution q)) (ranker : ExactIntegerRank m) : NormalizedOutput m :=
-  match recognitionBranch (m := m) violate solve with
+  match executableRecognitionBranch (m := m) violate solve with
   | .invalid t => ⟨.invalid t, ∅⟩
   | .empty => ⟨.empty, ∅⟩
   | .supported z =>
@@ -67,9 +68,9 @@ theorem executableNormalizedPipeline_correct (P : Model m) (hWF : WellFormed P)
     (violate : Option (IntegerRowSolution q)) (hv : ViolationSolverSpec P violate)
     (ranker : ExactIntegerRank m) :
     (executableNormalizedPipeline P hWF solve hs edgeSolve he violate ranker).Correct P := by
-  have hb := recognitionBranch_correct P hWF violate hv solve hs
+  have hb := executableRecognitionBranch_correct P hWF violate hv solve hs
   unfold executableNormalizedPipeline
-  cases ho : recognitionBranch (m := m) violate solve with
+  cases ho : executableRecognitionBranch (m := m) violate solve with
   | invalid t =>
     have hh : Feasible P t ∧ P.rhs < candidateValue P t := by
       simpa [ho, RecognitionBranch.Correct] using hb
@@ -99,6 +100,7 @@ theorem executableNormalizedPipeline_correct (P : Model m) (hWF : WellFormed P)
     change (⟨RecognitionOutput.supported (prefixSet z) (B.card-1)
       (decide (B.card = Fintype.card (Item m))), B⟩ : NormalizedOutput m).Correct P
     refine ⟨⟨hh.1, hh.2.2, hd, hf⟩, hB.1, hB.2.2.1, hB.2.2.2, ?_⟩
+    change B.card = B.card-1+1
     omega
 
 theorem executableNormalizedPipeline_facet (P : Model m) (hWF : WellFormed P)
