@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.preparedCellStep_value",
+    "MOR34.preparedCellStep_cost",
+    "MOR34.preparedCellBasis_value",
+    "MOR34.preparedCellBasis_cost_on_states",
+    "MOR34.preparedCellBudget_uniform",
     "MOR34.preparedCountForms_value",
     "MOR34.preparedCountForms_cost",
     "MOR34.orderedCountMatrix_bound",

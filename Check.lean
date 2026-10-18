@@ -1503,3 +1503,8 @@ import MOR34
 #print axioms MOR34.preparedNormalCheck_bits
 #print axioms MOR34.preparedNormalMinor_bits
 #print axioms MOR34.preparedCountForms_polynomial
+#print axioms MOR34.preparedCellStep_value
+#print axioms MOR34.preparedCellStep_cost
+#print axioms MOR34.preparedCellBasis_value
+#print axioms MOR34.preparedCellBasis_cost_on_states
+#print axioms MOR34.preparedCellBudget_uniform
