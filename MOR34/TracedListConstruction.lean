@@ -62,7 +62,7 @@ theorem chargedFilter_value {α : Type*} (p : α → Bool × ℕ) (L : List α) 
     (chargedFilter p L).1 = L.filter (fun a => (p a).1) := by
   induction L with
   | nil => rfl
-  | cons a L ih => simp [chargedFilter, List.filter_cons, ih]; split <;> rfl
+  | cons a L ih => simp [chargedFilter, List.filter_cons, ih]
 
 theorem chargedFilter_cost {α : Type*} (p : α → Bool × ℕ) (L : List α)
     (C : ℕ) (hp : ∀ a ∈ L, (p a).2 ≤ C) :
