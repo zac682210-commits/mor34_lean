@@ -1,0 +1,61 @@
+info: toolchain not updated; already up-to-date
+info: mathlib: running post-update hooks
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+
+100 1075k  100 1075k    0     0  3398k      0 --:--:-- --:--:-- --:--:-- 3398k
+
+installing leantar 0.1.15
+Attempting to download 6641 file(s)
+
+Downloaded: 1 file(s) [attempted 1/6641 = 0%]
+Downloaded: 74 file(s) [attempted 74/6641 = 1%]
+Downloaded: 214 file(s) [attempted 214/6641 = 3%]
+Downloaded: 373 file(s) [attempted 373/6641 = 5%]
+Downloaded: 533 file(s) [attempted 533/6641 = 8%]
+Downloaded: 691 file(s) [attempted 691/6641 = 10%]
+Downloaded: 828 file(s) [attempted 828/6641 = 12%]
+Downloaded: 989 file(s) [attempted 989/6641 = 14%]
+Downloaded: 1152 file(s) [attempted 1152/6641 = 17%]
+Downloaded: 1318 file(s) [attempted 1318/6641 = 19%]
+Downloaded: 1467 file(s) [attempted 1467/6641 = 22%]
+Downloaded: 1623 file(s) [attempted 1623/6641 = 24%]
+Downloaded: 1770 file(s) [attempted 1770/6641 = 26%]
+Downloaded: 1912 file(s) [attempted 1912/6641 = 28%]
+Downloaded: 2075 file(s) [attempted 2075/6641 = 31%]
+Downloaded: 2233 file(s) [attempted 2233/6641 = 33%]
+Downloaded: 2379 file(s) [attempted 2379/6641 = 35%]
+Downloaded: 2531 file(s) [attempted 2531/6641 = 38%]
+Downloaded: 2673 file(s) [attempted 2673/6641 = 40%]
+Downloaded: 2820 file(s) [attempted 2820/6641 = 42%]
+Downloaded: 2976 file(s) [attempted 2976/6641 = 44%]
+Downloaded: 3106 file(s) [attempted 3106/6641 = 46%]
+Downloaded: 3258 file(s) [attempted 3258/6641 = 49%]
+Downloaded: 3400 file(s) [attempted 3400/6641 = 51%]
+Downloaded: 3558 file(s) [attempted 3558/6641 = 53%]
+Downloaded: 3720 file(s) [attempted 3720/6641 = 56%]
+Downloaded: 3856 file(s) [attempted 3856/6641 = 58%]
+Downloaded: 4010 file(s) [attempted 4010/6641 = 60%]
+Downloaded: 4171 file(s) [attempted 4171/6641 = 62%]
+Downloaded: 4323 file(s) [attempted 4323/6641 = 65%]
+Downloaded: 4484 file(s) [attempted 4484/6641 = 67%]
+Downloaded: 4649 file(s) [attempted 4649/6641 = 70%]
+Downloaded: 4812 file(s) [attempted 4812/6641 = 72%]
+Downloaded: 4983 file(s) [attempted 4983/6641 = 75%]
+Downloaded: 5144 file(s) [attempted 5144/6641 = 77%]
+Downloaded: 5303 file(s) [attempted 5303/6641 = 79%]
+Downloaded: 5456 file(s) [attempted 5456/6641 = 82%]
+Downloaded: 5607 file(s) [attempted 5607/6641 = 84%]
+Downloaded: 5764 file(s) [attempted 5764/6641 = 86%]
+Downloaded: 5915 file(s) [attempted 5915/6641 = 89%]
+Downloaded: 6076 file(s) [attempted 6076/6641 = 91%]
+Downloaded: 6242 file(s) [attempted 6242/6641 = 93%]
+Downloaded: 6414 file(s) [attempted 6414/6641 = 96%]
+Downloaded: 6596 file(s) [attempted 6596/6641 = 99%]
+Downloaded: 6641 file(s) [attempted 6641/6641 = 100%] (100% success)
+Decompressing 6641 file(s)
+Unpacked in 329 ms
+Completed successfully!
