@@ -310,3 +310,7 @@ import MOR34.ChargedRawExecution
 import MOR34.WeightedParityCompilation
 
 import MOR34.WeightedSharedParity
+
+import MOR34.WeightedDenseRequests
+
+import MOR34.WeightedParityEnvelope

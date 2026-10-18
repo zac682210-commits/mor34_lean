@@ -1450,3 +1450,23 @@ import MOR34
 #print axioms MOR34.sharedWeightedDenseParityRow_value
 
 #print axioms MOR34.sharedWeightedDenseParityRow_cost
+
+#print axioms MOR34.weightedCompileRetainedRow_value
+
+#print axioms MOR34.sharedWeightedCompileParityRow_value
+
+#print axioms MOR34.weightedCompiledCountRequest_value
+
+#print axioms MOR34.weightedCompiledViolationRequest_value
+
+#print axioms MOR34.weightedCompiledForcedRequest_value
+
+#print axioms MOR34.weightedRequests_solver_inputs
+
+#print axioms MOR34.constructedRow_coordinate_work
+
+#print axioms MOR34.evaluatedRow_magnitudes
+
+#print axioms MOR34.expressionMagnitude_clog
+
+#print axioms MOR34.sharedWeightedCompileParityRow_cost

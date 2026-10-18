@@ -22,7 +22,12 @@ theorem chargedReturnedFamily_value (P : Model m) (hWF : WellFormed P) (R : ℕ)
       computedReturnedSets P hWF (denseCountOracle P A.R solve) (denseCountOracle_spec P A.R solve hs)
         (denseForcedOracle P R solve) (denseForcedOracle_spec P R solve hs) := by
   simp only [chargedReturnedFamily,List.toFinset_append,chargedMap_value,ops.makePrefix_value,
-    List.toFinset_map,chargedDenseSelection_value,chargedDenseEdges_value]
+    chargedDenseEdges_value]
+  have hp : ((chargedDenseSelection P hWF solve hs A).1.map (fun z => prefixSet z)).toFinset =
+      (chargedDenseSelection P hWF solve hs A).1.toFinset.image prefixSet := by
+    ext S
+    simp
+  rw [hp,chargedDenseSelection_value]
   exact constructedReturnedSets_eq P hWF _ _ _ (denseForcedOracle_spec P R solve hs)
 
 theorem chargedReturnedFamily_length (P : Model m) (hWF : WellFormed P) (R : ℕ)

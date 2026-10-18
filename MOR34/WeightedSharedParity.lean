@@ -59,7 +59,7 @@ theorem sharedWeightedDenseParityRow_cost (A : IntegerArithmeticCharge) (row : D
     rw [hs.1] at hr
     simp only [IntegerConstruction.work] at hx hy
     dsimp only [pricedParityEntry]
-    simp only [storedIntegerRead,chargedListRead_value] at hx hy ⊢
+    simp only [storedIntegerRead,chargedListRead_value] at hx hy hr ⊢
     omega
   let data := chargedMap (pricedParityEntry A row ε) (List.ofFn (fun j : Fin q => j))
   have hl : (data.1.map Prod.snd).length = q := by
@@ -77,7 +77,7 @@ theorem sharedWeightedDenseParityRow_cost (A : IntegerArithmeticCharge) (row : D
     ⟨hd,sumConstruction_literals _ M hlit⟩
     (IntegerArithmeticCharge.Bounded.mono A hA (by
       simp only [IntegerConstruction.work,sumConstruction_work,hl]
-      gcongr <;> omega))
+      exact Nat.add_le_add_right (Nat.mul_le_mul_right (Nat.clog 2 (M+2)) (by omega)) 2))
   simp only [IntegerConstruction.work,sumConstruction_work,hl] at hsum
   have hmap := chargedMap_cost (pricedParityEntry A row ε)
     (List.ofFn (fun j : Fin q => j)) (q+5+6*K) (fun j _ => he j)

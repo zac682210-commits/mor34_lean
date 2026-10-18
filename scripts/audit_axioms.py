@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.constructedRow_coordinate_work",
+    "MOR34.evaluatedRow_magnitudes",
+    "MOR34.expressionMagnitude_clog",
+    "MOR34.sharedWeightedCompileParityRow_cost",
+    "MOR34.weightedCompileRetainedRow_value",
+    "MOR34.sharedWeightedCompileParityRow_value",
+    "MOR34.weightedCompiledCountRequest_value",
+    "MOR34.weightedCompiledViolationRequest_value",
+    "MOR34.weightedCompiledForcedRequest_value",
+    "MOR34.weightedRequests_solver_inputs",
     "MOR34.pricedParityEntry_value",
     "MOR34.sharedWeightedDenseParityRow_value",
     "MOR34.sharedWeightedDenseParityRow_cost",

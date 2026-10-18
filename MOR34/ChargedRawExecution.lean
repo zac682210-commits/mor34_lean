@@ -48,7 +48,7 @@ theorem chargedRelabelOutput_value (e : Item m ≃ Fin n) (point : RelabelPointO
     (basis : RelabelBasisOperations m n) (out : NormalizedOutput m) :
     (chargedRelabelOutput e point basis out).1 = relabelOutput e out := by
   simp only [chargedRelabelOutput,chargedRelabelDecision_value,basis.collect_value,
-    chargedMap_value,basis.emit_value,point.value,List.toFinset_map,
+    chargedMap_value,basis.emit_value,point.value,
     relabelOutput,relabelBasis]
   congr 1
   ext S
