@@ -529,3 +529,19 @@ import MOR34
 #print axioms MOR34.relabel_signed_dimension
 
 #print axioms MOR34.boundedPipeline_raw_dimension
+
+#print axioms MOR34.rawCandidateLinear_point
+#print axioms MOR34.raw_valid_linear_bound
+#print axioms MOR34.rawTightPointSet_level
+#print axioms MOR34.rawCandidateFace_eq_hull
+#print axioms MOR34.rawCandidateFace_convex
+#print axioms MOR34.rawCandidateFace_extreme
+#print axioms MOR34.rawCandidateFace_nonempty
+#print axioms MOR34.rawCandidateFace_vectorSpan
+#print axioms MOR34.relabel_feasiblePointSet
+#print axioms MOR34.relabel_knapsackPolytope
+#print axioms MOR34.relabel_candidateFace
+#print axioms MOR34.relabel_polytope_finrank
+#print axioms MOR34.relabel_face_finrank
+#print axioms MOR34.relabel_geometric_facet
+#print axioms MOR34.relabel_definesFacet

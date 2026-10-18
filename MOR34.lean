@@ -134,3 +134,5 @@ import MOR34.RawTransport
 import MOR34.RawGeometry
 
 import MOR34.PrefixEncodingBounds
+
+import MOR34.RawFacet
