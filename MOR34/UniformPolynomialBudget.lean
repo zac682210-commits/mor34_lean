@@ -52,6 +52,32 @@ theorem uniformPolynomial_pow {f : ℕ → ℕ → ℕ → ℕ}
     _ ≤ (F q*(n+L+2)^d)^c := pow_le_pow_left' (hf q n L) c
     _ = _ := by rw [mul_pow,← pow_mul]
 
+open Lean Elab Tactic Meta in
+syntax "uniform_polynomial" : tactic
+
+open Lean Elab Tactic Meta in
+elab_rules : tactic
+  | `(tactic| uniform_polynomial) => do
+    try
+      evalTactic (← `(tactic| first
+        | exact uniformPolynomial_parameter _
+        | exact uniformPolynomial_n
+        | exact uniformPolynomial_L))
+      return
+    catch _ => pure ()
+    let target ← getMainTarget
+    let fn := target.getAppArgs.back!
+    let head ← lambdaTelescope fn fun _ body =>
+      pure body.headBeta.getAppFn.constName?
+    match head with
+    | some ``HAdd.hAdd =>
+      evalTactic (← `(tactic| apply uniformPolynomial_add <;> uniform_polynomial))
+    | some ``HMul.hMul =>
+      evalTactic (← `(tactic| apply uniformPolynomial_mul <;> uniform_polynomial))
+    | some ``HPow.hPow =>
+      evalTactic (← `(tactic| apply uniformPolynomial_pow <;> uniform_polynomial))
+    | _ => throwError "Unsupported uniform polynomial expression: {target}"
+
 /-- All nonlinear dependence on the parameter occurs in the factor. Local
 primitive input degrees c, bc and d are fixed before q is quantified. -/
 theorem normalizedExecutionBudget_uniform (I BI K : ℕ → ℕ) (c bc d : ℕ) :
@@ -63,13 +89,7 @@ theorem normalizedExecutionBudget_uniform (I BI K : ℕ → ℕ) (c bc d : ℕ) 
     selectionExecutionBudget edgeExecutionBudget finalBasisBudget binaryRankBudget
     retainedFamilyLength denseParityBudget denseExtremaBudget denseModesBudget
     denseCellLoopBudget denseCellQueryBudget chargedCellStepBudget
-  repeat first
-    | exact uniformPolynomial_parameter _
-    | exact uniformPolynomial_n
-    | exact uniformPolynomial_L
-    | with_reducible apply uniformPolynomial_add
-    | with_reducible apply uniformPolynomial_mul
-    | with_reducible apply uniformPolynomial_pow
+  uniform_polynomial
 
 /-- Monotonicity is used only for primitive envelopes, after the full execution
 has been bounded phase by phase. -/
