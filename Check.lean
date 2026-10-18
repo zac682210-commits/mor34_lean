@@ -1576,3 +1576,12 @@ import MOR34
 #print axioms MOR34.sharpPolynomial_mul
 #print axioms MOR34.sharpPolynomial_pow
 #print axioms MOR34.weightedNormalizedBudget_sharp
+#print axioms MOR34.weightedRun_correct
+#print axioms MOR34.weightedRun_cost
+#print axioms MOR34.rawWeightedBudget_sharp
+#print axioms MOR34.weightedRun_local_envelope
+#print axioms MOR34.weightedRun_sharp
+#print axioms MOR34.compressedPrepared_size
+#print axioms MOR34.compressedPrepared_parameter
+#print axioms MOR34.compressedPrepared_magnitudes
+#print axioms MOR34.chargedCompressionPreparation_cost

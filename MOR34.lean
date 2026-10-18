@@ -338,3 +338,5 @@ import MOR34.CompleteWeightedApplication
 import MOR34.WeightedRawExecution
 import MOR34.OriginalWeightedApplication
 import MOR34.SharpPolynomialBudget
+import MOR34.WeightedRunInterface
+import MOR34.ChargedCompressionPreparation
