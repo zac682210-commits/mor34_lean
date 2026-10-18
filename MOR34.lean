@@ -332,3 +332,6 @@ import MOR34.WeightedSelection
 import MOR34.WeightedBranchRequests
 import MOR34.WeightedRecognition
 import MOR34.WeightedExchange
+import MOR34.WeightedReturnedFamily
+import MOR34.WeightedNormalizedExecution
+import MOR34.CompleteWeightedApplication

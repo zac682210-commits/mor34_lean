@@ -7,6 +7,17 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.complete_compressed_weighted_application",
+    "MOR34.complete_weighted_application",
+    "MOR34.weightedNormalizedBudget_mono",
+    "MOR34.weightedNormalizedBudget_uniform",
+    "MOR34.weightedNormalizedExecution_cost",
+    "MOR34.weightedNormalizedExecution_basis_card",
+    "MOR34.weightedNormalizedExecution_correct",
+    "MOR34.weightedNormalizedExecution_value",
+    "MOR34.weightedReturnedFamily_cost",
+    "MOR34.weightedReturnedFamily_length",
+    "MOR34.weightedReturnedFamily_value",
     "MOR34.weightedDenseEdges_cost",
     "MOR34.weightedDenseEdges_value",
     "MOR34.weightedWitnessTable_value",

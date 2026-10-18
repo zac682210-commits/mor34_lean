@@ -1544,3 +1544,14 @@ import MOR34
 #print axioms MOR34.weightedWitnessTable_value
 #print axioms MOR34.weightedDenseEdges_value
 #print axioms MOR34.weightedDenseEdges_cost
+#print axioms MOR34.weightedReturnedFamily_value
+#print axioms MOR34.weightedReturnedFamily_length
+#print axioms MOR34.weightedReturnedFamily_cost
+#print axioms MOR34.weightedNormalizedExecution_value
+#print axioms MOR34.weightedNormalizedExecution_correct
+#print axioms MOR34.weightedNormalizedExecution_basis_card
+#print axioms MOR34.weightedNormalizedExecution_cost
+#print axioms MOR34.weightedNormalizedBudget_uniform
+#print axioms MOR34.weightedNormalizedBudget_mono
+#print axioms MOR34.complete_weighted_application
+#print axioms MOR34.complete_compressed_weighted_application
