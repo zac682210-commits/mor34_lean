@@ -604,3 +604,13 @@ import MOR34
 #print axioms MOR34.exactPivotSearch_complete
 #print axioms MOR34.exactPivotSearch_calls
 #print axioms MOR34.laplaceDet_bound
+
+#print axioms MOR34.rawNormalization_magnitude
+#print axioms MOR34.rawNormalization_class_size
+#print axioms MOR34.original_forced_rows_bounded
+#print axioms MOR34.original_violation_rows_bounded
+#print axioms MOR34.original_parity_rows_bounded
+
+#print axioms MOR34.tracedLaplaceDet_value
+#print axioms MOR34.tracedLaplaceDet_cost
+#print axioms MOR34.tracedLaplaceDet_correct_and_cost

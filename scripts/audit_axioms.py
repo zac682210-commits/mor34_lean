@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.tracedLaplaceDet_value',
+    'MOR34.tracedLaplaceDet_cost',
+    'MOR34.tracedLaplaceDet_correct_and_cost',
+
+    'MOR34.rawNormalization_magnitude',
+    'MOR34.rawNormalization_class_size',
+    'MOR34.original_forced_rows_bounded',
+    'MOR34.original_violation_rows_bounded',
+    'MOR34.original_parity_rows_bounded',
+
     'MOR34.laplaceDet_correct',
     'MOR34.laplaceArithmeticBudget_bound',
     'MOR34.exactPivotSearch_sound',

@@ -154,3 +154,5 @@ import MOR34.ViolationRowBounds
 import MOR34.CellQueryBounds
 
 import MOR34.FiniteDeterminant
+
+import MOR34.RawEncodingBounds
