@@ -31,10 +31,10 @@ theorem chargedCompressionPreparation_strong_cost (hn : 0 < n) (a v : Fin n → 
   simp only [Nat.add_zero]
   omega
 
+set_option maxHeartbeats 800000 in
 /-- Magnitude-independent arithmetic-operation consequence. Compression itself
 uses its established strongly polynomial contract; the compressed core and all
 new application steps are the same retained execution as above. -/
-set_option maxHeartbeats 800000 in
 theorem complete_strongly_polynomial_execution (I BI H K : ℕ → ℕ) (c bc ae d G ep : ℕ)
     (hI : ParameterGrowth I) (hBI : ParameterGrowth BI)
     (hH : ParameterGrowth H) (hK : ParameterGrowth K) :

@@ -34,10 +34,10 @@ theorem sharp_parameter_transport (q K W : ℕ) (h : q ≤ K+1) :
   exact (pow_le_pow_left' (by omega : q+6 ≤ K+7) _).trans
     (pow_le_pow_right' (by omega) (by nlinarith : W*(q+1) ≤ 2*W*(K+1)))
 
+set_option maxHeartbeats 800000 in
 /-- Full original-input compressed application. The sole algorithmic premises
 are contracts for standard compression, grouping/sorting, integer feasibility,
 rank and elementary data/arithmetic primitives. No core-cost premise is used. -/
-set_option maxHeartbeats 800000 in
 theorem complete_compressed_execution (I BI H K : ℕ → ℕ) (c bc ae d G ep : ℕ)
     (hI : ParameterGrowth I) (hBI : ParameterGrowth BI)
     (hH : ParameterGrowth H) (hK : ParameterGrowth K) :

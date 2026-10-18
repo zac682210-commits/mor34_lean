@@ -146,8 +146,9 @@ syntax "sharp_polynomial" : tactic
 open Lean Elab Tactic Meta in
 elab_rules : tactic
   | `(tactic| sharp_polynomial) => do
+    let saved ← saveState
     try
-      evalTactic (← `(tactic| first
+      withoutRecover <| Term.withoutErrToSorry <| evalTactic (← `(tactic| first
         | exact sharpPolynomial_n
         | exact sharpPolynomial_L
         | exact sharpPolynomial_parameter (by assumption)
@@ -157,7 +158,7 @@ elab_rules : tactic
         | exact sharpPolynomial_parameter (parameterGrowth_enumeration _ (by decide))
         | exact sharpPolynomial_parameter parameterGrowth_builtForms))
       return
-    catch _ => pure ()
+    catch _ => saved.restore
     let target ← getMainTarget
     let fn := target.getAppArgs.back!
     let head ← lambdaTelescope fn fun _ body => pure body.headBeta.getAppFn.constName?
@@ -167,10 +168,10 @@ elab_rules : tactic
     | some ``HPow.hPow => evalTactic (← `(tactic| apply sharpPolynomial_pow <;> sharp_polynomial))
     | _ => throwError "Unsupported sharp polynomial expression: {target}"
 
-/-- The complete derived budget, not an assumed core cost, has q^{O(q)}
-parameter dependence when the standard primitive factors have that dependence. -/
 set_option maxHeartbeats 3000000 in
 set_option maxRecDepth 4000 in
+/-- The complete derived budget, not an assumed core cost, has q^{O(q)}
+parameter dependence when the standard primitive factors have that dependence. -/
 theorem weightedNormalizedBudget_sharp (I BI H K : ℕ → ℕ) (c bc a d : ℕ)
     (hI : ParameterGrowth I) (hBI : ParameterGrowth BI)
     (hH : ParameterGrowth H) (hK : ParameterGrowth K) :
