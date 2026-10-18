@@ -1,0 +1,25 @@
+{
+  "started_utc": "2026-10-18T10:24:07.508Z",
+  "active_work_cutoff_utc": "2026-10-18T11:12:28.926Z",
+  "ended_utc": "2026-10-18T11:12:28.926Z",
+  "active_minutes": 43.65,
+  "prior_recorded_active_minutes": 385.803,
+  "cumulative_recorded_active_minutes": 429.453,
+  "cumulative_is_complete": false,
+  "historical_formalization_minutes": null,
+  "conservative_nonresearch_overhead_seconds": 120,
+  "CI_only_wait_seconds": 162.413,
+  "time_method": "Elapsed start to active-work cutoff minus explicitly tracked CI-only waiting and 120 seconds conservative nonresearch overhead. Inter-session gaps and final bookkeeping after cutoff excluded.",
+  "verified_commit": "239faa04a024e92e159ce60a70ac26c1b9c900af",
+  "remaining_active_work_estimate_minutes": [
+    60,
+    120
+  ],
+  "estimate_confidence": "provisional; full phase coverage remains unproved",
+  "verified_run": 39121830829,
+  "kernel_checked_named_theorems": 720,
+  "added_named_theorems": 58,
+  "new_paper_proofs_complete": false,
+  "algorithm_level_FPT_derivation_complete": false,
+  "next": "docs/NEXT_COST_20261018.md"
+}

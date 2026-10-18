@@ -40,8 +40,20 @@
         "MOR34.computedNormalPipeline_payload_states",
         "MOR34.computedPipeline_polynomial_payload",
         "MOR34.forcedSystem_polynomial_payload",
-        "MOR34.violationSystem_polynomial_payload"
-      ]
+        "MOR34.violationSystem_polynomial_payload",
+        "MOR34.countRowConstruction_value",
+        "MOR34.countParityConstructionWork_bound",
+        "MOR34.cellConstructionWork_polynomial",
+        "MOR34.forcedRowConstruction_value",
+        "MOR34.forcedConstructionWork_polynomial",
+        "MOR34.violationRowConstruction_value",
+        "MOR34.violationConstructionWork_polynomial"
+      ],
+      "cost_checkpoint": {
+        "commit": "239faa04a024e92e159ce60a70ac26c1b9c900af",
+        "run": 39121830829,
+        "full_reference_runtime_proved": false
+      }
     },
     {
       "id": "L2",
@@ -186,8 +198,18 @@
         "MOR34.computedCellSelection_basis",
         "MOR34.allNormalCandidateCalls_bound",
         "MOR34.normal_calls_parameter_bound",
-        "MOR34.normal_calls_original_parameter"
-      ]
+        "MOR34.normal_calls_original_parameter",
+        "MOR34.matrixNormalArithmeticCharge_bound",
+        "MOR34.normalBasisArithmeticCharge_bound",
+        "MOR34.allNormalArithmeticCharge_parameter",
+        "MOR34.normalWorkBits_polynomial",
+        "MOR34.counted_normal_bit_cost"
+      ],
+      "cost_checkpoint": {
+        "commit": "239faa04a024e92e159ce60a70ac26c1b9c900af",
+        "run": 39121830829,
+        "full_reference_runtime_proved": false
+      }
     },
     {
       "id": "T8span",
@@ -296,8 +318,18 @@
         "MOR34.computedReturnedBasis_rank_calls",
         "MOR34.binaryBasisSearch_rank_payload_states",
         "MOR34.rowCallFactor_parameter_bound",
-        "MOR34.counted_rank_cost_bound"
-      ]
+        "MOR34.counted_rank_cost_bound",
+        "MOR34.storedReturnedSets_eq",
+        "MOR34.storedRawPipeline_correct",
+        "MOR34.all_solver_cost_bound",
+        "MOR34.chargedPhaseCost_bound",
+        "MOR34.returnedFamily_pairwise_work"
+      ],
+      "cost_checkpoint": {
+        "commit": "239faa04a024e92e159ce60a70ac26c1b9c900af",
+        "run": 39121830829,
+        "full_reference_runtime_proved": false
+      }
     },
     {
       "id": "C9",
