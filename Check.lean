@@ -1059,3 +1059,43 @@ import MOR34
 #print axioms MOR34.retainedForcedRow_cost
 
 #print axioms MOR34.retainedForcedRow_interpret
+
+#print axioms MOR34.chargedMap_cost_eq
+
+#print axioms MOR34.evaluateInteger_value
+
+#print axioms MOR34.evaluateInteger_cost
+
+#print axioms MOR34.evaluateConstructedRow_arrays
+
+#print axioms MOR34.evaluateConstructedRow_sized
+
+#print axioms MOR34.evaluateConstructedRow_value
+
+#print axioms MOR34.evaluateConstructedRow_cost
+
+#print axioms MOR34.compileRetainedRow_value
+
+#print axioms MOR34.compileRetainedRow_cost
+
+#print axioms MOR34.forcedRowIndexList_complete
+
+#print axioms MOR34.forcedRowIndexList_length
+
+#print axioms MOR34.retainedForcedSystem_sized
+
+#print axioms MOR34.retainedForcedSystem_iff
+
+#print axioms MOR34.retainedForcedSystem_cost
+
+#print axioms MOR34.compiledForcedRequest_sized
+
+#print axioms MOR34.compiledForcedRequest_iff
+
+#print axioms MOR34.compiledForcedRequest_cost
+
+#print axioms MOR34.denseForcedOracle_spec
+
+#print axioms MOR34.chargedDenseForcedSolve_cost
+
+#print axioms MOR34.denseForced_normalized_correct

@@ -7,6 +7,27 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedMap_cost_eq',
+    'MOR34.evaluateInteger_value',
+    'MOR34.evaluateInteger_cost',
+    'MOR34.evaluateConstructedRow_arrays',
+    'MOR34.evaluateConstructedRow_sized',
+    'MOR34.evaluateConstructedRow_value',
+    'MOR34.evaluateConstructedRow_cost',
+    'MOR34.compileRetainedRow_value',
+    'MOR34.compileRetainedRow_cost',
+    'MOR34.forcedRowIndexList_complete',
+    'MOR34.forcedRowIndexList_length',
+    'MOR34.retainedForcedSystem_sized',
+    'MOR34.retainedForcedSystem_iff',
+    'MOR34.retainedForcedSystem_cost',
+    'MOR34.compiledForcedRequest_sized',
+    'MOR34.compiledForcedRequest_iff',
+    'MOR34.compiledForcedRequest_cost',
+    'MOR34.denseForcedOracle_spec',
+    'MOR34.chargedDenseForcedSolve_cost',
+    'MOR34.denseForced_normalized_correct',
+
     'MOR34.readPrefixConstruction_value',
     'MOR34.readPrefixConstruction_cost',
     'MOR34.storedIntegerRead_cost',
