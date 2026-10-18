@@ -1,0 +1,155 @@
+{
+  "started_utc": "2026-10-18T05:00:54+00:00",
+  "ended_utc": "2026-10-18T05:58:20.392161+00:00",
+  "started_shanghai": "2026-10-18T13:00:54+08:00",
+  "ended_shanghai": "2026-10-18T13:58:20.392161+08:00",
+  "active_minutes": 41.627,
+  "prior_recorded_active_minutes": 303.974,
+  "cumulative_recorded_active_minutes": 345.601,
+  "cumulative_is_complete": false,
+  "historical_formalization_minutes": null,
+  "active_work_cutoff_utc": "2026-10-18T05:49:07.446727+00:00",
+  "excluded_ci_evidence_tail_seconds": 552.945,
+  "conservative_nonresearch_overhead_seconds": 100,
+  "additional_debug_interval": {
+    "started_utc": "2026-10-18T05:48:36.836214+00:00",
+    "ended_utc": "2026-10-18T05:49:07.446727+00:00",
+    "conservative_active_minutes": 0.344
+  },
+  "pre_debug_active_cutoff_utc": "2026-10-18T05:43:40.986651+00:00",
+  "time_method": "Actual proof/code development, dependency-source inspection, compiler diagnosis, mathematical review and checkpoint preparation. No sleep/inter-session gaps. Conservatively subtract 90 seconds from the first development block and 10 seconds from the separately recorded debug block. Exclude the intervening CI-only interval and final CI/evidence/upload tail.",
+  "attempts": [
+    {
+      "id": 39101838969,
+      "sha": "27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39101820946,
+      "sha": "c89598e311fb65f990b7e24ec8dc890d698db8b2",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39101458505,
+      "sha": "e7405bc8185086f8dfc02db63c59579dc408da50",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39101255642,
+      "sha": "ac27e1a0a2e082a38d540ce1cba4ac7e9dbee653",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39101110089,
+      "sha": "64759067ae9189d5162b77fa5cc6c6fd94e221c6",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39100838214,
+      "sha": "d0d510734a14770ec75d3aa31a89ef1a24ac044a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39100717044,
+      "sha": "dac636c1134dd88a8566f6b1d6bcd5083f833fcb",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39100410202,
+      "sha": "78dee2554bf99ae46220f7c3a0bc377c8886dd90",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39100339715,
+      "sha": "4b7a6b99e01dbe8be861cce448191c67d9057fd5",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39100243650,
+      "sha": "9df5d085e667f879eaf5cbb6d0a6a1d8c7f9df6f",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39100116166,
+      "sha": "ee32730780345f8a3e01f854c52cf59992459faf",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39100074107,
+      "sha": "c319f8a6dca03ad4a1eca15ccec385b0b2fcf6e0",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39099999764,
+      "sha": "058ce2e240df8989e4d8603374a495c2a3276ea3",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39099902571,
+      "sha": "69d9b06f0cb60b45e69761fd8fa53b48e65d0ec7",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39099773089,
+      "sha": "7ab1448c930fe919ccddf9cd32a272beca7f313d",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39099706680,
+      "sha": "cd03025a23192097c1b33e952d454977d73403ce",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39099596607,
+      "sha": "07694d20cddba3bb38ba1b2e61976037071023ec",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39099471350,
+      "sha": "2b53a3dc43c019c98e36265f55a2e933344a3a62",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39099292690,
+      "sha": "f6559d9c06347886525bc75758a897fe9a58950b",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39099182709,
+      "sha": "dad2fae2d34210f2fab27dea11937f6353101d72",
+      "status": "completed",
+      "conclusion": "failure"
+    }
+  ],
+  "verified_commit": "27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
+  "verified_run": 39101838969,
+  "kernel_checked_named_theorems": 591,
+  "runtime_smoke_checks": 15,
+  "complete_paper": false,
+  "complete_FPT_complexity": false,
+  "complete_algorithm_correctness": false,
+  "complete_algorithm_correctness_solver_relative": true,
+  "results": "Executable original-input procedure with complete output correctness relative to explicit ILP and exact-rank primitive contracts. Raw coefficient classes, item fibers and within-class sorting are computed. Finite integer normal search, support parity enumeration, returned tight-point family, deterministic binary-point ordering, rank-guided affine-basis extraction and original-coordinate relabeling are computable. Invalid witnesses, empty signed dimension, supported geometric face dimension/facet flag and tight affine basis are verified. Candidate-call charges, generated row payloads and candidate partial-sum bit bounds are proved. Normal coefficient and extrema witness tables have proved lookup/structural equality. Operational sharing/materialization costs, enumeration/construction/serialization bit costs, total cost composition, primitive implementations and compression remain open; no full FPT runtime claim.",
+  "next": "docs/NEXT_AFTER_EXECUTABLE_20261018.md",
+  "independent_review": false,
+  "remaining_estimate": "The earlier 2–6 hour estimate included executable generation, now completed together with raw preprocessing and normalized execution. Do not carry it forward. Next 40–60 minute block: account for materialized normal/extrema tables and define faithful operation/callback accounting. Full cost-composition completion time is not yet reliable; primitive ILP/rank/compression foundations are a separate substantially larger scope."
+}

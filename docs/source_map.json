@@ -25,7 +25,7 @@
         "prefix"
       ],
       "lean_target": "Explicit rational inequalities with integer counts and costs; exact parity substitution",
-      "status": "Exact integer formulation and coefficient/payload bounds for actual count, parity, forced and violation rows verified; full serialization and construction runtime remain open at 16228d3a902a737a3d94a14cda9da53e668c1521",
+      "status": "Actual row formulations and payloads, and computed raw grouping/sorting verified; construction/serialization runtime open at 27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
       "lean_theorems": [
         "MOR34.prefix_epigraph_iff",
         "MOR34.exact_linear_count_encoding",
@@ -35,7 +35,9 @@
         "MOR34.original_parity_rows_bounded",
         "MOR34.forced_system_payload",
         "MOR34.violation_system_payload",
-        "MOR34.cell_system_payload"
+        "MOR34.cell_system_payload",
+        "MOR34.executable_normalization_parameter",
+        "MOR34.computedNormalPipeline_payload_states"
       ]
     },
     {
@@ -146,7 +148,7 @@
         "L1"
       ],
       "lean_target": "Actual recursive basis search with a one-inequality feasibility interface; bounded integer normal families proved to exist",
-      "status": "All recursive cell-search states satisfy full dense integer row payload bounds; concrete small determinant/pivot enumeration verified separately. Executable full normal generator and total bit-operation complexity remain open at 16228d3a902a737a3d94a14cda9da53e668c1521",
+      "status": "Finite computable normal generator and count-basis integration verified. Candidate-check charge and intermediate bit bounds verified; full compiled cost model open at 27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
       "lean_theorems": [
         "MOR34.bounded_integer_forms_exist",
         "MOR34.linear_count_basis_correct",
@@ -166,7 +168,12 @@
         "MOR34.laplace_partial_sum_bits",
         "MOR34.normal_candidate_exists",
         "MOR34.checked_candidate_describes",
-        "MOR34.exactPivotDetCharge_bound"
+        "MOR34.exactPivotDetCharge_bound",
+        "MOR34.computedMatrixNormals_spec",
+        "MOR34.computedCountForms_spec",
+        "MOR34.normalBasisCandidateCalls_bound",
+        "MOR34.normalCheck_partial_sum_bits",
+        "MOR34.computedCellSelection_basis"
       ]
     },
     {
@@ -212,7 +219,7 @@
         "L7"
       ],
       "lean_target": "Original-input RawOutput.Correct: invalid witness / empty face / supported dimension, geometric facet Boolean and original-coordinate tight affine basis",
-      "status": "Full original-input output contract verified relative to explicit ILP/rank primitive contracts and classical preprocessing/normal choices; actual geometric facet and returned tight affine basis included at 16228d3a902a737a3d94a14cda9da53e668c1521",
+      "status": "Computed original-input output contract verified relative to explicit ILP/rank primitives. No classical data choice in this path at 27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
       "lean_theorems": [
         "MOR34.normalizedPipeline_correct",
         "MOR34.normalizedPipeline_dimension",
@@ -232,7 +239,12 @@
         "MOR34.rawNormalization_correct",
         "MOR34.rawNormalization_facet",
         "MOR34.rawNormalization_dimension",
-        "MOR34.rawPipeline_correct"
+        "MOR34.rawPipeline_correct",
+        "MOR34.executable_original_input_output_contract",
+        "MOR34.executableNormalizedPipeline_correct",
+        "MOR34.executableNormalizedPipeline_facet",
+        "MOR34.executableNormalizedPipeline_dimension",
+        "MOR34.executableRawPipeline_correct"
       ]
     },
     {
@@ -244,7 +256,7 @@
         "L7"
       ],
       "lean_target": "not yet encoded; fixed-dimensional ILP dependency unresolved",
-      "status": "Query accounting, input-to-row coefficient/payload bounds and small determinant arithmetic trace verified. No full cost composition, executable normal generator, primitive solver runtime or compression proof at 16228d3a902a737a3d94a14cda9da53e668c1521",
+      "status": "Candidate charges, query/payload and intermediate bit bounds verified. Sharing/materialization conventions and full bit-operation composition remain open at 27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
       "lean_theorems": [
         "MOR34.rowSearchCalls_le",
         "MOR34.cell_solver_row_count",
@@ -261,7 +273,11 @@
         "MOR34.original_violation_rows_bounded",
         "MOR34.cell_system_payload",
         "MOR34.boundedPipeline_payload_states",
-        "MOR34.laplace_partial_sum_bits"
+        "MOR34.laplace_partial_sum_bits",
+        "MOR34.computedCellSelection_normal_checks",
+        "MOR34.normalCheck_partial_sum_bits",
+        "MOR34.computedNormalPipeline_payload_states",
+        "MOR34.executableSupportSearch_calls_le"
       ]
     },
     {
