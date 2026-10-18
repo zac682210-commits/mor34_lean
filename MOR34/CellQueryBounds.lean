@@ -64,8 +64,9 @@ theorem cell_normal_queries_bound (l h : Counts q) (mode : CellMode q) (N : ℕ)
       t.Bounded (normalCoefficientBound q N + 1) ((N : ℤ) + normalCoefficientBound q N + 3) := by
   have hH : (0 : ℤ) ≤ normalCoefficientBound q N := by unfold normalCoefficientBound; positivity
   intro t ht
-  rcases List.mem_cons.mp ht with rfl | ht
-  · exact integerQuery_bound_mono a (boundedCountQueries_bound B N hN hB a ha) (by omega) (by omega)
+  rcases List.mem_cons.mp ht with he | ht
+  · subst t
+    exact integerQuery_bound_mono a (boundedCountQueries_bound B N hN hB a ha) (by omega) (by omega)
   · exact integerQuery_bound_mono t (cellQueries_bound l h mode N hl hh t ht) (by omega) (by omega)
 
 /-- Coefficient control for the exact scalar query supplied by a cell-span search. -/

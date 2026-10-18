@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.normalRadius_cast',
+    'MOR34.normalRadius_power_bound',
+    'MOR34.uniformRowRadius_power_bound',
+    'MOR34.uniformRow_signed_bits',
+    'MOR34.cellRow_uniform_bound',
+
     'MOR34.tracedLaplaceDet_value',
     'MOR34.tracedLaplaceDet_cost',
     'MOR34.tracedLaplaceDet_correct_and_cost',

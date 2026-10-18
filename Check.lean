@@ -614,3 +614,9 @@ import MOR34
 #print axioms MOR34.tracedLaplaceDet_value
 #print axioms MOR34.tracedLaplaceDet_cost
 #print axioms MOR34.tracedLaplaceDet_correct_and_cost
+
+#print axioms MOR34.normalRadius_cast
+#print axioms MOR34.normalRadius_power_bound
+#print axioms MOR34.uniformRowRadius_power_bound
+#print axioms MOR34.uniformRow_signed_bits
+#print axioms MOR34.cellRow_uniform_bound

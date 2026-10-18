@@ -23,7 +23,16 @@ theorem feasibleRows_integer_bounded (P : Model m) (N : ℕ) (M : ℤ)
   have hh := countRow_integer_bounded P N M 0 0 hM (by omega) (by omega) hm hw hc hb hd
     (fun i : Fin 0 => Fin.elim0 i) (fun i : Fin 0 => Fin.elim0 i)
     (fun i => Fin.elim0 i) (fun i => Fin.elim0 i) (feasibleCountRowIndex k)
-  convert hh using 1 <;> simp
+  have hA : (fun i : Fin 0 => (Fin.elim0 i : Fin q → ℚ)) =
+      (fun i j => ((Fin.elim0 i : Fin q → ℤ) j : ℚ)) := by
+    funext i
+    exact Fin.elim0 i
+  have hB : (fun i : Fin 0 => (Fin.elim0 i : ℚ)) =
+      (fun i => ((Fin.elim0 i : ℤ) : ℚ)) := by
+    funext i
+    exact Fin.elim0 i
+  rw [hA, hB]
+  simpa only [add_zero] using hh
 
 theorem violationInequality_integer_bounded (P : Model m) (N : ℕ) (M : ℤ)
     (hM : 1 ≤ M) (hc : ∀ j, |P.coefficient j| ≤ M) (hd : |P.rhs| ≤ M) :
