@@ -118,7 +118,7 @@ theorem forcedConstructionWork_polynomial (P : Model m) (hWF : WellFormed P)
     _ ≤ ∑ _k : ForcedRow m j u v, (4*q+2*n+12) :=
       Finset.sum_le_sum (fun k _ => forcedRowConstruction_work P j u v n hm k)
     _ = (n+2*q+(pairAllowed u v).card+6)*(4*q+2*n+12) := by
-      simp only [Finset.sum_const, Finset.card_univ, Nat.nsmul_eq_mul, forcedRow_card]; rfl
+      simp only [Finset.sum_const, Finset.card_univ, Nat.nsmul_eq_mul, forcedRow_card] <;> rfl
     _ ≤ (6*(n+L+2))*(24*(n+L+2)) := Nat.mul_le_mul (by omega) (by omega)
     _ = _ := by ring
 
