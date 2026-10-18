@@ -711,3 +711,15 @@ import MOR34
 #print axioms MOR34.materializeFin_eq
 #print axioms MOR34.storedParityExtrema_eq
 #print axioms MOR34.executableRawPipeline_dimension
+#print axioms MOR34.smallSigns_coordinate
+#print axioms MOR34.smallSigns_difference
+#print axioms MOR34.smallSigns_positive
+#print axioms MOR34.smallSigns_nonnegative
+#print axioms MOR34.smallSigns_zero
+#print axioms MOR34.smallSigns_order
+#print axioms MOR34.smallSigns_equal
+#print axioms MOR34.binarySignTest_norm
+#print axioms MOR34.binarySignTest_dot
+#print axioms MOR34.compression_subset_sign
+#print axioms MOR34.compression_subset_le
+#print axioms MOR34.compression_subset_eq

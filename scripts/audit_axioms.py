@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.smallSigns_coordinate",
+    "MOR34.smallSigns_difference",
+    "MOR34.smallSigns_positive",
+    "MOR34.smallSigns_nonnegative",
+    "MOR34.smallSigns_zero",
+    "MOR34.smallSigns_order",
+    "MOR34.smallSigns_equal",
+    "MOR34.binarySignTest_norm",
+    "MOR34.binarySignTest_dot",
+    "MOR34.compression_subset_sign",
+    "MOR34.compression_subset_le",
+    "MOR34.compression_subset_eq",
+
     "MOR34.executableRawPipeline_dimension",
     "MOR34.storedParityExtrema_eq",
     "MOR34.materializeFin_apply",
