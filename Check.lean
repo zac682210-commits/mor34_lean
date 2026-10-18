@@ -1035,3 +1035,27 @@ import MOR34
 #print axioms MOR34.allRowConstruction_budget
 
 #print axioms MOR34.constructionPhase_budget
+
+#print axioms MOR34.readPrefixConstruction_value
+
+#print axioms MOR34.readPrefixConstruction_cost
+
+#print axioms MOR34.storedIntegerRead_cost
+
+#print axioms MOR34.storedIntegerRead_of_present
+
+#print axioms MOR34.retainedResidualScalar_value
+
+#print axioms MOR34.retainedResidualPrefix_value
+
+#print axioms MOR34.retainedResidualPrefix_cost
+
+#print axioms MOR34.retainedSlopeRow_value
+
+#print axioms MOR34.retainedSlopeRow_cost
+
+#print axioms MOR34.retainedForcedRow_value
+
+#print axioms MOR34.retainedForcedRow_cost
+
+#print axioms MOR34.retainedForcedRow_interpret

@@ -251,3 +251,5 @@ import MOR34.MaterializedViolationRows
 import MOR34.EnumerationParameterBound
 
 import MOR34.ConstructionBudgetAggregation
+import MOR34.RetainedPrefixReads
+import MOR34.RetainedForcedRows

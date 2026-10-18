@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.readPrefixConstruction_value',
+    'MOR34.readPrefixConstruction_cost',
+    'MOR34.storedIntegerRead_cost',
+    'MOR34.storedIntegerRead_of_present',
+    'MOR34.retainedResidualScalar_value',
+    'MOR34.retainedResidualPrefix_value',
+    'MOR34.retainedResidualPrefix_cost',
+    'MOR34.retainedSlopeRow_value',
+    'MOR34.retainedSlopeRow_cost',
+    'MOR34.retainedForcedRow_value',
+    'MOR34.retainedForcedRow_cost',
+    'MOR34.retainedForcedRow_interpret',
+
     'MOR34.builtForcedRows_common_budget',
     'MOR34.allRowConstruction_budget',
     'MOR34.constructionPhase_budget',
