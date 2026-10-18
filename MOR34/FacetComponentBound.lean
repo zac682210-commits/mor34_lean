@@ -67,9 +67,10 @@ theorem quotient_augmented_dimension_bound (P : Model m) (hWF : WellFormed P) :
     _ ≤ (3*q+1)*2^q := allParityComponentGenerators_card P hWF
 
 /-- Corollary 6 of the manuscript, for the actual global exchange components. -/
-theorem facet_component_bound (P : Model m) (hWF : WellFormed P) (hf : DefinesFacet P) :
+theorem facet_component_bound (P : Model m) (hWF : WellFormed P) (hv : Valid P)
+    (hf : IsCodimensionOneFace (knapsackPolytope P) (candidateFace P)) :
     Fintype.card (ExchangeComponent P) ≤ (3*q+1)*2^q := by
-  obtain ⟨hT,hd⟩ := (candidate_facet_iff_dimension P hWF hf.1).mp hf.2
+  obtain ⟨hT,hd⟩ := (candidate_facet_iff_dimension P hWF hv).mp hf
   have hq := tight_dimension_quotient P hWF hT
   have hc := exchangeDirectionSpan_finrank P
   have ha := augmentedSpan_finrank (hT.image (componentCountMap P))
