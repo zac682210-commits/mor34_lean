@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedNormalizedExecution_value',
+    'MOR34.chargedNormalizedExecution_correct',
+    'MOR34.chargedNormalizedExecution_cost',
+
+    'MOR34.chargedReturnedFamily_value',
+    'MOR34.chargedReturnedFamily_length',
+    'MOR34.chargedReturnedFamily_cost',
+
+    'MOR34.chargedBinaryRank_value',
+    'MOR34.chargedBinaryRank_cost',
+    'MOR34.chargedFinalBasis_value',
+    'MOR34.chargedFinalBasis_cost',
+
     'MOR34.chargedAdjacentWitness_value',
     'MOR34.chargedWitnessTable_value',
     'MOR34.chargedEdgePoints_value',

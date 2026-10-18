@@ -41,8 +41,8 @@ theorem chargedDenseSupport_cost (P : Model m) (hWF : WellFormed P)
 
 /-- Local decoding/finite-set construction callbacks; no phase cost is assumed. -/
 structure PointOperations (m : Fin q → ℕ) where
-  prefix : Counts q → Finset (Item m) × ℕ
-  prefix_value : ∀ z, (prefix z).1 = prefixSet z
+  makePrefix : Counts q → Finset (Item m) × ℕ
+  makePrefix_value : ∀ z, (makePrefix z).1 = prefixSet z
   forced : (j : Fin q) → Fin (m j) → Fin (m j) → (Fin q → ℤ) → Finset (Item m) × ℕ
   forced_value : ∀ j u v z, (forced j u v z).1 = forcedSet j u v (decodeCounts z)
   invalid : (Fin q → ℤ) → Finset (Item m) × ℕ
@@ -53,7 +53,7 @@ structure PointOperations (m : Fin q → ℕ) where
 /-- Bounds are imposed only on finite coordinates, as actually returned by the
 correct integer solvers. Unused epigraph coordinates are not read. -/
 structure PointOperationBounds (ops : PointOperations m) (C : ℕ) : Prop where
-  prefix : ∀ z, BoundedCounts (m := m) z → (ops.prefix z).2 ≤ C
+  prefix_cost : ∀ z, BoundedCounts (m := m) z → (ops.makePrefix z).2 ≤ C
   forced : ∀ j u v z, IntegerCountBounds (m := m) z → (ops.forced j u v z).2 ≤ C
   invalid : ∀ z, IntegerCountBounds (m := m) z → (ops.invalid z).2 ≤ C
   swap : ∀ e S, (ops.swap e S).2 ≤ C

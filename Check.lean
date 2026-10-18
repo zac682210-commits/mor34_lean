@@ -1392,3 +1392,13 @@ import MOR34
 #print axioms MOR34.chargedEdgePoints_cost
 #print axioms MOR34.chargedDenseEdges_value
 #print axioms MOR34.chargedDenseEdges_cost
+#print axioms MOR34.chargedBinaryRank_value
+#print axioms MOR34.chargedBinaryRank_cost
+#print axioms MOR34.chargedFinalBasis_value
+#print axioms MOR34.chargedFinalBasis_cost
+#print axioms MOR34.chargedReturnedFamily_value
+#print axioms MOR34.chargedReturnedFamily_length
+#print axioms MOR34.chargedReturnedFamily_cost
+#print axioms MOR34.chargedNormalizedExecution_value
+#print axioms MOR34.chargedNormalizedExecution_correct
+#print axioms MOR34.chargedNormalizedExecution_cost
