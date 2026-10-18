@@ -45,7 +45,7 @@ theorem chargedBinaryRank_cost (ranker : ExactIntegerRank m) (ops : BinaryRankOp
   simp only [chargedBinaryRank,ops.emit_value,binaryRankBudget]
   change _ ≤ E*(n+3)*(n+1)^2+I*(4*(n+3)^2)^c+1
   dsimp only [n] at *
-  simp only [Nat.add_assoc] at *
+  simp only [Nat.add_assoc, Nat.reduceAdd] at *
   omega
 
 /-- Standard ordering/deduplication and insertion on finite binary point sets.
@@ -97,7 +97,7 @@ theorem chargedFinalBasis_cost (ranker : ExactIntegerRank m) (rankOps : BinaryRa
   dsimp only [chargedFinalBasis,finalBasisBudget]
   change _ ≤ O*(M+1)^2+(n+1)*(M*(2*binaryRankBudget n E I c+J+2)+J+2)+2
   dsimp only [n] at *
-  simp only [Nat.add_assoc] at *
+  simp only [Nat.add_assoc, Nat.reduceAdd] at *
   omega
 
 end MOR34

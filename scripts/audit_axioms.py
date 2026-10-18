@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.chargedRelabelDecision_value",
+    "MOR34.chargedRelabelDecision_cost",
+    "MOR34.chargedRelabelOutput_value",
+    "MOR34.chargedRelabelOutput_cost",
+    "MOR34.chargedRawExecution_correct",
     "MOR34.complete_reference_application",
     "MOR34.complete_compressed_reference_application",
     "MOR34.uniformPolynomial_parameter",

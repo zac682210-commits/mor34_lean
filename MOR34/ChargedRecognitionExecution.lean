@@ -78,7 +78,6 @@ theorem chargedDenseRecognition_value (P : Model m) (R D : ℕ)
   simp only [chargedDenseRecognition,executableRecognitionBranch,chargedDenseSupport_value]
   cases (chargedDenseViolationSolve P R solve).1 <;> simp only [ops.invalid_value]
   · cases executableSupportSearch (denseCountOracle P R solve) <;> rfl
-  · rfl
 
 def recognitionBudget (q n L D I c C : ℕ) : ℕ :=
   2048*(n+1)^4+I*(180*(n+L+2)^4)^c+functionEnumerationBudget q 2+

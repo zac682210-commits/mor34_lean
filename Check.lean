@@ -1424,3 +1424,13 @@ import MOR34
 #print axioms MOR34.complete_reference_application
 
 #print axioms MOR34.complete_compressed_reference_application
+
+#print axioms MOR34.chargedRelabelDecision_value
+
+#print axioms MOR34.chargedRelabelDecision_cost
+
+#print axioms MOR34.chargedRelabelOutput_value
+
+#print axioms MOR34.chargedRelabelOutput_cost
+
+#print axioms MOR34.chargedRawExecution_correct
