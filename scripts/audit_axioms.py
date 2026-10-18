@@ -7,6 +7,18 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.adjacentPairKey_injective',
+    'MOR34.sumConstruction_value',
+    'MOR34.sumConstruction_work',
+    'MOR34.prefixConstruction_value',
+    'MOR34.prefixConstruction_work',
+    'MOR34.atomicIntegerRow_value',
+    'MOR34.atomicIntegerRow_work',
+    'MOR34.construction_fold_value',
+    'MOR34.construction_fold_work',
+    'MOR34.parityRowConstruction_value',
+    'MOR34.parityRowConstruction_work',
+
     'MOR34.normalWorkBits_polynomial',
     'MOR34.normalCheck_signed_bits',
     'MOR34.determinant_signed_bits',

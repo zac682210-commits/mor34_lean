@@ -1,3 +1,4 @@
+import MOR34.IntegerConstructionTrace
 import MOR34.NormalBitCost
 import MOR34.AggregateArithmeticCost
 import MOR34.StoredEdgeWitnesses
@@ -822,3 +823,16 @@ import MOR34
 #print axioms MOR34.normalCheck_signed_bits
 #print axioms MOR34.determinant_signed_bits
 #print axioms MOR34.counted_normal_bit_cost
+
+#print axioms MOR34.sumConstruction_value
+#print axioms MOR34.sumConstruction_work
+#print axioms MOR34.prefixConstruction_value
+#print axioms MOR34.prefixConstruction_work
+#print axioms MOR34.atomicIntegerRow_value
+#print axioms MOR34.atomicIntegerRow_work
+#print axioms MOR34.construction_fold_value
+#print axioms MOR34.construction_fold_work
+#print axioms MOR34.parityRowConstruction_value
+#print axioms MOR34.parityRowConstruction_work
+
+#print axioms MOR34.adjacentPairKey_injective

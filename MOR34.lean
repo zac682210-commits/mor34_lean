@@ -209,3 +209,5 @@ import MOR34.StoredEdgeWitnesses
 import MOR34.AggregateArithmeticCost
 
 import MOR34.NormalBitCost
+
+import MOR34.IntegerConstructionTrace

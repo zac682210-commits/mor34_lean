@@ -5,11 +5,34 @@ import MOR34.NormalSearchCost
 namespace MOR34
 variable {q : ℕ} {m : Fin q → ℕ}
 
+def adjacentPairKey (e : AdjacentPair m) : ℕ × ℕ := (e.val.1.val,e.val.2.1.val)
+
+theorem adjacentPairKey_injective : Function.Injective (adjacentPairKey (m := m)) := by
+  rintro ⟨⟨j,u,v⟩,h⟩ ⟨⟨k,w,t⟩,h'⟩ he
+  have hj : j = k := Fin.ext (congrArg Prod.fst he)
+  subst k
+  have hu : u = w := Fin.ext (congrArg Prod.snd he)
+  subst w
+  have hv : v = t := Fin.ext (by omega)
+  subst t
+  rfl
+
+def adjacentPairLE (e f : AdjacentPair m) : Prop := adjacentPairKey e ≤ adjacentPairKey f
+
+instance : DecidableRel (adjacentPairLE (m := m)) := fun e f =>
+  inferInstanceAs (Decidable (adjacentPairKey e ≤ adjacentPairKey f))
+instance : IsTrans (AdjacentPair m) adjacentPairLE where
+  trans _ _ _ hab hbc := le_trans hab hbc
+instance : IsAntisymm (AdjacentPair m) adjacentPairLE where
+  antisymm _ _ hab hba := adjacentPairKey_injective (le_antisymm hab hba)
+instance : IsTotal (AdjacentPair m) adjacentPairLE where
+  total e f := le_total (adjacentPairKey e) (adjacentPairKey f)
+
 /-- Evaluate each adjacent exchange once; later phases consume these answers. -/
 def adjacentWitnessTable
     (solve : (j : Fin q) → Fin (m j) → Fin (m j) → Option (IntegerRowSolution q)) :
     List (AdjacentPair m × Option (Finset (Item m))) :=
-  Finset.univ.toList.map (fun e : AdjacentPair m =>
+  (Finset.univ.sort adjacentPairLE).map (fun e : AdjacentPair m =>
     (e, exchangeWitness solve e.val.1 e.val.2.1 e.val.2.2))
 
 def swapAtAdjacent (e : AdjacentPair m) (S : Finset (Item m)) : Finset (Item m) :=
@@ -47,7 +70,7 @@ theorem storedEdgePoints_mem
         exchangeWitness solve e.val.1 e.val.2.1 e.val.2.2 = some W ∧
           (S = W ∨ S = swapAtAdjacent e W) := by
   simp only [edgePointsFromTable, adjacentWitnessTable, List.flatMap_map, List.mem_flatMap,
-    Finset.mem_toList, Finset.mem_univ, true_and]
+    Finset.mem_sort, Finset.mem_univ, true_and]
   constructor
   · rintro ⟨e, he⟩
     cases hw : exchangeWitness solve e.val.1 e.val.2.1 e.val.2.2 with

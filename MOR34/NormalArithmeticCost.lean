@@ -65,9 +65,12 @@ theorem normalKeyCharge_bound {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ)
     (hs : s ≤ d) (k : NormalSearchKey s d) : normalKeyCharge M k ≤ normalKeyBudget d := by
   have hr : k.rank.val ≤ d := by omega
   have hp := pow_le_pow_left' hr 2
-  unfold normalKeyCharge
-  split_ifs with hi hd
-  · have hc : (∑ j : Fin d, ∑ l : Fin d,
+  by_cases hi : Function.Injective k.cols
+  · simp only [normalKeyCharge, dif_pos hi]
+    dsimp only
+    have hd' := minor_arithmetic_bound k.rank.val d hr
+      ((M.submatrix k.rows id).submatrix id k.cols)
+    have hc : (∑ j : Fin d, ∑ l : Fin d,
         columnNormalCharge (M.submatrix k.rows id) ⟨k.cols, hi⟩ j l) ≤
         d*d*((d+1)*((d+3)^2*d.factorial+2)) := by
       calc
@@ -76,20 +79,12 @@ theorem normalKeyCharge_bound {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ)
           Finset.sum_le_sum (fun j _ => Finset.sum_le_sum
             (fun l _ => columnNormalCharge_bound _ _ hr j l))
         _ = _ := by simp; ring
-    have hd' := minor_arithmetic_bound k.rank.val d hr
-      ((M.submatrix k.rows id).submatrix id ⟨k.cols, hi⟩)
     have hcheck : (∑ _i : Fin s, ∑ _j : Fin d, (2*d+1)) ≤ d*d*(2*d+1) := by
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, Nat.nsmul_eq_mul]
       exact (Nat.mul_le_mul_right _ hs).trans_eq (by ring)
-    dsimp only
+    split_ifs <;> unfold normalKeyBudget <;> omega
+  · simp only [normalKeyCharge, dif_neg hi, add_zero]
     unfold normalKeyBudget
-    omega
-  · have hd' := minor_arithmetic_bound k.rank.val d hr
-      ((M.submatrix k.rows id).submatrix id ⟨k.cols, hi⟩)
-    dsimp only
-    unfold normalKeyBudget
-    omega
-  · unfold normalKeyBudget
     omega
 
 /-- The actual early-stopping candidate search is charged, not a fictitious
