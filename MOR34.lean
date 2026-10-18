@@ -288,3 +288,5 @@ import MOR34.CellPhasePolynomial
 import MOR34.ChargedRankBasis
 import MOR34.RemainingRowLiterals
 import MOR34.WeightedRowEvaluation
+
+import MOR34.WeightedRowApplications

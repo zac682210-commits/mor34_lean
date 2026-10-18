@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.weightedCountRow_polynomial',
+    'MOR34.weightedForcedRow_polynomial',
+    'MOR34.weightedViolationRow_polynomial',
+
     "MOR34.uniformRowRadius_clog",
     "MOR34.uniformRowRadius_dominates",
     "MOR34.weightedEvaluateRow_polynomial",

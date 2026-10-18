@@ -34,11 +34,13 @@ theorem weightedEvaluateRow_cost {q : ℕ} (A : IntegerArithmeticCharge)
   have hcounts (j : Fin q) : (row.counts j).work ≤ row.work := by
     have hh := Finset.single_le_sum (f := fun i => (row.counts i).work)
       (fun i _ => Nat.zero_le _) (Finset.mem_univ j)
+    dsimp only at hh
     unfold ConstructedIntegerRow.work
     omega
   have hcosts (j : Fin q) : (row.costs j).work ≤ row.work := by
     have hh := Finset.single_le_sum (f := fun i => (row.costs i).work)
       (fun i _ => Nat.zero_le _) (Finset.mem_univ j)
+    dsimp only at hh
     unfold ConstructedIntegerRow.work
     omega
   have hbound : row.bound.work ≤ row.work := by unfold ConstructedIntegerRow.work; omega
@@ -65,7 +67,7 @@ theorem uniformRowRadius_clog (q N M : ℕ) (hN : 1 ≤ N) :
   have hh : uniformRowRadius q N M ≤ 2^e := uniformRowRadius_power_bound q N M hN
   have hp : 1 ≤ 2^e := Nat.one_le_pow _ _ (by decide)
   apply (Nat.le_pow_iff_clog_le (by decide)).mp
-  have he : uniformRowBits q N M = e+2 := by dsimp [uniformRowBits,e]; omega
+  have he : uniformRowBits q N M = e+2 := by rfl
   rw [he,pow_add]
   norm_num
   omega

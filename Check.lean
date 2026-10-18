@@ -1378,3 +1378,7 @@ import MOR34
 #print axioms MOR34.uniformRowRadius_dominates
 
 #print axioms MOR34.weightedEvaluateRow_polynomial
+
+#print axioms MOR34.weightedCountRow_polynomial
+#print axioms MOR34.weightedForcedRow_polynomial
+#print axioms MOR34.weightedViolationRow_polynomial
