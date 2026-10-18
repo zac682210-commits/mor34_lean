@@ -1,3 +1,4 @@
+import MOR34.StoredEdgeWitnesses
 import MOR34.NormalArithmeticCost
 import MOR34
 
@@ -797,3 +798,12 @@ import MOR34
 #print axioms MOR34.normalKeyCharge_bound
 #print axioms MOR34.matrixNormalArithmeticCharge_bound
 #print axioms MOR34.normalBasisArithmeticCharge_bound
+
+#print axioms MOR34.adjacentWitnessTable_length
+#print axioms MOR34.edgePointsFromTable_length
+#print axioms MOR34.storedEdgePoints_length
+#print axioms MOR34.storedEdgePoints_mem
+#print axioms MOR34.storedEdgePoints_eq
+#print axioms MOR34.storedReturnedSets_eq
+#print axioms MOR34.adjacent_exchange_uses_one_solve
+#print axioms MOR34.all_solver_calls_bound

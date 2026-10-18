@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.adjacentWitnessTable_length',
+    'MOR34.edgePointsFromTable_length',
+    'MOR34.storedEdgePoints_length',
+    'MOR34.storedEdgePoints_mem',
+    'MOR34.storedEdgePoints_eq',
+    'MOR34.storedReturnedSets_eq',
+    'MOR34.adjacent_exchange_uses_one_solve',
+    'MOR34.all_solver_calls_bound',
+
     'MOR34.minor_arithmetic_bound',
     'MOR34.columnNormalCharge_bound',
     'MOR34.normalKeyCharge_bound',
