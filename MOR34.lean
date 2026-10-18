@@ -314,3 +314,5 @@ import MOR34.WeightedSharedParity
 import MOR34.WeightedDenseRequests
 
 import MOR34.WeightedParityEnvelope
+
+import MOR34.WeightedRequestPolynomial

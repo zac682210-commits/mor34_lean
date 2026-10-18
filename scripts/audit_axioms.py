@@ -7,6 +7,8 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.parityOperandEnvelope_polynomial",
+    "MOR34.weightedBuiltCountParity_polynomial",
     "MOR34.constructedRow_coordinate_work",
     "MOR34.evaluatedRow_magnitudes",
     "MOR34.expressionMagnitude_clog",

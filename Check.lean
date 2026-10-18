@@ -1470,3 +1470,7 @@ import MOR34
 #print axioms MOR34.expressionMagnitude_clog
 
 #print axioms MOR34.sharedWeightedCompileParityRow_cost
+
+#print axioms MOR34.parityOperandEnvelope_polynomial
+
+#print axioms MOR34.weightedBuiltCountParity_polynomial

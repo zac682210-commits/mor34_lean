@@ -10,11 +10,13 @@ theorem constructedRow_coordinate_work (row : ConstructedIntegerRow q) :
   · intro j
     have h := Finset.single_le_sum (f := fun i => (row.counts i).work)
       (fun _ _ => Nat.zero_le _) (Finset.mem_univ j)
+    dsimp only at h
     unfold ConstructedIntegerRow.work
     omega
   · intro j
     have h := Finset.single_le_sum (f := fun i => (row.costs i).work)
       (fun _ _ => Nat.zero_le _) (Finset.mem_univ j)
+    dsimp only at h
     unfold ConstructedIntegerRow.work
     omega
   · unfold ConstructedIntegerRow.work
@@ -61,7 +63,9 @@ theorem sharedWeightedCompileParityRow_cost (A : IntegerArithmeticCharge)
     omega
   have he : row.1.work*Nat.clog 2 (M+2)+2 ≤ (2*q+7)*(W*Nat.clog 2 (M+2)+2)+2 := by
     have hh := Nat.mul_le_mul_right (Nat.clog 2 (M+2)) hw
-    nlinarith
+    have hh2 : W*Nat.clog 2 (M+2)+2 ≤ (2*q+7)*(W*Nat.clog 2 (M+2)+2) :=
+      Nat.le_mul_of_pos_left _ (by omega)
+    omega
   have hrow := weightedEvaluateRow_cost A row.1 M K hl
     (IntegerArithmeticCharge.Bounded.mono A hA he)
   have hmag := evaluatedRow_magnitudes row.1 M W hl hw
