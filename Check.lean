@@ -682,3 +682,9 @@ import MOR34
 #print axioms MOR34.computedNormalPipeline_payload_states
 #print axioms MOR34.normalBasisCandidateCalls_bound
 #print axioms MOR34.computedCellSelection_normal_checks
+#print axioms MOR34.binarySetKey_injective
+#print axioms MOR34.orderedBinarySets_mem
+#print axioms MOR34.orderedBinarySets_length
+#print axioms MOR34.computedParityFamily_eq
+#print axioms MOR34.computedSelectionFamily_eq
+#print axioms MOR34.computedReturnedSets_eq

@@ -7,6 +7,14 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.computedParityFamily_eq",
+    "MOR34.computedSelectionFamily_eq",
+    "MOR34.computedReturnedSets_eq",
+
+    "MOR34.binarySetKey_injective",
+    "MOR34.orderedBinarySets_mem",
+    "MOR34.orderedBinarySets_length",
+
     "MOR34.normalBasisCandidateCalls_bound",
     "MOR34.computedCellSelection_normal_checks",
 

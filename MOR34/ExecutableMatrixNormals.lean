@@ -75,7 +75,8 @@ theorem matrixNormalSearch_exists {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ) :
       simpa only [laplaceDet_correct] using hd
     have hc' : ∀ i j, ∑ l, M i l * concreteColumnNormal (M.submatrix a id) c j l = 0 := by
       simpa only [concreteColumnNormal_eq] using hc
-    simpa only [tryNormalKey, k, dif_pos c.injective, if_pos hd', if_pos hc']
+    simp [tryNormalKey, k, c.injective, hd', hc']
+    exact hd'
   cases he : matrixNormalSearch M with
   | some v => exact ⟨v, rfl⟩
   | none =>
