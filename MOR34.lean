@@ -185,3 +185,4 @@ import MOR34.NormalCheckIntermediates
 import MOR34.ExecutableRecognitionBranches
 import MOR34.ExecutableNormalization
 import MOR34.FiniteTable
+import MOR34.StoredExtrema

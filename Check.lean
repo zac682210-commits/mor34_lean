@@ -709,3 +709,4 @@ import MOR34
 #print axioms MOR34.executable_normalization_parameter
 #print axioms MOR34.materializeFin_apply
 #print axioms MOR34.materializeFin_eq
+#print axioms MOR34.storedParityExtrema_eq
