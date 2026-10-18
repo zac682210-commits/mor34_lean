@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.normalBoundedQuery_literals",
+    "MOR34.weightedDenseListQuery_value",
+    "MOR34.weightedDenseListQuery_cost",
+    "MOR34.weightedCoordinateScan_value",
+    "MOR34.weightedCoordinateScan_cost",
     "MOR34.preparedCellStep_value",
     "MOR34.preparedCellStep_cost",
     "MOR34.preparedCellBasis_value",

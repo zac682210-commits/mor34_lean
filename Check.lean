@@ -1508,3 +1508,8 @@ import MOR34
 #print axioms MOR34.preparedCellBasis_value
 #print axioms MOR34.preparedCellBasis_cost_on_states
 #print axioms MOR34.preparedCellBudget_uniform
+#print axioms MOR34.normalBoundedQuery_literals
+#print axioms MOR34.weightedDenseListQuery_value
+#print axioms MOR34.weightedDenseListQuery_cost
+#print axioms MOR34.weightedCoordinateScan_value
+#print axioms MOR34.weightedCoordinateScan_cost

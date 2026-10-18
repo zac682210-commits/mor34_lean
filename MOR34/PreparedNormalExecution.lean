@@ -26,7 +26,9 @@ def preparedCountForms (prep : CountMatrixPreparation q) (unit : ℕ)
 
 theorem preparedCountForms_value (prep : CountMatrixPreparation q) (unit : ℕ)
     (B : Finset (Counts q)) : (preparedCountForms prep unit B).1 = computedCountForms B := by
-  simpa only [preparedCountForms,prep.value,builtCountForms] using builtCountForms_value B
+  dsimp only [preparedCountForms]
+  rw [prep.value]
+  exact builtCountForms_value B
 
 theorem preparedCountForms_cost (prep : CountMatrixPreparation q) (unit E : ℕ)
     (B : Finset (Counts q)) (hB : B.card ≤ q+1) (he : (prep.emit B).2 ≤ E) :
