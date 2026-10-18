@@ -625,3 +625,7 @@ import MOR34
 #print axioms MOR34.uniform_row_payload
 #print axioms MOR34.uniform_system_payload
 #print axioms MOR34.cell_system_payload
+
+#print axioms MOR34.searchStates_of_containment
+#print axioms MOR34.cellSearch_payload_states
+#print axioms MOR34.boundedPipeline_payload_states

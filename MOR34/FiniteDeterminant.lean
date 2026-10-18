@@ -67,7 +67,7 @@ def tracedLaplaceDet : (r : ℕ) → Matrix (Fin r) (Fin r) ℤ → ℤ × ℕ
   | r+1, A =>
     let sub := fun j : Fin (r+1) => tracedLaplaceDet r (A.submatrix Fin.succ j.succAbove)
     (∑ j : Fin (r+1), (-1) ^ j.val * A 0 j * (sub j).1,
-      ∑ j : Fin (r+1), (sub j).2 + j.val + 3)
+      ∑ j : Fin (r+1), ((sub j).2 + j.val + 3))
 
 theorem tracedLaplaceDet_value (r : ℕ) (A : Matrix (Fin r) (Fin r) ℤ) :
     (tracedLaplaceDet r A).1 = laplaceDet r A := by
@@ -80,7 +80,7 @@ theorem tracedLaplaceDet_cost (r : ℕ) (A : Matrix (Fin r) (Fin r) ℤ) :
   induction r with
   | zero => simp [tracedLaplaceDet, laplaceArithmeticBudget]
   | succ r ih =>
-    change (∑ j : Fin (r+1), (tracedLaplaceDet r (A.submatrix Fin.succ j.succAbove)).2 + j.val + 3) ≤ _
+    change (∑ j : Fin (r+1), ((tracedLaplaceDet r (A.submatrix Fin.succ j.succAbove)).2 + j.val + 3)) ≤ _
     calc
       _ ≤ ∑ _j : Fin (r+1), (laplaceArithmeticBudget r + r + 3) := by
         apply Finset.sum_le_sum

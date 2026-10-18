@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.searchStates_of_containment',
+    'MOR34.cellSearch_payload_states',
+    'MOR34.boundedPipeline_payload_states',
+
     'MOR34.integerRowBits_uniform',
     'MOR34.uniform_row_payload',
     'MOR34.uniform_system_payload',

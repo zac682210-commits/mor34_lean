@@ -160,3 +160,5 @@ import MOR34.RawEncodingBounds
 import MOR34.UniformEncoding
 
 import MOR34.RowPayload
+
+import MOR34.SearchPayload
