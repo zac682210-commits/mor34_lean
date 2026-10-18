@@ -551,3 +551,11 @@ import MOR34
 #print axioms MOR34.relabelBasis_independent
 #print axioms MOR34.relabelBasis_tight
 #print axioms MOR34.relabelBasis_affineSpan
+
+#print axioms MOR34.relabelDecision_correct
+#print axioms MOR34.relabelOutput_correct
+#print axioms MOR34.raw_correct_output_facet
+#print axioms MOR34.relabelDecision_dimension
+#print axioms MOR34.rawPipeline_correct
+#print axioms MOR34.rawPipeline_facet
+#print axioms MOR34.rawPipeline_dimension

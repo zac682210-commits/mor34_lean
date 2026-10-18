@@ -7,6 +7,14 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.relabelDecision_correct',
+    'MOR34.relabelOutput_correct',
+    'MOR34.raw_correct_output_facet',
+    'MOR34.relabelDecision_dimension',
+    'MOR34.rawPipeline_correct',
+    'MOR34.rawPipeline_facet',
+    'MOR34.rawPipeline_dimension',
+
     'MOR34.relabelBasis_card',
     'MOR34.relabelBasis_points',
     'MOR34.relabelBasis_independent',
