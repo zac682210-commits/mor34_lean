@@ -705,3 +705,5 @@ import MOR34
 #print axioms MOR34.executableSupportSearch_none_iff
 #print axioms MOR34.executableSupportSearch_calls_le
 #print axioms MOR34.executableRecognitionBranch_correct
+#print axioms MOR34.executable_original_input_output_contract
+#print axioms MOR34.executable_normalization_parameter

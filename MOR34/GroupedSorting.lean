@@ -12,10 +12,10 @@ def GroupedConditions (P : Model m) : Prop :=
   (∀ i, P.weight i ≤ P.capacity) ∧ (∀ j, 0 ≤ P.coefficient j) ∧
   Function.Injective P.coefficient
 
-noncomputable def sortItems (P : Model m) : Item m ≃ Item m :=
+def sortItems (P : Model m) : Item m ≃ Item m :=
   Equiv.sigmaCongrRight (fun j => Tuple.sort (fun k => P.weight ⟨j, k⟩))
 
-noncomputable def sortGrouped (P : Model m) : Model m :=
+def sortGrouped (P : Model m) : Model m :=
   ⟨fun i => P.weight (sortItems P i), P.coefficient, P.capacity, P.rhs⟩
 
 theorem sortItems_class (P : Model m) (i : Item m) : (sortItems P i).1 = i.1 := rfl

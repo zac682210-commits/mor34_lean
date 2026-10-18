@@ -1,4 +1,5 @@
 import MOR34.ExecutableCountForms
+import MOR34.ExecutableNormalization
 
 open MOR34
 
@@ -37,3 +38,15 @@ private def accepts {q : ℕ} (forms : List (IntegerForm q)) (z : Counts q) : Bo
   assertCheck "full rank matrix has zero annihilator"
     (decide ((List.ofFn (fun j => List.ofFn (fullNormals j))) = [[0,0],[0,0]]))
   IO.println "11 computed-normal runtime checks passed"
+
+#eval do
+  let N := normalizeRawExecutable (n := 4) (by decide) ![4,2,3,1] ![1,0,1,0] 4 2
+    (by decide) (by decide) (by decide) (by decide)
+  assertCheck "raw coefficient grouping includes zero class" (decide (N.classes = 2))
+  assertCheck "raw classes sorted by coefficient"
+    (decide (List.ofFn N.model.coefficient = [0,1]))
+  assertCheck "raw within-class weights sorted"
+    (decide ((List.ofFn (fun j => List.ofFn (fun k => N.model.weight ⟨j,k⟩))) = [[1,2],[3,4]]))
+  assertCheck "raw item permutation retains original labels"
+    (decide ((List.ofFn (fun j => List.ofFn (fun k => (N.itemEquiv ⟨j,k⟩).val))) = [[3,1],[2,0]]))
+  IO.println "4 computed-normalization runtime checks passed"

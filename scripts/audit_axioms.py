@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.executable_original_input_output_contract",
+    "MOR34.executable_normalization_parameter",
+
     "MOR34.executableParityList_mem",
     "MOR34.executableParityList_length",
     "MOR34.executableSupportSearch_some",

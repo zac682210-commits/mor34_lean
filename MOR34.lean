@@ -183,3 +183,4 @@ import MOR34.ExecutableNormalizedPipeline
 import MOR34.ExecutableRawPipeline
 import MOR34.NormalCheckIntermediates
 import MOR34.ExecutableRecognitionBranches
+import MOR34.ExecutableNormalization
