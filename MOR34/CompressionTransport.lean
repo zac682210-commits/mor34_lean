@@ -55,7 +55,9 @@ theorem compression_facet (h : RawCompression a c a' c' b d b' d') :
 
 theorem compression_signedDimension (h : RawCompression a c a' c' b d b' d') :
     rawSignedDimension a c b d = rawSignedDimension a' c' b' d' := by
-  simp only [rawSignedDimension, compression_tightPointSet h]
+  classical
+  unfold rawSignedDimension
+  rw [compression_tightPointSet h]
 
 theorem compression_hypotheses (hn : 0 < n) (h : RawCompression a c a' c' b d b' d')
     (ha : ∀ i, 0 < a i) (hb : 0 < b) (hab : ∀ i, a i ≤ b) (hc : ∀ i, 0 ≤ c i) :
@@ -88,8 +90,8 @@ theorem compression_decision (h : RawCompression a c a' c' b d b' d') (out : Raw
       k = Module.finrank ℝ (vectorSpan ℝ (rawCandidateFace a c b d)) ∧
       (f = true ↔ RawDefinesFacet a c b d)) ↔ _
     by_cases hv : RawValid a c b d
-    · simp only [hv, (compression_valid h).mp hv, true_and, compression_tight h,
-        compression_face h hv, compression_facet h]
+    · simp only [RawDecision.Correct, hv, (compression_valid h).mp hv, true_and]
+      rw [compression_tight h, compression_face h hv, compression_facet h]
     · have hv' : ¬ RawValid a' c' b' d' := fun hh => hv ((compression_valid h).mpr hh)
       simp [RawDecision.Correct, hv, hv']
 

@@ -752,3 +752,7 @@ import MOR34
 #print axioms MOR34.quotient_augmented_span_le_component_generators
 #print axioms MOR34.quotient_augmented_dimension_bound
 #print axioms MOR34.facet_component_bound
+#print axioms MOR34.compressionRadius_power_bound
+#print axioms MOR34.compressed_integer_bits
+#print axioms MOR34.compressed_payload_bound
+#print axioms MOR34.compression_cost_substitution

@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.compressionRadius_power_bound",
+    "MOR34.compressed_integer_bits",
+    "MOR34.compressed_payload_bound",
+    "MOR34.compression_cost_substitution",
+
     "MOR34.oneParityComponentGenerators_card",
     "MOR34.allParityComponentGenerators_card",
     "MOR34.quotient_prefix_mem_component_generators",
