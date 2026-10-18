@@ -1,0 +1,89 @@
+{
+  "started_utc": "2026-10-18T16:52:17.698102+00:00",
+  "ready": true,
+  "steps": [
+    {
+      "name": "1_lean_version",
+      "command": [
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "2_core_smoke",
+      "command": [
+        "lean",
+        "smoke/Minimal.lean"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "dependencies",
+      "command": [
+        "lake",
+        "update"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "cache",
+      "command": [
+        "lake",
+        "exe",
+        "cache",
+        "get"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "3_mathlib_smoke",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "smoke/Mathlib.lean"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "4_project_build",
+      "command": [
+        "lake",
+        "build"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "4_computed_normals_smoke",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "smoke/ComputedNormals.lean"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "4_project_axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "Check.lean"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "4_axiom_allowlist",
+      "command": [
+        "/usr/bin/python3",
+        "scripts/audit_axioms.py",
+        "/home/runner/work/mor34_lean/mor34_lean/logs/environment_gate/4_project_axioms.log"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "scope": "Project build and explicit named-theorem axiom audit; consult docs/ACCEPTANCE.json for verified paper scope",
+  "updated_utc": "2026-10-18T17:00:06.780444+00:00"
+}

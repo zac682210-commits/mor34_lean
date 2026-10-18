@@ -1,0 +1,14 @@
+{
+  "started_at_utc": "2026-10-18T15:17:45.672Z",
+  "active_work_cutoff_utc": "2026-10-18T17:03:11.570Z",
+  "elapsed_to_active_cutoff_seconds": 6325.898,
+  "ci_only_wait_seconds": 150.005,
+  "additional_bookkeeping_exclusion_seconds": 360,
+  "active_minutes": 96.932,
+  "previous_cumulative_recorded_active_minutes": 549.025,
+  "cumulative_recorded_active_minutes": 645.957,
+  "accounting_method": "Elapsed continuous session minus explicitly measured CI-only waits and an additional conservative six-minute deduction for bookkeeping. Final archival work after active_work_cutoff is excluded. This is session time accounting, not CPU time; no inter-turn gaps or unrecorded earlier preparation are added.",
+  "status": "requested_new_proof_scope_complete",
+  "verified_source_commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
+  "verified_ci_run": 39146901961
+}

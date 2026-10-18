@@ -24,8 +24,8 @@
       "depends_on": [
         "prefix"
       ],
-      "lean_target": "MOR34.violationSystem_polynomial_payload",
-      "status": "Actual integer encodings and explicit quartic polynomial payload checked; primitive solver and routine arithmetic implementations are outside scope. Verified source e7c2ab38c192b515f54c02d8963f9c038748de74",
+      "lean_target": "MOR34.weightedRequests_solver_inputs",
+      "status": "Complete in the approved new-proofs/local-standard-contract scope. Verified source 8951a2f5c5a64a477e907991b7653698d11ec440; run 39146901961. See COST_MODEL_20261018.md.",
       "lean_theorems": [
         "MOR34.prefix_epigraph_iff",
         "MOR34.exact_linear_count_encoding",
@@ -47,12 +47,17 @@
         "MOR34.forcedRowConstruction_value",
         "MOR34.forcedConstructionWork_polynomial",
         "MOR34.violationRowConstruction_value",
-        "MOR34.violationConstructionWork_polynomial"
+        "MOR34.violationConstructionWork_polynomial",
+        "MOR34.weightedCompiledCountRequest_polynomial",
+        "MOR34.weightedBranchRows_cost",
+        "MOR34.weightedBranchRequests_cost",
+        "MOR34.weightedRequests_solver_inputs"
       ],
       "cost_checkpoint": {
-        "commit": "239faa04a024e92e159ce60a70ac26c1b9c900af",
-        "run": 39121830829,
-        "full_reference_runtime_proved": false
+        "commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
+        "run": 39146901961,
+        "full_reference_runtime_proved": true,
+        "compiled_backend_runtime_proved": false
       }
     },
     {
@@ -169,8 +174,8 @@
       "depends_on": [
         "L1"
       ],
-      "lean_target": "MOR34.normal_calls_original_parameter",
-      "status": "Correct basis search, bounded normal coefficients and query counts checked; parameter-only normal enumeration factor bounded explicitly. Compiler operational cost is outside scope. Verified source e7c2ab38c192b515f54c02d8963f9c038748de74",
+      "lean_target": "MOR34.normal_envelope_from_global",
+      "status": "Complete in the approved new-proofs/local-standard-contract scope. Verified source 8951a2f5c5a64a477e907991b7653698d11ec440; run 39146901961. See COST_MODEL_20261018.md.",
       "lean_theorems": [
         "MOR34.bounded_integer_forms_exist",
         "MOR34.linear_count_basis_correct",
@@ -203,12 +208,17 @@
         "MOR34.normalBasisArithmeticCharge_bound",
         "MOR34.allNormalArithmeticCharge_parameter",
         "MOR34.normalWorkBits_polynomial",
-        "MOR34.counted_normal_bit_cost"
+        "MOR34.counted_normal_bit_cost",
+        "MOR34.preparedWeightedCell_cost",
+        "MOR34.preparedNormalOperands_on_states",
+        "MOR34.preparedWeightedCell_normal_states",
+        "MOR34.normal_envelope_from_global"
       ],
       "cost_checkpoint": {
-        "commit": "239faa04a024e92e159ce60a70ac26c1b9c900af",
-        "run": 39121830829,
-        "full_reference_runtime_proved": false
+        "commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
+        "run": 39146901961,
+        "full_reference_runtime_proved": true,
+        "compiled_backend_runtime_proved": false
       }
     },
     {
@@ -253,8 +263,8 @@
         "L1",
         "L7"
       ],
-      "lean_target": "Original-input RawOutput.Correct: invalid witness / empty face / supported dimension, geometric facet Boolean and original-coordinate tight affine basis",
-      "status": "Computed original-input output contract verified relative to explicit ILP/rank primitives. No classical data choice in this path at 27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
+      "lean_target": "MOR34.runPreparedWeighted_correct",
+      "status": "Complete in the approved new-proofs/local-standard-contract scope. Verified source 8951a2f5c5a64a477e907991b7653698d11ec440; run 39146901961. See COST_MODEL_20261018.md.",
       "lean_theorems": [
         "MOR34.normalizedPipeline_correct",
         "MOR34.normalizedPipeline_dimension",
@@ -279,8 +289,18 @@
         "MOR34.executableNormalizedPipeline_correct",
         "MOR34.executableNormalizedPipeline_facet",
         "MOR34.executableNormalizedPipeline_dimension",
-        "MOR34.executableRawPipeline_correct"
-      ]
+        "MOR34.executableRawPipeline_correct",
+        "MOR34.weightedNormalizedExecution_correct",
+        "MOR34.weightedRawExecution_correct",
+        "MOR34.weightedRun_correct",
+        "MOR34.runPreparedWeighted_correct"
+      ],
+      "cost_checkpoint": {
+        "commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
+        "run": 39146901961,
+        "full_reference_runtime_proved": true,
+        "compiled_backend_runtime_proved": false
+      }
     },
     {
       "id": "T8time",
@@ -290,8 +310,8 @@
         "T8correct",
         "L7"
       ],
-      "lean_target": "MOR34.counted_rank_cost_bound",
-      "status": "Partial: actual query sizes, counted ILP costs, rank-call/input sizes and parameter factors checked; full reference-algorithm phase-cost composition remains open. Verified source e7c2ab38c192b515f54c02d8963f9c038748de74",
+      "lean_target": "MOR34.complete_compressed_execution",
+      "status": "Complete in the approved new-proofs/local-standard-contract scope. Verified source 8951a2f5c5a64a477e907991b7653698d11ec440; run 39146901961. See COST_MODEL_20261018.md.",
       "lean_theorems": [
         "MOR34.rowSearchCalls_le",
         "MOR34.cell_solver_row_count",
@@ -323,12 +343,18 @@
         "MOR34.storedRawPipeline_correct",
         "MOR34.all_solver_cost_bound",
         "MOR34.chargedPhaseCost_bound",
-        "MOR34.returnedFamily_pairwise_work"
+        "MOR34.returnedFamily_pairwise_work",
+        "MOR34.weightedNormalizedExecution_cost",
+        "MOR34.weightedNormalizedBudget_sharp",
+        "MOR34.weightedRun_sharp",
+        "MOR34.doubled_dimension_factor",
+        "MOR34.complete_compressed_execution"
       ],
       "cost_checkpoint": {
-        "commit": "239faa04a024e92e159ce60a70ac26c1b9c900af",
-        "run": 39121830829,
-        "full_reference_runtime_proved": false
+        "commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
+        "run": 39146901961,
+        "full_reference_runtime_proved": true,
+        "compiled_backend_runtime_proved": false
       }
     },
     {
@@ -338,8 +364,8 @@
       "depends_on": [
         "T8time"
       ],
-      "lean_target": "MOR34.compression_cost_substitution",
-      "status": "Semantic application and quartic size complete relative to cited FT conclusion. Arithmetic-time corollary still depends on the unfinished total FPT cost theorem. Verified source e7c2ab38c192b515f54c02d8963f9c038748de74",
+      "lean_target": "MOR34.complete_strongly_polynomial_execution",
+      "status": "Complete in the approved new-proofs/local-standard-contract scope. Verified source 8951a2f5c5a64a477e907991b7653698d11ec440; run 39146901961. See COST_MODEL_20261018.md.",
       "lean_theorems": [
         "MOR34.compression_feasible",
         "MOR34.compression_tight",
@@ -348,9 +374,27 @@
         "MOR34.compression_output",
         "MOR34.compressed_payload_bound",
         "MOR34.external_compression_application",
-        "MOR34.compression_cost_substitution"
-      ]
+        "MOR34.compression_cost_substitution",
+        "MOR34.chargedCompressionPreparation_cost",
+        "MOR34.compressedPrepared_magnitudes",
+        "MOR34.compressedPrepared_parameter",
+        "MOR34.complete_compressed_execution",
+        "MOR34.chargedCompressionPreparation_strong_cost",
+        "MOR34.complete_strongly_polynomial_execution"
+      ],
+      "cost_checkpoint": {
+        "commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
+        "run": 39146901961,
+        "full_reference_runtime_proved": true,
+        "compiled_backend_runtime_proved": false
+      }
     }
   ],
-  "current_scope": "docs/SCOPE_NEW_PROOFS_20261018.md"
+  "current_scope": "docs/SCOPE_NEW_PROOFS_20261018.md",
+  "new_proofs_complete": true,
+  "verification": {
+    "commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
+    "run": 39146901961,
+    "named_declarations": 1154
+  }
 }
