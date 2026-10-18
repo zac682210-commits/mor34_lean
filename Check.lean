@@ -637,3 +637,6 @@ import MOR34
 #print axioms MOR34.basicRow_uniform_bound
 #print axioms MOR34.forced_system_payload
 #print axioms MOR34.violation_system_payload
+#print axioms MOR34.firstWitnessCharge_bound
+#print axioms MOR34.pivotDetCharge_bound
+#print axioms MOR34.exactPivotDetCharge_bound

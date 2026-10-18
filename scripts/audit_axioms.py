@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.firstWitnessCharge_bound",
+    "MOR34.pivotDetCharge_bound",
+    "MOR34.exactPivotDetCharge_bound",
     'MOR34.basicRow_uniform_bound',
     'MOR34.forced_system_payload',
     'MOR34.violation_system_payload',
