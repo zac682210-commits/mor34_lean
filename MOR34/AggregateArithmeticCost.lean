@@ -59,7 +59,11 @@ theorem normalKeyBudget_factorial_bound (d : ℕ) :
     exact hh.trans ((pow_le_pow_right' hb (by decide : 4 ≤ 5)).trans
       (Nat.le_mul_of_pos_right _ (by omega)))
   unfold normalKeyBudget
-  omega
+  calc
+    _ ≤ (d+3)^5*(d.factorial+2)+(d+3)^5*(d.factorial+2)+
+        (d+3)^5*(d.factorial+2)+(d+3)^5*(d.factorial+2) :=
+      Nat.add_le_add (Nat.add_le_add (Nat.add_le_add h₁ h₂) h₃) h₄
+    _ = _ := by ring
 
 theorem normalKeyBudget_parameter_bound (d : ℕ) :
     normalKeyBudget d ≤ (d+3)^(d+8) := by
