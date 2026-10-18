@@ -688,3 +688,6 @@ import MOR34
 #print axioms MOR34.computedParityFamily_eq
 #print axioms MOR34.computedSelectionFamily_eq
 #print axioms MOR34.computedReturnedSets_eq
+#print axioms MOR34.computedReturnedBasis_correct
+#print axioms MOR34.executableNormalizedPipeline_correct
+#print axioms MOR34.executableNormalizedPipeline_facet

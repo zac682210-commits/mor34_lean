@@ -179,3 +179,4 @@ import MOR34.NormalSearchCost
 import MOR34.ComputedSearchPayload
 import MOR34.OrderedBinarySets
 import MOR34.ExecutableReturnedSets
+import MOR34.ExecutableNormalizedPipeline

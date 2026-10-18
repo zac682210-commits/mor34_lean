@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.computedReturnedBasis_correct",
+    "MOR34.executableNormalizedPipeline_correct",
+    "MOR34.executableNormalizedPipeline_facet",
+
     "MOR34.computedParityFamily_eq",
     "MOR34.computedSelectionFamily_eq",
     "MOR34.computedReturnedSets_eq",
