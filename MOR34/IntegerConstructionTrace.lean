@@ -35,8 +35,10 @@ theorem sumConstruction_value (L : List ℤ) : (sumConstruction L).value = L.sum
 theorem sumConstruction_work (L : List ℤ) : (sumConstruction L).work = 2*L.length+1 := by
   induction L with
   | nil => rfl
-  | cons a L ih => simp only [sumConstruction, List.foldr_cons, IntegerConstruction.work] at *
-                         simp only [List.length_cons]; omega
+  | cons a L ih =>
+      change 1+(sumConstruction L).work+1 = 2*(a::L).length+1
+      rw [ih, List.length_cons]
+      omega
 
 /-- All original prefix values are constructed by finite sums, with no arithmetic
 oracle hidden in the row constant. A shared table may improve this bound. -/
@@ -46,7 +48,8 @@ def prefixConstruction {n : ℕ} (w : Fin n → ℤ) (z : ℕ) : IntegerConstruc
 theorem prefixConstruction_value {n : ℕ} (w : Fin n → ℤ) (z : ℕ) :
     (prefixConstruction w z).value = prefixCost w z := by
   rw [prefixConstruction, sumConstruction_value]
-  simp [prefixCost]
+  have hh := List.sum_toFinset w (Finset.sort_nodup (· ≤ ·) (classPrefix n z))
+  simpa [prefixCost] using hh.symm
 
 theorem prefixConstruction_work {n : ℕ} (w : Fin n → ℤ) (z : ℕ) :
     (prefixConstruction w z).work ≤ 2*n+1 := by

@@ -22,6 +22,13 @@ jobs:
         with:
           path: .lake/packages
           key: mor34-linux-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}
+      - name: Restore project build objects
+        uses: actions/cache/restore@v4
+        with:
+          path: .lake/build
+          key: mor34-project-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            mor34-project-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
       - name: Run four readiness gates
         run: python3 scripts/environment_gate.py
       - name: Save Lean dependencies
@@ -30,6 +37,12 @@ jobs:
         with:
           path: .lake/packages
           key: mor34-linux-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}
+      - name: Save project build objects
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .lake/build
+          key: mor34-project-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.sha }}
       - name: Retain actual logs and resolved dependency manifest
         if: always()
         uses: actions/upload-artifact@v4

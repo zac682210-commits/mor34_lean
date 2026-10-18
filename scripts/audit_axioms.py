@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.violationRowConstruction_value',
+    'MOR34.violationRowConstruction_work',
+    'MOR34.violationConstructionWork_polynomial',
+
     'MOR34.forcedSlopeConstruction_value',
     'MOR34.forcedSlopeConstruction_work',
     'MOR34.forcedEmptyConstruction_value',

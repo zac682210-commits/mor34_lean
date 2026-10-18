@@ -1,3 +1,4 @@
+import MOR34.ViolationConstructionCost
 import MOR34.ForcedConstructionCost
 import MOR34.ReturnedFamilyCost
 import MOR34.CountConstructionCost
@@ -859,3 +860,7 @@ import MOR34
 #print axioms MOR34.forcedRowConstruction_value
 #print axioms MOR34.forcedRowConstruction_work
 #print axioms MOR34.forcedConstructionWork_polynomial
+
+#print axioms MOR34.violationRowConstruction_value
+#print axioms MOR34.violationRowConstruction_work
+#print axioms MOR34.violationConstructionWork_polynomial
