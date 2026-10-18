@@ -1,3 +1,4 @@
+import MOR34.AggregateArithmeticCost
 import MOR34.StoredEdgeWitnesses
 import MOR34.NormalArithmeticCost
 import MOR34
@@ -807,3 +808,11 @@ import MOR34
 #print axioms MOR34.storedReturnedSets_eq
 #print axioms MOR34.adjacent_exchange_uses_one_solve
 #print axioms MOR34.all_solver_calls_bound
+
+#print axioms MOR34.allNormalArithmeticCharge_bound
+#print axioms MOR34.normalKeyBudget_factorial_bound
+#print axioms MOR34.normalKeyBudget_parameter_bound
+#print axioms MOR34.allNormalArithmeticCharge_parameter
+#print axioms MOR34.all_solver_cost_bound
+
+#print axioms MOR34.chargedPhaseCost_bound

@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedPhaseCost_bound',
+    'MOR34.allNormalArithmeticCharge_bound',
+    'MOR34.normalKeyBudget_factorial_bound',
+    'MOR34.normalKeyBudget_parameter_bound',
+    'MOR34.allNormalArithmeticCharge_parameter',
+    'MOR34.all_solver_cost_bound',
+
     'MOR34.adjacentWitnessTable_length',
     'MOR34.edgePointsFromTable_length',
     'MOR34.storedEdgePoints_length',

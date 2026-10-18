@@ -205,3 +205,5 @@ import MOR34.ParameterFactors
 
 import MOR34.NormalArithmeticCost
 import MOR34.StoredEdgeWitnesses
+
+import MOR34.AggregateArithmeticCost
