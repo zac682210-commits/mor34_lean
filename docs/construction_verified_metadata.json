@@ -1,0 +1,17 @@
+{
+  "runtime_checks": 15,
+  "commit": "bdfd84d19dc1f9b36ecf9d8f595137854af8b47d",
+  "run": 39125116229,
+  "artifact_id": 12135632177,
+  "artifact_sha256": "64523280de97bb3d3e5effc4a5cc66397cb44400bc91eae71c5d49b84d432b4b",
+  "attempts": 1,
+  "manifest_match": true,
+  "source_blob_match": true,
+  "checked_named_theorems": 803,
+  "prior_accepted_commit": "239faa04a024e92e159ce60a70ac26c1b9c900af",
+  "prior_accepted_named_declarations": 720,
+  "added_theorems": 83,
+  "verified_job": 117668493060,
+  "source_files_matched": 173,
+  "note": "attempts is the successful workflow run attempt number; earlier failing source commits are retained in branch history"
+}

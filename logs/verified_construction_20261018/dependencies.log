@@ -1,0 +1,41 @@
+info: toolchain not updated; already up-to-date
+info: mathlib: running post-update hooks
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+
+100 1075k  100 1075k    0     0  3662k      0 --:--:-- --:--:-- --:--:-- 3662k
+
+installing leantar 0.1.15
+Attempting to download 6641 file(s)
+
+Downloaded: 1 file(s) [attempted 1/6641 = 0%]
+Downloaded: 195 file(s) [attempted 195/6641 = 2%]
+Downloaded: 496 file(s) [attempted 496/6641 = 7%]
+Downloaded: 838 file(s) [attempted 838/6641 = 12%]
+Downloaded: 1164 file(s) [attempted 1164/6641 = 17%]
+Downloaded: 1469 file(s) [attempted 1469/6641 = 22%]
+Downloaded: 1751 file(s) [attempted 1751/6641 = 26%]
+Downloaded: 2073 file(s) [attempted 2073/6641 = 31%]
+Downloaded: 2372 file(s) [attempted 2372/6641 = 35%]
+Downloaded: 2686 file(s) [attempted 2686/6641 = 40%]
+Downloaded: 2997 file(s) [attempted 2997/6641 = 45%]
+Downloaded: 3280 file(s) [attempted 3280/6641 = 49%]
+Downloaded: 3585 file(s) [attempted 3585/6641 = 53%]
+Downloaded: 3900 file(s) [attempted 3900/6641 = 58%]
+Downloaded: 4193 file(s) [attempted 4193/6641 = 63%]
+Downloaded: 4533 file(s) [attempted 4533/6641 = 68%]
+Downloaded: 4777 file(s) [attempted 4777/6641 = 71%]
+Downloaded: 5053 file(s) [attempted 5053/6641 = 76%]
+Downloaded: 5346 file(s) [attempted 5346/6641 = 80%]
+Downloaded: 5636 file(s) [attempted 5636/6641 = 84%]
+Downloaded: 5895 file(s) [attempted 5895/6641 = 88%]
+Downloaded: 6192 file(s) [attempted 6192/6641 = 93%]
+Downloaded: 6575 file(s) [attempted 6575/6641 = 99%]
+Downloaded: 6641 file(s) [attempted 6641/6641 = 100%]
+Downloaded: 6641 file(s) [attempted 6641/6641 = 100%] (100% success)
+Decompressing 6641 file(s)
+Unpacked in 2217 ms
+Completed successfully!

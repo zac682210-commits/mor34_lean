@@ -1,0 +1,27 @@
+{
+  "started_utc": "2026-10-18T11:21:28.140Z",
+  "active_work_cutoff_utc": "2026-10-18T12:01:34.215Z",
+  "ended_utc": "2026-10-18T12:01:34.215Z",
+  "active_minutes": 38.101,
+  "prior_recorded_active_minutes": 429.453,
+  "cumulative_recorded_active_minutes": 467.554,
+  "cumulative_is_complete": false,
+  "historical_formalization_minutes": null,
+  "conservative_nonresearch_overhead_seconds": 120,
+  "CI_only_wait_seconds": 0,
+  "interrupted": true,
+  "minimum_40_minutes_met": false,
+  "time_method": "Last confirmed active boundary before interruption minus explicitly tracked CI-only waits and 120 seconds conservative overhead; subsequent pause and final bookkeeping are excluded.",
+  "verified_commit": "bdfd84d19dc1f9b36ecf9d8f595137854af8b47d",
+  "verified_run": 39125116229,
+  "kernel_checked_named_declarations": 803,
+  "added_theorems": 83,
+  "new_paper_proofs_complete": false,
+  "algorithm_level_FPT_derivation_complete": false,
+  "next": "docs/NEXT_CONSTRUCTION_20261018.md",
+  "remaining_active_work_estimate_minutes": [
+    45,
+    90
+  ],
+  "estimate_confidence": "provisional; remaining uncertainty is phase-complete execution coverage, not a remaining geometric lemma"
+}
