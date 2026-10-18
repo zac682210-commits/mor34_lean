@@ -769,3 +769,5 @@ import MOR34
 #print axioms MOR34.rowSearchCalls_polynomial
 #print axioms MOR34.counted_ilp_cost_bound
 #print axioms MOR34.allNormalCandidateCalls_bound
+
+#print axioms MOR34.external_compression_application

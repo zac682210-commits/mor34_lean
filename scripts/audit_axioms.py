@@ -7,6 +7,7 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.external_compression_application',
     'MOR34.rowSearchCalls_polynomial',
     'MOR34.counted_ilp_cost_bound',
     'MOR34.allNormalCandidateCalls_bound',
