@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.six_power_parameter_bound',
+    'MOR34.normal_calls_parameter_bound',
+    'MOR34.rowCallFactor_parameter_bound',
+    'MOR34.normal_calls_original_parameter',
+
     'MOR34.forcedSystem_polynomial_payload',
     'MOR34.violationSystem_polynomial_payload',
 

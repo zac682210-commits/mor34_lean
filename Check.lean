@@ -782,3 +782,8 @@ import MOR34
 
 #print axioms MOR34.forcedSystem_polynomial_payload
 #print axioms MOR34.violationSystem_polynomial_payload
+
+#print axioms MOR34.six_power_parameter_bound
+#print axioms MOR34.normal_calls_parameter_bound
+#print axioms MOR34.rowCallFactor_parameter_bound
+#print axioms MOR34.normal_calls_original_parameter
