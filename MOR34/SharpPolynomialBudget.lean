@@ -160,12 +160,14 @@ elab_rules : tactic
       return
     catch _ => saved.restore
     let target ← getMainTarget
-    let fn := target.getAppArgs.back!
+    unless target.isAppOf ``SharpPolynomial do
+      throwError "Expected SharpPolynomial goal"
+    let fn := target.getAppArgs[0]!
     let head ← lambdaTelescope fn fun _ body => pure body.headBeta.getAppFn.constName?
     match head with
-    | some ``HAdd.hAdd => evalTactic (← `(tactic| apply sharpPolynomial_add <;> sharp_polynomial))
-    | some ``HMul.hMul => evalTactic (← `(tactic| apply sharpPolynomial_mul <;> sharp_polynomial))
-    | some ``HPow.hPow => evalTactic (← `(tactic| apply sharpPolynomial_pow <;> sharp_polynomial))
+    | some ``HAdd.hAdd | some ``Nat.add => evalTactic (← `(tactic| apply sharpPolynomial_add <;> sharp_polynomial))
+    | some ``HMul.hMul | some ``Nat.mul => evalTactic (← `(tactic| apply sharpPolynomial_mul <;> sharp_polynomial))
+    | some ``HPow.hPow | some ``Nat.pow => evalTactic (← `(tactic| apply sharpPolynomial_pow <;> sharp_polynomial))
     | _ => throwError "Unsupported sharp polynomial expression: {target}"
 
 set_option maxHeartbeats 3000000 in

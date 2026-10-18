@@ -15,8 +15,9 @@ theorem runPreparedWeighted_correct (prepared : CompressedPreparedInput a v b rh
   (compression_output prepared.1.relation _).mpr (weightedRun_correct prepared.1.normalization s)
 
 theorem compressedPrepared_exponent (n : ℕ) : 7*(n+1)^3 ≤ 18*(n+1)^4 := by
-  have h := Nat.mul_le_mul_left (7*(n+1)^3) (show 1 ≤ n+1 by omega)
-  nlinarith [show (n+1)^4=(n+1)^3*(n+1) by ring]
+  exact (Nat.mul_le_mul_left 7
+    (pow_le_pow_right' (by omega : 1 ≤ n+1) (by decide : 3 ≤ 4))).trans
+    (Nat.mul_le_mul_right ((n+1)^4) (by decide : 7 ≤ 18))
 
 /-- The end budget is derived below from the three preprocessing calls and
 all weighted core phases. Its input degree is independent of q. -/
@@ -26,8 +27,21 @@ def compressedEndBudget (q n L G ep W ec : ℕ) : ℕ :=
 theorem compressedEndBudget_sharp (G ep W ec : ℕ) :
     SharpPolynomial (fun q n L => compressedEndBudget q n L G ep W ec) := by
   have hW : ParameterGrowth (fun q => (q+6)^(W*(q+1))) := ⟨W,fun _ => le_rfl⟩
-  unfold compressedEndBudget preparationBudget
-  sharp_polynomial
+  have size := sharpPolynomial_add (sharpPolynomial_add sharpPolynomial_n sharpPolynomial_L)
+    (sharpPolynomial_parameter (parameterGrowth_constant 2))
+  have np := sharpPolynomial_add sharpPolynomial_n (sharpPolynomial_parameter (parameterGrowth_constant 1))
+  have t1 := sharpPolynomial_mul (sharpPolynomial_parameter (parameterGrowth_constant (2*G)))
+    (sharpPolynomial_pow size ep)
+  have t2 := sharpPolynomial_mul (sharpPolynomial_parameter (parameterGrowth_constant G))
+    (sharpPolynomial_pow (sharpPolynomial_add (sharpPolynomial_add sharpPolynomial_n
+      (sharpPolynomial_mul (sharpPolynomial_parameter (parameterGrowth_constant 18))
+        (sharpPolynomial_pow np 4))) (sharpPolynomial_parameter (parameterGrowth_constant 2))) ep)
+  have t3 := sharpPolynomial_mul (sharpPolynomial_parameter (parameterGrowth_constant 2)) sharpPolynomial_n
+  have prep := sharpPolynomial_add (sharpPolynomial_add (sharpPolynomial_add t1 t2) t3)
+    (sharpPolynomial_parameter (parameterGrowth_constant 4))
+  have core := sharpPolynomial_mul (sharpPolynomial_mul (sharpPolynomial_parameter hW)
+    (sharpPolynomial_parameter (parameterGrowth_constant (20^ec)))) (sharpPolynomial_pow np (4*ec))
+  exact sharpPolynomial_add (sharpPolynomial_add prep core) (sharpPolynomial_parameter (parameterGrowth_constant 1))
 
 theorem sharp_parameter_transport (q K W : ℕ) (h : q ≤ K+1) :
     (q+6)^(W*(q+1)) ≤ (K+7)^((2*W)*(K+1)) := by
