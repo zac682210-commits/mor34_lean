@@ -44,12 +44,12 @@ def chargedClassAdjacencies (j : Fin q) : List (AdjacentPair m) × ℕ :=
   (out.1,out.2+m j+1)
 
 theorem chargedClassAdjacencies_length (j : Fin q) :
-    (chargedClassAdjacencies j).1.length ≤ m j := by
+    (chargedClassAdjacencies (m := m) j).1.length ≤ m j := by
   simp only [chargedClassAdjacencies, chargedFilterMap_value]
   exact (List.length_filterMap_le _ _).trans_eq List.length_finRange
 
 theorem chargedClassAdjacencies_cost (j : Fin q) :
-    (chargedClassAdjacencies j).2 ≤ 4*m j+1 := by
+    (chargedClassAdjacencies (m := m) j).2 ≤ 4*m j+1 := by
   have hh := chargedFilterMap_cost (fun u : Fin (m j) => (adjacentAt j u,2))
     (List.finRange (m j)) 2 (fun _ _ => le_rfl)
   simp only [List.length_finRange] at hh
@@ -72,15 +72,15 @@ theorem chargedAdjacentIndices_length :
   simp only [chargedAdjacentIndices, chargedFlatMap_value, List.length_flatMap,
     List.map_ofFn, List.sum_ofFn]
   calc
-    _ ≤ ∑ j : Fin q, m j := Finset.sum_le_sum (fun j _ => chargedClassAdjacencies_length j)
+    _ ≤ ∑ j : Fin q, m j := Finset.sum_le_sum (fun j _ => chargedClassAdjacencies_length (m := m) j)
     _ = _ := by simp [Item, Fintype.card_sigma]
 
 theorem chargedAdjacentIndices_cost (n : ℕ) (hq : q ≤ n) (hm : ∀ j, m j ≤ n) :
     (chargedAdjacentIndices m).2 ≤ 8*(n+1)^2 := by
   have hh := chargedFlatMap_cost (chargedClassAdjacencies (m := m))
     (List.ofFn (fun j : Fin q => j)) (4*n+1) n
-    (fun j _ => (chargedClassAdjacencies_cost j).trans (by have h := hm j; omega))
-    (fun j _ => (chargedClassAdjacencies_length j).trans (hm j))
+    (fun j _ => (chargedClassAdjacencies_cost (m := m) j).trans (by have h := hm j; omega))
+    (fun j _ => (chargedClassAdjacencies_length (m := m) j).trans (hm j))
   simp only [List.length_ofFn] at hh
   have hmul := Nat.mul_le_mul_right (4*n+1+n+1) hq
   unfold chargedAdjacentIndices

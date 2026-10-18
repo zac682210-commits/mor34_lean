@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.compressed_core_and_preprocessing',
+    'MOR34.compression_cost_substitution_two',
+    'MOR34.compressed_size_offset_bound',
+    'MOR34.arithmetic_and_enumeration_parameter_bound',
+    'MOR34.allNormalEnumerationCharge_bound',
+    'MOR34.normalEnumerationCharge_bound',
     'MOR34.chargedAllResidualTables_cost',
     'MOR34.chargedAllResidualTables_contains',
     'MOR34.chargedAllResidualTables_length',

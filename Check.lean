@@ -941,3 +941,15 @@ import MOR34
 #print axioms MOR34.chargedAllResidualTables_contains
 
 #print axioms MOR34.chargedAllResidualTables_cost
+
+#print axioms MOR34.normalEnumerationCharge_bound
+
+#print axioms MOR34.allNormalEnumerationCharge_bound
+
+#print axioms MOR34.arithmetic_and_enumeration_parameter_bound
+
+#print axioms MOR34.compressed_size_offset_bound
+
+#print axioms MOR34.compression_cost_substitution_two
+
+#print axioms MOR34.compressed_core_and_preprocessing

@@ -231,3 +231,7 @@ import MOR34.ResidualTableConstruction
 import MOR34.ConstructedAdjacentIndices
 
 import MOR34.AllResidualTables
+
+import MOR34.NormalEnumerationAggregation
+
+import MOR34.CompressionCostOffset
