@@ -17,7 +17,7 @@ theorem violationRowConstruction_value (P : Model m) (k : ViolationRow m) :
       feasibleRow_as_countRow]
     congr 1 <;> funext i <;> exact Fin.elim0 i
   | inr u => simp [violationRowConstruction, ConstructedIntegerRow.value,
-      IntegerConstruction.value, violationRow, violationInequality, integerRow]
+      IntegerConstruction.value, violationRow, violationInequality, integerRow, funext_iff]
 
 theorem violationRowConstruction_work (P : Model m) (n : ℕ) (hm : ∀ j, m j ≤ n)
     (k : ViolationRow m) : (violationRowConstruction P k).work ≤ 4*q+2*n+6 := by
