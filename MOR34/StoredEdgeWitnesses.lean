@@ -1,6 +1,7 @@
 import MOR34.ExecutableReturnedSets
 import MOR34.OracleCostComposition
 import MOR34.NormalSearchCost
+import MOR34.ExecutableRawPipeline
 
 namespace MOR34
 variable {q : ℕ} {m : Fin q → ℕ}
@@ -148,5 +149,62 @@ theorem all_solver_calls_bound (P : Model m) (hWF : WellFormed P)
   have h₁ := rowSearchCalls_polynomial P hWF solve hs forms hsize
   have h₂ := adjacentPair_card m
   nlinarith
+
+
+/-- Supported branch with the exchange answer table retained once. -/
+def storedNormalizedPipeline (P : Model m) (hWF : WellFormed P)
+    (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
+    (hs : ParityRowSolverSpec P solve)
+    (edgeSolve : (j : Fin q) → Fin (m j) → Fin (m j) → Option (IntegerRowSolution q))
+    (violate : Option (IntegerRowSolution q)) (ranker : ExactIntegerRank m) : NormalizedOutput m :=
+  match executableRecognitionBranch (m := m) violate solve with
+  | .invalid t => ⟨.invalid t, ∅⟩
+  | .empty => ⟨.empty, ∅⟩
+  | .supported z =>
+    let table := adjacentWitnessTable edgeSolve
+    let family := (computedSelectionFamily P hWF solve hs).image prefixSet ∪
+      (edgePointsFromTable table).toFinset
+    let B := binaryBasisSearch (orderedBinarySets family)
+      (fun B => ranker.evaluate (binaryPointMatrix B))
+    ⟨.supported (prefixSet z) (B.card-1) (decide (B.card = Fintype.card (Item m))), B⟩
+
+theorem storedNormalizedPipeline_eq (P : Model m) (hWF : WellFormed P)
+    (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
+    (hs : ParityRowSolverSpec P solve)
+    (edgeSolve : (j : Fin q) → Fin (m j) → Fin (m j) → Option (IntegerRowSolution q))
+    (he : ForcedRowSolverSpec P edgeSolve)
+    (violate : Option (IntegerRowSolution q)) (ranker : ExactIntegerRank m) :
+    storedNormalizedPipeline P hWF solve hs edgeSolve violate ranker =
+      executableNormalizedPipeline P hWF solve hs edgeSolve he violate ranker := by
+  simp only [storedNormalizedPipeline, executableNormalizedPipeline, computedReturnedBasis,
+    storedReturnedSets_eq P hWF solve hs edgeSolve he]
+
+theorem storedNormalizedPipeline_correct (P : Model m) (hWF : WellFormed P)
+    (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
+    (hs : ParityRowSolverSpec P solve)
+    (edgeSolve : (j : Fin q) → Fin (m j) → Fin (m j) → Option (IntegerRowSolution q))
+    (he : ForcedRowSolverSpec P edgeSolve)
+    (violate : Option (IntegerRowSolution q)) (hv : ViolationSolverSpec P violate)
+    (ranker : ExactIntegerRank m) :
+    (storedNormalizedPipeline P hWF solve hs edgeSolve violate ranker).Correct P := by
+  rw [storedNormalizedPipeline_eq P hWF solve hs edgeSolve he]
+  exact executableNormalizedPipeline_correct P hWF solve hs edgeSolve he violate hv ranker
+
+def RawNormalization.runStored {n : ℕ} {a c : Fin n → ℤ} {b d : ℤ}
+    (N : RawNormalization a c b d) (s : RowPrimitives N.model) : RawOutput n :=
+  relabelOutput N.itemEquiv (storedNormalizedPipeline N.model N.wellFormed
+    s.solve s.solve_spec s.edgeSolve s.violate s.ranker)
+
+theorem storedRawPipeline_eq {n : ℕ} {a c : Fin n → ℤ} {b d : ℤ}
+    (N : RawNormalization a c b d) (s : RowPrimitives N.model) :
+    N.runStored s = N.runExecutable s := by
+  unfold RawNormalization.runStored RawNormalization.runExecutable
+  rw [storedNormalizedPipeline_eq N.model N.wellFormed s.solve s.solve_spec s.edgeSolve s.edge_spec]
+
+theorem storedRawPipeline_correct {n : ℕ} {a c : Fin n → ℤ} {b d : ℤ}
+    (N : RawNormalization a c b d) (s : RowPrimitives N.model) :
+    (N.runStored s).Correct a c b d := by
+  rw [storedRawPipeline_eq]
+  exact executableRawPipeline_correct N s
 
 end MOR34

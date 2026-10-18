@@ -864,3 +864,8 @@ import MOR34
 #print axioms MOR34.violationRowConstruction_value
 #print axioms MOR34.violationRowConstruction_work
 #print axioms MOR34.violationConstructionWork_polynomial
+
+#print axioms MOR34.storedNormalizedPipeline_eq
+#print axioms MOR34.storedNormalizedPipeline_correct
+#print axioms MOR34.storedRawPipeline_eq
+#print axioms MOR34.storedRawPipeline_correct

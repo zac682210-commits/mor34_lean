@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.storedNormalizedPipeline_eq',
+    'MOR34.storedNormalizedPipeline_correct',
+    'MOR34.storedRawPipeline_eq',
+    'MOR34.storedRawPipeline_correct',
+
     'MOR34.violationRowConstruction_value',
     'MOR34.violationRowConstruction_work',
     'MOR34.violationConstructionWork_polynomial',
