@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.integerQuery_bound_mono',
+    'MOR34.coordinateLower_bound',
+    'MOR34.coordinateUpper_bound',
+    'MOR34.cellCoordinateQueries_bound',
+    'MOR34.cellQueries_bound',
+    'MOR34.cell_normal_queries_bound',
+    'MOR34.cell_normal_parity_rows_bounded',
+
+    'MOR34.feasibleRow_as_countRow',
+    'MOR34.feasibleRows_integer_bounded',
+    'MOR34.violationInequality_integer_bounded',
+    'MOR34.violationRows_integer_bounded',
+
     'MOR34.forcedOrdinaryRow_integer_bounded',
     'MOR34.forcedSlopeRow_integer_bounded',
     'MOR34.forcedEmptyRow_integer_bounded',

@@ -584,3 +584,16 @@ import MOR34
 #print axioms MOR34.forcedSlopeRow_integer_bounded
 #print axioms MOR34.forcedEmptyRow_integer_bounded
 #print axioms MOR34.forcedRows_integer_bounded
+
+#print axioms MOR34.feasibleRow_as_countRow
+#print axioms MOR34.feasibleRows_integer_bounded
+#print axioms MOR34.violationInequality_integer_bounded
+#print axioms MOR34.violationRows_integer_bounded
+
+#print axioms MOR34.integerQuery_bound_mono
+#print axioms MOR34.coordinateLower_bound
+#print axioms MOR34.coordinateUpper_bound
+#print axioms MOR34.cellCoordinateQueries_bound
+#print axioms MOR34.cellQueries_bound
+#print axioms MOR34.cell_normal_queries_bound
+#print axioms MOR34.cell_normal_parity_rows_bounded

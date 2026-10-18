@@ -148,3 +148,7 @@ import MOR34.IntegerRowBounds
 import MOR34.CountRowBounds
 
 import MOR34.ForcedRowBounds
+
+import MOR34.ViolationRowBounds
+
+import MOR34.CellQueryBounds
