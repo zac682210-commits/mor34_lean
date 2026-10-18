@@ -102,7 +102,7 @@ theorem chargedDenseExtrema_value (P : Model m) (hWF : WellFormed P) (R D : ℕ)
     (hs : DenseRowSolverSpec solve) (ε : Parity q) (hn : ∃ z, TightParity P ε z) :
     (chargedDenseExtrema P hWF R D solve hs ε hn).1 =
       rowSearchedExtrema P hWF (denseCountOracle P R solve) (denseCountOracle_spec P R solve hs) ε hn := by
-  exact extremaFromTables_eq _ _ _ _ _
+  simp only [chargedDenseExtrema,extremaFromTables_eq]
 
 theorem chargedDenseExtrema_cost (P : Model m) (hWF : WellFormed P)
     (R D I c M L : ℕ) (hR : R ≤ 4*(Fintype.card (Item m)+1)^2)
@@ -119,7 +119,7 @@ theorem chargedDenseExtrema_cost (P : Model m) (hWF : WellFormed P)
   let W := (Fintype.card (Item m)+1)*(U+q+5)+1
   have hwit (lower : Bool) (j : Fin q) : (chargedCoordinateWitness P R D solve ε j lower).2 ≤ W := by
     have hh := chargedCoordinateScan_cost P hWF R D I c M L hR hM hML hw hc hb hd solve hcost ε j lower
-    have hm := Nat.mul_le_mul_right (U+q+5) (Nat.add_le_add_right (class_size_le_items j) 1)
+    have hm := Nat.mul_le_mul_right (U+q+5) (Nat.add_le_add_right (class_size_le_items (m := m) j) 1)
     exact Nat.add_le_add_right (hh.trans hm) 1
   have hlo := chargedFinTable_cost (fun j => chargedCoordinateWitness P R D solve ε j false) W (hwit false)
   have hhi := chargedFinTable_cost (fun j => chargedCoordinateWitness P R D solve ε j true) W (hwit true)

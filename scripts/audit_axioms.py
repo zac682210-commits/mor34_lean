@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.chargedCellRestrictions_value",
+    "MOR34.chargedCellRestrictions_cost",
+    "MOR34.chargedDenseParityFamily_value",
+    "MOR34.chargedDenseParityFamily_cost",
+    "MOR34.chargedDenseParityFamily_length",
+    "MOR34.chargedDenseSelection_value",
+    "MOR34.chargedDenseSelection_cost",
     "MOR34.chargedDenseModes_value",
     "MOR34.chargedDenseModes_cost",
     "MOR34.chargedDenseModes_length",

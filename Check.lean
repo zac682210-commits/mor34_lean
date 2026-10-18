@@ -1304,3 +1304,17 @@ import MOR34
 #print axioms MOR34.chargedDenseModes_cost
 
 #print axioms MOR34.chargedDenseModes_length
+
+#print axioms MOR34.chargedDenseParityFamily_value
+
+#print axioms MOR34.chargedDenseParityFamily_cost
+
+#print axioms MOR34.chargedDenseParityFamily_length
+
+#print axioms MOR34.chargedDenseSelection_value
+
+#print axioms MOR34.chargedDenseSelection_cost
+
+#print axioms MOR34.chargedCellRestrictions_value
+
+#print axioms MOR34.chargedCellRestrictions_cost

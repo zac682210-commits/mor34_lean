@@ -3,22 +3,44 @@ import MOR34.ChargedParityDecode
 namespace MOR34
 variable {q : ℕ} {m : Fin q → ℕ}
 
+/-- Explicitly charge the three restriction records per coordinate, including
+indexed reads from the retained extrema and mode tables. -/
+def chargedCellRestrictions (l h : Counts q) (mode : CellMode q) : List (IntegerQuery q) × ℕ :=
+  let out := chargedFlatMap
+    (fun j => (cellCoordinateQueries l h mode j,16*(q+1)^2)) (List.finRange q)
+  (out.1,out.2+q+1)
+
+theorem chargedCellRestrictions_value (l h : Counts q) (mode : CellMode q) :
+    (chargedCellRestrictions l h mode).1 = cellQueries l h mode := by
+  simp only [chargedCellRestrictions,chargedFlatMap_value,cellQueries]
+
+theorem chargedCellRestrictions_cost (l h : Counts q) (mode : CellMode q) :
+    (chargedCellRestrictions l h mode).2 ≤ 20*(q+1)^3 := by
+  have hh := chargedFlatMap_cost
+    (fun j => (cellCoordinateQueries l h mode j,16*(q+1)^2)) (List.finRange q)
+    (16*(q+1)^2) 3 (fun _ _ => le_rfl) (by intro j _; simp [cellCoordinateQueries])
+  simp only [List.length_finRange] at hh
+  dsimp only [chargedCellRestrictions]
+  nlinarith [sq_nonneg (q : ℤ)]
+
 def chargedDenseCellQuery (P : Model m) (R D : ℕ)
     (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
     (ε : Parity q) (e : ParityExtrema P ε) (mode : CellMode q) (t : IntegerQuery q) :
     Option (Counts q) × ℕ :=
-  chargedDecodedRequest ε (chargedDenseCountSolve P R solve ε (t::cellQueries e.low e.high mode)) D
+  let restrictions := chargedCellRestrictions e.low e.high mode
+  let out := chargedDecodedRequest ε (chargedDenseCountSolve P R solve ε (t::restrictions.1)) D
+  (out.1,restrictions.2+out.2+1)
 
 theorem chargedDenseCellQuery_value (P : Model m) (R D : ℕ)
     (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
     (ε : Parity q) (e : ParityExtrema P ε) (mode : CellMode q) (t : IntegerQuery q) :
     (chargedDenseCellQuery P R D solve ε e mode t).1 =
       rowCellOracle (denseCountOracle P R solve) ε e mode t := by
-  simp only [chargedDenseCellQuery,chargedDecodedRequest_value,rowCellOracle,
+  simp only [chargedDenseCellQuery,chargedCellRestrictions_value,chargedDecodedRequest_value,rowCellOracle,
     restrictedQueryOracle,parityListSolver,denseCountOracle]
 
 def denseCellQueryBudget (q n L D I c : ℕ) : ℕ :=
-  2048*(n+1)^4+I*(180*(n+L+2)^4)^c+q*(D+2)+3
+  2048*(n+1)^4+I*(180*(n+L+2)^4)^c+q*(D+2)+20*(q+1)^3+4
 
 def denseCellLoopBudget (q n L Rnormal D I c J : ℕ) : ℕ :=
   (q+1)*(chargedCellStepBudget q Rnormal (denseCellQueryBudget q n L D I c)+J+1)+1
@@ -78,8 +100,10 @@ theorem chargedDenseCellBasis_cost (P : Model m) (hWF : WellFormed P)
     have hh := chargedDecodedRequest_cost ε
       (chargedDenseCountSolve P R solve ε (t::cellQueries e.low e.high mode)) D
     have hreq := hB t ht
+    have hrestr := chargedCellRestrictions_cost e.low e.high mode
     dsimp only [query,chargedDenseCellQuery,denseCellQueryBudget]
-    dsimp only [e] at hh ⊢
+    rw [chargedCellRestrictions_value]
+    dsimp only [e] at hh hrestr ⊢
     omega
   apply chargedCellBasis_cost_on_contained_states (parityCellSet P ε e mode) query
   · rw [hquery]
