@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.IntegerArithmeticCharge.Bounded.mono",
+    "MOR34.weightedEvaluateRow_value",
+    "MOR34.weightedEvaluateRow_cost",
+    "MOR34.forcedSlopeConstruction_literals",
+    "MOR34.forcedEmptyConstruction_literals",
+    "MOR34.forcedRowConstruction_literals",
+    "MOR34.violationRowConstruction_literals",
+    "MOR34.construction_fold_literals",
+    "MOR34.parityRowConstruction_literals",
     "MOR34.chargedDenseSupport_nonempty",
     "MOR34.chargedRankOutside_value",
     "MOR34.chargedRankOutside_cost",

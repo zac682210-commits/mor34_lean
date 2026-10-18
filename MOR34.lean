@@ -286,3 +286,5 @@ import MOR34.DenseModeComposition
 import MOR34.ChargedParityFamily
 import MOR34.CellPhasePolynomial
 import MOR34.ChargedRankBasis
+import MOR34.RemainingRowLiterals
+import MOR34.WeightedRowEvaluation

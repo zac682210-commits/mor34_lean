@@ -1354,3 +1354,21 @@ import MOR34
 #print axioms MOR34.chargedRankBasis_cost
 
 #print axioms MOR34.chargedDenseSupport_nonempty
+
+#print axioms MOR34.forcedSlopeConstruction_literals
+
+#print axioms MOR34.forcedEmptyConstruction_literals
+
+#print axioms MOR34.forcedRowConstruction_literals
+
+#print axioms MOR34.violationRowConstruction_literals
+
+#print axioms MOR34.construction_fold_literals
+
+#print axioms MOR34.parityRowConstruction_literals
+
+#print axioms MOR34.IntegerArithmeticCharge.Bounded.mono
+
+#print axioms MOR34.weightedEvaluateRow_value
+
+#print axioms MOR34.weightedEvaluateRow_cost
