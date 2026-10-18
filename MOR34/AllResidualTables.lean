@@ -40,7 +40,7 @@ theorem chargedAllResidualTables_cost (P : Model m) (hWF : WellFormed P)
     ((e,t.1),t.2+1)) (chargedAdjacentIndices m).1 (8*(n+1)^2+1)
     (by intro e _; have h := ht e; dsimp; omega)
   have hb := hh.trans (Nat.mul_le_mul_right (8*(n+1)^2+1+1) hl)
-  unfold chargedAllResidualTables
+  dsimp only [chargedAllResidualTables]
   change _ ≤ 18*(n+1)^3
   nlinarith
 

@@ -235,3 +235,7 @@ import MOR34.AllResidualTables
 import MOR34.NormalEnumerationAggregation
 
 import MOR34.CompressionCostOffset
+
+import MOR34.ConstructedWitnessPipeline
+
+import MOR34.StoredListPrimitives

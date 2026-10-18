@@ -53,7 +53,7 @@ theorem chargedClassAdjacencies_cost (j : Fin q) :
   have hh := chargedFilterMap_cost (fun u : Fin (m j) => (adjacentAt j u,2))
     (List.finRange (m j)) 2 (fun _ _ => le_rfl)
   simp only [List.length_finRange] at hh
-  unfold chargedClassAdjacencies
+  dsimp only [chargedClassAdjacencies]
   omega
 
 def chargedAdjacentIndices (m : Fin q → ℕ) : List (AdjacentPair m) × ℕ :=
@@ -83,7 +83,7 @@ theorem chargedAdjacentIndices_cost (n : ℕ) (hq : q ≤ n) (hm : ∀ j, m j �
     (fun j _ => (chargedClassAdjacencies_length (m := m) j).trans (hm j))
   simp only [List.length_ofFn] at hh
   have hmul := Nat.mul_le_mul_right (4*n+1+n+1) hq
-  unfold chargedAdjacentIndices
+  dsimp only [chargedAdjacentIndices]
   nlinarith
 
 end MOR34

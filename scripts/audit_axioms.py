@@ -7,6 +7,22 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedListRead_value',
+    'MOR34.chargedListRead_cost',
+    'MOR34.storedResidualRead_value',
+    'MOR34.storedResidualRead_cost',
+    'MOR34.prefixIndexList_sorted',
+    'MOR34.chargedPrefixConstruction_value',
+    'MOR34.chargedPrefixConstruction_interpret',
+    'MOR34.chargedPrefixConstruction_cost',
+
+    'MOR34.constructedWitnessTable_length',
+    'MOR34.constructedEdgePoints_mem',
+    'MOR34.constructedEdgePoints_eq_stored',
+    'MOR34.constructedReturnedSets_eq',
+    'MOR34.constructedNormalizedPipeline_eq',
+    'MOR34.constructedNormalizedPipeline_correct',
+
     'MOR34.compressed_core_and_preprocessing',
     'MOR34.compression_cost_substitution_two',
     'MOR34.compressed_size_offset_bound',

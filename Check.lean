@@ -953,3 +953,31 @@ import MOR34
 #print axioms MOR34.compression_cost_substitution_two
 
 #print axioms MOR34.compressed_core_and_preprocessing
+
+#print axioms MOR34.constructedWitnessTable_length
+
+#print axioms MOR34.constructedEdgePoints_mem
+
+#print axioms MOR34.constructedEdgePoints_eq_stored
+
+#print axioms MOR34.constructedReturnedSets_eq
+
+#print axioms MOR34.constructedNormalizedPipeline_eq
+
+#print axioms MOR34.constructedNormalizedPipeline_correct
+
+#print axioms MOR34.chargedListRead_value
+
+#print axioms MOR34.chargedListRead_cost
+
+#print axioms MOR34.storedResidualRead_value
+
+#print axioms MOR34.storedResidualRead_cost
+
+#print axioms MOR34.prefixIndexList_sorted
+
+#print axioms MOR34.chargedPrefixConstruction_value
+
+#print axioms MOR34.chargedPrefixConstruction_interpret
+
+#print axioms MOR34.chargedPrefixConstruction_cost
