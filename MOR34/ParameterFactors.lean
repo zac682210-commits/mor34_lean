@@ -16,7 +16,10 @@ theorem normal_calls_parameter_bound (q : ℕ) :
       simp only [pow_one]
       exact Nat.mul_le_mul (six_power_parameter_bound q)
         (Nat.mul_le_mul (by omega) (Nat.mul_le_mul_left _ (pow_le_pow_left' (by omega) _)))
-    _ = _ := by repeat rw [← pow_add]; congr 1; omega
+    _ = _ := by
+      simp only [← pow_add]
+      congr 1
+      omega
 
 theorem rowCallFactor_parameter_bound (q : ℕ) : rowCallFactor q ≤ (q+2)^(3*q+5) := by
   have hb : 1 ≤ q+2 := by omega
@@ -34,7 +37,10 @@ theorem rowCallFactor_parameter_bound (q : ℕ) : rowCallFactor q ≤ (q+2)^(3*q
         simp only [pow_one]
         exact Nat.mul_le_mul (Nat.mul_le_mul (by omega) (pow_le_pow_left' (by omega) 2))
           (six_power_parameter_bound q)
-      _ = _ := by repeat rw [← pow_add]; congr 1; omega
+      _ = _ := by
+        simp only [← pow_add]
+        congr 1
+        omega
   calc
     rowCallFactor q ≤ 3*(q+2)^(3*q+3) := by unfold rowCallFactor; omega
     _ ≤ (q+2)^2*(q+2)^(3*q+3) := Nat.mul_le_mul_right _
