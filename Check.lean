@@ -643,3 +643,9 @@ import MOR34
 #print axioms MOR34.selected_rows_span_of_checks
 #print axioms MOR34.checked_candidate_describes
 #print axioms MOR34.normal_candidate_exists
+#print axioms MOR34.concreteColumnNormal_eq
+#print axioms MOR34.mem_normalSearchKeys
+#print axioms MOR34.tryNormalKey_spec
+#print axioms MOR34.matrixNormalSearch_exists
+#print axioms MOR34.matrixNormalSearch_isSome
+#print axioms MOR34.computedMatrixNormals_spec

@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.concreteColumnNormal_eq",
+    "MOR34.mem_normalSearchKeys",
+    "MOR34.tryNormalKey_spec",
+    "MOR34.matrixNormalSearch_exists",
+    "MOR34.matrixNormalSearch_isSome",
+    "MOR34.computedMatrixNormals_spec",
+
     "MOR34.normal_candidate_exists",
     "MOR34.selected_rows_span_of_checks",
     "MOR34.checked_candidate_describes",

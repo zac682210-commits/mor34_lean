@@ -168,3 +168,5 @@ import MOR34.DeterminantIntermediates
 import MOR34.BasicRowPayload
 import MOR34.PivotCost
 import MOR34.NormalCandidate
+import MOR34.ConcreteColumnNormals
+import MOR34.ExecutableMatrixNormals
