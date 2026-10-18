@@ -707,3 +707,5 @@ import MOR34
 #print axioms MOR34.executableRecognitionBranch_correct
 #print axioms MOR34.executable_original_input_output_contract
 #print axioms MOR34.executable_normalization_parameter
+#print axioms MOR34.materializeFin_apply
+#print axioms MOR34.materializeFin_eq

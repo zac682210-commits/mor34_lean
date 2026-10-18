@@ -1,5 +1,6 @@
 import MOR34.ConcreteColumnNormals
 import MOR34.NormalCandidate
+import MOR34.FiniteTable
 
 namespace MOR34
 
@@ -27,7 +28,7 @@ def tryNormalKey {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ)
     let c : Fin k.rank.val ↪ Fin d := ⟨k.cols, hi⟩
     let R := M.submatrix k.rows id
     if laplaceDet k.rank.val (R.submatrix id c) ≠ 0 then
-      let v := concreteColumnNormal R c
+      let v := materializeFin (fun j => materializeFin (concreteColumnNormal R c j))
       if ∀ i j, ∑ l, M i l * v j l = 0 then some v else none
     else none
   else none
@@ -48,7 +49,7 @@ theorem tryNormalKey_spec {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ)
     by_cases hd : laplaceDet k.rank.val (R.submatrix id c) ≠ 0
     · by_cases hc : ∀ i j, ∑ l, M i l * concreteColumnNormal R c j l = 0
       · have he : concreteColumnNormal R c = v := by
-          simpa only [tryNormalKey, dif_pos hi, c, R, if_pos hd, if_pos hc, Option.some.injEq] using hv
+          simpa only [tryNormalKey, materializeFin_eq, dif_pos hi, c, R, if_pos hd, if_pos hc, Option.some.injEq] using hv
         rw [← he, concreteColumnNormal_eq]
         have hd' : (R.submatrix id c).det ≠ 0 := by simpa only [laplaceDet_correct] using hd
         have hc' : ∀ i j, ∑ l, M i l * columnNormal R c j l = 0 := by
@@ -57,11 +58,11 @@ theorem tryNormalKey_spec {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ)
         · exact checked_candidate_describes M k.rows c hd' hc'
         · intro N hN hM
           simpa only [Fintype.card_fin] using columnNormal_uniform_bound R c N hN (fun i j => hM (k.rows i) j)
-      · simp only [tryNormalKey, dif_pos hi, c, R, if_pos hd, if_neg hc] at hv
+      · simp only [tryNormalKey, materializeFin_eq, dif_pos hi, c, R, if_pos hd, if_neg hc] at hv
         cases hv
-    · simp only [tryNormalKey, dif_pos hi, c, R, if_neg hd] at hv
+    · simp only [tryNormalKey, materializeFin_eq, dif_pos hi, c, R, if_neg hd] at hv
       cases hv
-  · simp [tryNormalKey, hi] at hv
+  · simp [tryNormalKey, materializeFin_eq, hi] at hv
 
 def matrixNormalSearch {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ) :
     Option (Fin d → Fin d → ℤ) := firstWitness (tryNormalKey M) (normalSearchKeys s d)
@@ -75,7 +76,7 @@ theorem matrixNormalSearch_exists {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ) :
       simpa only [laplaceDet_correct] using hd
     have hc' : ∀ i j, ∑ l, M i l * concreteColumnNormal (M.submatrix a id) c j l = 0 := by
       simpa only [concreteColumnNormal_eq] using hc
-    simp [tryNormalKey, k, c.injective, hd', hc']
+    simp [tryNormalKey, materializeFin_eq, k, c.injective, hd', hc']
     exact hd'
   cases he : matrixNormalSearch M with
   | some v => exact ⟨v, rfl⟩

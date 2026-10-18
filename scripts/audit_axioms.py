@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.materializeFin_apply",
+    "MOR34.materializeFin_eq",
+
     "MOR34.executable_original_input_output_contract",
     "MOR34.executable_normalization_parameter",
 
