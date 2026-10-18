@@ -60,9 +60,11 @@ theorem weightedCellQuery_cost_on_states (P : Model m) (hWF : WellFormed P)
           weightedCellQueryBudget q (Fintype.card (Item m)) L D I c H a) (q+1) ∅ := by
   dsimp only
   let e := rowSearchedExtrema P hWF (denseCountOracle P R solve) (denseCountOracle_spec P R solve hs) ε hn
+  have toNatAbs (z : ℤ) (hz : |z| ≤ (M : ℤ)) : z.natAbs ≤ M := by
+    exact_mod_cast (show (z.natAbs : ℤ) ≤ (M : ℤ) by simpa only [Int.natCast_natAbs] using hz)
   have hlit := weightedReachedCellRequests_polynomial P hWF solve hs R M L H a hR hM hML
-    (fun i => by exact_mod_cast hw i) (fun j => by exact_mod_cast hc j)
-    (by exact_mod_cast hd) (by exact_mod_cast hb) arith hA ε e mode
+    (fun i => toNatAbs _ (hw i)) (fun j => toNatAbs _ (hc j))
+    (toNatAbs _ hd) (toNatAbs _ hb) arith hA ε e mode
   have hp := computedPipeline_polynomial_payload P hWF (denseCountOracle P R solve)
     (denseCountOracle_spec P R solve hs) M L hM hML hw hc hb hd ε hn mode
   have hboth := searchStates_and _ _ _ _ _ hlit hp
@@ -77,6 +79,8 @@ theorem weightedCellQuery_cost_on_states (P : Model m) (hWF : WellFormed P)
   rw [weightedCompiledCountRequest_value] at hdecode
   dsimp only [weightedDenseCellQuery,weightedCellQueryBudget]
   rw [chargedCellRestrictions_value]
+  dsimp only [weightedDenseCountSolve]
+  rw [weightedCompiledCountRequest_value]
   dsimp only [e] at hbuild hsolve hdecode hrestr ⊢
   omega
 
