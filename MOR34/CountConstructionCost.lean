@@ -42,10 +42,9 @@ theorem countRowConstruction_value (P : Model m) (A : Fin r → Fin q → ℤ) (
     (k : CountRow m r) :
     (countRowConstruction P A b k).value = countRow P (fun i j => (A i j : ℚ)) (fun i => (b i : ℚ)) k := by
   rcases k with (j | j) | ((u | u) | (⟨j,t⟩ | (u | i)))
-  all_goals simp only [countRowConstruction, atomicIntegerRow_value, prefixRowConstruction_value,
+  all_goals simp [countRowConstruction, atomicIntegerRow_value, prefixRowConstruction_value,
     countRow, ConstructedIntegerRow.value, IntegerConstruction.value, integerRow, integerPick,
     pickCoeff]
-  all_goals congr 1 <;> simp <;> push_cast <;> ring
 
 theorem countRowConstruction_work (P : Model m) (A : Fin r → Fin q → ℤ) (b : Fin r → ℤ)
     (n : ℕ) (hm : ∀ j, m j ≤ n) (k : CountRow m r) :
@@ -65,11 +64,11 @@ substitution; row dispatch, list storage and bit costs are separate primitives. 
 def countParityConstructionWork (P : Model m) (A : Fin r → Fin q → ℤ) (b : Fin r → ℤ)
     (ε : Parity q) : ℕ :=
   ∑ k : CountRow m r,
-    (countRowConstruction P A b k).work +
+    ((countRowConstruction P A b k).work +
     (parityRowConstruction
       (fun j => ((countRowConstruction P A b k).counts j).value)
       (fun j => ((countRowConstruction P A b k).costs j).value)
-      (countRowConstruction P A b k).bound.value ε).work
+      (countRowConstruction P A b k).bound.value ε).work)
 
 theorem countParityConstructionWork_bound (P : Model m) (A : Fin r → Fin q → ℤ)
     (b : Fin r → ℤ) (ε : Parity q) (n : ℕ) (hm : ∀ j, m j ≤ n) :
@@ -77,6 +76,7 @@ theorem countParityConstructionWork_bound (P : Model m) (A : Fin r → Fin q →
       (Fintype.card (Item m)+2*q+r+3)*(12*q+2*n+10) := by
   calc
     _ ≤ ∑ _k : CountRow m r, (12*q+2*n+10) := by
+      unfold countParityConstructionWork
       apply Finset.sum_le_sum
       intro k _
       rw [parityRowConstruction_work]
