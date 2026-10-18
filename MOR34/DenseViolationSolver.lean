@@ -59,9 +59,15 @@ theorem compiledViolationRequest_cost (P : Model m) (hWF : WellFormed P) (R : �
   have hi : (violationRowIndexList m).length ≤ 6*(n+1) := by
     rw [violationRowIndexList_length]; change n+2*q+2 ≤ _; omega
   have hmap' := hmap.trans (Nat.mul_le_mul_right (256*(n+1)^3+1) hi)
+  have hone : 1 ≤ (n+1)^3 := Nat.one_le_pow _ _ (by omega)
+  have hmap'' := hmap'.trans (show 6*(n+1)*(256*(n+1)^3+1) ≤ 1542*(n+1)^4 from by
+    calc
+      _ ≤ 6*(n+1)*(257*(n+1)^3) := Nat.mul_le_mul_left _ (by omega)
+      _ = _ := by ring)
+  have hpow : n+1 ≤ (n+1)^4 := le_self_pow₀ (by omega) (by decide)
   dsimp only [compiledViolationRequest]
   change _ ≤ 2048*(n+1)^4
-  nlinarith
+  omega
 
 def chargedDenseViolationSolve (P : Model m) (R : ℕ)
     (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ) :
