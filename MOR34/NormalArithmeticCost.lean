@@ -66,7 +66,7 @@ theorem normalKeyCharge_bound {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ)
   have hr : k.rank.val ≤ d := by omega
   have hp := pow_le_pow_left' hr 2
   by_cases hi : Function.Injective k.cols
-  · simp only [normalKeyCharge, dif_pos hi]
+  · simp only [normalKeyCharge, dif_pos hi, Function.Embedding.coeFn_mk]
     have hd' := minor_arithmetic_bound k.rank.val d hr
       ((M.submatrix k.rows id).submatrix id k.cols)
     have hc : (∑ j : Fin d, ∑ l : Fin d,

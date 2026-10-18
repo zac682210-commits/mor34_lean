@@ -8,7 +8,7 @@ variable {q : ℕ} {m : Fin q → ℕ}
 /-- Length of a binary vector's explicit nested coordinate encoding. -/
 theorem binarySetKey_coordinate_count (S : Finset (Item m)) :
     ((binarySetKey S).map List.length).sum = Fintype.card (Item m) := by
-  simp [binarySetKey, Item, Fintype.card_sigma]
+  simp [binarySetKey, Function.comp_def, List.sum_ofFn, Item, Fintype.card_sigma]
 
 /-- A deliberately simple pairwise comparison implementation needs a fixed
 polynomial number of coordinate visits. This is a count of its prescribed
