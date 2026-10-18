@@ -189,3 +189,4 @@ import MOR34.StoredExtrema
 import MOR34.CompressionSigns
 import MOR34.CompressionTransport
 import MOR34.CompressionParameter
+import MOR34.ParityComponentSupport

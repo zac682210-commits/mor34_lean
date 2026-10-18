@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.image_card_le_bucket_card",
+    "MOR34.varyingClassComponents_card",
+    "MOR34.varyingComponents_card",
+    "MOR34.parityComponentGenerators_card",
+    "MOR34.parityComponentGenerators_span",
+
     "MOR34.image_card_of_equal_fibers",
     "MOR34.positive_values_as_image",
     "MOR34.compression_positive_parameter",

@@ -741,3 +741,8 @@ import MOR34
 #print axioms MOR34.compression_coefficient_order
 #print axioms MOR34.compression_coefficient_zero
 #print axioms MOR34.compressed_original_output_contract
+#print axioms MOR34.image_card_le_bucket_card
+#print axioms MOR34.varyingClassComponents_card
+#print axioms MOR34.varyingComponents_card
+#print axioms MOR34.parityComponentGenerators_card
+#print axioms MOR34.parityComponentGenerators_span
