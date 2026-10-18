@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.laplaceDet_correct',
+    'MOR34.laplaceArithmeticBudget_bound',
+    'MOR34.exactPivotSearch_sound',
+    'MOR34.exactPivotSearch_complete',
+    'MOR34.exactPivotSearch_calls',
+    'MOR34.laplaceDet_bound',
+
     'MOR34.integerQuery_bound_mono',
     'MOR34.coordinateLower_bound',
     'MOR34.coordinateUpper_bound',

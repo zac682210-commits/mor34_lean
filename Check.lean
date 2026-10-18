@@ -597,3 +597,10 @@ import MOR34
 #print axioms MOR34.cellQueries_bound
 #print axioms MOR34.cell_normal_queries_bound
 #print axioms MOR34.cell_normal_parity_rows_bounded
+
+#print axioms MOR34.laplaceDet_correct
+#print axioms MOR34.laplaceArithmeticBudget_bound
+#print axioms MOR34.exactPivotSearch_sound
+#print axioms MOR34.exactPivotSearch_complete
+#print axioms MOR34.exactPivotSearch_calls
+#print axioms MOR34.laplaceDet_bound
