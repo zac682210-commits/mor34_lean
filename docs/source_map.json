@@ -25,13 +25,17 @@
         "prefix"
       ],
       "lean_target": "Explicit rational inequalities with integer counts and costs; exact parity substitution",
-      "status": "exact formulation checked at 4f88fe34dac90c933406986163f5f3cd634d8d07; construction and coefficient bit bounds open",
+      "status": "Exact integer formulation and coefficient/payload bounds for actual count, parity, forced and violation rows verified; full serialization and construction runtime remain open at 16228d3a902a737a3d94a14cda9da53e668c1521",
       "lean_theorems": [
         "MOR34.prefix_epigraph_iff",
         "MOR34.exact_linear_count_encoding",
         "MOR34.exact_parity_linear_count_encoding",
         "MOR34.epigraph_variable_count",
-        "MOR34.countRow_card"
+        "MOR34.countRow_card",
+        "MOR34.original_parity_rows_bounded",
+        "MOR34.forced_system_payload",
+        "MOR34.violation_system_payload",
+        "MOR34.cell_system_payload"
       ]
     },
     {
@@ -142,7 +146,7 @@
         "L1"
       ],
       "lean_target": "Actual recursive basis search with a one-inequality feasibility interface; bounded integer normal families proved to exist",
-      "status": "query-bounded count-basis search and actual added-constraint coefficient-bit bound verified at 4fa9921b96a39227868c5957b0f6491eb9f05491; all recursive states and parity substitution included. Executable generator and total bit-operation complexity remain open",
+      "status": "All recursive cell-search states satisfy full dense integer row payload bounds; concrete small determinant/pivot enumeration verified separately. Executable full normal generator and total bit-operation complexity remain open at 16228d3a902a737a3d94a14cda9da53e668c1521",
       "lean_theorems": [
         "MOR34.bounded_integer_forms_exist",
         "MOR34.linear_count_basis_correct",
@@ -156,7 +160,13 @@
         "MOR34.boundedCountForms_bits",
         "MOR34.boundedCellSelection_query_bounds",
         "MOR34.boundedParityQueries_bound",
-        "MOR34.pivotSearch_calls"
+        "MOR34.pivotSearch_calls",
+        "MOR34.boundedPipeline_payload_states",
+        "MOR34.uniform_system_payload",
+        "MOR34.laplace_partial_sum_bits",
+        "MOR34.normal_candidate_exists",
+        "MOR34.checked_candidate_describes",
+        "MOR34.exactPivotDetCharge_bound"
       ]
     },
     {
@@ -201,8 +211,8 @@
         "L1",
         "L7"
       ],
-      "lean_target": "One returned normalized output: invalid witness / valid empty face / dimension, geometric facet Boolean and searched actual tight-point affine basis",
-      "status": "bounded normalized output contract verified at 4fa9921b96a39227868c5957b0f6491eb9f05491, relative to ILP/rank interfaces and bounded classical normal-family choice. Raw grouping, predicate and dimension bridges proved; complete raw result wrapper remains open",
+      "lean_target": "Original-input RawOutput.Correct: invalid witness / empty face / supported dimension, geometric facet Boolean and original-coordinate tight affine basis",
+      "status": "Full original-input output contract verified relative to explicit ILP/rank primitive contracts and classical preprocessing/normal choices; actual geometric facet and returned tight affine basis included at 16228d3a902a737a3d94a14cda9da53e668c1521",
       "lean_theorems": [
         "MOR34.normalizedPipeline_correct",
         "MOR34.normalizedPipeline_dimension",
@@ -217,7 +227,12 @@
         "MOR34.boundedPipeline_facet",
         "MOR34.normalized_model_exists",
         "MOR34.relabel_tight_finrank",
-        "MOR34.boundedPipeline_raw_dimension"
+        "MOR34.boundedPipeline_raw_dimension",
+        "MOR34.original_input_output_contract",
+        "MOR34.rawNormalization_correct",
+        "MOR34.rawNormalization_facet",
+        "MOR34.rawNormalization_dimension",
+        "MOR34.rawPipeline_correct"
       ]
     },
     {
@@ -229,7 +244,7 @@
         "L7"
       ],
       "lean_target": "not yet encoded; fixed-dimensional ILP dependency unresolved",
-      "status": "query/rank-call accounting, raw q<=K+1 and actual normal coefficient bits verified at 4fa9921b96a39227868c5957b0f6491eb9f05491; full operation/encoding model, ILP/rank foundations and costed normal generator remain open",
+      "status": "Query accounting, input-to-row coefficient/payload bounds and small determinant arithmetic trace verified. No full cost composition, executable normal generator, primitive solver runtime or compression proof at 16228d3a902a737a3d94a14cda9da53e668c1521",
       "lean_theorems": [
         "MOR34.rowSearchCalls_le",
         "MOR34.cell_solver_row_count",
@@ -241,7 +256,12 @@
         "MOR34.raw_parameter_bound",
         "MOR34.raw_classes_le_items",
         "MOR34.boundedCountForms_bits",
-        "MOR34.pivotSearch_calls"
+        "MOR34.pivotSearch_calls",
+        "MOR34.original_forced_rows_bounded",
+        "MOR34.original_violation_rows_bounded",
+        "MOR34.cell_system_payload",
+        "MOR34.boundedPipeline_payload_states",
+        "MOR34.laplace_partial_sum_bits"
       ]
     },
     {

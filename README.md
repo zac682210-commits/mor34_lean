@@ -4,32 +4,30 @@ Lean 4.19.0 formalization of *Fixed-Parameter Recognition of Knapsack Facets via
 
 Development branch: `codex/mor34-formalization`.
 
-## Verified checkpoint — October 17, 2026
+## Verified checkpoint — October 18, 2026
 
-[Successful CI](https://github.com/zac682210-commits/mor34_lean/actions/runs/39013099048), source `4fa9921b96a39227868c5957b0f6491eb9f05491`. All eight commands pass; **426 named theorems** pass the transitive axiom allowlist (`propext`, `Classical.choice`, `Quot.sound`). No `sorryAx` or project axiom. Frozen model and targets unchanged.
+[Successful CI](https://github.com/zac682210-commits/mor34_lean/actions/runs/39098124607), source `16228d3a902a737a3d94a14cda9da53e668c1521`. All eight commands pass; **523 named theorems** pass the transitive axiom allowlist (`propext`, `Classical.choice`, `Quot.sound`). No `sorryAx` or project axiom. Frozen model and targets unchanged.
 
-The preferred `boundedPipeline` returns the verified normalized output contract while using bounded integer affine equations in every cell search. Its output includes invalid witnesses, signed empty-face dimension, supported-face dimension/facet decision and a searched affine basis of actual tight binary points. Explicit correct ILP and exact-rank solvers remain assumed.
+`original_input_output_contract` now starts from the original integer data and paper hypotheses, normalizes it, runs the bounded pipeline and returns a correct original-coordinate output. Explicit correct ILP and exact-rank primitives remain assumed.
 
 | Scope | Status |
 | --- | --- |
 | Structural proof | Pairing, exchange kernel, quotient dimension, affine cells, augmented span proved |
-| Normal equations | Arbitrary finite count selections; complete zero-set description and coefficient-bit bound proved |
-| Actual recursive searches | Bounded family integrated; all intermediate states, strict query offsets and parity substitution bounded |
-| Normalized output | Full solver-relative invalid/empty/supported output contract proved |
-| Pivot enumeration | Sound/complete finite search with at most d^r attempts, relative to determinant evaluator |
-| Original input | Grouping/sorting existence, item bijection, feasible/tight/valid predicate preservation, raw parameter and computed signed tight-face dimension transport proved |
-| Still open | Complete raw output/basis/facet wrapper; executable normal generation; total encoding and cost model; primitive rank/ILP and full FPT/compression foundations |
+| Original-input output | Invalid witness, empty-face dimension −1, supported-face dimension, geometric facet decision, tight-point affine basis proved relative to solvers |
+| Query encoding | Actual count/parity/forced/violation rows have integer bounds; dense coefficient payload bounded, including every recursive cell-search state |
+| Small determinant | Concrete recursive evaluation, exact pivot search, arithmetic trace and intermediate partial-sum bits proved |
+| Still open | Executable normalization/normal generator, complete serialization and cost composition, primitive rank/ILP implementations, full FPT/compression foundations |
 
-The bounded normal family still uses classical row/pivot choices; the finite pivot search is not yet the generator. Call counts and coefficient sizes do not establish total runtime. `complete_paper`, `complete_algorithm_correctness`, and `complete_FPT_complexity` remain false. This is same-session review; theorem counts are not completion percentages.
+Classical choices remain. The concrete pivot search is not yet the bounded normal generator. Dense payload sizes exclude wire-format headers; arithmetic-operation charges do not establish bit runtime. The extrema implementation uses finite scanning, not the paper's sharper binary-search call bound. `complete_paper`, unconditional `complete_algorithm_correctness`, and `complete_FPT_complexity` remain false. Same-session review only; theorem counts are not completion percentages.
 
 ## Evidence and continuation
 
-- Exact logs: `logs/verified_normals_20261017/`.
-- Source/artifact hashes: `docs/source_hashes_normals_20261017.json`.
+- Exact logs: `logs/verified_raw_20261018/`.
+- Source/artifact hashes: `docs/source_hashes_raw_20261018.json`.
 - Scope: `docs/ACCEPTANCE.json`, `docs/source_map.json`.
-- Review: `docs/REVIEW_NORMALS_20261017.md`.
-- Next: `docs/NEXT_AFTER_NORMALS_20261017.md`.
-- Chinese report: `docs/PROGRESS_NORMALS_20261017.md`.
-- Ledger: `docs/session_normals_20261017.json`; 40.18 active minutes this round, 263.92 cumulative recorded minutes. Older unlogged preparation is unknown.
+- Review: `docs/REVIEW_RAW_20261018.md`.
+- Next: `docs/NEXT_AFTER_RAW_20261018.md`.
+- Chinese report: `docs/PROGRESS_RAW_20261018.md`.
+- Ledger: `docs/session_raw_20261018.json`; 40.05 active minutes this round, 303.97 cumulative recorded minutes. Older unlogged preparation is unknown.
 
 Run `python3 scripts/environment_gate.py` for the eight verification commands. Earlier checkpoints are preserved. Historical comments in frozen files do not describe current acceptance. Reference manuscript: `reference/mor34_fpt_proof.tex`.
