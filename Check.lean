@@ -1324,3 +1324,19 @@ import MOR34
 #print axioms MOR34.chargedCellStepBudget_scale
 
 #print axioms MOR34.denseCellLoopBudget_polynomial
+
+#print axioms MOR34.denseModesBudget_polynomial
+
+#print axioms MOR34.denseExtremaBudget_polynomial
+
+#print axioms MOR34.denseParityBudget_polynomial
+
+#print axioms MOR34.chargedDenseSelection_polynomial
+
+#print axioms MOR34.chargedDenseSelection_length
+
+#print axioms MOR34.chargedDenseSelection_set
+
+#print axioms MOR34.chargedDenseSelection_points
+
+#print axioms MOR34.chargedDenseSelection_span

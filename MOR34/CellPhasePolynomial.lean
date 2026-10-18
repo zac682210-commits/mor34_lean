@@ -74,4 +74,103 @@ theorem denseCellLoopBudget_polynomial (q n L N D I c J K d : ℕ)
   change _ ≤ _*X
   nlinarith
 
+def cellModesFactor (q I K c : ℕ) : ℕ :=
+  functionEnumerationBudget q 3+3^q*(cellLoopFactor q I K c+K+q+3)+1
+
+theorem denseModesBudget_polynomial (q n L N D I c J E K d : ℕ)
+    (hN : N ≤ K*(n+L+2)^d) (hD : D ≤ K*(n+L+2)^d)
+    (hJ : J ≤ K*(n+L+2)^d) (hE : E ≤ K*(n+L+2)^d) :
+    denseModesBudget q n L N D I c J E ≤
+      cellModesFactor q I K c*(n+L+2)^(4*c+d+4) := by
+  let X := (n+L+2)^(4*c+d+4)
+  have hX : 1 ≤ X := Nat.one_le_pow _ _ (by omega)
+  have hd : (n+L+2)^d ≤ X := pow_le_pow_right' (by omega) (by omega)
+  have he := hE.trans (Nat.mul_le_mul_left K hd)
+  have hb := denseCellLoopBudget_polynomial q n L N D I c J K d hN hD hJ
+  have hi : denseCellLoopBudget q n L N D I c J+E+q+3 ≤
+      (cellLoopFactor q I K c+K+q+3)*X := by nlinarith
+  have hh := Nat.mul_le_mul_left (3^q) hi
+  have hf : functionEnumerationBudget q 3+1 ≤ (functionEnumerationBudget q 3+1)*X :=
+    Nat.le_mul_of_pos_right _ (by omega)
+  dsimp only [denseModesBudget,cellModesFactor]
+  change _ ≤ _*X
+  nlinarith
+
+def cellExtremaFactor (q I K c : ℕ) : ℕ :=
+  2*q*(cellQueryFactor q I K c+q+8)+2*q+3
+
+theorem denseExtremaBudget_polynomial (q n L D I c K d : ℕ)
+    (hD : D ≤ K*(n+L+2)^d) :
+    denseExtremaBudget q n L D I c ≤
+      cellExtremaFactor q I K c*(n+L+2)^(4*c+d+5) := by
+  let S := n+L+2
+  let X := S^(4*c+d+4)
+  have hS : 1 ≤ S := by dsimp [S]; omega
+  have hX : 1 ≤ X := Nat.one_le_pow _ _ hS
+  have hY : 1 ≤ S*X := Nat.one_le_mul hS hX
+  have hU : denseCellQueryBudget q n L D I c ≤ cellQueryFactor q I K c*X :=
+    denseCellQueryBudget_polynomial q n L D I c K d hD
+  have hsum : denseCellQueryBudget q n L D I c+q+5 ≤
+      (cellQueryFactor q I K c+q+5)*X := by nlinarith
+  have hmul := Nat.mul_le_mul (show n+1 ≤ S by dsimp [S]; omega) hsum
+  have hi : (n+1)*(denseCellQueryBudget q n L D I c+q+5)+3 ≤
+      (cellQueryFactor q I K c+q+8)*(S*X) := by nlinarith
+  have hh := Nat.mul_le_mul_left (2*q) hi
+  have hconst : 2*q+3 ≤ (2*q+3)*(S*X) := Nat.le_mul_of_pos_right _ (by omega)
+  have heq : (n+L+2)^(4*c+d+5) = S*X := by
+    change S^((4*c+d+4)+1) = S*X
+    rw [pow_succ']; rfl
+  rw [heq]
+  unfold denseExtremaBudget cellExtremaFactor
+  nlinarith
+
+def cellParityFactor (q I K c : ℕ) : ℕ :=
+  cellQueryFactor q I K c+cellExtremaFactor q I K c+cellModesFactor q I K c+1
+
+theorem denseParityBudget_polynomial (q n L N D I c J E K d : ℕ)
+    (hN : N ≤ K*(n+L+2)^d) (hD : D ≤ K*(n+L+2)^d)
+    (hJ : J ≤ K*(n+L+2)^d) (hE : E ≤ K*(n+L+2)^d) :
+    denseParityBudget q n L N D I c J E ≤
+      cellParityFactor q I K c*(n+L+2)^(4*c+d+5) := by
+  let X := (n+L+2)^(4*c+d+5)
+  have hX : 1 ≤ X := Nat.one_le_pow _ _ (by omega)
+  have hpow : (n+L+2)^(4*c+d+4) ≤ X := pow_le_pow_right' (by omega) (by omega)
+  have hq := (denseCellQueryBudget_polynomial q n L D I c K d hD).trans
+    (Nat.mul_le_mul_left (cellQueryFactor q I K c) hpow)
+  have he := denseExtremaBudget_polynomial q n L D I c K d hD
+  have hm := (denseModesBudget_polynomial q n L N D I c J E K d hN hD hJ hE).trans
+    (Nat.mul_le_mul_left (cellModesFactor q I K c) hpow)
+  dsimp only [denseParityBudget,cellParityFactor]
+  change _ ≤ _*X
+  nlinarith
+
+def cellSelectionFactor (q I K c : ℕ) : ℕ :=
+  functionEnumerationBudget q 2+2^q*(cellParityFactor q I K c+3^q*(q+1)+1)+1
+
+/-- Actual retained selection has a polynomial input exponent independent of q,
+provided the established primitive exponents c and d are uniform in q. The
+factor may depend on q; no whole-phase runtime premise is assumed. -/
+theorem chargedDenseSelection_polynomial {q : ℕ} {m : Fin q → ℕ}
+    (P : Model m) (hWF : WellFormed P)
+    (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
+    (hs : DenseRowSolverSpec solve) (A : DenseCellPrimitives P solve) (K d : ℕ)
+    (hN : A.N ≤ K*(Fintype.card (Item m)+A.L+2)^d)
+    (hD : A.D ≤ K*(Fintype.card (Item m)+A.L+2)^d)
+    (hJ : A.J ≤ K*(Fintype.card (Item m)+A.L+2)^d)
+    (hE : A.E ≤ K*(Fintype.card (Item m)+A.L+2)^d) :
+    (chargedDenseSelection P hWF solve hs A).2 ≤
+      cellSelectionFactor q A.I K A.c*(Fintype.card (Item m)+A.L+2)^(4*A.c+d+5) := by
+  let X := (Fintype.card (Item m)+A.L+2)^(4*A.c+d+5)
+  have hX : 1 ≤ X := Nat.one_le_pow _ _ (by omega)
+  have hp := denseParityBudget_polynomial q (Fintype.card (Item m)) A.L A.N A.D A.I A.c A.J A.E K d hN hD hJ hE
+  have hi : denseParityBudget q (Fintype.card (Item m)) A.L A.N A.D A.I A.c A.J A.E+3^q*(q+1)+1 ≤
+      (cellParityFactor q A.I K A.c+3^q*(q+1)+1)*X := by nlinarith
+  have hh := Nat.mul_le_mul_left (2^q) hi
+  have he : functionEnumerationBudget q 2+1 ≤ (functionEnumerationBudget q 2+1)*X :=
+    Nat.le_mul_of_pos_right _ (by omega)
+  apply (chargedDenseSelection_cost P hWF solve hs A).trans
+  unfold cellSelectionFactor
+  change _ ≤ _*X
+  nlinarith
+
 end MOR34

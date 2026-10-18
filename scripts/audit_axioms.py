@@ -7,6 +7,14 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.chargedDenseSelection_length",
+    "MOR34.chargedDenseSelection_set",
+    "MOR34.chargedDenseSelection_points",
+    "MOR34.chargedDenseSelection_span",
+    "MOR34.denseModesBudget_polynomial",
+    "MOR34.denseExtremaBudget_polynomial",
+    "MOR34.denseParityBudget_polynomial",
+    "MOR34.chargedDenseSelection_polynomial",
     "MOR34.denseCellQueryBudget_polynomial",
     "MOR34.chargedCellStepBudget_scale",
     "MOR34.denseCellLoopBudget_polynomial",

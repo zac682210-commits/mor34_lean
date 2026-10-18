@@ -8,7 +8,15 @@ an established solver or one finite-collection operation, never the composed
 algorithm. Scalar charges R, D, N are still arithmetic reference allowances. -/
 structure DenseCellPrimitives (P : Model m)
     (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ) where
-  R D N I c J E M L : ℕ
+  R : ℕ
+  D : ℕ
+  N : ℕ
+  I : ℕ
+  c : ℕ
+  J : ℕ
+  E : ℕ
+  M : ℕ
+  L : ℕ
   read_bound : R ≤ 4*(Fintype.card (Item m)+1)^2
   magnitude_pos : 1 ≤ M
   magnitude_bits : M ≤ 2^L

@@ -128,4 +128,53 @@ theorem chargedDenseSelection_cost (P : Model m) (hWF : WellFormed P)
   have hf := chargedFinFunctions_cost q 2
   exact Nat.add_le_add_right (Nat.add_le_add hf hh) 1
 
+/-- The retained list, including repetitions, has the parameter-only bound.
+This is stronger for later data-movement accounting than a bound on its set. -/
+theorem chargedDenseSelection_length (P : Model m) (hWF : WellFormed P)
+    (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
+    (hs : DenseRowSolverSpec solve) (A : DenseCellPrimitives P solve) :
+    (chargedDenseSelection P hWF solve hs A).1.length ≤ (q+1)*6^q := by
+  have hh := flatMap_length_bound (chargedFinFunctions q 2).1
+    (fun ε => (chargedDenseParityFamily P hWF solve hs A ε).1) (3^q*(q+1))
+    (fun ε _ => chargedDenseParityFamily_length P hWF solve hs A ε)
+  have hlen : (chargedFinFunctions q 2).1.length = 2^q := by
+    rw [chargedFinFunctions_value,allFinFunctions_length]
+  rw [hlen] at hh
+  have heq : 2^q*(3^q*(q+1)) = (q+1)*6^q := by
+    rw [show (6:ℕ)=2*3 from rfl,mul_pow]
+    ring
+  simpa only [chargedDenseSelection,chargedFlatMap_value,heq] using hh
+
+theorem chargedDenseSelection_set (P : Model m) (hWF : WellFormed P)
+    (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
+    (hs : DenseRowSolverSpec solve) (A : DenseCellPrimitives P solve) :
+    (↑(chargedDenseSelection P hWF solve hs A).1.toFinset : Set (Counts q)) =
+      selectedCounts P (computedCellSelection P hWF (denseCountOracle P A.R solve)
+        (denseCountOracle_spec P A.R solve hs)) := by
+  rw [chargedDenseSelection_value,computedSelectionFamily_eq,selectionFinset_coe]
+
+theorem chargedDenseSelection_points (P : Model m) (hWF : WellFormed P)
+    (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
+    (hs : DenseRowSolverSpec solve) (A : DenseCellPrimitives P solve)
+    (z : Counts q) (hz : z ∈ (chargedDenseSelection P hWF solve hs A).1) :
+    BoundedCounts (m := m) z ∧ Tight P (prefixSet z) := by
+  have hz' : z ∈ (↑(chargedDenseSelection P hWF solve hs A).1.toFinset : Set (Counts q)) :=
+    List.mem_toFinset.mpr hz
+  rw [chargedDenseSelection_set] at hz'
+  obtain ⟨ε,hn,mode,hz''⟩ := hz'
+  have h := (computedCellSelection P hWF (denseCountOracle P A.R solve)
+    (denseCountOracle_spec P A.R solve hs)).contained ε hn mode hz''
+  exact ⟨h.1.1,h.1.2.1⟩
+
+/-- The retained output feeds the same new span theorem as the pure selection. -/
+theorem chargedDenseSelection_span (P : Model m) (hWF : WellFormed P)
+    (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
+    (hs : DenseRowSolverSpec solve) (A : DenseCellPrimitives P solve) :
+    augmentedSpan (tightPointSet P) =
+      augmentedSpan ((fun z => pointVector (prefixSet z)) ''
+        (↑(chargedDenseSelection P hWF solve hs A).1.toFinset : Set (Counts q))) ⊔
+        (adjacentDirectionSpan P).map zeroAugment := by
+  rw [chargedDenseSelection_set]
+  exact selected_augmented_span P hWF _
+
 end MOR34
