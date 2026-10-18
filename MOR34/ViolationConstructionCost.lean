@@ -37,6 +37,7 @@ theorem violationConstructionWork_polynomial (P : Model m) (hWF : WellFormed P) 
       Finset.sum_le_sum (fun k _ => violationRowConstruction_work P n hm k)
     _ = (n+2*q+2)*(4*q+2*n+6) := by
       simp only [Finset.sum_const, Finset.card_univ, Nat.nsmul_eq_mul, violationRow_card]
+      rfl
     _ ≤ (6*(n+L+2))*(24*(n+L+2)) := Nat.mul_le_mul (by omega) (by omega)
     _ = _ := by ring
 
