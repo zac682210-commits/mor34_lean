@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.computedCountForms_bits",
+    "MOR34.forms_cell_queries_bound",
+    "MOR34.forms_cell_system_payload",
+    "MOR34.computedCellSearch_payload_states",
+    "MOR34.computedNormalPipeline_payload_states",
+
     "MOR34.flatMap_length_bound",
     "MOR34.normalSearchKeys_length_bound",
     "MOR34.matrixNormalSearch_calls",

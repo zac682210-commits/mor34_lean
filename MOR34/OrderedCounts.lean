@@ -5,14 +5,26 @@ import Mathlib.Data.Finset.Sort
 namespace MOR34
 variable {q : ℕ}
 
-/-- Lexicographic enumeration, with the order confined to the sorting operation. -/
-def orderedCounts (B : Finset (Counts q)) : List (Counts q) :=
-  letI : LinearOrder (Counts q) := LinearOrder.lift' List.ofFn List.ofFn_injective
-  B.sort (· ≤ ·)
+/-- An explicit lexicographic relation avoids changing the usual pointwise order. -/
+def countLexLE (x y : Counts q) : Prop := List.ofFn x ≤ List.ofFn y
 
-theorem orderedCounts_mem (B : Finset (Counts q)) (z : Counts q) : z ∈ orderedCounts B ↔ z ∈ B := by
-  dsimp only [orderedCounts]
-  exact Finset.mem_sort _
+instance : DecidableRel (countLexLE (q := q)) := fun x y =>
+  inferInstanceAs (Decidable (List.ofFn x ≤ List.ofFn y))
+
+instance : IsTrans (Counts q) countLexLE where
+  trans _ _ _ hab hbc := le_trans hab hbc
+
+instance : IsAntisymm (Counts q) countLexLE where
+  antisymm _ _ hab hba := List.ofFn_injective (le_antisymm hab hba)
+
+instance : IsTotal (Counts q) countLexLE where
+  total a b := le_total (List.ofFn a) (List.ofFn b)
+
+/-- Computable lexicographic enumeration of the selected finite set. -/
+def orderedCounts (B : Finset (Counts q)) : List (Counts q) := B.sort countLexLE
+
+theorem orderedCounts_mem (B : Finset (Counts q)) (z : Counts q) : z ∈ orderedCounts B ↔ z ∈ B :=
+  Finset.mem_sort countLexLE
 
 theorem orderedCounts_length (B : Finset (Counts q)) : (orderedCounts B).length = B.card := by
   simp [orderedCounts]

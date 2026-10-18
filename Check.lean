@@ -675,3 +675,8 @@ import MOR34
 #print axioms MOR34.computedCountForms_search_calls
 #print axioms MOR34.searchStates_card
 #print axioms MOR34.computedCountForms_search_states
+#print axioms MOR34.computedCountForms_bits
+#print axioms MOR34.forms_cell_queries_bound
+#print axioms MOR34.forms_cell_system_payload
+#print axioms MOR34.computedCellSearch_payload_states
+#print axioms MOR34.computedNormalPipeline_payload_states
