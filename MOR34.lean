@@ -142,3 +142,7 @@ import MOR34.RawBasis
 import MOR34.RawOutput
 
 import MOR34.RawInputPipeline
+
+import MOR34.IntegerRowBounds
+
+import MOR34.CountRowBounds

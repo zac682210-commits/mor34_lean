@@ -566,3 +566,16 @@ import MOR34
 #print axioms MOR34.rawNormalization_facet
 #print axioms MOR34.rawNormalization_dimension
 #print axioms MOR34.original_input_output_contract
+
+#print axioms MOR34.integerRow_bounded
+#print axioms MOR34.integerRow_bound_mono
+#print axioms MOR34.integerPick_abs_bound
+#print axioms MOR34.integerRow_withParity
+#print axioms MOR34.integerRow_parity_bounded
+#print axioms MOR34.queryRow_integer_bounded
+#print axioms MOR34.signedIntegerBits_bound
+#print axioms MOR34.integerRowBits_bound
+#print axioms MOR34.bounded_row_encoding_exists
+
+#print axioms MOR34.countRow_integer_bounded
+#print axioms MOR34.parityRows_integer_bounded

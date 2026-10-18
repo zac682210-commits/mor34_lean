@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.countRow_integer_bounded',
+    'MOR34.parityRows_integer_bounded',
+
+    'MOR34.integerRow_bounded',
+    'MOR34.integerRow_bound_mono',
+    'MOR34.integerPick_abs_bound',
+    'MOR34.integerRow_withParity',
+    'MOR34.integerRow_parity_bounded',
+    'MOR34.queryRow_integer_bounded',
+    'MOR34.signedIntegerBits_bound',
+    'MOR34.integerRowBits_bound',
+    'MOR34.bounded_row_encoding_exists',
+
     'MOR34.rawNormalization_exists',
     'MOR34.rawNormalization_correct',
     'MOR34.rawNormalization_parameter',
