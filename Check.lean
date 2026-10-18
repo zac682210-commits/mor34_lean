@@ -1165,3 +1165,17 @@ import MOR34
 #print axioms MOR34.chargedBasisExecution_value
 
 #print axioms MOR34.chargedBasisExecution_cost
+
+#print axioms MOR34.sumConstruction_literals
+
+#print axioms MOR34.prefixConstruction_literals
+
+#print axioms MOR34.integerPick_magnitude
+
+#print axioms MOR34.atomicIntegerRow_literals
+
+#print axioms MOR34.prefixRowConstruction_literals
+
+#print axioms MOR34.countRowConstruction_literals
+
+#print axioms MOR34.countRow_subterm_bits

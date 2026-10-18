@@ -7,6 +7,14 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.sumConstruction_literals',
+    'MOR34.prefixConstruction_literals',
+    'MOR34.integerPick_magnitude',
+    'MOR34.atomicIntegerRow_literals',
+    'MOR34.prefixRowConstruction_literals',
+    'MOR34.countRowConstruction_literals',
+    'MOR34.countRow_subterm_bits',
+
     'MOR34.chargedFirstWitness_value',
     'MOR34.chargedFirstWitness_cost',
     'MOR34.chargedDescendingSearch_value',
