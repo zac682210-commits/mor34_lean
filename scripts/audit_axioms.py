@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.chargedDenseSupport_nonempty",
+    "MOR34.chargedRankOutside_value",
+    "MOR34.chargedRankOutside_cost",
+    "MOR34.chargedRankStep_value",
+    "MOR34.chargedRankStep_cost",
+    "MOR34.chargedRankBasis_value",
+    "MOR34.chargedRankBasis_cost",
     "MOR34.chargedDenseSelection_length",
     "MOR34.chargedDenseSelection_set",
     "MOR34.chargedDenseSelection_points",

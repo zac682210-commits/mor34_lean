@@ -1340,3 +1340,17 @@ import MOR34
 #print axioms MOR34.chargedDenseSelection_points
 
 #print axioms MOR34.chargedDenseSelection_span
+
+#print axioms MOR34.chargedRankOutside_value
+
+#print axioms MOR34.chargedRankOutside_cost
+
+#print axioms MOR34.chargedRankStep_value
+
+#print axioms MOR34.chargedRankStep_cost
+
+#print axioms MOR34.chargedRankBasis_value
+
+#print axioms MOR34.chargedRankBasis_cost
+
+#print axioms MOR34.chargedDenseSupport_nonempty

@@ -14,6 +14,17 @@ def denseParityBudget (q n L N D I c J E : ℕ) : ℕ :=
   denseCellQueryBudget q n L D I c+denseExtremaBudget q n L D I c+
     denseModesBudget q n L N D I c J E+1
 
+theorem chargedDenseSupport_nonempty (P : Model m) (hWF : WellFormed P) (R D : ℕ)
+    (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
+    (hs : DenseRowSolverSpec solve) (ε : Parity q)
+    (h : (chargedDenseListQuery P R D solve ε []).1.isSome = true) :
+    ∃ z, TightParity P ε z := by
+  let z := (chargedDenseListQuery P R D solve ε []).1.get h
+  have hz : parityListSolver (denseCountOracle P R solve) ε [] = some z := by
+    rw [← chargedDenseListQuery_value P R D solve ε []]
+    exact (Option.some_get h).symm
+  exact ⟨z, ((parityListSolver_spec P hWF _ (denseCountOracle_spec P R solve hs) ε).found [] z hz).1⟩
+
 /-- One support answer decides whether extrema and modes run. Their returned
 values are retained and reused; no test for mathematical nonemptiness occurs. -/
 def chargedDenseParityFamily (P : Model m) (hWF : WellFormed P)
@@ -22,12 +33,7 @@ def chargedDenseParityFamily (P : Model m) (hWF : WellFormed P)
     List (Counts q) × ℕ :=
   let support := chargedDenseListQuery P A.R A.D solve ε []
   if h : support.1.isSome then
-    let z := support.1.get h
-    have hz : parityListSolver (denseCountOracle P A.R solve) ε [] = some z := by
-      rw [← chargedDenseListQuery_value P A.R A.D solve ε []]
-      exact (Option.some_get h).symm
-    have hn : ∃ w, TightParity P ε w :=
-      ⟨z, ((parityListSolver_spec P hWF _ (denseCountOracle_spec P A.R solve hs) ε).found [] z hz).1⟩
+    have hn : ∃ w, TightParity P ε w := chargedDenseSupport_nonempty P hWF A.R A.D solve hs ε h
     let ex := chargedDenseExtrema P hWF A.R A.D solve hs ε hn
     let points := chargedDenseModes P solve A ε ex.1
     (points.1,support.2+ex.2+points.2+1)
@@ -42,7 +48,7 @@ theorem chargedDenseParityFamily_value (P : Model m) (hWF : WellFormed P)
   classical
   simp only [chargedDenseParityFamily,computedParityFamily,chargedDenseListQuery_value]
   split
-  · simp only [chargedDenseExtrema_value,chargedDenseModes_value,
+  · simp only [chargedDenseExtrema_value,chargedDenseModes_value P hWF solve hs A ε,
       computedCellSelection_basis,storedParityExtrema_eq]
   · rfl
 
@@ -68,19 +74,23 @@ theorem chargedDenseParityFamily_cost (P : Model m) (hWF : WellFormed P)
     rw [chargedDenseExtrema_value]
     exact chargedDenseModes_cost P hWF solve hs A ε hn
   change _ ≤ U+V+W+1
-  unfold chargedDenseParityFamily
+  dsimp only [chargedDenseParityFamily]
   split
-  · exact Nat.add_le_add_right (Nat.add_le_add (Nat.add_le_add hsupport (he _)) (hm _)) 1
+  · rename_i h
+    have hn := chargedDenseSupport_nonempty P hWF A.R A.D solve hs ε h
+    exact Nat.add_le_add_right (Nat.add_le_add (Nat.add_le_add hsupport (he hn)) (hm hn)) 1
   · omega
 
 theorem chargedDenseParityFamily_length (P : Model m) (hWF : WellFormed P)
     (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)
     (hs : DenseRowSolverSpec solve) (A : DenseCellPrimitives P solve) (ε : Parity q) :
     (chargedDenseParityFamily P hWF solve hs A ε).1.length ≤ 3^q*(q+1) := by
-  unfold chargedDenseParityFamily
+  dsimp only [chargedDenseParityFamily]
   split
-  · rw [chargedDenseExtrema_value]
-    exact chargedDenseModes_length P hWF solve hs A ε _
+  · rename_i h
+    have hn := chargedDenseSupport_nonempty P hWF A.R A.D solve hs ε h
+    rw [chargedDenseExtrema_value]
+    exact chargedDenseModes_length P hWF solve hs A ε hn
   · exact Nat.zero_le _
 
 /-- Enumerate all parities once, retaining the concatenated point output. This
