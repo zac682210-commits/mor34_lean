@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.complete_compressed_execution",
+    "MOR34.sharp_parameter_transport",
+    "MOR34.compressedEndBudget_sharp",
+    "MOR34.compressedPrepared_exponent",
+    "MOR34.runPreparedWeighted_correct",
     "MOR34.chargedCompressionPreparation_cost",
     "MOR34.compressedPrepared_magnitudes",
     "MOR34.compressedPrepared_parameter",

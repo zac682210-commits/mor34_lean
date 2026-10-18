@@ -1585,3 +1585,8 @@ import MOR34
 #print axioms MOR34.compressedPrepared_parameter
 #print axioms MOR34.compressedPrepared_magnitudes
 #print axioms MOR34.chargedCompressionPreparation_cost
+#print axioms MOR34.runPreparedWeighted_correct
+#print axioms MOR34.compressedPrepared_exponent
+#print axioms MOR34.compressedEndBudget_sharp
+#print axioms MOR34.sharp_parameter_transport
+#print axioms MOR34.complete_compressed_execution
