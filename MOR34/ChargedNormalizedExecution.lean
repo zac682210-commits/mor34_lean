@@ -36,6 +36,8 @@ theorem chargedNormalizedExecution_value (P : Model m) (hWF : WellFormed P) (R :
     chargedDenseRecognition_value,chargedFinalBasis_value,chargedReturnedFamily_value,
     ops.makePrefix_value,constructedNormalizedPipeline,constructedReturnedSets_eq P hWF _ _ _
       (denseForcedOracle_spec P R solve hs)]
+  cases executableRecognitionBranch (m := m) (chargedDenseViolationSolve P A.R solve).1
+    (denseCountOracle P A.R solve) <;> rfl
 
 theorem chargedNormalizedExecution_correct (P : Model m) (hWF : WellFormed P) (R : ℕ)
     (solve : List (DenseIntegerRow q) → Option (IntegerRowSolution q) × ℕ)

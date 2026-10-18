@@ -1474,3 +1474,5 @@ import MOR34
 #print axioms MOR34.parityOperandEnvelope_polynomial
 
 #print axioms MOR34.weightedBuiltCountParity_polynomial
+
+#print axioms MOR34.weightedCompiledCountRequest_polynomial
