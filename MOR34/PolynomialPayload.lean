@@ -92,4 +92,38 @@ theorem computedPipeline_polynomial_payload (P : Model m) (hWF : WellFormed P)
   obtain ⟨a,b,d,he,hbits⟩ := hB t ht
   exact ⟨a,b,d,he,hbits.trans (cell_payload_polynomial q _ M L (coefficient_classes_le_items P hWF) hML)⟩
 
+/-- Actual forced-exchange rows, with witnesses retained in the encoding statement. -/
+theorem forcedSystem_polynomial_payload (P : Model m) (hWF : WellFormed P)
+    (M L : ℕ) (hM : 1 ≤ M) (hML : M ≤ 2^L)
+    (hw : ∀ i, |P.weight i| ≤ (M : ℤ)) (hc : ∀ j, |P.coefficient j| ≤ (M : ℤ))
+    (hb : |P.capacity| ≤ (M : ℤ)) (hd : |P.rhs| ≤ (M : ℤ))
+    (j : Fin q) (u v : Fin (m j)) :
+    ∃ a b : ForcedRow m j u v → Fin q → ℤ, ∃ d : ForcedRow m j u v → ℤ,
+      (∀ k, forcedRow P j u v k = integerRow (a k) (b k) (d k)) ∧
+      (∑ k, integerRowBits (a k) (b k) (d k)) ≤ 168*(Fintype.card (Item m)+L+2)^4 := by
+  have hm : ∀ j, m j ≤ Fintype.card (Item m)+1 :=
+    fun j => (class_size_le_items j).trans (Nat.le_succ _)
+  obtain ⟨a,b,d,he,hbits⟩ := forced_system_payload P (Fintype.card (Item m)+1) M
+    (by omega) hM hm hw hc hb hd j u v
+  have hk : (pairAllowed u v).card ≤ Fintype.card (Item m) := by
+    have hh := Finset.card_le_univ (pairAllowed u v)
+    simp only [Fintype.card_fin] at hh
+    exact hh.trans (class_size_le_items j)
+  exact ⟨a,b,d,he,hbits.trans (forced_payload_polynomial q _ M L _
+    (coefficient_classes_le_items P hWF) hk hML)⟩
+
+theorem violationSystem_polynomial_payload (P : Model m) (hWF : WellFormed P)
+    (M L : ℕ) (hM : 1 ≤ M) (hML : M ≤ 2^L)
+    (hw : ∀ i, |P.weight i| ≤ (M : ℤ)) (hc : ∀ j, |P.coefficient j| ≤ (M : ℤ))
+    (hb : |P.capacity| ≤ (M : ℤ)) (hd : |P.rhs| ≤ (M : ℤ)) :
+    ∃ a b : ViolationRow m → Fin q → ℤ, ∃ d : ViolationRow m → ℤ,
+      (∀ k, violationRow P k = integerRow (a k) (b k) (d k)) ∧
+      (∑ k, integerRowBits (a k) (b k) (d k)) ≤ 168*(Fintype.card (Item m)+L+2)^4 := by
+  have hm : ∀ j, m j ≤ Fintype.card (Item m)+1 :=
+    fun j => (class_size_le_items j).trans (Nat.le_succ _)
+  obtain ⟨a,b,d,he,hbits⟩ := violation_system_payload P (Fintype.card (Item m)+1) M
+    (by omega) hM hm hw hc hb hd
+  exact ⟨a,b,d,he,hbits.trans (violation_payload_polynomial q _ M L
+    (coefficient_classes_le_items P hWF) hML)⟩
+
 end MOR34

@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.forcedSystem_polynomial_payload',
+    'MOR34.violationSystem_polynomial_payload',
+
     'MOR34.facet_component_bound_parameter',
     'MOR34.raw_facet_component_bound',
 

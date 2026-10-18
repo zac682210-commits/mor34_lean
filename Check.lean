@@ -779,3 +779,6 @@ import MOR34
 
 #print axioms MOR34.facet_component_bound_parameter
 #print axioms MOR34.raw_facet_component_bound
+
+#print axioms MOR34.forcedSystem_polynomial_payload
+#print axioms MOR34.violationSystem_polynomial_payload
