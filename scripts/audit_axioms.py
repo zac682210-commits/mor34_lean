@@ -7,6 +7,7 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.executableRawPipeline_dimension",
     "MOR34.storedParityExtrema_eq",
     "MOR34.materializeFin_apply",
     "MOR34.materializeFin_eq",
