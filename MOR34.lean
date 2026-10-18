@@ -190,3 +190,4 @@ import MOR34.CompressionSigns
 import MOR34.CompressionTransport
 import MOR34.CompressionParameter
 import MOR34.ParityComponentSupport
+import MOR34.FacetComponentBound

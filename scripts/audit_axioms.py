@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.oneParityComponentGenerators_card",
+    "MOR34.allParityComponentGenerators_card",
+    "MOR34.quotient_prefix_mem_component_generators",
+    "MOR34.quotient_augmented_span_le_component_generators",
+    "MOR34.quotient_augmented_dimension_bound",
+    "MOR34.facet_component_bound",
+
     "MOR34.image_card_le_bucket_card",
     "MOR34.varyingClassComponents_card",
     "MOR34.varyingComponents_card",

@@ -746,3 +746,9 @@ import MOR34
 #print axioms MOR34.varyingComponents_card
 #print axioms MOR34.parityComponentGenerators_card
 #print axioms MOR34.parityComponentGenerators_span
+#print axioms MOR34.oneParityComponentGenerators_card
+#print axioms MOR34.allParityComponentGenerators_card
+#print axioms MOR34.quotient_prefix_mem_component_generators
+#print axioms MOR34.quotient_augmented_span_le_component_generators
+#print axioms MOR34.quotient_augmented_dimension_bound
+#print axioms MOR34.facet_component_bound
