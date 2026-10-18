@@ -58,7 +58,9 @@ theorem tryNormalKey_spec {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ)
         · intro N hN hM
           simpa only [Fintype.card_fin] using columnNormal_uniform_bound R c N hN (fun i j => hM (k.rows i) j)
       · simp only [tryNormalKey, dif_pos hi, c, R, if_pos hd, if_neg hc] at hv
+        cases hv
     · simp only [tryNormalKey, dif_pos hi, c, R, if_neg hd] at hv
+      cases hv
   · simp [tryNormalKey, hi] at hv
 
 def matrixNormalSearch {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ) :
@@ -73,7 +75,7 @@ theorem matrixNormalSearch_exists {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ) :
       simpa only [laplaceDet_correct] using hd
     have hc' : ∀ i j, ∑ l, M i l * concreteColumnNormal (M.submatrix a id) c j l = 0 := by
       simpa only [concreteColumnNormal_eq] using hc
-    simp [tryNormalKey, k, c.injective, hd', hc']
+    simpa only [tryNormalKey, k, dif_pos c.injective, if_pos hd', if_pos hc']
   cases he : matrixNormalSearch M with
   | some v => exact ⟨v, rfl⟩
   | none =>

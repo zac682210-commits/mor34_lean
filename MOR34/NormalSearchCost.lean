@@ -1,0 +1,90 @@
+import MOR34.ExecutableMatrixNormals
+import MOR34.ExecutableCountForms
+import MOR34.SearchPayload
+
+namespace MOR34
+
+/-- A list-size estimate used for the explicit finite candidate enumeration. -/
+theorem flatMap_length_bound {α β : Type*} (L : List α) (f : α → List β) (C : ℕ)
+    (h : ∀ x ∈ L, (f x).length ≤ C) : (L.flatMap f).length ≤ L.length * C := by
+  induction L with
+  | nil => simp
+  | cons a L ih =>
+    simp only [List.flatMap_cons, List.length_append, List.length_cons]
+    have ha := h a (by simp)
+    have ht := ih (fun x hx => h x (by simp [hx]))
+    nlinarith
+
+theorem normalSearchKeys_length_bound (s d : ℕ) (hd : 1 ≤ d) (hs : s ≤ d) :
+    (normalSearchKeys s d).length ≤ (d+1) * d^(2*d) := by
+  unfold normalSearchKeys
+  apply (flatMap_length_bound _ _ (d^(2*d)) ?_).trans_eq
+  · intro r _
+    have hr : r.val ≤ d := by omega
+    have ha : s^r.val ≤ d^d :=
+      (pow_le_pow_left' hs r.val).trans (pow_le_pow_right' hd hr)
+    have hc : d^r.val ≤ d^d := pow_le_pow_right' hd hr
+    have hh := flatMap_length_bound (allFinFunctions r.val s)
+      (fun a => (allFinFunctions r.val d).map (fun c => (⟨r,a,c⟩ : NormalSearchKey s d)))
+      (d^r.val) (by intro a _; simp [allFinFunctions_length])
+    simp only [allFinFunctions_length] at hh
+    calc
+      _ ≤ s^r.val * d^r.val := hh
+      _ ≤ d^d * d^d := Nat.mul_le_mul ha hc
+      _ = d^(2*d) := by rw [← pow_add]; congr 1; omega
+  · simp
+
+theorem matrixNormalSearch_calls {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ)
+    (hd : 1 ≤ d) (hs : s ≤ d) :
+    firstWitnessCalls (tryNormalKey M) (normalSearchKeys s d) ≤ (d+1)*d^(2*d) :=
+  (firstWitness_calls_le _ _).trans (normalSearchKeys_length_bound s d hd hs)
+
+/-- The bound applies to the matrix actually built from the selected count points. -/
+theorem computedCountForms_search_calls {q : ℕ} (B : Finset (Counts q)) (hB : B.card ≤ q+1) :
+    firstWitnessCalls (tryNormalKey (orderedCountMatrix B))
+      (normalSearchKeys (orderedCounts B).length (q+1)) ≤ (q+2)*(q+1)^(2*(q+1)) := by
+  apply matrixNormalSearch_calls _ (by omega)
+  simpa only [orderedCounts_length] using hB
+
+/-- Cardinality is bounded at every actual recursive state, without assuming oracle correctness. -/
+theorem searchStates_card {α : Type*} [DecidableEq α] (oracle : Finset α → Option α)
+    (limit fuel : ℕ) (B : Finset α) (hB : B.card + fuel ≤ limit) :
+    SearchStates oracle (fun S => S.card ≤ limit) fuel B := by
+  induction fuel generalizing B with
+  | zero => trivial
+  | succ r ih =>
+    refine ⟨by omega, ?_⟩
+    cases he : oracle B with
+    | none => simp [he]
+    | some z =>
+      simp only [he]
+      apply ih
+      have hh := Finset.card_insert_le z B
+      omega
+
+/-- Every normal computation used by the q+1-step basis search has parameter-only
+candidate count. This counts candidate checks, not their integer bit cost. -/
+theorem computedCountForms_search_states {q : ℕ} (solve : IntegerQuery q → Option (Counts q)) :
+    SearchStates (linearSpanOracle solve computedCountForms)
+      (fun B => firstWitnessCalls (tryNormalKey (orderedCountMatrix B))
+        (normalSearchKeys (orderedCounts B).length (q+1)) ≤ (q+2)*(q+1)^(2*(q+1))) (q+1) ∅ := by
+  have aux : ∀ fuel (B : Finset (Counts q)), B.card + fuel ≤ q+1 →
+      SearchStates (linearSpanOracle solve computedCountForms)
+        (fun B => firstWitnessCalls (tryNormalKey (orderedCountMatrix B))
+          (normalSearchKeys (orderedCounts B).length (q+1)) ≤ (q+2)*(q+1)^(2*(q+1))) fuel B := by
+    intro fuel
+    induction fuel with
+    | zero => intros; trivial
+    | succ r ih =>
+      intro B hB
+      refine ⟨computedCountForms_search_calls B (by omega), ?_⟩
+      cases he : linearSpanOracle solve computedCountForms B with
+      | none => simp [he]
+      | some z =>
+        simp only [he]
+        apply ih
+        have hh := Finset.card_insert_le z B
+        omega
+  exact aux _ _ (by simp)
+
+end MOR34

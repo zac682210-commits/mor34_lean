@@ -669,3 +669,9 @@ import MOR34
 #print axioms MOR34.computedRawPipeline_correct
 #print axioms MOR34.computedRawPipeline_facet
 #print axioms MOR34.computed_original_input_output_contract
+#print axioms MOR34.flatMap_length_bound
+#print axioms MOR34.normalSearchKeys_length_bound
+#print axioms MOR34.matrixNormalSearch_calls
+#print axioms MOR34.computedCountForms_search_calls
+#print axioms MOR34.searchStates_card
+#print axioms MOR34.computedCountForms_search_states

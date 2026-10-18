@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.flatMap_length_bound",
+    "MOR34.normalSearchKeys_length_bound",
+    "MOR34.matrixNormalSearch_calls",
+    "MOR34.computedCountForms_search_calls",
+    "MOR34.searchStates_card",
+    "MOR34.computedCountForms_search_states",
+
     "MOR34.computedRawPipeline_correct",
     "MOR34.computedRawPipeline_facet",
     "MOR34.computed_original_input_output_contract",

@@ -175,3 +175,4 @@ import MOR34.ExecutableCountForms
 import MOR34.ComputedCellPipeline
 import MOR34.ComputedNormalizedPipeline
 import MOR34.ComputedRawPipeline
+import MOR34.NormalSearchCost
