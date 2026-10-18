@@ -1382,3 +1382,13 @@ import MOR34
 #print axioms MOR34.weightedCountRow_polynomial
 #print axioms MOR34.weightedForcedRow_polynomial
 #print axioms MOR34.weightedViolationRow_polynomial
+#print axioms MOR34.chargedDenseSupport_value
+#print axioms MOR34.chargedDenseSupport_cost
+#print axioms MOR34.chargedDenseRecognition_value
+#print axioms MOR34.chargedDenseRecognition_cost
+#print axioms MOR34.chargedAdjacentWitness_value
+#print axioms MOR34.chargedWitnessTable_value
+#print axioms MOR34.chargedEdgePoints_value
+#print axioms MOR34.chargedEdgePoints_cost
+#print axioms MOR34.chargedDenseEdges_value
+#print axioms MOR34.chargedDenseEdges_cost

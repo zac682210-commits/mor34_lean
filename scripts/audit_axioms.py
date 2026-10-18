@@ -7,6 +7,18 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedAdjacentWitness_value',
+    'MOR34.chargedWitnessTable_value',
+    'MOR34.chargedEdgePoints_value',
+    'MOR34.chargedEdgePoints_cost',
+    'MOR34.chargedDenseEdges_value',
+    'MOR34.chargedDenseEdges_cost',
+
+    'MOR34.chargedDenseSupport_value',
+    'MOR34.chargedDenseSupport_cost',
+    'MOR34.chargedDenseRecognition_value',
+    'MOR34.chargedDenseRecognition_cost',
+
     'MOR34.weightedCountRow_polynomial',
     'MOR34.weightedForcedRow_polynomial',
     'MOR34.weightedViolationRow_polynomial',
