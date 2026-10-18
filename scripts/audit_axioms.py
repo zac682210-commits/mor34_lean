@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.minor_arithmetic_bound',
+    'MOR34.columnNormalCharge_bound',
+    'MOR34.normalKeyCharge_bound',
+    'MOR34.matrixNormalArithmeticCharge_bound',
+    'MOR34.normalBasisArithmeticCharge_bound',
+
     'MOR34.computedReturnedBasis_rank_calls_polynomial',
     'MOR34.counted_rank_cost_bound',
 

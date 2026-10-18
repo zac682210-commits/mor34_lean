@@ -1,3 +1,4 @@
+import MOR34.NormalArithmeticCost
 import MOR34
 
 -- Each named theorem must have only allowed standard axiom dependencies.
@@ -790,3 +791,9 @@ import MOR34
 
 #print axioms MOR34.computedReturnedBasis_rank_calls_polynomial
 #print axioms MOR34.counted_rank_cost_bound
+
+#print axioms MOR34.minor_arithmetic_bound
+#print axioms MOR34.columnNormalCharge_bound
+#print axioms MOR34.normalKeyCharge_bound
+#print axioms MOR34.matrixNormalArithmeticCharge_bound
+#print axioms MOR34.normalBasisArithmeticCharge_bound
