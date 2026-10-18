@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.chargedFinTable_value",
+    "MOR34.chargedFinTable_cost",
+    "MOR34.chargedCoordinateWitness_value",
+    "MOR34.extremaFromTables_eq",
+    "MOR34.chargedDenseExtrema_value",
+    "MOR34.chargedDenseExtrema_cost",
+    "MOR34.chargedDenseListQuery_value",
+    "MOR34.chargedDenseListQuery_cost",
+    "MOR34.chargedCoordinateScan_value",
+    "MOR34.chargedCoordinateScan_cost",
     'MOR34.chargedDenseCellQuery_value',
     'MOR34.chargedDenseCellBasis_value',
     'MOR34.chargedDenseCellBasis_cost',

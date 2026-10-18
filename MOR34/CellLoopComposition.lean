@@ -49,7 +49,7 @@ theorem chargedCellBasis_cost_on_contained_states {q : ℕ}
     (hor : LinearOracleSpec C (fun a => (solve a).1)) (R U J : ℕ)
     (put : Counts q → Finset (Counts q) → Finset (Counts q) × ℕ)
     (hp : ∀ z B, (put z B).1 = insert z B)
-    (hi : ∀ z B, B.card ≤ q+1 → z ∈ C → (B : Set (Counts q)) ⊆ C → (put z B).2 ≤ J)
+    (hi : ∀ z (B : Finset (Counts q)), B.card ≤ q+1 → z ∈ C → (B : Set (Counts q)) ⊆ C → (put z B).2 ≤ J)
     (hs : SearchStates (linearSpanOracle (fun a => (solve a).1) computedCountForms)
       (fun B => ∀ a ∈ outsideQueries (computedCountForms B), (solve a).2 ≤ U) (q+1) ∅) :
     (chargedCellBasis solve R put).2 ≤

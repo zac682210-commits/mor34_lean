@@ -1272,3 +1272,23 @@ import MOR34
 #print axioms MOR34.chargedDenseCellBasis_value
 
 #print axioms MOR34.chargedDenseCellBasis_cost
+
+#print axioms MOR34.chargedDenseListQuery_value
+
+#print axioms MOR34.chargedDenseListQuery_cost
+
+#print axioms MOR34.chargedCoordinateScan_value
+
+#print axioms MOR34.chargedCoordinateScan_cost
+
+#print axioms MOR34.chargedFinTable_value
+
+#print axioms MOR34.chargedFinTable_cost
+
+#print axioms MOR34.chargedCoordinateWitness_value
+
+#print axioms MOR34.extremaFromTables_eq
+
+#print axioms MOR34.chargedDenseExtrema_value
+
+#print axioms MOR34.chargedDenseExtrema_cost

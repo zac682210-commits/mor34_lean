@@ -279,3 +279,5 @@ import MOR34.CellLoopComposition
 import MOR34.ChargedParityDecode
 
 import MOR34.DenseCellLoop
+import MOR34.DenseCoordinateScans
+import MOR34.ChargedExtremaTable
