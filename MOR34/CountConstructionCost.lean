@@ -42,9 +42,9 @@ theorem countRowConstruction_value (P : Model m) (A : Fin r → Fin q → ℤ) (
     (k : CountRow m r) :
     (countRowConstruction P A b k).value = countRow P (fun i j => (A i j : ℚ)) (fun i => (b i : ℚ)) k := by
   rcases k with (j | j) | ((u | u) | (⟨j,t⟩ | (u | i)))
-  all_goals simp [countRowConstruction, atomicIntegerRow_value, prefixRowConstruction_value,
+  all_goals simp [countRowConstruction, atomicIntegerRow, prefixRowConstruction,
     countRow, ConstructedIntegerRow.value, IntegerConstruction.value, integerRow, integerPick,
-    pickCoeff]
+    pickCoeff, prefixConstruction_value, funext_iff, sub_eq_add_neg]
 
 theorem countRowConstruction_work (P : Model m) (A : Fin r → Fin q → ℤ) (b : Fin r → ℤ)
     (n : ℕ) (hm : ∀ j, m j ≤ n) (k : CountRow m r) :
