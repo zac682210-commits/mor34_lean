@@ -109,6 +109,7 @@ theorem chargedDenseEdges_cost (P : Model m) (hWF : WellFormed P) (R : ℕ)
   have hm' := hm.trans (Nat.mul_le_mul_right _ hl)
   have hind := chargedAdjacentIndices_cost n (coefficient_classes_le_items P hWF)
     (fun j => class_size_le_items j)
+  change (chargedAdjacentIndices m).2 ≤ 8*(n+1)^2 at hind
   have hedge := chargedEdgePoints_cost ops C hops (chargedWitnessTable P R solve ops).1
   have ht : (chargedWitnessTable P R solve ops).1.length ≤ n := by
     rw [chargedWitnessTable_value]

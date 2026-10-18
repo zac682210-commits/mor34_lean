@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.pricedParityEntry_value",
+    "MOR34.sharedWeightedDenseParityRow_value",
+    "MOR34.sharedWeightedDenseParityRow_cost",
     "MOR34.chargedNormalizedExecution_basis_card",
     "MOR34.chargedRawExecution_cost",
     "MOR34.weightedDenseParityRow_value",

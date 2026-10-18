@@ -1444,3 +1444,9 @@ import MOR34
 #print axioms MOR34.chargedNormalizedExecution_basis_card
 
 #print axioms MOR34.chargedRawExecution_cost
+
+#print axioms MOR34.pricedParityEntry_value
+
+#print axioms MOR34.sharedWeightedDenseParityRow_value
+
+#print axioms MOR34.sharedWeightedDenseParityRow_cost
