@@ -694,3 +694,7 @@ import MOR34
 #print axioms MOR34.executableRawPipeline_correct
 #print axioms MOR34.executableRawPipeline_facet
 #print axioms MOR34.executable_normalized_original_output_contract
+#print axioms MOR34.concreteColumnNormal_bound
+#print axioms MOR34.normalCheck_term_bound
+#print axioms MOR34.normalCheck_partial_sum_bound
+#print axioms MOR34.normalCheck_partial_sum_bits

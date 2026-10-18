@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.normalCheck_partial_sum_bits",
+    "MOR34.concreteColumnNormal_bound",
+    "MOR34.normalCheck_term_bound",
+    "MOR34.normalCheck_partial_sum_bound",
+
     "MOR34.executableRawPipeline_correct",
     "MOR34.executableRawPipeline_facet",
     "MOR34.executable_normalized_original_output_contract",
