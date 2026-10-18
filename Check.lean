@@ -989,3 +989,19 @@ import MOR34
 #print axioms MOR34.builtNormalBasisSearch_value
 
 #print axioms MOR34.builtNormalBasisSearch_cost
+
+#print axioms MOR34.builtPrefixRow_value
+
+#print axioms MOR34.builtPrefixRow_cost
+
+#print axioms MOR34.builtForcedSlope_value
+
+#print axioms MOR34.builtForcedSlope_cost
+
+#print axioms MOR34.builtForcedRow_value
+
+#print axioms MOR34.builtForcedRow_cost
+
+#print axioms MOR34.builtForcedRows_interpret
+
+#print axioms MOR34.builtForcedRows_total_cost
