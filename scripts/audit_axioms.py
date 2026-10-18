@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.relabelBasis_card',
+    'MOR34.relabelBasis_points',
+    'MOR34.relabelBasis_independent',
+    'MOR34.relabelBasis_tight',
+    'MOR34.relabelBasis_affineSpan',
+
     'MOR34.rawCandidateLinear_point',
     'MOR34.raw_valid_linear_bound',
     'MOR34.rawTightPointSet_level',

@@ -545,3 +545,9 @@ import MOR34
 #print axioms MOR34.relabel_face_finrank
 #print axioms MOR34.relabel_geometric_facet
 #print axioms MOR34.relabel_definesFacet
+
+#print axioms MOR34.relabelBasis_card
+#print axioms MOR34.relabelBasis_points
+#print axioms MOR34.relabelBasis_independent
+#print axioms MOR34.relabelBasis_tight
+#print axioms MOR34.relabelBasis_affineSpan
