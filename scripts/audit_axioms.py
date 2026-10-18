@@ -7,6 +7,21 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.residual_table_polynomial_work',
+    'MOR34.chargedResidualWeights_cost',
+    'MOR34.builtResidualWeight_eq',
+    'MOR34.chargedResidualWeights_length',
+    'MOR34.chargedResidualWeights_value',
+    'MOR34.residualIndexList_length',
+    'MOR34.residualIndexList_sorted',
+    'MOR34.residualIndexList_finset',
+    'MOR34.matrixNormalSearchBuilt_cost',
+    'MOR34.matrixNormalSearchBuilt_value',
+    'MOR34.chargedNormalKeys_cost',
+    'MOR34.chargedNormalKeys_value',
+    'MOR34.chargedRankKeys_cost',
+    'MOR34.rankKey_length_bound',
+    'MOR34.chargedRankKeys_value',
     'MOR34.chargedFinFunctions_parameter_cost',
     'MOR34.functionEnumerationBudget_bound',
     'MOR34.chargedFinFunctions_cost',

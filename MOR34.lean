@@ -223,3 +223,7 @@ import MOR34.ViolationConstructionCost
 import MOR34.TracedListConstruction
 
 import MOR34.TracedFunctionEnumeration
+
+import MOR34.TracedNormalEnumeration
+
+import MOR34.ResidualTableConstruction

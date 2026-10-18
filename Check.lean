@@ -889,3 +889,33 @@ import MOR34
 #print axioms MOR34.functionEnumerationBudget_bound
 
 #print axioms MOR34.chargedFinFunctions_parameter_cost
+
+#print axioms MOR34.chargedRankKeys_value
+
+#print axioms MOR34.rankKey_length_bound
+
+#print axioms MOR34.chargedRankKeys_cost
+
+#print axioms MOR34.chargedNormalKeys_value
+
+#print axioms MOR34.chargedNormalKeys_cost
+
+#print axioms MOR34.matrixNormalSearchBuilt_value
+
+#print axioms MOR34.matrixNormalSearchBuilt_cost
+
+#print axioms MOR34.residualIndexList_finset
+
+#print axioms MOR34.residualIndexList_sorted
+
+#print axioms MOR34.residualIndexList_length
+
+#print axioms MOR34.chargedResidualWeights_value
+
+#print axioms MOR34.chargedResidualWeights_length
+
+#print axioms MOR34.builtResidualWeight_eq
+
+#print axioms MOR34.chargedResidualWeights_cost
+
+#print axioms MOR34.residual_table_polynomial_work
