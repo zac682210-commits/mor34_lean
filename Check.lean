@@ -559,3 +559,10 @@ import MOR34
 #print axioms MOR34.rawPipeline_correct
 #print axioms MOR34.rawPipeline_facet
 #print axioms MOR34.rawPipeline_dimension
+
+#print axioms MOR34.rawNormalization_exists
+#print axioms MOR34.rawNormalization_correct
+#print axioms MOR34.rawNormalization_parameter
+#print axioms MOR34.rawNormalization_facet
+#print axioms MOR34.rawNormalization_dimension
+#print axioms MOR34.original_input_output_contract

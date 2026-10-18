@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.rawNormalization_exists',
+    'MOR34.rawNormalization_correct',
+    'MOR34.rawNormalization_parameter',
+    'MOR34.rawNormalization_facet',
+    'MOR34.rawNormalization_dimension',
+    'MOR34.original_input_output_contract',
+
     'MOR34.relabelDecision_correct',
     'MOR34.relabelOutput_correct',
     'MOR34.raw_correct_output_facet',
