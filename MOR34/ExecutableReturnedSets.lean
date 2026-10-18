@@ -33,7 +33,9 @@ theorem computedSelectionFamily_eq (P : Model m) (hWF : WellFormed P)
     (hs : ParityRowSolverSpec P solve) :
     computedSelectionFamily P hWF solve hs = selectionFinset P (computedCellSelection P hWF solve hs) := by
   rw [← computedCellSelection_executed]
-  simp only [computedSelectionFamily, executedSelection, computedParityFamily_eq]
+  simp only [computedSelectionFamily, executedSelection]
+  exact congrArg (fun f : Parity q → Finset (Counts q) => Finset.univ.biUnion f)
+    (funext (fun ε => computedParityFamily_eq P hWF solve hs computedCountForms ε))
 
 def computedReturnedSets (P : Model m) (hWF : WellFormed P)
     (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
