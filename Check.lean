@@ -1233,3 +1233,9 @@ import MOR34
 #print axioms MOR34.actualCellRequest_cost
 
 #print axioms MOR34.denseCellRequests_cost_on_states
+
+#print axioms MOR34.weightedEvaluateInteger_value
+
+#print axioms MOR34.weightedEvaluateInteger_cost
+
+#print axioms MOR34.weightedEvaluateInteger_cost_of_literals

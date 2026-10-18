@@ -269,3 +269,5 @@ import MOR34.DensePayloadTransfer
 import MOR34.DenseSolverSize
 
 import MOR34.DenseCellCost
+
+import MOR34.WeightedIntegerEvaluation

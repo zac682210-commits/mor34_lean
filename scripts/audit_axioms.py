@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.weightedEvaluateInteger_value',
+    'MOR34.weightedEvaluateInteger_cost',
+    'MOR34.weightedEvaluateInteger_cost_of_literals',
+
     'MOR34.actualCellRequest_cost',
     'MOR34.denseCellRequests_cost_on_states',
 
