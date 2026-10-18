@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedDenseCellQuery_value',
+    'MOR34.chargedDenseCellBasis_value',
+    'MOR34.chargedDenseCellBasis_cost',
+
+    'MOR34.chargedCellBasis_cost_on_contained_states',
     'MOR34.chargedParityDecode_value',
     'MOR34.chargedParityDecode_cost',
     'MOR34.chargedDecodedRequest_value',
@@ -429,7 +434,6 @@ EXPECTED = {
     "MOR34.normalSearchKeys_length_bound",
     "MOR34.matrixNormalSearch_calls",
     "MOR34.computedCountForms_search_calls",
-    "MOR34.searchStates_card",
     "MOR34.computedCountForms_search_states",
 
     "MOR34.computedRawPipeline_correct",

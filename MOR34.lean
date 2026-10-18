@@ -277,3 +277,5 @@ import MOR34.DenseBasicQueryCost
 import MOR34.CellLoopComposition
 
 import MOR34.ChargedParityDecode
+
+import MOR34.DenseCellLoop
