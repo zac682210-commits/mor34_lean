@@ -29,7 +29,7 @@ theorem chargedCompressionPreparation_strong_cost (hn : 0 < n) (a v : Fin n → 
   dsimp only [p,chargedCompressionPreparation] at h₄ ⊢
   unfold preparationBudget
   simp only [Nat.add_zero]
-  omega
+  nlinarith only [h₁,h₂,h₄]
 
 set_option maxHeartbeats 800000 in
 /-- Magnitude-independent arithmetic-operation consequence. Compression itself

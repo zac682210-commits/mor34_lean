@@ -120,6 +120,6 @@ theorem chargedCompressionPreparation_cost (hn : 0 < n) (a v : Fin n → ℤ) (b
     (pow_le_pow_left' (Nat.add_le_add_right (Nat.add_le_add_left hp n) 2) e))
   dsimp only [p,chargedCompressionPreparation] at h₄ ⊢
   unfold preparationBudget
-  omega
+  nlinarith only [h₁,h₂,h₄]
 
 end MOR34
