@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.forcedSlopeConstruction_value',
+    'MOR34.forcedSlopeConstruction_work',
+    'MOR34.forcedEmptyConstruction_value',
+    'MOR34.forcedEmptyConstruction_work',
+    'MOR34.forcedOrdinaryConstruction_value',
+    'MOR34.forcedRowConstruction_value',
+    'MOR34.forcedRowConstruction_work',
+    'MOR34.forcedConstructionWork_polynomial',
+
+    'MOR34.binarySetKey_coordinate_count',
+    'MOR34.returnedFamily_pairwise_work',
+    'MOR34.returnedFamily_coordinate_work',
+
     'MOR34.prefixRowConstruction_value',
     'MOR34.prefixRowConstruction_work',
     'MOR34.countRowConstruction_value',

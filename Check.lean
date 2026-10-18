@@ -1,3 +1,5 @@
+import MOR34.ForcedConstructionCost
+import MOR34.ReturnedFamilyCost
 import MOR34.CountConstructionCost
 import MOR34.IntegerConstructionTrace
 import MOR34.NormalBitCost
@@ -844,3 +846,16 @@ import MOR34
 #print axioms MOR34.countRowConstruction_work
 #print axioms MOR34.countParityConstructionWork_bound
 #print axioms MOR34.cellConstructionWork_polynomial
+
+#print axioms MOR34.binarySetKey_coordinate_count
+#print axioms MOR34.returnedFamily_pairwise_work
+#print axioms MOR34.returnedFamily_coordinate_work
+
+#print axioms MOR34.forcedSlopeConstruction_value
+#print axioms MOR34.forcedSlopeConstruction_work
+#print axioms MOR34.forcedEmptyConstruction_value
+#print axioms MOR34.forcedEmptyConstruction_work
+#print axioms MOR34.forcedOrdinaryConstruction_value
+#print axioms MOR34.forcedRowConstruction_value
+#print axioms MOR34.forcedRowConstruction_work
+#print axioms MOR34.forcedConstructionWork_polynomial
