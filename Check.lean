@@ -1497,3 +1497,9 @@ import MOR34
 #print axioms MOR34.weightedCellLoopBudget_uniform
 #print axioms MOR34.weightedCellLoopBudget_mono
 #print axioms MOR34.weightedCellLoopBudget_fpt
+#print axioms MOR34.preparedCountForms_value
+#print axioms MOR34.preparedCountForms_cost
+#print axioms MOR34.orderedCountMatrix_bound
+#print axioms MOR34.preparedNormalCheck_bits
+#print axioms MOR34.preparedNormalMinor_bits
+#print axioms MOR34.preparedCountForms_polynomial

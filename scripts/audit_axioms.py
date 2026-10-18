@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.preparedCountForms_value",
+    "MOR34.preparedCountForms_cost",
+    "MOR34.orderedCountMatrix_bound",
+    "MOR34.preparedNormalCheck_bits",
+    "MOR34.preparedNormalMinor_bits",
+    "MOR34.preparedCountForms_polynomial",
     "MOR34.weightedCellLoopBudget_uniform",
     "MOR34.weightedCellLoopBudget_mono",
     "MOR34.weightedCellLoopBudget_fpt",
