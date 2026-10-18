@@ -21,7 +21,13 @@ theorem rowSearchCalls_polynomial (P : Model m) (hWF : WellFormed P)
     Nat.mul_le_mul_right _ (by omega)
   have ha : 1+2*2^q+4*Fintype.card (Item m)*2^q ≤
       (1+6*2^q)*(Fintype.card (Item m)+1) := by
-    nlinarith [Nat.zero_le (Fintype.card (Item m)*2^q)]
+    calc
+      _ ≤ 1+6*2^q+6*Fintype.card (Item m)*2^q :=
+        Nat.add_le_add
+          (Nat.add_le_add_left (Nat.mul_le_mul_right (2^q) (by decide : 2 ≤ 6)) 1)
+          (Nat.mul_le_mul_right (2^q) (Nat.mul_le_mul_right _ (by decide : 4 ≤ 6)))
+      _ ≤ Fintype.card (Item m)+(1+6*2^q+6*Fintype.card (Item m)*2^q) := by omega
+      _ = _ := by ring
   have hb : 2*(q+1)^2*6^q ≤ (2*(q+1)^2*6^q)*(Fintype.card (Item m)+1) :=
     Nat.le_mul_of_pos_right _ (by omega)
   calc
