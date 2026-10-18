@@ -1402,3 +1402,25 @@ import MOR34
 #print axioms MOR34.chargedNormalizedExecution_value
 #print axioms MOR34.chargedNormalizedExecution_correct
 #print axioms MOR34.chargedNormalizedExecution_cost
+
+#print axioms MOR34.uniformPolynomial_parameter
+
+#print axioms MOR34.uniformPolynomial_n
+
+#print axioms MOR34.uniformPolynomial_L
+
+#print axioms MOR34.uniformPolynomial_add
+
+#print axioms MOR34.uniformPolynomial_mul
+
+#print axioms MOR34.uniformPolynomial_pow
+
+#print axioms MOR34.normalizedExecutionBudget_uniform
+
+#print axioms MOR34.normalizedExecutionBudget_mono
+
+#print axioms MOR34.normalizedExecutionBudget_fpt
+
+#print axioms MOR34.complete_reference_application
+
+#print axioms MOR34.complete_compressed_reference_application

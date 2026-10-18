@@ -300,3 +300,7 @@ import MOR34.ChargedBinaryRank
 import MOR34.ChargedReturnedFamily
 
 import MOR34.ChargedNormalizedExecution
+
+import MOR34.UniformPolynomialBudget
+
+import MOR34.CompleteReferenceApplication

@@ -7,6 +7,17 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.complete_reference_application",
+    "MOR34.complete_compressed_reference_application",
+    "MOR34.uniformPolynomial_parameter",
+    "MOR34.uniformPolynomial_n",
+    "MOR34.uniformPolynomial_L",
+    "MOR34.uniformPolynomial_add",
+    "MOR34.uniformPolynomial_mul",
+    "MOR34.uniformPolynomial_pow",
+    "MOR34.normalizedExecutionBudget_uniform",
+    "MOR34.normalizedExecutionBudget_mono",
+    "MOR34.normalizedExecutionBudget_fpt",
     'MOR34.chargedNormalizedExecution_value',
     'MOR34.chargedNormalizedExecution_correct',
     'MOR34.chargedNormalizedExecution_cost',
