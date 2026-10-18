@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.normal_instruction_price_polynomial",
+    "MOR34.normal_envelope_from_global",
+    "MOR34.doubled_dimension_factor",
+    "MOR34.complete_strongly_polynomial_execution",
+    "MOR34.chargedCompressionPreparation_strong_cost",
     "MOR34.complete_compressed_execution",
     "MOR34.sharp_parameter_transport",
     "MOR34.compressedEndBudget_sharp",

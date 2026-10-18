@@ -1590,3 +1590,8 @@ import MOR34
 #print axioms MOR34.compressedEndBudget_sharp
 #print axioms MOR34.sharp_parameter_transport
 #print axioms MOR34.complete_compressed_execution
+#print axioms MOR34.chargedCompressionPreparation_strong_cost
+#print axioms MOR34.complete_strongly_polynomial_execution
+#print axioms MOR34.doubled_dimension_factor
+#print axioms MOR34.normal_envelope_from_global
+#print axioms MOR34.normal_instruction_price_polynomial

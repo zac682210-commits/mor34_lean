@@ -341,3 +341,5 @@ import MOR34.SharpPolynomialBudget
 import MOR34.WeightedRunInterface
 import MOR34.ChargedCompressionPreparation
 import MOR34.CompleteCompressedExecution
+import MOR34.StrongPreparationCost
+import MOR34.StandardFactorInstantiation
