@@ -15,7 +15,8 @@ theorem finVectorIntegerForm_pairing (v : Fin (q+1) → ℤ) (z : Counts q) :
 
 /-- No choice in the generated data: sorted counts, finite candidate search, finite determinants. -/
 def computedCountForms (B : Finset (Counts q)) : List (IntegerForm q) :=
-  List.ofFn (fun j : Fin (q+1) => finVectorIntegerForm (computedMatrixNormals (orderedCountMatrix B) j))
+  let normals := computedMatrixNormals (orderedCountMatrix B)
+  List.ofFn (fun j : Fin (q+1) => finVectorIntegerForm (normals j))
 
 theorem computedCountForms_spec (B : Finset (Counts q)) : FormsDescribe B (computedCountForms B) := by
   intro z

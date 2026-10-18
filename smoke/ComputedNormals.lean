@@ -10,7 +10,7 @@ private def assertCheck (name : String) (ok : Bool) : IO Unit := do
 private def accepts {q : ℕ} (forms : List (IntegerForm q)) (z : Counts q) : Bool :=
   forms.all (fun f => decide (f.eval z = 0))
 
-/-- Runtime checks, separate from and not used by any proof. -/
+/- Runtime checks, separate from and not used by any proof. -/
 #eval do
   let emptyForms := computedCountForms (∅ : Finset (Counts 1))
   assertCheck "empty set rejects all sampled points"
