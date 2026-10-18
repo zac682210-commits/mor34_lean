@@ -7,6 +7,8 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.selected_rows_span_of_checks",
+    "MOR34.checked_candidate_describes",
     "MOR34.firstWitnessCharge_bound",
     "MOR34.pivotDetCharge_bound",
     "MOR34.exactPivotDetCharge_bound",

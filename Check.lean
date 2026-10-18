@@ -640,3 +640,5 @@ import MOR34
 #print axioms MOR34.firstWitnessCharge_bound
 #print axioms MOR34.pivotDetCharge_bound
 #print axioms MOR34.exactPivotDetCharge_bound
+#print axioms MOR34.selected_rows_span_of_checks
+#print axioms MOR34.checked_candidate_describes
