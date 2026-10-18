@@ -1476,3 +1476,7 @@ import MOR34
 #print axioms MOR34.weightedBuiltCountParity_polynomial
 
 #print axioms MOR34.weightedCompiledCountRequest_polynomial
+
+#print axioms MOR34.forms_cell_query_literals
+
+#print axioms MOR34.weightedReachedCellRequests_polynomial

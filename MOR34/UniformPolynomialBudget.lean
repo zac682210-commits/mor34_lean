@@ -67,9 +67,9 @@ theorem normalizedExecutionBudget_uniform (I BI K : ℕ → ℕ) (c bc d : ℕ) 
     | exact uniformPolynomial_parameter _
     | exact uniformPolynomial_n
     | exact uniformPolynomial_L
-    | apply uniformPolynomial_add
-    | apply uniformPolynomial_mul
-    | apply uniformPolynomial_pow
+    | with_reducible apply uniformPolynomial_add
+    | with_reducible apply uniformPolynomial_mul
+    | with_reducible apply uniformPolynomial_pow
 
 /-- Monotonicity is used only for primitive envelopes, after the full execution
 has been bounded phase by phase. -/

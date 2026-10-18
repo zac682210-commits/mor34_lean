@@ -7,6 +7,8 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.forms_cell_query_literals",
+    "MOR34.weightedReachedCellRequests_polynomial",
     "MOR34.weightedCompiledCountRequest_polynomial",
     "MOR34.parityOperandEnvelope_polynomial",
     "MOR34.weightedBuiltCountParity_polynomial",
