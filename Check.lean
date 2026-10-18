@@ -1127,3 +1127,29 @@ import MOR34
 #print axioms MOR34.denseCountOracle_spec
 
 #print axioms MOR34.chargedDenseCountSolve_cost
+
+#print axioms MOR34.violationRowIndexList_complete
+
+#print axioms MOR34.violationRowIndexList_length
+
+#print axioms MOR34.compiledViolationRequest_sized
+
+#print axioms MOR34.compiledViolationRequest_iff
+
+#print axioms MOR34.compiledViolationRequest_cost
+
+#print axioms MOR34.denseViolation_spec
+
+#print axioms MOR34.chargedDenseViolationSolve_cost
+
+#print axioms MOR34.denseNormalizedPipeline_correct
+
+#print axioms MOR34.expression_value_magnitude
+
+#print axioms MOR34.constructionSubterm_work
+
+#print axioms MOR34.constructionSubterm_literals
+
+#print axioms MOR34.constructionSubterm_bits
+
+#print axioms MOR34.constructionSubterm_bits_polynomial

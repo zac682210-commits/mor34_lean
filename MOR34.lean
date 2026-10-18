@@ -258,3 +258,5 @@ import MOR34.ForcedRowEnumeration
 import MOR34.DenseForcedSolver
 import MOR34.DenseParityRows
 import MOR34.DenseCountSolver
+import MOR34.DenseViolationSolver
+import MOR34.ExpressionBitEnvelope

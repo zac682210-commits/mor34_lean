@@ -7,6 +7,20 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.violationRowIndexList_complete',
+    'MOR34.violationRowIndexList_length',
+    'MOR34.compiledViolationRequest_sized',
+    'MOR34.compiledViolationRequest_iff',
+    'MOR34.compiledViolationRequest_cost',
+    'MOR34.denseViolation_spec',
+    'MOR34.chargedDenseViolationSolve_cost',
+    'MOR34.denseNormalizedPipeline_correct',
+    'MOR34.expression_value_magnitude',
+    'MOR34.constructionSubterm_work',
+    'MOR34.constructionSubterm_literals',
+    'MOR34.constructionSubterm_bits',
+    'MOR34.constructionSubterm_bits_polynomial',
+
     'MOR34.denseParityRow_arrays',
     'MOR34.denseParityRow_value',
     'MOR34.denseParityRow_sized',
