@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.builtCountForms_value',
+    'MOR34.builtCountForms_cost',
+    'MOR34.builtNormalBasisSearch_value',
+    'MOR34.builtNormalBasisSearch_cost',
+
     'MOR34.chargedListRead_value',
     'MOR34.chargedListRead_cost',
     'MOR34.storedResidualRead_value',

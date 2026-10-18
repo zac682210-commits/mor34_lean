@@ -239,3 +239,5 @@ import MOR34.CompressionCostOffset
 import MOR34.ConstructedWitnessPipeline
 
 import MOR34.StoredListPrimitives
+
+import MOR34.BuiltNormalBasis

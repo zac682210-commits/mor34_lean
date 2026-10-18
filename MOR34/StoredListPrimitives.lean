@@ -42,6 +42,7 @@ theorem storedResidualRead_cost {q : ℕ} {m : Fin q → ℕ} (P : Model m)
     (chargedListRead T i).2 ≤ m j+1 := by
   have hh := chargedListRead_cost T i
   rw [hT, chargedResidualWeights_length] at hh
+  rw [hT]
   have hc : (pairAllowed u v).card ≤ m j := by simpa using Finset.card_le_univ (pairAllowed u v)
   omega
 

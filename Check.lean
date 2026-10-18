@@ -981,3 +981,11 @@ import MOR34
 #print axioms MOR34.chargedPrefixConstruction_interpret
 
 #print axioms MOR34.chargedPrefixConstruction_cost
+
+#print axioms MOR34.builtCountForms_value
+
+#print axioms MOR34.builtCountForms_cost
+
+#print axioms MOR34.builtNormalBasisSearch_value
+
+#print axioms MOR34.builtNormalBasisSearch_cost
