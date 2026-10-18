@@ -1372,3 +1372,9 @@ import MOR34
 #print axioms MOR34.weightedEvaluateRow_value
 
 #print axioms MOR34.weightedEvaluateRow_cost
+
+#print axioms MOR34.uniformRowRadius_clog
+
+#print axioms MOR34.uniformRowRadius_dominates
+
+#print axioms MOR34.weightedEvaluateRow_polynomial

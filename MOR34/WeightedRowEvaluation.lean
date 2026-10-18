@@ -57,4 +57,52 @@ theorem weightedEvaluateRow_cost {q : ℕ} (A : IntegerArithmeticCharge)
     List.sum_ofFn,List.length_ofFn,ConstructedIntegerRow.work]
   nlinarith
 
+/-- The common magnitude envelope itself has a polynomial logarithm. -/
+theorem uniformRowRadius_clog (q N M : ℕ) (hN : 1 ≤ N) :
+    Nat.clog 2 (uniformRowRadius q N M+2) ≤ uniformRowBits q N M := by
+  let e := Nat.clog 2 N+Nat.clog 2 (M+1)+
+    (Nat.clog 2 (q+1)+Nat.clog 2 N)*(q+1)+6
+  have hh : uniformRowRadius q N M ≤ 2^e := uniformRowRadius_power_bound q N M hN
+  have hp : 1 ≤ 2^e := Nat.one_le_pow _ _ (by decide)
+  apply (Nat.le_pow_iff_clog_le (by decide)).mp
+  have he : uniformRowBits q N M = e+2 := by dsimp [uniformRowBits,e]; omega
+  rw [he,pow_add]
+  norm_num
+  omega
+
+theorem uniformRowRadius_dominates (q N M : ℕ) (hN : 1 ≤ N) (hM : 1 ≤ M) :
+    N+M+normalRadius q N+3 ≤ uniformRowRadius q N M := by
+  unfold uniformRowRadius
+  nlinarith
+
+/-- All three row families have at most 12(n+L+2) arithmetic nodes. Once their
+literal bound is instantiated, their actual weighted evaluator has a uniform
+polynomial bit-cost bound, independently of the parameter in the exponent. -/
+theorem weightedEvaluateRow_polynomial {q : ℕ} (A : IntegerArithmeticCharge)
+    (row : ConstructedIntegerRow q) (n L M H a : ℕ) (hq : q ≤ n) (hML : M ≤ 2^L)
+    (hwork : row.work ≤ 12*(n+L+2))
+    (hlit : row.LiteralsBounded (uniformRowRadius q (n+1) M))
+    (hA : A.Bounded (170*(n+L+2)^3) (H*(170*(n+L+2)^3)^a)) :
+    (weightedEvaluateRow A row).2 ≤ (12*H*170^a+5)*(n+L+2)^(3*a+1) := by
+  let S := n+L+2
+  change row.work ≤ 12*S at hwork
+  change (weightedEvaluateRow A row).2 ≤ (12*H*170^a+5)*S^(3*a+1)
+  have hS : 1 ≤ S := by dsimp [S]; omega
+  have hlog : Nat.clog 2 (uniformRowRadius q (n+1) M+2) ≤ 14*S^2 :=
+    (uniformRowRadius_clog q (n+1) M (by omega)).trans (uniformRowBits_polynomial q n M L hq hML)
+  have hbits : row.work*Nat.clog 2 (uniformRowRadius q (n+1) M+2)+2 ≤ 170*S^3 := by
+    have hh := Nat.mul_le_mul hwork hlog
+    have hp : 1 ≤ S^3 := Nat.one_le_pow _ _ hS
+    nlinarith
+  have heval := weightedEvaluateRow_cost A row (uniformRowRadius q (n+1) M)
+    (H*(170*S^3)^a) hlit (IntegerArithmeticCharge.Bounded.mono A hA hbits)
+  have hmul := Nat.mul_le_mul_right (H*(170*S^3)^a) hwork
+  have heq : (12*S)*(H*(170*S^3)^a) = (12*H*170^a)*S^(3*a+1) := by
+    rw [mul_pow,← pow_mul,pow_succ]
+    ring
+  have hpow : S ≤ S^(3*a+1) := le_self_pow₀ hS (by omega)
+  have hqn : q ≤ S := by dsimp [S]; omega
+  have htail : 3*q+2 ≤ 5*S^(3*a+1) := by omega
+  exact heval.trans (by rw [heq] at hmul; nlinarith)
+
 end MOR34

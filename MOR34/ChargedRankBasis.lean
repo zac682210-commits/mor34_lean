@@ -58,8 +58,9 @@ theorem chargedRankStep_cost {α : Type*} [DecidableEq α] (L : List α)
     (fun a _ => chargedRankOutside_cost rank put hp d U J hr hi B a hB)
   have hc := firstWitness_calls_le (fun a =>
     if (chargedRankOutside rank put B a).1 then some a else none) L
-  exact hh.trans (by simpa only [Nat.add_assoc] using Nat.add_le_add_right
-    (Nat.mul_le_mul_right (2*U+J+1+1) hc) 1)
+  exact hh.trans (by
+    simpa only [Nat.add_assoc] using
+      (Nat.add_le_add_right (Nat.mul_le_mul_right (2*U+J+1+1) hc) 1))
 
 def chargedRankBasis {α : Type*} [DecidableEq α] (L : List α)
     (rank : Finset α → ℕ × ℕ) (put : α → Finset α → Finset α × ℕ) (d : ℕ) :

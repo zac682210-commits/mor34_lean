@@ -87,6 +87,7 @@ theorem denseModesBudget_polynomial (q n L N D I c J E K d : ℕ)
   have hd : (n+L+2)^d ≤ X := pow_le_pow_right' (by omega) (by omega)
   have he := hE.trans (Nat.mul_le_mul_left K hd)
   have hb := denseCellLoopBudget_polynomial q n L N D I c J K d hN hD hJ
+  change denseCellLoopBudget q n L N D I c J ≤ cellLoopFactor q I K c*X at hb
   have hi : denseCellLoopBudget q n L N D I c J+E+q+3 ≤
       (cellLoopFactor q I K c+K+q+3)*X := by nlinarith
   have hh := Nat.mul_le_mul_left (3^q) hi
@@ -107,7 +108,7 @@ theorem denseExtremaBudget_polynomial (q n L D I c K d : ℕ)
   let X := S^(4*c+d+4)
   have hS : 1 ≤ S := by dsimp [S]; omega
   have hX : 1 ≤ X := Nat.one_le_pow _ _ hS
-  have hY : 1 ≤ S*X := Nat.one_le_mul hS hX
+  have hY : 1 ≤ S*X := by nlinarith
   have hU : denseCellQueryBudget q n L D I c ≤ cellQueryFactor q I K c*X :=
     denseCellQueryBudget_polynomial q n L D I c K d hD
   have hsum : denseCellQueryBudget q n L D I c+q+5 ≤
@@ -119,7 +120,7 @@ theorem denseExtremaBudget_polynomial (q n L D I c K d : ℕ)
   have hconst : 2*q+3 ≤ (2*q+3)*(S*X) := Nat.le_mul_of_pos_right _ (by omega)
   have heq : (n+L+2)^(4*c+d+5) = S*X := by
     change S^((4*c+d+4)+1) = S*X
-    rw [pow_succ']; rfl
+    rw [pow_succ']
   rw [heq]
   unfold denseExtremaBudget cellExtremaFactor
   nlinarith
@@ -138,6 +139,7 @@ theorem denseParityBudget_polynomial (q n L N D I c J E K d : ℕ)
   have hq := (denseCellQueryBudget_polynomial q n L D I c K d hD).trans
     (Nat.mul_le_mul_left (cellQueryFactor q I K c) hpow)
   have he := denseExtremaBudget_polynomial q n L D I c K d hD
+  change denseExtremaBudget q n L D I c ≤ cellExtremaFactor q I K c*X at he
   have hm := (denseModesBudget_polynomial q n L N D I c J E K d hN hD hJ hE).trans
     (Nat.mul_le_mul_left (cellModesFactor q I K c) hpow)
   dsimp only [denseParityBudget,cellParityFactor]
@@ -163,6 +165,8 @@ theorem chargedDenseSelection_polynomial {q : ℕ} {m : Fin q → ℕ}
   let X := (Fintype.card (Item m)+A.L+2)^(4*A.c+d+5)
   have hX : 1 ≤ X := Nat.one_le_pow _ _ (by omega)
   have hp := denseParityBudget_polynomial q (Fintype.card (Item m)) A.L A.N A.D A.I A.c A.J A.E K d hN hD hJ hE
+  change denseParityBudget q (Fintype.card (Item m)) A.L A.N A.D A.I A.c A.J A.E ≤
+    cellParityFactor q A.I K A.c*X at hp
   have hi : denseParityBudget q (Fintype.card (Item m)) A.L A.N A.D A.I A.c A.J A.E+3^q*(q+1)+1 ≤
       (cellParityFactor q A.I K A.c+3^q*(q+1)+1)*X := by nlinarith
   have hh := Nat.mul_le_mul_left (2^q) hi

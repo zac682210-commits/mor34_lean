@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.uniformRowRadius_clog",
+    "MOR34.uniformRowRadius_dominates",
+    "MOR34.weightedEvaluateRow_polynomial",
     "MOR34.IntegerArithmeticCharge.Bounded.mono",
     "MOR34.weightedEvaluateRow_value",
     "MOR34.weightedEvaluateRow_cost",
