@@ -26,7 +26,11 @@ theorem expression_value_magnitude (e : IntegerConstruction) (M : ℕ)
         pow_le_pow_right' (by omega) (by omega)
       have hs := (Int.natAbs_add_le a.value b.value).trans (Nat.add_le_add ha hb)
       simp only [IntegerConstruction.value, IntegerConstruction.work, pow_succ]
-      nlinarith
+      calc
+        _ ≤ (M+2)^a.work+(M+2)^b.work := hs
+        _ ≤ (M+2)^(a.work+b.work)+(M+2)^(a.work+b.work) := Nat.add_le_add hpa hpb
+        _ = (M+2)^(a.work+b.work)*2 := by ring
+        _ ≤ _ := Nat.mul_le_mul_left _ (by omega)
   | mul a b ia ib =>
       have hh := Nat.mul_le_mul (ia h.1) (ib h.2)
       simp only [IntegerConstruction.value, IntegerConstruction.work, Int.natAbs_mul]
