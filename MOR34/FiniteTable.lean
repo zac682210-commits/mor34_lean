@@ -6,7 +6,7 @@ namespace MOR34
 stored data, but does not by itself provide a backend operation-count theorem. -/
 def materializeFin {n : ℕ} {α : Type*} (f : Fin n → α) : Fin n → α :=
   let values := List.ofFn f
-  fun i => values[i.val]'(by simpa using i.isLt)
+  fun i => values[i.val]'(by simpa only [values, List.length_ofFn] using i.isLt)
 
 @[simp] theorem materializeFin_apply {n : ℕ} {α : Type*} (f : Fin n → α) (i : Fin n) :
     materializeFin f i = f i := by simp [materializeFin]
