@@ -765,3 +765,7 @@ import MOR34
 #print axioms MOR34.violation_payload_polynomial
 #print axioms MOR34.searchStates_mono
 #print axioms MOR34.computedPipeline_polynomial_payload
+
+#print axioms MOR34.rowSearchCalls_polynomial
+#print axioms MOR34.counted_ilp_cost_bound
+#print axioms MOR34.allNormalCandidateCalls_bound
