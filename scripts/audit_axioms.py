@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.integerRowBits_uniform',
+    'MOR34.uniform_row_payload',
+    'MOR34.uniform_system_payload',
+    'MOR34.cell_system_payload',
+
     'MOR34.normalRadius_cast',
     'MOR34.normalRadius_power_bound',
     'MOR34.uniformRowRadius_power_bound',

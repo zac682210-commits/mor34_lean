@@ -158,3 +158,5 @@ import MOR34.FiniteDeterminant
 import MOR34.RawEncodingBounds
 
 import MOR34.UniformEncoding
+
+import MOR34.RowPayload

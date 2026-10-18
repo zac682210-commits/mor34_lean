@@ -620,3 +620,8 @@ import MOR34
 #print axioms MOR34.uniformRowRadius_power_bound
 #print axioms MOR34.uniformRow_signed_bits
 #print axioms MOR34.cellRow_uniform_bound
+
+#print axioms MOR34.integerRowBits_uniform
+#print axioms MOR34.uniform_row_payload
+#print axioms MOR34.uniform_system_payload
+#print axioms MOR34.cell_system_payload
