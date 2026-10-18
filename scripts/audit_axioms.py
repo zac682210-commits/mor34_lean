@@ -7,6 +7,10 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.laplaceTerm_abs_bound',
+    'MOR34.laplace_partial_sum_bound',
+    'MOR34.laplace_partial_sum_bits',
+
     'MOR34.searchStates_of_containment',
     'MOR34.cellSearch_payload_states',
     'MOR34.boundedPipeline_payload_states',

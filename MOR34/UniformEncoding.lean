@@ -73,7 +73,7 @@ theorem cellRow_uniform_bound {q : ℕ} (L : CountInequality q) (N M : ℕ)
     (show (0 : ℤ) ≤ (M : ℤ)+normalCoefficientBound q N+2 by omega)
   have hR : (uniformRowRadius q N M : ℤ) =
       (6*(N : ℤ)+10)*((M : ℤ)+normalCoefficientBound q N+1) := by
-    simp only [uniformRowRadius, Nat.cast_mul, Nat.cast_add, Nat.cast_ofNat, normalRadius_cast]
+    simp only [uniformRowRadius, Nat.cast_mul, Nat.cast_add, Nat.cast_ofNat, Nat.cast_one, normalRadius_cast]
   apply integerRow_bound_mono L h
   · rw [hR]; nlinarith
   · rw [hR]; nlinarith

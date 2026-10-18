@@ -629,3 +629,7 @@ import MOR34
 #print axioms MOR34.searchStates_of_containment
 #print axioms MOR34.cellSearch_payload_states
 #print axioms MOR34.boundedPipeline_payload_states
+
+#print axioms MOR34.laplaceTerm_abs_bound
+#print axioms MOR34.laplace_partial_sum_bound
+#print axioms MOR34.laplace_partial_sum_bits
