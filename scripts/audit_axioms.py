@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedParityDecode_value',
+    'MOR34.chargedParityDecode_cost',
+    'MOR34.chargedDecodedRequest_value',
+    'MOR34.chargedDecodedRequest_cost',
+    'MOR34.parity_solution_count_bounds',
+
+    'MOR34.searchStates_card',
+    'MOR34.searchStates_and',
+    'MOR34.chargedCellBasis_cost_of_query_states',
+
     'MOR34.boundedCountRequest_payload',
     'MOR34.boundedCountSolver_cost',
     'MOR34.simpleQuery_normal_bound',

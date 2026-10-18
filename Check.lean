@@ -1249,3 +1249,19 @@ import MOR34
 #print axioms MOR34.maximumScanQuery_bound
 
 #print axioms MOR34.minimumScanQuery_bound
+
+#print axioms MOR34.searchStates_card
+
+#print axioms MOR34.searchStates_and
+
+#print axioms MOR34.chargedCellBasis_cost_of_query_states
+
+#print axioms MOR34.chargedParityDecode_value
+
+#print axioms MOR34.chargedParityDecode_cost
+
+#print axioms MOR34.chargedDecodedRequest_value
+
+#print axioms MOR34.chargedDecodedRequest_cost
+
+#print axioms MOR34.parity_solution_count_bounds
