@@ -756,3 +756,12 @@ import MOR34
 #print axioms MOR34.compressed_integer_bits
 #print axioms MOR34.compressed_payload_bound
 #print axioms MOR34.compression_cost_substitution
+
+#print axioms MOR34.clog_two_le_input
+#print axioms MOR34.uniformRowBits_polynomial
+#print axioms MOR34.dense_query_payload_polynomial
+#print axioms MOR34.cell_payload_polynomial
+#print axioms MOR34.forced_payload_polynomial
+#print axioms MOR34.violation_payload_polynomial
+#print axioms MOR34.searchStates_mono
+#print axioms MOR34.computedPipeline_polynomial_payload

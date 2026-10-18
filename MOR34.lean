@@ -192,3 +192,5 @@ import MOR34.CompressionParameter
 import MOR34.ParityComponentSupport
 import MOR34.FacetComponentBound
 import MOR34.CompressionSize
+
+import MOR34.PolynomialPayload

@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.clog_two_le_input',
+    'MOR34.uniformRowBits_polynomial',
+    'MOR34.dense_query_payload_polynomial',
+    'MOR34.cell_payload_polynomial',
+    'MOR34.forced_payload_polynomial',
+    'MOR34.violation_payload_polynomial',
+    'MOR34.searchStates_mono',
+    'MOR34.computedPipeline_polynomial_payload',
+
     "MOR34.compressionRadius_power_bound",
     "MOR34.compressed_integer_bits",
     "MOR34.compressed_payload_bound",
