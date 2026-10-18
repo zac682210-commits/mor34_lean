@@ -32,7 +32,7 @@ theorem relabelBasis_independent (e : Item m ≃ Fin n) (B : Finset (Finset (Ite
     (hB : AffineIndependent ℝ (fun S : B => pointVector S.val)) :
     AffineIndependent ℝ (fun T : relabelBasis e B => rawPointVector T.val) := by
   have hh := hB.map' (relabelLinear e).toAffineEquiv.toAffineMap (relabelLinear e).injective
-  apply (affineIndependent_equiv ℝ (relabelBasisEquiv e B)).mp
+  apply (affineIndependent_equiv (k := ℝ) (relabelBasisEquiv e B)).mp
   convert hh using 1
   funext S
   exact (relabel_pointVector e S.val).symm

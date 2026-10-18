@@ -579,3 +579,8 @@ import MOR34
 
 #print axioms MOR34.countRow_integer_bounded
 #print axioms MOR34.parityRows_integer_bounded
+
+#print axioms MOR34.forcedOrdinaryRow_integer_bounded
+#print axioms MOR34.forcedSlopeRow_integer_bounded
+#print axioms MOR34.forcedEmptyRow_integer_bounded
+#print axioms MOR34.forcedRows_integer_bounded
