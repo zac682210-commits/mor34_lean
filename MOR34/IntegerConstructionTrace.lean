@@ -112,8 +112,7 @@ theorem parityRowConstruction_value {q : ℕ} (a b : Fin q → ℤ) (d : ℤ) (�
   · funext j
     push_cast
     rfl
-  · push_cast
-    ring
+  · simp [Function.comp_def, IntegerConstruction.value, sub_eq_add_neg]
 
 theorem parityRowConstruction_work {q : ℕ} (a b : Fin q → ℤ) (d : ℤ) (ε : Parity q) :
     (parityRowConstruction a b d ε).work = 8*q+4 := by

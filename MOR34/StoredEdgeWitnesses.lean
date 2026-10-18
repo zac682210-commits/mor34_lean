@@ -14,6 +14,8 @@ theorem adjacentPairKey_injective : Function.Injective (adjacentPairKey (m := m)
   subst k
   have hu : u = w := Fin.ext (List.cons.inj (List.cons.inj he).2).1
   subst w
+  change u.val+1 = v.val at h
+  change u.val+1 = t.val at h'
   have hv : v = t := Fin.ext (by omega)
   subst t
   rfl
