@@ -17,10 +17,19 @@ theorem rowSearchCalls_polynomial (P : Model m) (hWF : WellFormed P)
     rowSearchCalls P hWF solve hs forms ≤ rowCallFactor q*(Fintype.card (Item m)+1) := by
   have hh := rowSearchCalls_le P hWF solve hs forms hsize
   have hq := coefficient_classes_le_items P hWF
-  have hmul := Nat.mul_le_mul_right (2*2^q) hq
-  have hn : 0 ≤ Fintype.card (Item m)*(2*(q+1)^2*6^q) := Nat.zero_le _
-  unfold rowCallFactor
-  nlinarith
+  have h2 : 2*(Fintype.card (Item m)+q)*2^q ≤ 4*Fintype.card (Item m)*2^q :=
+    Nat.mul_le_mul_right _ (by omega)
+  have ha : 1+2*2^q+4*Fintype.card (Item m)*2^q ≤
+      (1+6*2^q)*(Fintype.card (Item m)+1) := by
+    nlinarith [Nat.zero_le (Fintype.card (Item m)*2^q)]
+  have hb : 2*(q+1)^2*6^q ≤ (2*(q+1)^2*6^q)*(Fintype.card (Item m)+1) :=
+    Nat.le_mul_of_pos_right _ (by omega)
+  calc
+    _ ≤ (1+2*2^q+2*(Fintype.card (Item m)+q)*2^q)+2*(q+1)^2*6^q := hh
+    _ ≤ (1+6*2^q)*(Fintype.card (Item m)+1)+
+        (2*(q+1)^2*6^q)*(Fintype.card (Item m)+1) :=
+      Nat.add_le_add ((Nat.add_le_add_left h2 _).trans ha) hb
+    _ = _ := by unfold rowCallFactor; ring
 
 /-- Substitution of the supplied fixed-dimension solver's per-call cost bound.
 This charges only the phases in rowSearchCalls; other algorithm phases are separate. -/
