@@ -170,3 +170,5 @@ import MOR34.PivotCost
 import MOR34.NormalCandidate
 import MOR34.ConcreteColumnNormals
 import MOR34.ExecutableMatrixNormals
+import MOR34.OrderedCounts
+import MOR34.ExecutableCountForms

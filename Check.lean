@@ -649,3 +649,11 @@ import MOR34
 #print axioms MOR34.matrixNormalSearch_exists
 #print axioms MOR34.matrixNormalSearch_isSome
 #print axioms MOR34.computedMatrixNormals_spec
+#print axioms MOR34.orderedCounts_mem
+#print axioms MOR34.orderedCounts_length
+#print axioms MOR34.finAugmentedCount_cast
+#print axioms MOR34.orderedCountMatrix_span
+#print axioms MOR34.finVectorIntegerForm_pairing
+#print axioms MOR34.computedCountForms_spec
+#print axioms MOR34.computedCountForms_length
+#print axioms MOR34.computedCountForms_bound

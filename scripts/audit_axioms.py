@@ -7,6 +7,15 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.orderedCounts_mem",
+    "MOR34.orderedCounts_length",
+    "MOR34.finAugmentedCount_cast",
+    "MOR34.orderedCountMatrix_span",
+    "MOR34.finVectorIntegerForm_pairing",
+    "MOR34.computedCountForms_spec",
+    "MOR34.computedCountForms_length",
+    "MOR34.computedCountForms_bound",
+
     "MOR34.concreteColumnNormal_eq",
     "MOR34.mem_normalSearchKeys",
     "MOR34.tryNormalKey_spec",
