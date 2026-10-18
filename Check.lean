@@ -1489,3 +1489,8 @@ import MOR34
 #print axioms MOR34.rawReferenceBudget_uniform
 #print axioms MOR34.original_reference_application
 #print axioms MOR34.prepend_standard_preprocessing
+#print axioms MOR34.weightedDenseCountSolve_value
+#print axioms MOR34.weightedDenseCellQuery_value
+#print axioms MOR34.weightedCellQuery_cost_on_states
+#print axioms MOR34.weightedDenseCellBasis_value
+#print axioms MOR34.weightedDenseCellBasis_cost
