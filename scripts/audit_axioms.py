@@ -7,6 +7,16 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedOutsideQueries_value',
+    'MOR34.chargedOutsideQueries_cost',
+    'MOR34.chargedCellStep_value',
+    'MOR34.chargedCellStep_cost',
+    'MOR34.chargedBasisExecution_cost_on_states',
+    'MOR34.chargedCellBasis_value',
+    'MOR34.denseRawPipeline_correct',
+    'MOR34.denseRawPipeline_facet',
+    'MOR34.dense_original_input_output_contract',
+
     'MOR34.sumConstruction_literals',
     'MOR34.prefixConstruction_literals',
     'MOR34.integerPick_magnitude',

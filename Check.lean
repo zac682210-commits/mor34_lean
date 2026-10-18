@@ -1179,3 +1179,21 @@ import MOR34
 #print axioms MOR34.countRowConstruction_literals
 
 #print axioms MOR34.countRow_subterm_bits
+
+#print axioms MOR34.chargedOutsideQueries_value
+
+#print axioms MOR34.chargedOutsideQueries_cost
+
+#print axioms MOR34.chargedCellStep_value
+
+#print axioms MOR34.chargedCellStep_cost
+
+#print axioms MOR34.chargedBasisExecution_cost_on_states
+
+#print axioms MOR34.chargedCellBasis_value
+
+#print axioms MOR34.denseRawPipeline_correct
+
+#print axioms MOR34.denseRawPipeline_facet
+
+#print axioms MOR34.dense_original_input_output_contract
