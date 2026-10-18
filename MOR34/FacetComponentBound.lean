@@ -1,4 +1,5 @@
 import MOR34.ParityComponentSupport
+import MOR34.RawInputPipeline
 
 namespace MOR34
 variable {q : ℕ} {m : Fin q → ℕ}
@@ -76,5 +77,24 @@ theorem facet_component_bound (P : Model m) (hWF : WellFormed P) (hv : Valid P)
   have ha := augmentedSpan_finrank (hT.image (componentCountMap P))
   have hb := quotient_augmented_dimension_bound P hWF
   omega
+
+/-- The component bound uses the original number of positive coefficient values. -/
+theorem facet_component_bound_parameter (P : Model m) (hWF : WellFormed P)
+    (hv : Valid P) (hf : IsCodimensionOneFace (knapsackPolytope P) (candidateFace P))
+    (K : ℕ) (hK : q ≤ K+1) :
+    Fintype.card (ExchangeComponent P) ≤ (3*K+4)*2^(K+1) := by
+  apply (facet_component_bound P hWF hv hf).trans
+  exact Nat.mul_le_mul (by omega) (pow_le_pow_right' (by decide) hK)
+
+theorem raw_facet_component_bound {n : ℕ} {a c : Fin n → ℤ} {b d : ℤ}
+    (N : RawNormalization a c b d) (hf : RawDefinesFacet a c b d) :
+    Fintype.card (ExchangeComponent N.model) ≤
+      (3*((Finset.univ.image c).filter (fun v => 0 < v)).card+4)*
+        2^(((Finset.univ.image c).filter (fun v => 0 < v)).card+1) := by
+  have hf' : RawDefinesFacet a c N.model.capacity N.model.rhs := by
+    simpa only [N.capacity_eq,N.rhs_eq] using hf
+  have hh := (relabel_definesFacet N.model N.itemEquiv a c N.weight_eq N.coefficient_eq).mp hf'
+  exact facet_component_bound_parameter N.model N.wellFormed hh.1 hh.2 _
+    (rawNormalization_parameter N)
 
 end MOR34

@@ -7,6 +7,9 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.facet_component_bound_parameter',
+    'MOR34.raw_facet_component_bound',
+
     'MOR34.computedReturnedBasis_rank_calls',
     'MOR34.binaryPointMatrix_entry_bits',
     'MOR34.binaryMatrixPayload_bound',

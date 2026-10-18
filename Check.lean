@@ -776,3 +776,6 @@ import MOR34
 #print axioms MOR34.binaryPointMatrix_entry_bits
 #print axioms MOR34.binaryMatrixPayload_bound
 #print axioms MOR34.binaryBasisSearch_rank_payload_states
+
+#print axioms MOR34.facet_component_bound_parameter
+#print axioms MOR34.raw_facet_component_bound
