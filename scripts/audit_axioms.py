@@ -7,6 +7,17 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.chargedAllResidualTables_cost',
+    'MOR34.chargedAllResidualTables_contains',
+    'MOR34.chargedAllResidualTables_length',
+    'MOR34.chargedAdjacentIndices_cost',
+    'MOR34.chargedAdjacentIndices_length',
+    'MOR34.chargedAdjacentIndices_complete',
+    'MOR34.chargedClassAdjacencies_cost',
+    'MOR34.chargedClassAdjacencies_length',
+    'MOR34.adjacentAt_complete',
+    'MOR34.chargedFilterMap_cost',
+    'MOR34.chargedFilterMap_value',
     'MOR34.residual_table_polynomial_work',
     'MOR34.chargedResidualWeights_cost',
     'MOR34.builtResidualWeight_eq',

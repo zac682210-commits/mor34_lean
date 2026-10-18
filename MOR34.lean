@@ -227,3 +227,7 @@ import MOR34.TracedFunctionEnumeration
 import MOR34.TracedNormalEnumeration
 
 import MOR34.ResidualTableConstruction
+
+import MOR34.ConstructedAdjacentIndices
+
+import MOR34.AllResidualTables

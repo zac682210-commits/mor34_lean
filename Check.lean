@@ -919,3 +919,25 @@ import MOR34
 #print axioms MOR34.chargedResidualWeights_cost
 
 #print axioms MOR34.residual_table_polynomial_work
+
+#print axioms MOR34.chargedFilterMap_value
+
+#print axioms MOR34.chargedFilterMap_cost
+
+#print axioms MOR34.adjacentAt_complete
+
+#print axioms MOR34.chargedClassAdjacencies_length
+
+#print axioms MOR34.chargedClassAdjacencies_cost
+
+#print axioms MOR34.chargedAdjacentIndices_complete
+
+#print axioms MOR34.chargedAdjacentIndices_length
+
+#print axioms MOR34.chargedAdjacentIndices_cost
+
+#print axioms MOR34.chargedAllResidualTables_length
+
+#print axioms MOR34.chargedAllResidualTables_contains
+
+#print axioms MOR34.chargedAllResidualTables_cost
