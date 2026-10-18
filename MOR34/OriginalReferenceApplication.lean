@@ -67,7 +67,7 @@ theorem original_reference_application (I BI K : ℕ → ℕ) (c bc d : ℕ) :
     hlocal.point hlocal.order hlocal.insertBinary hlocal.emitBinary
   have hm := Nat.mul_le_mul_left (n+1) (Nat.add_le_add_right hRC 1)
   have hraw := hF N.classes n A.L
-  unfold rawReferenceBudget at hraw
+  dsimp only [rawReferenceBudget] at hraw
   have hbound := parameterMajorant_le F N.classes
     (((Finset.univ.image v).filter (fun z => 0 < z)).card) (rawNormalization_parameter N)
   have hlast := Nat.mul_le_mul_right ((n+A.L+2)^e) hbound
