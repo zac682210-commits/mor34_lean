@@ -7,6 +7,7 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.normal_candidate_exists",
     "MOR34.selected_rows_span_of_checks",
     "MOR34.checked_candidate_describes",
     "MOR34.firstWitnessCharge_bound",
