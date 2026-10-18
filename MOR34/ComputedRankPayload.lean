@@ -6,6 +6,7 @@ import MOR34.NormalSearchCost
 namespace MOR34
 variable {q : ℕ} {m : Fin q → ℕ}
 
+set_option maxHeartbeats 1000000 in
 theorem computedReturnedBasis_rank_calls (P : Model m) (hWF : WellFormed P)
     (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
     (hs : ParityRowSolverSpec P solve)
