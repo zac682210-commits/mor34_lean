@@ -1,3 +1,4 @@
+import MOR34.NormalBitCost
 import MOR34.AggregateArithmeticCost
 import MOR34.StoredEdgeWitnesses
 import MOR34.NormalArithmeticCost
@@ -816,3 +817,8 @@ import MOR34
 #print axioms MOR34.all_solver_cost_bound
 
 #print axioms MOR34.chargedPhaseCost_bound
+
+#print axioms MOR34.normalWorkBits_polynomial
+#print axioms MOR34.normalCheck_signed_bits
+#print axioms MOR34.determinant_signed_bits
+#print axioms MOR34.counted_normal_bit_cost

@@ -7,6 +7,11 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.normalWorkBits_polynomial',
+    'MOR34.normalCheck_signed_bits',
+    'MOR34.determinant_signed_bits',
+    'MOR34.counted_normal_bit_cost',
+
     'MOR34.chargedPhaseCost_bound',
     'MOR34.allNormalArithmeticCharge_bound',
     'MOR34.normalKeyBudget_factorial_bound',
