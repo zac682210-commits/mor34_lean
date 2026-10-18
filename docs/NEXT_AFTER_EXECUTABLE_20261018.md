@@ -1,3 +1,5 @@
+> Scope update, 2026-10-18: the user now requests only newly contributed proofs. See `SCOPE_NEW_PROOFS_20261018.md` and `NEXT_NEW_PROOFS_20261018.md`. Requirements below to reimplement established algorithms or verify compiler execution costs are historical and no longer prerequisites.
+
 # Resume after executable original-input checkpoint
 
 Read ACCEPTANCE.json, session_executable_20261018.json, executable_verified_metadata.json and REVIEW_EXECUTABLE_20261018.md first. Final successful CI and matching source/artifact identities are authoritative. Preserve older checkpoints and frozen Model/Targets/PaperInterface. Work on codex/mor34-formalization, no merge/publication. No bypass of local Lean execution restrictions; compile on GitHub Actions.

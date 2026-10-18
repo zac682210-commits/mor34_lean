@@ -1,3 +1,5 @@
+> Scope update, 2026-10-18: the user now requests only newly contributed proofs. See `SCOPE_NEW_PROOFS_20261018.md` and `NEXT_NEW_PROOFS_20261018.md`. Requirements below to reimplement established algorithms or verify compiler execution costs are historical and no longer prerequisites.
+
 # MOR34 formalization scope
 
 Reference: Zhiyan Lin, *Fixed-Parameter Recognition of Knapsack Facets via Parity and Feasible Exchanges*, v0.1, October 13, 2026. The unchanged reference PDF hash appears in `source_map.json`.

@@ -1,8 +1,8 @@
 {
-  "stage": "executable_original_input_output_verified_relative_to_primitives",
+  "stage": "new_structural_proofs_and_compression_application_verified",
   "compiler_gate": true,
   "interface_elaboration_gate": true,
-  "paper_alignment": "Same-session review: docs/REVIEW_EXECUTABLE_20261018.md. Frozen model/targets unchanged. Same output contract; finite normal search replaces small elimination, basis cardinality supplies dimension. Extrema use finite scanning, not the paper binary-search call expression.",
+  "paper_alignment": "Frozen input model and target contracts unchanged. General structural/correctness proofs plus C6 verified. C9 semantics and compressed size verified relative to explicit external FT conclusions; total FPT time combination remains open. Six-item illustration not separately certified.",
   "accepted_axioms": [
     "propext",
     "Quot.sound",
@@ -15,7 +15,8 @@
     "L5",
     "T8span",
     "rankbridge",
-    "T8correct"
+    "T8correct",
+    "C6"
   ],
   "separate_complexity_goals": [
     "L1",
@@ -23,9 +24,7 @@
     "T8time",
     "C9"
   ],
-  "optional": [
-    "C6"
-  ],
+  "optional": [],
   "reject": [
     "sorryAx",
     "project axioms",
@@ -36,12 +35,12 @@
   "comparator_status": "not configured or run",
   "independent_kernel_replay": false,
   "mathlib_smoke_gate": true,
-  "compiler_evidence": "GitHub Actions 39101838969: all nine commands exited 0; logs/verified_executable_20261018; 15 runtime smoke checks.",
+  "compiler_evidence": "GitHub Actions 39113325809: nine commands exited 0; logs/verified_newproofs_20261018; 15 runtime smoke checks.",
   "project_build_gate": true,
   "axiom_audit_gate": true,
-  "verified_commit": "27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
-  "verified_run": 39101838969,
-  "kernel_checked_project_theorems": 591,
+  "verified_commit": "e7c2ab38c192b515f54c02d8963f9c038748de74",
+  "verified_run": 39113325809,
+  "kernel_checked_project_theorems": 662,
   "complete_lemma4": true,
   "complete_structural_proof": true,
   "complete_FPT_complexity": false,
@@ -66,7 +65,7 @@
   "rational_real_rank_bridge": true,
   "concrete_integer_matrix": true,
   "parameter_bounded_row_count": true,
-  "structural_scope": "Lemmas 2–5, prefixes, Theorem 8 augmented-span identity, finite small selection existence, integer retained matrix and its rational-rank/real-dimension identity. Algorithm construction and complexity excluded.",
+  "structural_scope": "Lemmas 2\u20135, prefixes, Theorem 8 augmented-span identity, finite small selection existence, integer retained matrix and its rational-rank/real-dimension identity. Algorithm construction and complexity excluded.",
   "complete_L1_encoding": true,
   "complete_L1_bit_complexity": false,
   "oracle_relative_count_basis": true,
@@ -81,7 +80,7 @@
   "global_exchange_epigraph_equivalence": true,
   "validity_prefix_reduction": true,
   "support_epigraph_reduction": true,
-  "algorithm_scope": "Executable original-input procedure with complete output correctness relative to explicit ILP and exact-rank primitive contracts. Raw coefficient classes, item fibers and within-class sorting are computed. Finite integer normal search, support parity enumeration, returned tight-point family, deterministic binary-point ordering, rank-guided affine-basis extraction and original-coordinate relabeling are computable. Invalid witnesses, empty signed dimension, supported geometric face dimension/facet flag and tight affine basis are verified. Candidate-call charges, generated row payloads and candidate partial-sum bit bounds are proved. Normal coefficient and extrema witness tables have proved lookup/structural equality. Operational sharing/materialization costs, enumeration/construction/serialization bit costs, total cost composition, primitive implementations and compression remain open; no full FPT runtime claim.",
+  "algorithm_scope": "Executable original-input output correctness relative to ILP and rank primitives. New compression application preserves feasible/tight sets, parameter, geometry and complete output. Actual ILP row encodings have a parameter-independent quartic payload bound; rank inputs have quadratic payload. Counted solver costs, normal-search aggregation and explicit parameter-power bounds are checked. Complete reference-algorithm phase-cost assembly remains open; no primitive implementation or compiler-backend proof is required under the current scope.",
   "attained_extrema_from_search": true,
   "extrema_scan_call_bound": true,
   "exact_cell_linear_queries": true,
@@ -157,5 +156,21 @@
   "materialized_normal_tables": true,
   "stored_extrema_witnesses": true,
   "runtime_smoke_checks": 15,
-  "compiled_runtime_model_verified": false
+  "compiled_runtime_model_verified": false,
+  "new_core_proofs_complete": true,
+  "new_compression_semantics_and_size_complete": true,
+  "new_applications_complete": false,
+  "algorithm_level_FPT_derivation_complete": false,
+  "new_paper_proofs_complete": false,
+  "full_self_contained_formalization_complete": false,
+  "complete_corollary6": true,
+  "compression_sign_and_parameter_preservation": true,
+  "compression_output_transport": true,
+  "compression_polynomial_payload": true,
+  "polynomial_actual_ILP_payload": true,
+  "actual_rank_call_and_payload_bounds": true,
+  "parameter_factor_power_bounds": true,
+  "user_scope": "Only newly contributed proofs and their applications; established ILP/rank/FT internals and compiler runtime verification excluded.",
+  "scope_document": "docs/SCOPE_NEW_PROOFS_20261018.md",
+  "next": "docs/NEXT_NEW_PROOFS_20261018.md"
 }

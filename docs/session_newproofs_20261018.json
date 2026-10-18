@@ -1,0 +1,146 @@
+{
+  "started_utc": "2026-10-18T08:15:30+00:00",
+  "active_work_cutoff_utc": "2026-10-18T08:56:42.144272+00:00",
+  "ended_utc": "2026-10-18T09:05:12.379952+00:00",
+  "active_minutes": 40.202,
+  "prior_recorded_active_minutes": 345.601,
+  "cumulative_recorded_active_minutes": 385.803,
+  "cumulative_is_complete": false,
+  "historical_formalization_minutes": null,
+  "conservative_nonresearch_overhead_seconds": 60,
+  "time_method": "Actual proof development, source review, compiler diagnosis and checkpoint preparation. No sleep or inter-session gaps; subtract recorded overhead. CI-only evidence tail after cutoff is excluded.",
+  "verified_commit": "e7c2ab38c192b515f54c02d8963f9c038748de74",
+  "verified_run": 39113325809,
+  "kernel_checked_named_theorems": 662,
+  "added_named_theorems": 71,
+  "runtime_smoke_checks": 15,
+  "new_core_proofs_complete": true,
+  "new_compression_semantics_and_size_complete": true,
+  "algorithm_level_FPT_derivation_complete": false,
+  "new_paper_proofs_complete": false,
+  "external_primitive_implementations": "out of scope by user instruction",
+  "compiled_runtime_model_verified": false,
+  "attempts": [
+    {
+      "id": 39113325809,
+      "sha": "e7c2ab38c192b515f54c02d8963f9c038748de74",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39113074373,
+      "sha": "01aa25575028585df4c7207531a00189cb87b41b",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39112888979,
+      "sha": "54220aef0b227ce8cc48673803690300cded34c6",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39112711263,
+      "sha": "fa4b62b165741189ef69af50acb7c210af0efad6",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39112672517,
+      "sha": "d06ed7395ec675994ef7cff288552a306f4ab68d",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39112639892,
+      "sha": "c00a9f84deb79a12fd3d3bdaa4352aad67b1d20f",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39112559491,
+      "sha": "2d9e65a56097185f436edcdf4893a89004a87c2c",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39112416800,
+      "sha": "c2ba015e335699f34f899bb99d964bdf70361387",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39112293437,
+      "sha": "e798b9ef1e43144f90a938486512e3da8d9d3c4d",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39112238793,
+      "sha": "aad4401ba6668f90d482fcb54c383b2018227f97",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39112057623,
+      "sha": "c5f6eb3c74c0cadd422751d6494e83f4e04df76a",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39111970527,
+      "sha": "5a415d0552e034ab2f24aeccabaea7578871c8f5",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39111906283,
+      "sha": "4f5428fa2cb57966aa9532fdc5da63779dc52f7c",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39111847467,
+      "sha": "b9d1bbfe25cb959ebae9d9e47529058daf59de27",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39111771869,
+      "sha": "5ccb22a0634ce043261871003ff348c94b26a52b",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39111476742,
+      "sha": "0b2fa62233a8920f4e96e4ba525f8cf338791e10",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39111330647,
+      "sha": "325959bc21fd832e4cb3ad7ed72af88f5704bd3c",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39111255823,
+      "sha": "27ec7e0a9282eaabb6433dde1c510a4559bff976",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39111079310,
+      "sha": "c15c286eaaf03316d2c394df132ec93912246b5a",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 39110946182,
+      "sha": "dbcba47c5b9f6c27354fa9b311d38ef59b4cce6b",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "next": "docs/NEXT_NEW_PROOFS_20261018.md"
+}

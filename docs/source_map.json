@@ -24,8 +24,8 @@
       "depends_on": [
         "prefix"
       ],
-      "lean_target": "Explicit rational inequalities with integer counts and costs; exact parity substitution",
-      "status": "Actual row formulations and payloads, and computed raw grouping/sorting verified; construction/serialization runtime open at 27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
+      "lean_target": "MOR34.violationSystem_polynomial_payload",
+      "status": "Actual integer encodings and explicit quartic polynomial payload checked; primitive solver and routine arithmetic implementations are outside scope. Verified source e7c2ab38c192b515f54c02d8963f9c038748de74",
       "lean_theorems": [
         "MOR34.prefix_epigraph_iff",
         "MOR34.exact_linear_count_encoding",
@@ -37,7 +37,10 @@
         "MOR34.violation_system_payload",
         "MOR34.cell_system_payload",
         "MOR34.executable_normalization_parameter",
-        "MOR34.computedNormalPipeline_payload_states"
+        "MOR34.computedNormalPipeline_payload_states",
+        "MOR34.computedPipeline_polynomial_payload",
+        "MOR34.forcedSystem_polynomial_payload",
+        "MOR34.violationSystem_polynomial_payload"
       ]
     },
     {
@@ -137,8 +140,15 @@
         "L3",
         "L4"
       ],
-      "lean_target": "not yet encoded; optional branch",
-      "status": "open; not kernel checked"
+      "lean_target": "MOR34.raw_facet_component_bound",
+      "status": "Complete bound for actual exchange components, including original positive-coefficient parameter. Verified source e7c2ab38c192b515f54c02d8963f9c038748de74",
+      "lean_theorems": [
+        "MOR34.varyingClassComponents_card",
+        "MOR34.parityComponentGenerators_span",
+        "MOR34.quotient_augmented_dimension_bound",
+        "MOR34.facet_component_bound",
+        "MOR34.raw_facet_component_bound"
+      ]
     },
     {
       "id": "L7",
@@ -147,8 +157,8 @@
       "depends_on": [
         "L1"
       ],
-      "lean_target": "Actual recursive basis search with a one-inequality feasibility interface; bounded integer normal families proved to exist",
-      "status": "Finite computable normal generator and count-basis integration verified. Candidate-check charge and intermediate bit bounds verified; full compiled cost model open at 27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
+      "lean_target": "MOR34.normal_calls_original_parameter",
+      "status": "Correct basis search, bounded normal coefficients and query counts checked; parameter-only normal enumeration factor bounded explicitly. Compiler operational cost is outside scope. Verified source e7c2ab38c192b515f54c02d8963f9c038748de74",
       "lean_theorems": [
         "MOR34.bounded_integer_forms_exist",
         "MOR34.linear_count_basis_correct",
@@ -173,7 +183,10 @@
         "MOR34.computedCountForms_spec",
         "MOR34.normalBasisCandidateCalls_bound",
         "MOR34.normalCheck_partial_sum_bits",
-        "MOR34.computedCellSelection_basis"
+        "MOR34.computedCellSelection_basis",
+        "MOR34.allNormalCandidateCalls_bound",
+        "MOR34.normal_calls_parameter_bound",
+        "MOR34.normal_calls_original_parameter"
       ]
     },
     {
@@ -250,13 +263,13 @@
     {
       "id": "T8time",
       "paper": "Theorem 8, FPT time",
-      "contract": "Executable algorithms, input encoding and cost model yield 2^{O((K+1)log(K+2))} poly(n,L), q<=K+1.",
+      "contract": "Mathematical reference-algorithm cost 2^{O((K+1)log(K+2))} poly(n,L), using cited primitive algorithms; compiler cost verification excluded.",
       "depends_on": [
         "T8correct",
         "L7"
       ],
-      "lean_target": "not yet encoded; fixed-dimensional ILP dependency unresolved",
-      "status": "Candidate charges, query/payload and intermediate bit bounds verified. Sharing/materialization conventions and full bit-operation composition remain open at 27fe8ef3c050f91d3c81b2e39557dceee07a04a4",
+      "lean_target": "MOR34.counted_rank_cost_bound",
+      "status": "Partial: actual query sizes, counted ILP costs, rank-call/input sizes and parameter factors checked; full reference-algorithm phase-cost composition remains open. Verified source e7c2ab38c192b515f54c02d8963f9c038748de74",
       "lean_theorems": [
         "MOR34.rowSearchCalls_le",
         "MOR34.cell_solver_row_count",
@@ -277,7 +290,13 @@
         "MOR34.computedCellSelection_normal_checks",
         "MOR34.normalCheck_partial_sum_bits",
         "MOR34.computedNormalPipeline_payload_states",
-        "MOR34.executableSupportSearch_calls_le"
+        "MOR34.executableSupportSearch_calls_le",
+        "MOR34.rowSearchCalls_polynomial",
+        "MOR34.counted_ilp_cost_bound",
+        "MOR34.computedReturnedBasis_rank_calls",
+        "MOR34.binaryBasisSearch_rank_payload_states",
+        "MOR34.rowCallFactor_parameter_bound",
+        "MOR34.counted_rank_cost_bound"
       ]
     },
     {
@@ -287,8 +306,19 @@
       "depends_on": [
         "T8time"
       ],
-      "lean_target": "not yet encoded; compression dependency unresolved",
-      "status": "open; not kernel checked"
+      "lean_target": "MOR34.compression_cost_substitution",
+      "status": "Semantic application and quartic size complete relative to cited FT conclusion. Arithmetic-time corollary still depends on the unfinished total FPT cost theorem. Verified source e7c2ab38c192b515f54c02d8963f9c038748de74",
+      "lean_theorems": [
+        "MOR34.compression_feasible",
+        "MOR34.compression_tight",
+        "MOR34.compression_valid",
+        "MOR34.compression_positive_parameter",
+        "MOR34.compression_output",
+        "MOR34.compressed_payload_bound",
+        "MOR34.external_compression_application",
+        "MOR34.compression_cost_substitution"
+      ]
     }
-  ]
+  ],
+  "current_scope": "docs/SCOPE_NEW_PROOFS_20261018.md"
 }

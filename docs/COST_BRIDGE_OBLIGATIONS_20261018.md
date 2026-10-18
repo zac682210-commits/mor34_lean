@@ -1,3 +1,5 @@
+> Scope update, 2026-10-18: the user now requests only newly contributed proofs. See `SCOPE_NEW_PROOFS_20261018.md` and `NEXT_NEW_PROOFS_20261018.md`. Requirements below to reimplement established algorithms or verify compiler execution costs are historical and no longer prerequisites.
+
 # Remaining operational cost bridge
 
 This is a specification for the next proof block, not a proved runtime theorem.
