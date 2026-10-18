@@ -7,6 +7,12 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.chargedDenseModes_value",
+    "MOR34.chargedDenseModes_cost",
+    "MOR34.chargedDenseModes_length",
+    "MOR34.chargedModeFamily_value",
+    "MOR34.chargedModeFamily_cost",
+    "MOR34.chargedModeFamily_length",
     "MOR34.chargedFinTable_value",
     "MOR34.chargedFinTable_cost",
     "MOR34.chargedCoordinateWitness_value",

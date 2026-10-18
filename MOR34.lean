@@ -281,3 +281,5 @@ import MOR34.ChargedParityDecode
 import MOR34.DenseCellLoop
 import MOR34.DenseCoordinateScans
 import MOR34.ChargedExtremaTable
+import MOR34.ChargedModeFamily
+import MOR34.DenseModeComposition

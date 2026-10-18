@@ -1292,3 +1292,15 @@ import MOR34
 #print axioms MOR34.chargedDenseExtrema_value
 
 #print axioms MOR34.chargedDenseExtrema_cost
+
+#print axioms MOR34.chargedModeFamily_value
+
+#print axioms MOR34.chargedModeFamily_cost
+
+#print axioms MOR34.chargedModeFamily_length
+
+#print axioms MOR34.chargedDenseModes_value
+
+#print axioms MOR34.chargedDenseModes_cost
+
+#print axioms MOR34.chargedDenseModes_length

@@ -79,6 +79,7 @@ theorem chargedDenseCellBasis_cost (P : Model m) (hWF : WellFormed P)
       (chargedDenseCountSolve P R solve ε (t::cellQueries e.low e.high mode)) D
     have hreq := hB t ht
     dsimp only [query,chargedDenseCellQuery,denseCellQueryBudget]
+    dsimp only [e] at hh ⊢
     omega
   apply chargedCellBasis_cost_on_contained_states (parityCellSet P ε e mode) query
   · rw [hquery]
