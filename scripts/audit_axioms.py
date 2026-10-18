@@ -7,6 +7,13 @@ import re
 import sys
 
 EXPECTED = {
+    'MOR34.prefixRowConstruction_value',
+    'MOR34.prefixRowConstruction_work',
+    'MOR34.countRowConstruction_value',
+    'MOR34.countRowConstruction_work',
+    'MOR34.countParityConstructionWork_bound',
+    'MOR34.cellConstructionWork_polynomial',
+
     'MOR34.adjacentPairKey_injective',
     'MOR34.sumConstruction_value',
     'MOR34.sumConstruction_work',

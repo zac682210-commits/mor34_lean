@@ -5,13 +5,14 @@ import MOR34.NormalSearchCost
 namespace MOR34
 variable {q : ℕ} {m : Fin q → ℕ}
 
-def adjacentPairKey (e : AdjacentPair m) : ℕ × ℕ := (e.val.1.val,e.val.2.1.val)
+def adjacentPairKey (e : AdjacentPair m) : List ℕ := [e.val.1.val,e.val.2.1.val]
 
 theorem adjacentPairKey_injective : Function.Injective (adjacentPairKey (m := m)) := by
   rintro ⟨⟨j,u,v⟩,h⟩ ⟨⟨k,w,t⟩,h'⟩ he
-  have hj : j = k := Fin.ext (congrArg Prod.fst he)
+  change [j.val,u.val] = [k.val,w.val] at he
+  have hj : j = k := Fin.ext (List.cons.inj he).1
   subst k
-  have hu : u = w := Fin.ext (congrArg Prod.snd he)
+  have hu : u = w := Fin.ext (List.cons.inj (List.cons.inj he).2).1
   subst w
   have hv : v = t := Fin.ext (by omega)
   subst t

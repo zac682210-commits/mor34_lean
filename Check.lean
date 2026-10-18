@@ -1,3 +1,4 @@
+import MOR34.CountConstructionCost
 import MOR34.IntegerConstructionTrace
 import MOR34.NormalBitCost
 import MOR34.AggregateArithmeticCost
@@ -836,3 +837,10 @@ import MOR34
 #print axioms MOR34.parityRowConstruction_work
 
 #print axioms MOR34.adjacentPairKey_injective
+
+#print axioms MOR34.prefixRowConstruction_value
+#print axioms MOR34.prefixRowConstruction_work
+#print axioms MOR34.countRowConstruction_value
+#print axioms MOR34.countRowConstruction_work
+#print axioms MOR34.countParityConstructionWork_bound
+#print axioms MOR34.cellConstructionWork_polynomial

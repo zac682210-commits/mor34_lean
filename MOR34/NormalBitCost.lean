@@ -26,6 +26,7 @@ theorem normalCheck_signed_bits {q s r : ℕ} (M : Matrix (Fin s) (Fin (q+1)) �
     signedIntegerBits (∑ l ∈ S, M i l * concreteColumnNormal (M.submatrix a id) c j l) ≤
       normalWorkBits q n := by
   have hh := normalCheck_partial_sum_bits M a c (n+1) (by omega) hM i j S
+  simp only [show q+1+1=q+2 by omega] at hh
   unfold signedIntegerBits normalWorkBits
   omega
 
