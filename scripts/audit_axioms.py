@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.weightedDenseEdges_cost",
+    "MOR34.weightedDenseEdges_value",
+    "MOR34.weightedWitnessTable_value",
+    "MOR34.weightedAdjacentWitness_value",
+    "MOR34.weightedDenseRecognition_cost",
+    "MOR34.weightedDenseRecognition_value",
+    "MOR34.weightedDenseSupport_cost",
+    "MOR34.weightedDenseSupport_value",
+    "MOR34.weightedDenseBranchSolve_cost",
+    "MOR34.weightedDenseViolationSolve_value",
+    "MOR34.weightedDenseForcedSolve_value",
+    "MOR34.weightedBranchRequests_cost",
+    "MOR34.weightedBranchRows_cost",
     "MOR34.weightedDenseSupport_nonempty",
     "MOR34.weightedDenseParityFamily_value",
     "MOR34.weightedDenseParityFamily_cost",

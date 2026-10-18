@@ -329,3 +329,6 @@ import MOR34.WeightedExtrema
 import MOR34.WeightedPipelinePrimitives
 import MOR34.WeightedModes
 import MOR34.WeightedSelection
+import MOR34.WeightedBranchRequests
+import MOR34.WeightedRecognition
+import MOR34.WeightedExchange

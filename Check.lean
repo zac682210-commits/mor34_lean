@@ -1531,3 +1531,16 @@ import MOR34
 #print axioms MOR34.weightedDenseSelection_set
 #print axioms MOR34.weightedDenseSelection_points
 #print axioms MOR34.weightedDenseSelection_span
+#print axioms MOR34.weightedBranchRows_cost
+#print axioms MOR34.weightedBranchRequests_cost
+#print axioms MOR34.weightedDenseForcedSolve_value
+#print axioms MOR34.weightedDenseViolationSolve_value
+#print axioms MOR34.weightedDenseBranchSolve_cost
+#print axioms MOR34.weightedDenseSupport_value
+#print axioms MOR34.weightedDenseSupport_cost
+#print axioms MOR34.weightedDenseRecognition_value
+#print axioms MOR34.weightedDenseRecognition_cost
+#print axioms MOR34.weightedAdjacentWitness_value
+#print axioms MOR34.weightedWitnessTable_value
+#print axioms MOR34.weightedDenseEdges_value
+#print axioms MOR34.weightedDenseEdges_cost
