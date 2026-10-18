@@ -698,3 +698,4 @@ import MOR34
 #print axioms MOR34.normalCheck_term_bound
 #print axioms MOR34.normalCheck_partial_sum_bound
 #print axioms MOR34.normalCheck_partial_sum_bits
+#print axioms MOR34.executableNormalizedPipeline_dimension

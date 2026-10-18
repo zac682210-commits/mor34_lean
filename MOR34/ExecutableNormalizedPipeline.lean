@@ -111,4 +111,16 @@ theorem executableNormalizedPipeline_facet (P : Model m) (hWF : WellFormed P)
     (executableNormalizedPipeline P hWF solve hs edgeSolve he violate ranker).decision.isFacet = true ↔ DefinesFacet P :=
   correct_output_facet P _ (executableNormalizedPipeline_correct P hWF solve hs edgeSolve he violate hv ranker).1
 
+theorem executableNormalizedPipeline_dimension (P : Model m) (hWF : WellFormed P) (hv : Valid P)
+    (solve : Parity q → List (IntegerQuery q) → Option (IntegerRowSolution q))
+    (hs : ParityRowSolverSpec P solve)
+    (edgeSolve : (j : Fin q) → Fin (m j) → Fin (m j) → Option (IntegerRowSolution q))
+    (he : ForcedRowSolverSpec P edgeSolve)
+    (violate : Option (IntegerRowSolution q)) (hviol : ViolationSolverSpec P violate)
+    (ranker : ExactIntegerRank m) :
+    (executableNormalizedPipeline P hWF solve hs edgeSolve he violate ranker).decision.dimension =
+      some (candidateFaceDimension P) :=
+  correct_output_dimension P _
+    (executableNormalizedPipeline_correct P hWF solve hs edgeSolve he violate hviol ranker).1 hv
+
 end MOR34

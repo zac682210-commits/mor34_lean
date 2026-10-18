@@ -20,6 +20,7 @@ theorem normalSearchKeys_length_bound (s d : ℕ) (hd : 1 ≤ d) (hs : s ≤ d) 
     (normalSearchKeys s d).length ≤ (d+1) * d^(2*d) := by
   unfold normalSearchKeys
   apply (flatMap_length_bound _ _ (d^(2*d)) ?_).trans_eq
+  · simp
   · intro r _
     have hr : r.val ≤ d := by omega
     have ha : s^r.val ≤ d^d :=
@@ -33,7 +34,6 @@ theorem normalSearchKeys_length_bound (s d : ℕ) (hd : 1 ≤ d) (hs : s ≤ d) 
       _ ≤ s^r.val * d^r.val := hh
       _ ≤ d^d * d^d := Nat.mul_le_mul ha hc
       _ = d^(2*d) := by rw [← pow_add]; congr 1; omega
-  · simp
 
 theorem matrixNormalSearch_calls {s d : ℕ} (M : Matrix (Fin s) (Fin d) ℤ)
     (hd : 1 ≤ d) (hs : s ≤ d) :
