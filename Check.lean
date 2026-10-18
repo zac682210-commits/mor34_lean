@@ -1518,3 +1518,16 @@ import MOR34
 #print axioms MOR34.weightedDenseExtrema_cost
 #print axioms MOR34.preparedWeightedCell_value
 #print axioms MOR34.preparedWeightedCell_cost
+#print axioms MOR34.weightedDenseModes_value
+#print axioms MOR34.weightedDenseModes_cost
+#print axioms MOR34.weightedDenseModes_length
+#print axioms MOR34.weightedDenseSupport_nonempty
+#print axioms MOR34.weightedDenseParityFamily_value
+#print axioms MOR34.weightedDenseParityFamily_cost
+#print axioms MOR34.weightedDenseParityFamily_length
+#print axioms MOR34.weightedDenseSelection_value
+#print axioms MOR34.weightedDenseSelection_cost
+#print axioms MOR34.weightedDenseSelection_length
+#print axioms MOR34.weightedDenseSelection_set
+#print axioms MOR34.weightedDenseSelection_points
+#print axioms MOR34.weightedDenseSelection_span

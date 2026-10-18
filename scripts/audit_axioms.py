@@ -7,6 +7,19 @@ import re
 import sys
 
 EXPECTED = {
+    "MOR34.weightedDenseSupport_nonempty",
+    "MOR34.weightedDenseParityFamily_value",
+    "MOR34.weightedDenseParityFamily_cost",
+    "MOR34.weightedDenseParityFamily_length",
+    "MOR34.weightedDenseSelection_value",
+    "MOR34.weightedDenseSelection_cost",
+    "MOR34.weightedDenseSelection_length",
+    "MOR34.weightedDenseSelection_set",
+    "MOR34.weightedDenseSelection_points",
+    "MOR34.weightedDenseSelection_span",
+    "MOR34.weightedDenseModes_value",
+    "MOR34.weightedDenseModes_cost",
+    "MOR34.weightedDenseModes_length",
     "MOR34.preparedWeightedCell_value",
     "MOR34.preparedWeightedCell_cost",
     "MOR34.weightedCoordinateWitness_value",
