@@ -5,7 +5,7 @@ namespace MOR34
 
 /-- A deliberately coarse bound used only to exhibit a parameter-independent degree. -/
 theorem clog_two_le_input (n : ℕ) : Nat.clog 2 n ≤ n :=
-  (Nat.le_pow_iff_clog_le (by decide)).mp (Nat.le_of_lt (Nat.lt_two_pow_self n))
+  (Nat.le_pow_iff_clog_le (by decide)).mp (Nat.le_of_lt (Nat.lt_two_pow_self (n := n)))
 
 theorem uniformRowBits_polynomial (q n M L : ℕ) (hq : q ≤ n) (hM : M ≤ 2^L) :
     uniformRowBits q (n+1) M ≤ 14*(n+L+2)^2 := by

@@ -11,7 +11,7 @@ def compressionRadius (n : ℕ) : ℕ :=
 theorem compressionRadius_power_bound (n : ℕ) : compressionRadius n ≤ 2^(7*(n+1)^3) := by
   let r := n+1
   have hr : 1 ≤ r := by omega
-  have hp : r+1 ≤ 2^r := Nat.lt_two_pow_self r
+  have hp : r+1 ≤ 2^r := Nat.lt_two_pow_self
   have he : 4*r^3+r*(r*(r+2)) ≤ 7*r^3 := by
     have hh := Nat.mul_le_mul_left (r*r) hr
     nlinarith
@@ -45,7 +45,7 @@ theorem compressed_payload_bound {n : ℕ} (a c : Fin n → ℤ) (b d : ℤ)
       _ = _ := by simp
   have h1 := hs (augmentedWeights a b) ha
   have h2 := hs (augmentedWeights c d) hc
-  have hn : 1 ≤ (n+1)^3 := by positivity
+  have hn : 1 ≤ (n+1)^3 := Nat.one_le_pow _ _ (by omega)
   have hmul := Nat.mul_le_mul_left (4*(n+1)) hn
   unfold rawIntegerPayload
   nlinarith [show (n+1)^4 = (n+1)*(n+1)^3 by ring]
