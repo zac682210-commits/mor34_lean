@@ -15,12 +15,17 @@
         "MOR34.counts_prefixSet",
         "MOR34.counts_bounded",
         "MOR34.prefix_tight"
-      ]
+      ],
+      "revised_manuscript_label": "eq:Z",
+      "revised_manuscript_location": {
+        "number": "1",
+        "page": 2
+      }
     },
     {
       "id": "L1",
       "paper": "Lemma 1",
-      "contract": "Integer epigraph feasibility iff count feasibility, including arbitrary rational linear restrictions; parity substitution retains 2q integer variables.",
+      "contract": "Exact count/epigraph encoding with arbitrary rational linear restrictions; parity keeps 2q signed integer variables. Encoding size includes the added restrictions. The executed algorithm uses bounded integer rows.",
       "depends_on": [
         "prefix"
       ],
@@ -58,6 +63,11 @@
         "run": 39146901961,
         "full_reference_runtime_proved": true,
         "compiled_backend_runtime_proved": false
+      },
+      "revised_manuscript_label": "lem:oracle",
+      "revised_manuscript_location": {
+        "number": "1",
+        "page": 3
       }
     },
     {
@@ -74,7 +84,12 @@
         "MOR34.component_interval",
         "MOR34.componentLabel_eq_iff_class_connected",
         "MOR34.componentLabel_interval"
-      ]
+      ],
+      "revised_manuscript_label": "lem:interval",
+      "revised_manuscript_location": {
+        "number": "2",
+        "page": 3
+      }
     },
     {
       "id": "split",
@@ -83,7 +98,12 @@
       "depends_on": [],
       "lean_target": "MOR34.BalancedSplitGoal",
       "status": "kernel checked on commit 16888b3874da42274d9287f9731d6c67a61c0f8e",
-      "lean_theorem": "MOR34.balancedSplit"
+      "lean_theorem": "MOR34.balancedSplit",
+      "revised_manuscript_label": "lem:pair",
+      "revised_manuscript_location": {
+        "number": "4",
+        "page": 4
+      }
     },
     {
       "id": "pair",
@@ -94,7 +114,12 @@
       ],
       "lean_target": "MOR34.PairingAtCutGoal",
       "status": "kernel checked on commit 8ac25e0cc6a5c28693b4f05c34e4bfff222896aa",
-      "lean_theorem": "MOR34.pairingAtCut"
+      "lean_theorem": "MOR34.pairingAtCut",
+      "revised_manuscript_label": "lem:pair",
+      "revised_manuscript_location": {
+        "number": "4",
+        "page": 4
+      }
     },
     {
       "id": "L4",
@@ -111,7 +136,12 @@
         "MOR34.interiorExchange",
         "MOR34.parity_interior_connected",
         "MOR34.componentLabel_eq_iff_class_connected"
-      ]
+      ],
+      "revised_manuscript_label": "lem:pair",
+      "revised_manuscript_location": {
+        "number": "4",
+        "page": 4
+      }
     },
     {
       "id": "L3",
@@ -128,7 +158,12 @@
         "MOR34.exchangeDirectionSpan_finrank",
         "MOR34.tight_image_eq_prefix_image",
         "MOR34.tight_dimension_quotient"
-      ]
+      ],
+      "revised_manuscript_label": "lem:quotient",
+      "revised_manuscript_location": {
+        "number": "3",
+        "page": 4
+      }
     },
     {
       "id": "L5",
@@ -147,7 +182,12 @@
         "MOR34.cellCondition_unique",
         "MOR34.cell_index_card",
         "MOR34.parity_cell_decomposition"
-      ]
+      ],
+      "revised_manuscript_label": "lem:affine",
+      "revised_manuscript_location": {
+        "number": "5",
+        "page": 5
+      }
     },
     {
       "id": "C6",
@@ -165,12 +205,17 @@
         "MOR34.quotient_augmented_dimension_bound",
         "MOR34.facet_component_bound",
         "MOR34.raw_facet_component_bound"
-      ]
+      ],
+      "revised_manuscript_label": "cor:C",
+      "revised_manuscript_location": {
+        "number": "6",
+        "page": 5
+      }
     },
     {
       "id": "L7",
       "paper": "Lemma 7",
-      "contract": "Nonempty restricted count sets admit an affine basis of <=q+1 points computable with O(q^2) integer feasibility calls; added normals have polynomial bit length.",
+      "contract": "Augmented-count affine-basis search uses at most 2(q+1)^2 ILP calls; finite pivot/Cramer normal construction and all reached operands are bounded. Construction is q^{O(q)}, not claimed polynomial in q.",
       "depends_on": [
         "L1"
       ],
@@ -219,6 +264,11 @@
         "run": 39146901961,
         "full_reference_runtime_proved": true,
         "compiled_backend_runtime_proved": false
+      },
+      "revised_manuscript_label": "lem:basis",
+      "revised_manuscript_location": {
+        "number": "7",
+        "page": 6
       }
     },
     {
@@ -237,7 +287,12 @@
         "MOR34.small_selected_span",
         "MOR34.retained_row_span",
         "MOR34.small_retained_matrix"
-      ]
+      ],
+      "revised_manuscript_label": "thm:main",
+      "revised_manuscript_location": {
+        "number": "8",
+        "page": 6
+      }
     },
     {
       "id": "rankbridge",
@@ -251,7 +306,12 @@
         "MOR34.rational_matrix_rank",
         "MOR34.integer_matrix_rank",
         "MOR34.retained_matrix_rational_rank"
-      ]
+      ],
+      "revised_manuscript_label": "thm:main",
+      "revised_manuscript_location": {
+        "number": "8",
+        "page": 6
+      }
     },
     {
       "id": "T8correct",
@@ -300,6 +360,11 @@
         "run": 39146901961,
         "full_reference_runtime_proved": true,
         "compiled_backend_runtime_proved": false
+      },
+      "revised_manuscript_label": "thm:main",
+      "revised_manuscript_location": {
+        "number": "8",
+        "page": 6
       }
     },
     {
@@ -355,6 +420,11 @@
         "run": 39146901961,
         "full_reference_runtime_proved": true,
         "compiled_backend_runtime_proved": false
+      },
+      "revised_manuscript_label": "thm:main",
+      "revised_manuscript_location": {
+        "number": "8",
+        "page": 6
       }
     },
     {
@@ -387,6 +457,11 @@
         "run": 39146901961,
         "full_reference_runtime_proved": true,
         "compiled_backend_runtime_proved": false
+      },
+      "revised_manuscript_label": "cor:compression",
+      "revised_manuscript_location": {
+        "number": "9",
+        "page": 8
       }
     }
   ],
@@ -396,5 +471,14 @@
     "commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
     "run": 39146901961,
     "named_declarations": 1154
+  },
+  "alignment_document": "docs/PAPER_ALIGNMENT_20261019.md",
+  "alignment_manifest": "docs/paper_alignment_20261019.json",
+  "revised_manuscript": {
+    "version": "0.2",
+    "tex_sha256": "680ca0a68fb6eb3d0a60fc965de73a6047d88b316d559112e5163bc84e47db23",
+    "pdf_sha256": "bc1db82d40643e394d68d9eef74f46fccfc070735652ba84bcb37e5f953d4504",
+    "patch": "reference/mor34_v0.2.patch",
+    "date": "2026-10-19"
   }
 }

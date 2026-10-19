@@ -1,0 +1,1387 @@
+{
+  "original_pdf_sha256": "245e77fc9f9613ebb5ae1bfef7ae013412507002c3cac1b8eedb76d60b31645d",
+  "original_tex_sha256": "b196e7ae10fded807dcf8530c3bfa192c9657515dba31165f34980bf30c9ec8b",
+  "revised_tex_sha256": "680ca0a68fb6eb3d0a60fc965de73a6047d88b316d559112e5163bc84e47db23",
+  "lean_verified_commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
+  "lean_ci_run": 39146901961,
+  "theorem_numbering_unchanged": true,
+  "lean_sources_modified": false,
+  "paper_version": "0.2",
+  "paper_date": "2026-10-19",
+  "revised_pdf_sha256": "bc1db82d40643e394d68d9eef74f46fccfc070735652ba84bcb37e5f953d4504",
+  "revised_pages": 12,
+  "checked_at": "2026-10-19",
+  "scope": "New proofs and applications relative to explicit established algorithm contracts; not a solver-independent certified implementation.",
+  "symbol_correspondence": {
+    "paper c": "top-level Lean v (or c in raw definitions)",
+    "paper item position r": "Lean index r-1; cut label r unchanged",
+    "paper Z subset Z^q": "Counts q = Fin q -> Nat plus BoundedCounts and Tight prefix",
+    "paper A": "componentCountMap",
+    "paper K": "cardinality of distinct strictly positive raw candidate coefficients",
+    "paper L": "ordinary full input encoding length; rawIntegerPayload is a signed-integer payload proxy, not a byte serializer"
+  },
+  "entries": [
+    {
+      "id": "prefix",
+      "paper": "Preliminaries",
+      "manuscript_label": "eq:Z",
+      "revised_location": {
+        "number": "1",
+        "page": 2
+      },
+      "claim": "For every finite selected set S, prefix(counts S) has the same counts and no greater weight.",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.prefixMinimality",
+          "file": "MOR34/PrefixMinimality.lean",
+          "line": 82,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PrefixMinimality.lean#L82"
+        },
+        {
+          "name": "MOR34.counts_prefixSet",
+          "file": "MOR34/PrefixMinimality.lean",
+          "line": 29,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PrefixMinimality.lean#L29"
+        },
+        {
+          "name": "MOR34.counts_bounded",
+          "file": "MOR34/PrefixMinimality.lean",
+          "line": 24,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PrefixMinimality.lean#L24"
+        },
+        {
+          "name": "MOR34.prefix_tight",
+          "file": "MOR34/PrefixMinimality.lean",
+          "line": 96,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PrefixMinimality.lean#L96"
+        }
+      ]
+    },
+    {
+      "id": "L1",
+      "paper": "Lemma 1",
+      "manuscript_label": "lem:oracle",
+      "revised_location": {
+        "number": "1",
+        "page": 3
+      },
+      "claim": "Integer epigraph feasibility iff count feasibility, including arbitrary rational linear restrictions; parity substitution retains 2q integer variables. General rational-row encoding size also counts those rows; the executed path constructs bounded integer rows.",
+      "external_dependency_groups": [
+        "E1",
+        "E4"
+      ],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.prefix_epigraph_iff",
+          "file": "MOR34/PrefixEpigraph.lean",
+          "line": 74,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PrefixEpigraph.lean#L74"
+        },
+        {
+          "name": "MOR34.exact_linear_count_encoding",
+          "file": "MOR34/LinearEncoding.lean",
+          "line": 103,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/LinearEncoding.lean#L103"
+        },
+        {
+          "name": "MOR34.exact_parity_linear_count_encoding",
+          "file": "MOR34/ParityLinearEncoding.lean",
+          "line": 27,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParityLinearEncoding.lean#L27"
+        },
+        {
+          "name": "MOR34.epigraph_variable_count",
+          "file": "MOR34/CountEncoding.lean",
+          "line": 122,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CountEncoding.lean#L122"
+        },
+        {
+          "name": "MOR34.countRow_card",
+          "file": "MOR34/LinearEncoding.lean",
+          "line": 99,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/LinearEncoding.lean#L99"
+        },
+        {
+          "name": "MOR34.original_parity_rows_bounded",
+          "file": "MOR34/RawEncodingBounds.lean",
+          "line": 48,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawEncodingBounds.lean#L48"
+        },
+        {
+          "name": "MOR34.forced_system_payload",
+          "file": "MOR34/BasicRowPayload.lean",
+          "line": 24,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BasicRowPayload.lean#L24"
+        },
+        {
+          "name": "MOR34.violation_system_payload",
+          "file": "MOR34/BasicRowPayload.lean",
+          "line": 38,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BasicRowPayload.lean#L38"
+        },
+        {
+          "name": "MOR34.cell_system_payload",
+          "file": "MOR34/RowPayload.lean",
+          "line": 46,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RowPayload.lean#L46"
+        },
+        {
+          "name": "MOR34.executable_normalization_parameter",
+          "file": "MOR34/ExecutableNormalization.lean",
+          "line": 58,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutableNormalization.lean#L58"
+        },
+        {
+          "name": "MOR34.computedNormalPipeline_payload_states",
+          "file": "MOR34/ComputedSearchPayload.lean",
+          "line": 90,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ComputedSearchPayload.lean#L90"
+        },
+        {
+          "name": "MOR34.computedPipeline_polynomial_payload",
+          "file": "MOR34/PolynomialPayload.lean",
+          "line": 78,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PolynomialPayload.lean#L78"
+        },
+        {
+          "name": "MOR34.forcedSystem_polynomial_payload",
+          "file": "MOR34/PolynomialPayload.lean",
+          "line": 96,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PolynomialPayload.lean#L96"
+        },
+        {
+          "name": "MOR34.violationSystem_polynomial_payload",
+          "file": "MOR34/PolynomialPayload.lean",
+          "line": 115,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PolynomialPayload.lean#L115"
+        },
+        {
+          "name": "MOR34.countRowConstruction_value",
+          "file": "MOR34/CountConstructionCost.lean",
+          "line": 41,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CountConstructionCost.lean#L41"
+        },
+        {
+          "name": "MOR34.countParityConstructionWork_bound",
+          "file": "MOR34/CountConstructionCost.lean",
+          "line": 73,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CountConstructionCost.lean#L73"
+        },
+        {
+          "name": "MOR34.cellConstructionWork_polynomial",
+          "file": "MOR34/CountConstructionCost.lean",
+          "line": 89,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CountConstructionCost.lean#L89"
+        },
+        {
+          "name": "MOR34.forcedRowConstruction_value",
+          "file": "MOR34/ForcedConstructionCost.lean",
+          "line": 73,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ForcedConstructionCost.lean#L73"
+        },
+        {
+          "name": "MOR34.forcedConstructionWork_polynomial",
+          "file": "MOR34/ForcedConstructionCost.lean",
+          "line": 108,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ForcedConstructionCost.lean#L108"
+        },
+        {
+          "name": "MOR34.violationRowConstruction_value",
+          "file": "MOR34/ViolationConstructionCost.lean",
+          "line": 12,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ViolationConstructionCost.lean#L12"
+        },
+        {
+          "name": "MOR34.violationConstructionWork_polynomial",
+          "file": "MOR34/ViolationConstructionCost.lean",
+          "line": 29,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ViolationConstructionCost.lean#L29"
+        },
+        {
+          "name": "MOR34.weightedCompiledCountRequest_polynomial",
+          "file": "MOR34/WeightedRequestPolynomial.lean",
+          "line": 79,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedRequestPolynomial.lean#L79"
+        },
+        {
+          "name": "MOR34.weightedBranchRows_cost",
+          "file": "MOR34/WeightedBranchRequests.lean",
+          "line": 19,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedBranchRequests.lean#L19"
+        },
+        {
+          "name": "MOR34.weightedBranchRequests_cost",
+          "file": "MOR34/WeightedBranchRequests.lean",
+          "line": 53,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedBranchRequests.lean#L53"
+        },
+        {
+          "name": "MOR34.weightedRequests_solver_inputs",
+          "file": "MOR34/WeightedDenseRequests.lean",
+          "line": 69,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedDenseRequests.lean#L69"
+        }
+      ]
+    },
+    {
+      "id": "L2",
+      "paper": "Lemma 2",
+      "manuscript_label": "lem:interval",
+      "revised_location": {
+        "number": "2",
+        "page": 3
+      },
+      "claim": "An exchange edge r<s forces each u<v inside [r,s]; components are intervals determined by adjacent edges.",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.intervalExchange",
+          "file": "MOR34/Exchange.lean",
+          "line": 31,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/Exchange.lean#L31"
+        },
+        {
+          "name": "MOR34.connected_iff_cuts",
+          "file": "MOR34/Components.lean",
+          "line": 97,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/Components.lean#L97"
+        },
+        {
+          "name": "MOR34.component_interval",
+          "file": "MOR34/Components.lean",
+          "line": 105,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/Components.lean#L105"
+        },
+        {
+          "name": "MOR34.componentLabel_eq_iff_class_connected",
+          "file": "MOR34/ExchangeKernel.lean",
+          "line": 129,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExchangeKernel.lean#L129"
+        },
+        {
+          "name": "MOR34.componentLabel_interval",
+          "file": "MOR34/ExchangeKernel.lean",
+          "line": 139,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExchangeKernel.lean#L139"
+        }
+      ]
+    },
+    {
+      "id": "split",
+      "paper": "Auxiliary for Lemma 4",
+      "manuscript_label": "lem:pair",
+      "revised_location": {
+        "number": "4",
+        "page": 4
+      },
+      "claim": "D of size 2k, k>=2; disjoint two-element subsets P,N can be put into opposite halves of size k.",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.balancedSplit",
+          "file": "MOR34/BalancedSplit.lean",
+          "line": 7,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BalancedSplit.lean#L7"
+        }
+      ]
+    },
+    {
+      "id": "pair",
+      "paper": "Auxiliary for Lemma 4",
+      "manuscript_label": "lem:pair",
+      "revised_location": {
+        "number": "4",
+        "page": 4
+      },
+      "claim": "All class counts have equal parity. For each fixed interior cut, repartition both prefixes into balanced outputs, both crossing that cut.",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.pairingAtCut",
+          "file": "MOR34/PairingAtCut.lean",
+          "line": 5,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PairingAtCut.lean#L5"
+        }
+      ]
+    },
+    {
+      "id": "L4",
+      "paper": "Lemma 4",
+      "manuscript_label": "lem:pair",
+      "revised_location": {
+        "number": "4",
+        "page": 4
+      },
+      "claim": "For all bounded z,w with tight feasible prefixes and full coordinatewise parity agreement, each cut z_j+2<=r<=w_j-2 is an adjacent feasible exchange.",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.interiorExchange",
+          "file": "MOR34/InteriorExchange.lean",
+          "line": 29,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/InteriorExchange.lean#L29"
+        },
+        {
+          "name": "MOR34.parity_interior_connected",
+          "file": "MOR34/Components.lean",
+          "line": 113,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/Components.lean#L113"
+        },
+        {
+          "name": "MOR34.componentLabel_eq_iff_class_connected",
+          "file": "MOR34/ExchangeKernel.lean",
+          "line": 129,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExchangeKernel.lean#L129"
+        }
+      ]
+    },
+    {
+      "id": "L3",
+      "paper": "Lemma 3",
+      "manuscript_label": "lem:quotient",
+      "revised_location": {
+        "number": "3",
+        "page": 4
+      },
+      "claim": "For component-count map A, exchange-direction span E=ker A; A(T)=A(prefix(Z)); nonempty T has dim aff(T)=n-C+dim aff(A(T)).",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.exchangeDirectionSpan_eq_ker",
+          "file": "MOR34/ExchangeKernel.lean",
+          "line": 96,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExchangeKernel.lean#L96"
+        },
+        {
+          "name": "MOR34.exchangeDirectionSpan_finrank",
+          "file": "MOR34/ExchangeKernel.lean",
+          "line": 153,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExchangeKernel.lean#L153"
+        },
+        {
+          "name": "MOR34.tight_image_eq_prefix_image",
+          "file": "MOR34/PrefixQuotient.lean",
+          "line": 97,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PrefixQuotient.lean#L97"
+        },
+        {
+          "name": "MOR34.tight_dimension_quotient",
+          "file": "MOR34/TightDimension.lean",
+          "line": 61,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/TightDimension.lean#L61"
+        }
+      ]
+    },
+    {
+      "id": "L5",
+      "paper": "Lemma 5",
+      "manuscript_label": "lem:affine",
+      "revised_location": {
+        "number": "5",
+        "page": 5
+      },
+      "claim": "Each parity/endpoint/middle cell admits an affine map agreeing with A(prefix(z)) on its feasible counts; at most 6^q cells.",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.parityExtrema_exists",
+          "file": "MOR34/ParityCells.lean",
+          "line": 37,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParityCells.lean#L37"
+        },
+        {
+          "name": "MOR34.actual_cell_affine",
+          "file": "MOR34/ParityCells.lean",
+          "line": 123,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParityCells.lean#L123"
+        },
+        {
+          "name": "MOR34.parity_cell_cover",
+          "file": "MOR34/ParityCells.lean",
+          "line": 135,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParityCells.lean#L135"
+        },
+        {
+          "name": "MOR34.cellCondition_unique",
+          "file": "MOR34/ParityCells.lean",
+          "line": 160,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParityCells.lean#L160"
+        },
+        {
+          "name": "MOR34.cell_index_card",
+          "file": "MOR34/ParityCells.lean",
+          "line": 171,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParityCells.lean#L171"
+        },
+        {
+          "name": "MOR34.parity_cell_decomposition",
+          "file": "MOR34/ParityCells.lean",
+          "line": 175,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParityCells.lean#L175"
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "paper": "Corollary 6",
+      "manuscript_label": "cor:C",
+      "revised_location": {
+        "number": "6",
+        "page": 5
+      },
+      "claim": "For a facet, number of exchange components C<=(3q+1)*2^q.",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.varyingClassComponents_card",
+          "file": "MOR34/ParityComponentSupport.lean",
+          "line": 31,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParityComponentSupport.lean#L31"
+        },
+        {
+          "name": "MOR34.parityComponentGenerators_span",
+          "file": "MOR34/ParityComponentSupport.lean",
+          "line": 95,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParityComponentSupport.lean#L95"
+        },
+        {
+          "name": "MOR34.quotient_augmented_dimension_bound",
+          "file": "MOR34/FacetComponentBound.lean",
+          "line": 60,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/FacetComponentBound.lean#L60"
+        },
+        {
+          "name": "MOR34.facet_component_bound",
+          "file": "MOR34/FacetComponentBound.lean",
+          "line": 71,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/FacetComponentBound.lean#L71"
+        },
+        {
+          "name": "MOR34.raw_facet_component_bound",
+          "file": "MOR34/FacetComponentBound.lean",
+          "line": 89,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/FacetComponentBound.lean#L89"
+        }
+      ]
+    },
+    {
+      "id": "L7",
+      "paper": "Lemma 7",
+      "manuscript_label": "lem:basis",
+      "revised_location": {
+        "number": "7",
+        "page": 6
+      },
+      "claim": "Finite augmented-row pivot search and Cramer/Laplace normal construction; affine-basis search from the empty set, at most 2(q+1)^2 ILP calls per cell, bounded coefficients and q^{O(q)} normal-construction cost.",
+      "external_dependency_groups": [
+        "E1",
+        "E4"
+      ],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.bounded_integer_forms_exist",
+          "file": "MOR34/IntegerNormals.lean",
+          "line": 65,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/IntegerNormals.lean#L65"
+        },
+        {
+          "name": "MOR34.linear_count_basis_correct",
+          "file": "MOR34/LinearOracle.lean",
+          "line": 185,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/LinearOracle.lean#L185"
+        },
+        {
+          "name": "MOR34.real_affine_basis_from_linear_oracle",
+          "file": "MOR34/BasisIndependence.lean",
+          "line": 86,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BasisIndependence.lean#L86"
+        },
+        {
+          "name": "MOR34.oracle_cell_basis_selection",
+          "file": "MOR34/OracleCellBases.lean",
+          "line": 8,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/OracleCellBases.lean#L8"
+        },
+        {
+          "name": "MOR34.pivotNormal_independent",
+          "file": "MOR34/BoundedPivotNormals.lean",
+          "line": 37,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BoundedPivotNormals.lean#L37"
+        },
+        {
+          "name": "MOR34.pivotNormals_span",
+          "file": "MOR34/PivotNormalSpan.lean",
+          "line": 49,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PivotNormalSpan.lean#L49"
+        },
+        {
+          "name": "MOR34.pivotNormal_logarithmic_bits",
+          "file": "MOR34/PivotNormalBits.lean",
+          "line": 30,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PivotNormalBits.lean#L30"
+        },
+        {
+          "name": "MOR34.independent_rows_pivot_minor",
+          "file": "MOR34/PivotMinorExistence.lean",
+          "line": 9,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PivotMinorExistence.lean#L9"
+        },
+        {
+          "name": "MOR34.bounded_count_forms_exist",
+          "file": "MOR34/BoundedCountForms.lean",
+          "line": 64,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BoundedCountForms.lean#L64"
+        },
+        {
+          "name": "MOR34.boundedCountForms_bits",
+          "file": "MOR34/NormalQueryBounds.lean",
+          "line": 76,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalQueryBounds.lean#L76"
+        },
+        {
+          "name": "MOR34.boundedCellSelection_query_bounds",
+          "file": "MOR34/BoundedCellPipeline.lean",
+          "line": 91,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BoundedCellPipeline.lean#L91"
+        },
+        {
+          "name": "MOR34.boundedParityQueries_bound",
+          "file": "MOR34/NormalQueryBounds.lean",
+          "line": 95,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalQueryBounds.lean#L95"
+        },
+        {
+          "name": "MOR34.pivotSearch_calls",
+          "file": "MOR34/PivotSearch.lean",
+          "line": 75,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PivotSearch.lean#L75"
+        },
+        {
+          "name": "MOR34.boundedPipeline_payload_states",
+          "file": "MOR34/SearchPayload.lean",
+          "line": 73,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/SearchPayload.lean#L73"
+        },
+        {
+          "name": "MOR34.uniform_system_payload",
+          "file": "MOR34/RowPayload.lean",
+          "line": 33,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RowPayload.lean#L33"
+        },
+        {
+          "name": "MOR34.laplace_partial_sum_bits",
+          "file": "MOR34/DeterminantIntermediates.lean",
+          "line": 36,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/DeterminantIntermediates.lean#L36"
+        },
+        {
+          "name": "MOR34.normal_candidate_exists",
+          "file": "MOR34/NormalCandidate.lean",
+          "line": 37,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalCandidate.lean#L37"
+        },
+        {
+          "name": "MOR34.checked_candidate_describes",
+          "file": "MOR34/NormalCandidate.lean",
+          "line": 25,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalCandidate.lean#L25"
+        },
+        {
+          "name": "MOR34.exactPivotDetCharge_bound",
+          "file": "MOR34/PivotCost.lean",
+          "line": 41,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PivotCost.lean#L41"
+        },
+        {
+          "name": "MOR34.computedMatrixNormals_spec",
+          "file": "MOR34/ExecutableMatrixNormals.lean",
+          "line": 97,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutableMatrixNormals.lean#L97"
+        },
+        {
+          "name": "MOR34.computedCountForms_spec",
+          "file": "MOR34/ExecutableCountForms.lean",
+          "line": 21,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutableCountForms.lean#L21"
+        },
+        {
+          "name": "MOR34.normalBasisCandidateCalls_bound",
+          "file": "MOR34/NormalSearchCost.lean",
+          "line": 102,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalSearchCost.lean#L102"
+        },
+        {
+          "name": "MOR34.normalCheck_partial_sum_bits",
+          "file": "MOR34/NormalCheckIntermediates.lean",
+          "line": 44,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalCheckIntermediates.lean#L44"
+        },
+        {
+          "name": "MOR34.computedCellSelection_basis",
+          "file": "MOR34/ComputedCellPipeline.lean",
+          "line": 55,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ComputedCellPipeline.lean#L55"
+        },
+        {
+          "name": "MOR34.allNormalCandidateCalls_bound",
+          "file": "MOR34/OracleCostComposition.lean",
+          "line": 69,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/OracleCostComposition.lean#L69"
+        },
+        {
+          "name": "MOR34.normal_calls_parameter_bound",
+          "file": "MOR34/ParameterFactors.lean",
+          "line": 12,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParameterFactors.lean#L12"
+        },
+        {
+          "name": "MOR34.normal_calls_original_parameter",
+          "file": "MOR34/ParameterFactors.lean",
+          "line": 51,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParameterFactors.lean#L51"
+        },
+        {
+          "name": "MOR34.matrixNormalArithmeticCharge_bound",
+          "file": "MOR34/NormalArithmeticCost.lean",
+          "line": 94,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalArithmeticCost.lean#L94"
+        },
+        {
+          "name": "MOR34.normalBasisArithmeticCharge_bound",
+          "file": "MOR34/NormalArithmeticCost.lean",
+          "line": 109,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalArithmeticCost.lean#L109"
+        },
+        {
+          "name": "MOR34.allNormalArithmeticCharge_parameter",
+          "file": "MOR34/AggregateArithmeticCost.lean",
+          "line": 81,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/AggregateArithmeticCost.lean#L81"
+        },
+        {
+          "name": "MOR34.normalWorkBits_polynomial",
+          "file": "MOR34/NormalBitCost.lean",
+          "line": 12,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalBitCost.lean#L12"
+        },
+        {
+          "name": "MOR34.counted_normal_bit_cost",
+          "file": "MOR34/NormalBitCost.lean",
+          "line": 54,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalBitCost.lean#L54"
+        },
+        {
+          "name": "MOR34.preparedWeightedCell_cost",
+          "file": "MOR34/WeightedPipelinePrimitives.lean",
+          "line": 46,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedPipelinePrimitives.lean#L46"
+        },
+        {
+          "name": "MOR34.preparedNormalOperands_on_states",
+          "file": "MOR34/ReachedNormalOperands.lean",
+          "line": 32,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ReachedNormalOperands.lean#L32"
+        },
+        {
+          "name": "MOR34.preparedWeightedCell_normal_states",
+          "file": "MOR34/ReachedNormalOperands.lean",
+          "line": 46,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ReachedNormalOperands.lean#L46"
+        },
+        {
+          "name": "MOR34.normal_envelope_from_global",
+          "file": "MOR34/StandardFactorInstantiation.lean",
+          "line": 17,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/StandardFactorInstantiation.lean#L17"
+        }
+      ]
+    },
+    {
+      "id": "T8span",
+      "paper": "Theorem 8, span identity",
+      "manuscript_label": "thm:main",
+      "revised_location": {
+        "number": "8",
+        "page": 6
+      },
+      "claim": "The span of retained augmented tight prefixes and adjacent exchange directions equals the span of all augmented tight points.",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.adjacentDirectionSpan_eq_ker",
+          "file": "MOR34/AdjacentSpan.lean",
+          "line": 39,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/AdjacentSpan.lean#L39"
+        },
+        {
+          "name": "MOR34.selected_augmented_span",
+          "file": "MOR34/SelectedSpan.lean",
+          "line": 49,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/SelectedSpan.lean#L49"
+        },
+        {
+          "name": "MOR34.small_selected_span",
+          "file": "MOR34/FiniteCellBases.lean",
+          "line": 107,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/FiniteCellBases.lean#L107"
+        },
+        {
+          "name": "MOR34.retained_row_span",
+          "file": "MOR34/RetainedMatrix.lean",
+          "line": 43,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RetainedMatrix.lean#L43"
+        },
+        {
+          "name": "MOR34.small_retained_matrix",
+          "file": "MOR34/RetainedMatrix.lean",
+          "line": 121,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RetainedMatrix.lean#L121"
+        }
+      ]
+    },
+    {
+      "id": "rankbridge",
+      "paper": "Theorem 8, scalar bridge",
+      "manuscript_label": "thm:main",
+      "revised_location": {
+        "number": "8",
+        "page": 6
+      },
+      "claim": "Finite integer matrices have the same rank over Q and R; augmented rank minus one gives nonempty real affine dimension.",
+      "external_dependency_groups": [],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.augmentedSpan_finrank",
+          "file": "MOR34/AugmentedDimension.lean",
+          "line": 37,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/AugmentedDimension.lean#L37"
+        },
+        {
+          "name": "MOR34.rational_matrix_rank",
+          "file": "MOR34/RankScalar.lean",
+          "line": 38,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RankScalar.lean#L38"
+        },
+        {
+          "name": "MOR34.integer_matrix_rank",
+          "file": "MOR34/RankScalar.lean",
+          "line": 50,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RankScalar.lean#L50"
+        },
+        {
+          "name": "MOR34.retained_matrix_rational_rank",
+          "file": "MOR34/RetainedMatrix.lean",
+          "line": 89,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RetainedMatrix.lean#L89"
+        }
+      ]
+    },
+    {
+      "id": "T8correct",
+      "paper": "Theorem 8, correctness",
+      "manuscript_label": "thm:main",
+      "revised_location": {
+        "number": "8",
+        "page": 6
+      },
+      "claim": "With valid input, return empty-face dimension -1 or correct nonempty dimension and an affine basis of actual tight points; facet iff valid and dimension n-1.",
+      "external_dependency_groups": [
+        "E1",
+        "E2",
+        "E4"
+      ],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.normalizedPipeline_correct",
+          "file": "MOR34/NormalizedPipeline.lean",
+          "line": 70,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalizedPipeline.lean#L70"
+        },
+        {
+          "name": "MOR34.normalizedPipeline_dimension",
+          "file": "MOR34/SignedDimension.lean",
+          "line": 31,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/SignedDimension.lean#L31"
+        },
+        {
+          "name": "MOR34.computedRecognition_facet",
+          "file": "MOR34/RecognitionCertificate.lean",
+          "line": 98,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RecognitionCertificate.lean#L98"
+        },
+        {
+          "name": "MOR34.searched_returned_basis",
+          "file": "MOR34/BinaryPointBasis.lean",
+          "line": 63,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BinaryPointBasis.lean#L63"
+        },
+        {
+          "name": "MOR34.searched_returned_basis_card",
+          "file": "MOR34/ReturnedBasisSize.lean",
+          "line": 35,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ReturnedBasisSize.lean#L35"
+        },
+        {
+          "name": "MOR34.candidateFace_eq_hull",
+          "file": "MOR34/FacetBridge.lean",
+          "line": 43,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/FacetBridge.lean#L43"
+        },
+        {
+          "name": "MOR34.candidate_facet_iff_computed_rank",
+          "file": "MOR34/FacetBridge.lean",
+          "line": 89,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/FacetBridge.lean#L89"
+        },
+        {
+          "name": "MOR34.executedSelection_eq",
+          "file": "MOR34/ExecutedCells.lean",
+          "line": 74,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutedCells.lean#L74"
+        },
+        {
+          "name": "MOR34.boundedPipeline_correct",
+          "file": "MOR34/BoundedNormalizedPipeline.lean",
+          "line": 25,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BoundedNormalizedPipeline.lean#L25"
+        },
+        {
+          "name": "MOR34.boundedPipeline_dimension",
+          "file": "MOR34/BoundedNormalizedPipeline.lean",
+          "line": 64,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BoundedNormalizedPipeline.lean#L64"
+        },
+        {
+          "name": "MOR34.boundedPipeline_facet",
+          "file": "MOR34/BoundedNormalizedPipeline.lean",
+          "line": 76,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BoundedNormalizedPipeline.lean#L76"
+        },
+        {
+          "name": "MOR34.normalized_model_exists",
+          "file": "MOR34/InputGrouping.lean",
+          "line": 7,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/InputGrouping.lean#L7"
+        },
+        {
+          "name": "MOR34.relabel_tight_finrank",
+          "file": "MOR34/RawGeometry.lean",
+          "line": 45,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawGeometry.lean#L45"
+        },
+        {
+          "name": "MOR34.boundedPipeline_raw_dimension",
+          "file": "MOR34/RawGeometry.lean",
+          "line": 84,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawGeometry.lean#L84"
+        },
+        {
+          "name": "MOR34.original_input_output_contract",
+          "file": "MOR34/RawInputPipeline.lean",
+          "line": 71,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawInputPipeline.lean#L71"
+        },
+        {
+          "name": "MOR34.rawNormalization_correct",
+          "file": "MOR34/RawInputPipeline.lean",
+          "line": 43,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawInputPipeline.lean#L43"
+        },
+        {
+          "name": "MOR34.rawNormalization_facet",
+          "file": "MOR34/RawInputPipeline.lean",
+          "line": 55,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawInputPipeline.lean#L55"
+        },
+        {
+          "name": "MOR34.rawNormalization_dimension",
+          "file": "MOR34/RawInputPipeline.lean",
+          "line": 60,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawInputPipeline.lean#L60"
+        },
+        {
+          "name": "MOR34.rawPipeline_correct",
+          "file": "MOR34/RawOutput.lean",
+          "line": 121,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawOutput.lean#L121"
+        },
+        {
+          "name": "MOR34.executable_original_input_output_contract",
+          "file": "MOR34/ExecutableNormalization.lean",
+          "line": 52,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutableNormalization.lean#L52"
+        },
+        {
+          "name": "MOR34.executableNormalizedPipeline_correct",
+          "file": "MOR34/ExecutableNormalizedPipeline.lean",
+          "line": 63,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutableNormalizedPipeline.lean#L63"
+        },
+        {
+          "name": "MOR34.executableNormalizedPipeline_facet",
+          "file": "MOR34/ExecutableNormalizedPipeline.lean",
+          "line": 106,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutableNormalizedPipeline.lean#L106"
+        },
+        {
+          "name": "MOR34.executableNormalizedPipeline_dimension",
+          "file": "MOR34/ExecutableNormalizedPipeline.lean",
+          "line": 116,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutableNormalizedPipeline.lean#L116"
+        },
+        {
+          "name": "MOR34.executableRawPipeline_correct",
+          "file": "MOR34/ExecutableRawPipeline.lean",
+          "line": 14,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutableRawPipeline.lean#L14"
+        },
+        {
+          "name": "MOR34.weightedNormalizedExecution_correct",
+          "file": "MOR34/WeightedNormalizedExecution.lean",
+          "line": 42,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedNormalizedExecution.lean#L42"
+        },
+        {
+          "name": "MOR34.weightedRawExecution_correct",
+          "file": "MOR34/WeightedRawExecution.lean",
+          "line": 21,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedRawExecution.lean#L21"
+        },
+        {
+          "name": "MOR34.weightedRun_correct",
+          "file": "MOR34/WeightedRunInterface.lean",
+          "line": 45,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedRunInterface.lean#L45"
+        },
+        {
+          "name": "MOR34.runPreparedWeighted_correct",
+          "file": "MOR34/CompleteCompressedExecution.lean",
+          "line": 12,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompleteCompressedExecution.lean#L12"
+        }
+      ]
+    },
+    {
+      "id": "T8time",
+      "paper": "Theorem 8, FPT time",
+      "manuscript_label": "thm:main",
+      "revised_location": {
+        "number": "8",
+        "page": 6
+      },
+      "claim": "Mathematical reference-algorithm cost 2^{O((K+1)log(K+2))} poly(n,L), using cited primitive algorithms; compiler cost verification excluded.",
+      "external_dependency_groups": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "dependency_note": "E3 is required by complete_compressed_execution only; the uncompressed weighted execution uses E1/E2/E4. All are explicit local contracts, not project axioms.",
+      "declarations": [
+        {
+          "name": "MOR34.rowSearchCalls_le",
+          "file": "MOR34/QueryAccounting.lean",
+          "line": 65,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/QueryAccounting.lean#L65"
+        },
+        {
+          "name": "MOR34.cell_solver_row_count",
+          "file": "MOR34/QueryAccounting.lean",
+          "line": 79,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/QueryAccounting.lean#L79"
+        },
+        {
+          "name": "MOR34.adjacentPair_card",
+          "file": "MOR34/ComputedEdges.lean",
+          "line": 25,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ComputedEdges.lean#L25"
+        },
+        {
+          "name": "MOR34.forcedRow_card",
+          "file": "MOR34/ForcedRows.lean",
+          "line": 103,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ForcedRows.lean#L103"
+        },
+        {
+          "name": "MOR34.returned_basis_rank_calls",
+          "file": "MOR34/BasisRankCalls.lean",
+          "line": 34,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/BasisRankCalls.lean#L34"
+        },
+        {
+          "name": "MOR34.coefficient_class_parameter_bound",
+          "file": "MOR34/ParameterCount.lean",
+          "line": 40,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParameterCount.lean#L40"
+        },
+        {
+          "name": "MOR34.pivotNormal_logarithmic_bits",
+          "file": "MOR34/PivotNormalBits.lean",
+          "line": 30,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PivotNormalBits.lean#L30"
+        },
+        {
+          "name": "MOR34.raw_parameter_bound",
+          "file": "MOR34/RawTransport.lean",
+          "line": 74,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawTransport.lean#L74"
+        },
+        {
+          "name": "MOR34.raw_classes_le_items",
+          "file": "MOR34/RawTransport.lean",
+          "line": 81,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawTransport.lean#L81"
+        },
+        {
+          "name": "MOR34.boundedCountForms_bits",
+          "file": "MOR34/NormalQueryBounds.lean",
+          "line": 76,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalQueryBounds.lean#L76"
+        },
+        {
+          "name": "MOR34.pivotSearch_calls",
+          "file": "MOR34/PivotSearch.lean",
+          "line": 75,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/PivotSearch.lean#L75"
+        },
+        {
+          "name": "MOR34.original_forced_rows_bounded",
+          "file": "MOR34/RawEncodingBounds.lean",
+          "line": 34,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawEncodingBounds.lean#L34"
+        },
+        {
+          "name": "MOR34.original_violation_rows_bounded",
+          "file": "MOR34/RawEncodingBounds.lean",
+          "line": 41,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RawEncodingBounds.lean#L41"
+        },
+        {
+          "name": "MOR34.cell_system_payload",
+          "file": "MOR34/RowPayload.lean",
+          "line": 46,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/RowPayload.lean#L46"
+        },
+        {
+          "name": "MOR34.boundedPipeline_payload_states",
+          "file": "MOR34/SearchPayload.lean",
+          "line": 73,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/SearchPayload.lean#L73"
+        },
+        {
+          "name": "MOR34.laplace_partial_sum_bits",
+          "file": "MOR34/DeterminantIntermediates.lean",
+          "line": 36,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/DeterminantIntermediates.lean#L36"
+        },
+        {
+          "name": "MOR34.computedCellSelection_normal_checks",
+          "file": "MOR34/NormalSearchCost.lean",
+          "line": 121,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalSearchCost.lean#L121"
+        },
+        {
+          "name": "MOR34.normalCheck_partial_sum_bits",
+          "file": "MOR34/NormalCheckIntermediates.lean",
+          "line": 44,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/NormalCheckIntermediates.lean#L44"
+        },
+        {
+          "name": "MOR34.computedNormalPipeline_payload_states",
+          "file": "MOR34/ComputedSearchPayload.lean",
+          "line": 90,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ComputedSearchPayload.lean#L90"
+        },
+        {
+          "name": "MOR34.executableSupportSearch_calls_le",
+          "file": "MOR34/ExecutableRecognitionBranches.lean",
+          "line": 41,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ExecutableRecognitionBranches.lean#L41"
+        },
+        {
+          "name": "MOR34.rowSearchCalls_polynomial",
+          "file": "MOR34/OracleCostComposition.lean",
+          "line": 12,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/OracleCostComposition.lean#L12"
+        },
+        {
+          "name": "MOR34.counted_ilp_cost_bound",
+          "file": "MOR34/OracleCostComposition.lean",
+          "line": 42,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/OracleCostComposition.lean#L42"
+        },
+        {
+          "name": "MOR34.computedReturnedBasis_rank_calls",
+          "file": "MOR34/ComputedRankPayload.lean",
+          "line": 10,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ComputedRankPayload.lean#L10"
+        },
+        {
+          "name": "MOR34.binaryBasisSearch_rank_payload_states",
+          "file": "MOR34/ComputedRankPayload.lean",
+          "line": 50,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ComputedRankPayload.lean#L50"
+        },
+        {
+          "name": "MOR34.rowCallFactor_parameter_bound",
+          "file": "MOR34/ParameterFactors.lean",
+          "line": 24,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ParameterFactors.lean#L24"
+        },
+        {
+          "name": "MOR34.counted_rank_cost_bound",
+          "file": "MOR34/ComputedRankPayload.lean",
+          "line": 90,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ComputedRankPayload.lean#L90"
+        },
+        {
+          "name": "MOR34.storedReturnedSets_eq",
+          "file": "MOR34/StoredEdgeWitnesses.lean",
+          "line": 116,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/StoredEdgeWitnesses.lean#L116"
+        },
+        {
+          "name": "MOR34.storedRawPipeline_correct",
+          "file": "MOR34/StoredEdgeWitnesses.lean",
+          "line": 205,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/StoredEdgeWitnesses.lean#L205"
+        },
+        {
+          "name": "MOR34.all_solver_cost_bound",
+          "file": "MOR34/AggregateArithmeticCost.lean",
+          "line": 112,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/AggregateArithmeticCost.lean#L112"
+        },
+        {
+          "name": "MOR34.chargedPhaseCost_bound",
+          "file": "MOR34/AggregateArithmeticCost.lean",
+          "line": 130,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/AggregateArithmeticCost.lean#L130"
+        },
+        {
+          "name": "MOR34.returnedFamily_pairwise_work",
+          "file": "MOR34/ReturnedFamilyCost.lean",
+          "line": 18,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ReturnedFamilyCost.lean#L18"
+        },
+        {
+          "name": "MOR34.weightedNormalizedExecution_cost",
+          "file": "MOR34/WeightedNormalizedExecution.lean",
+          "line": 70,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedNormalizedExecution.lean#L70"
+        },
+        {
+          "name": "MOR34.weightedNormalizedBudget_sharp",
+          "file": "MOR34/SharpPolynomialBudget.lean",
+          "line": 177,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/SharpPolynomialBudget.lean#L177"
+        },
+        {
+          "name": "MOR34.weightedRun_sharp",
+          "file": "MOR34/WeightedRunInterface.lean",
+          "line": 118,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/WeightedRunInterface.lean#L118"
+        },
+        {
+          "name": "MOR34.doubled_dimension_factor",
+          "file": "MOR34/StandardFactorInstantiation.lean",
+          "line": 7,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/StandardFactorInstantiation.lean#L7"
+        },
+        {
+          "name": "MOR34.complete_compressed_execution",
+          "file": "MOR34/CompleteCompressedExecution.lean",
+          "line": 55,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompleteCompressedExecution.lean#L55"
+        }
+      ]
+    },
+    {
+      "id": "C9",
+      "paper": "Corollary 9",
+      "manuscript_label": "cor:compression",
+      "revised_location": {
+        "number": "9",
+        "page": 8
+      },
+      "claim": "Frank-Tardos compression preserves feasibility, equality levels and coefficient classes; unit-cost FPT bound independent of integer magnitudes.",
+      "external_dependency_groups": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "dependency_note": "External groups refer to algorithmic existence/cost; semantic encoding, span and geometry statements themselves need no ILP/rank implementation.",
+      "declarations": [
+        {
+          "name": "MOR34.compression_feasible",
+          "file": "MOR34/CompressionTransport.lean",
+          "line": 12,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompressionTransport.lean#L12"
+        },
+        {
+          "name": "MOR34.compression_tight",
+          "file": "MOR34/CompressionTransport.lean",
+          "line": 15,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompressionTransport.lean#L15"
+        },
+        {
+          "name": "MOR34.compression_valid",
+          "file": "MOR34/CompressionTransport.lean",
+          "line": 19,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompressionTransport.lean#L19"
+        },
+        {
+          "name": "MOR34.compression_positive_parameter",
+          "file": "MOR34/CompressionParameter.lean",
+          "line": 34,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompressionParameter.lean#L34"
+        },
+        {
+          "name": "MOR34.compression_output",
+          "file": "MOR34/CompressionTransport.lean",
+          "line": 99,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompressionTransport.lean#L99"
+        },
+        {
+          "name": "MOR34.compressed_payload_bound",
+          "file": "MOR34/CompressionSize.lean",
+          "line": 36,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompressionSize.lean#L36"
+        },
+        {
+          "name": "MOR34.external_compression_application",
+          "file": "MOR34/CompressionApplication.lean",
+          "line": 7,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompressionApplication.lean#L7"
+        },
+        {
+          "name": "MOR34.compression_cost_substitution",
+          "file": "MOR34/CompressionSize.lean",
+          "line": 55,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompressionSize.lean#L55"
+        },
+        {
+          "name": "MOR34.chargedCompressionPreparation_cost",
+          "file": "MOR34/ChargedCompressionPreparation.lean",
+          "line": 100,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ChargedCompressionPreparation.lean#L100"
+        },
+        {
+          "name": "MOR34.compressedPrepared_magnitudes",
+          "file": "MOR34/ChargedCompressionPreparation.lean",
+          "line": 68,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ChargedCompressionPreparation.lean#L68"
+        },
+        {
+          "name": "MOR34.compressedPrepared_parameter",
+          "file": "MOR34/ChargedCompressionPreparation.lean",
+          "line": 60,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/ChargedCompressionPreparation.lean#L60"
+        },
+        {
+          "name": "MOR34.complete_compressed_execution",
+          "file": "MOR34/CompleteCompressedExecution.lean",
+          "line": 55,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/CompleteCompressedExecution.lean#L55"
+        },
+        {
+          "name": "MOR34.chargedCompressionPreparation_strong_cost",
+          "file": "MOR34/StrongPreparationCost.lean",
+          "line": 14,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/StrongPreparationCost.lean#L14"
+        },
+        {
+          "name": "MOR34.complete_strongly_polynomial_execution",
+          "file": "MOR34/StrongPreparationCost.lean",
+          "line": 38,
+          "url": "https://github.com/zac682210-commits/mor34_lean/blob/8951a2f5c5a64a477e907991b7653698d11ec440/MOR34/StrongPreparationCost.lean#L38"
+        }
+      ]
+    }
+  ],
+  "external_results": [
+    {
+      "id": "E1",
+      "name": "固定维整数线性可行性算法",
+      "not_formalized": "求解器存在性、内部正确性和维数 r 下 r^{O(r)} poly(B) 的复杂度定理。",
+      "interfaces": [
+        "DenseRowSolverSpec",
+        "DenseSolverCostBound"
+      ],
+      "supplied_by": "Lenstra–Frank–Tardos–Kannan；Bredereck et al., arXiv:1709.02850v2, Theorem 1。",
+      "source": "https://arxiv.org/html/1709.02850v2",
+      "proved_here": "原始、奇偶、强制交换各类整数行的等价性、可行见证解码、2q 个有符号整数变量、实际输入大小、调用次数以及费用组合。"
+    },
+    {
+      "id": "E2",
+      "name": "精确有理矩阵秩算法",
+      "not_formalized": "具体消元算法的实现、其正确性及多项式位复杂度；并未提供可运行的高效 ranker 实例。",
+      "interfaces": [
+        "ExactIntegerRank",
+        "BinaryRankOperations",
+        "BinaryRankBounds"
+      ],
+      "supplied_by": "标准精确有理线性代数算法；本文只需整数矩阵上的有理秩。",
+      "source": null,
+      "proved_here": "输入矩阵确由保留的二进制点构成；插点增秩选择过程正确，次数/矩阵大小有界；Q 与 R 的秩相等、增广秩与仿射维数关系已在项目内证明。"
+    },
+    {
+      "id": "E3",
+      "name": "Frank–Tardos 压缩定理",
+      "not_formalized": "压缩算法本身以及一般小符号保持、系数界、多项式位复杂度、强多项式算术操作数和预处理中间有理数位长保证。",
+      "interfaces": [
+        "CompressionPrimitive",
+        "PreparationLocalBounds",
+        "PreparationStrongBounds"
+      ],
+      "supplied_by": "Frank–Tardos (1987)；Etscheid et al., arXiv:1507.03439v1, Theorem 1及其后说明。",
+      "source": "https://arxiv.org/pdf/1507.03439",
+      "proved_here": "分别作用于 (a,b) 与 (c,d)，取 N=n+2；证明原假设、可行/紧点集、有效性、正系数类数 K 与输出保持，压缩整数负载 ≤18(n+1)^4，并组合两次调用和归一化代价。"
+    },
+    {
+      "id": "E4",
+      "name": "基本算术、访问、排序和集合/矩阵构造算法",
+      "not_formalized": "本地操作的具体高效实现及其机器时间证明；任意附加有理行清分母的一般成本。",
+      "interfaces": [
+        "IntegerArithmeticCharge",
+        "CountMatrixPreparation",
+        "PointOperations",
+        "PointOperationBounds",
+        "NormalizationPrimitive",
+        "RelabelLocalBounds",
+        "ExecutionLocalBounds",
+        "WeightedExecutionLocalBounds"
+      ],
+      "supplied_by": "标准多项式时间整数算术、比较、有限数组/集合处理及排序；常数和多项式次数在参数 q 之前固定。",
+      "source": null,
+      "proved_here": "具体值规范与算法输出一致；实际整数表达式、法向量候选及中间和的位长、调用所在阶段、次数和合成费用。实际识别路径只构造整数行。"
+    }
+  ],
+  "already_formalized_library_results": [
+    "Mathlib finite-dimensional linear algebra and rank-nullity",
+    "Mathlib affine/convex spans and determinant identities",
+    "Mathlib finite sets, orders and integer identities"
+  ],
+  "excluded_nonalgorithmic_claims": [
+    "literature DP-completeness and XP background",
+    "novelty/priority assertions",
+    "six-item illustration",
+    "compiler/backend operational correctness and concrete timing"
+  ],
+  "repository_reference_policy": "reference/mor34_fpt_proof.tex/pdf preserve the v0.1 source snapshot for the verified source commit. reference/mor34_v0.2.patch reconstructs the revised manuscript. Current paper PDF and reproduction archive replace their existing research-file identities."
+}

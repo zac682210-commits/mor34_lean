@@ -1,0 +1,205 @@
+--- a/reference/mor34_fpt_proof.tex
++++ b/reference/mor34_fpt_proof.tex
+@@ -1,6 +1,6 @@
+ \documentclass[11pt]{article}
+ \usepackage[margin=1in]{geometry}
+-\usepackage{amsmath,amssymb,amsthm,booktabs,hyperref}
++\usepackage{amsmath,amssymb,amsthm,booktabs,array,hyperref}
+ \usepackage{xurl}
+ \hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue,pdftitle={Fixed-Parameter Recognition of Knapsack Facets},pdfauthor={Zhiyan Lin}}
+ \newtheorem{theorem}{Theorem}
+@@ -8,9 +8,10 @@
+ \newtheorem{corollary}[theorem]{Corollary}
+ \newcommand{\Z}{\mathbb Z}\newcommand{\R}{\mathbb R}
+ \newcommand{\aff}{\operatorname{aff}}\newcommand{\spn}{\operatorname{span}}
++\newcommand{\lean}[1]{{\small\nolinkurl{#1}}}
+ \title{Fixed-Parameter Recognition of Knapsack Facets\\via Parity and Feasible Exchanges}
+ \author{Zhiyan Lin}
+-\date{October 13, 2026\\\small Research preprint, version 0.1}
++\date{October 19, 2026\\\small Research preprint, version 0.2}
+ \begin{document}\maketitle
+ \begin{abstract}
+ Given a binary knapsack polytope and a nonnegative candidate inequality, let $K$ be the number of distinct positive candidate coefficients. Chen and Zhu gave an $n^{K+O(1)}$ recognition algorithm and asked whether the problem is fixed-parameter tractable in $K$. We give an affirmative answer, and compute the dimension of every nonempty supporting face in time $2^{O((K+1)\log(K+2))}\operatorname{poly}(n,L)$, where $L$ is the binary input length. The structural step pairs tight prefix solutions whose class counts have the same parity. Repartitioning their symmetric differences forces all but two endpoint items in each varying class interval into one feasible-exchange component. As a result, the component-count map is affine on at most $6^{K+1}$ explicitly describable regions. Affine bases of their integer count sets are computed by fixed-dimensional integer programming. The algorithm does not require integer-point counting.
+@@ -27,7 +28,7 @@
+ 
+ The resulting algorithm computes the exact supporting-face dimension in fixed-parameter time, and hence recognizes facets. Standard Frank--Tardos weight compression also gives a bound of $2^{O((K+1)\log(K+2))}\operatorname{poly}(n)$ arithmetic operations in the unit-cost model used by Chen and Zhu. A related structural consequence bounds the number of exchange components of any facet by $(3q+1)2^q$. Fixed-dimensional integer programming, weight compression, convex-prefix epigraphs, rational affine-hull computation, and parity arguments are established tools. The contribution here is the exchange-forcing pairing lemma and the resulting affine-region decomposition for binary knapsack faces. Parity-based structural bounds in a different mixed-integer knapsack model occur, for example, in Dash, G\"unl\"uk, and Wolsey \cite{DGW}; their continuous-variable coefficient bound does not give the binary recognition algorithm proved here.
+ 
+-Section 2 introduces the count formulation and its integer-programming oracle. Section 3 treats exchanges and the quotient map. Section 4 proves the parity structure. Section 5 gives the algorithm and its complexity. Section 6 explains a small obstruction that distinguishes the method from retaining one parity representative. Section 7 concludes. All proofs follow their statements.
++Section 2 introduces the count formulation and its integer-programming oracle. Section 3 treats exchanges and the quotient map. Section 4 proves the parity structure. Section 5 gives the algorithm and its complexity. Section 6 explains a small obstruction that distinguishes the method from retaining one parity representative. Section 7 concludes. Appendix A gives the correspondence with the Lean development and states the external algorithmic contracts. All proofs follow their statements.
+ 
+ \section{Preliminaries and the count oracle}
+ Let $n\ge1$, $a\in\Z_{>0}^n$, $b\in\Z_{>0}$, and $\max_i a_i\le b$. Put
+@@ -55,7 +56,7 @@
+ 
+ The following formulation makes the number of integer variables explicit.
+ \begin{lemma}\label{lem:oracle}
+-Membership in $Z$ together with rational linear constraints on $z$ can be tested by integer programming with $2q$ variables. A prescribed parity $z\equiv\epsilon\pmod2$ does not increase this number. The formulation has $O(n+q)$ inequalities in addition to the prescribed linear constraints, with polynomial encoding length.
++Feasibility over $Z$ together with rational linear constraints on $z$ can be tested by integer programming with $2q$ variables. A prescribed parity $z\equiv\epsilon\pmod2$ does not increase this number. The formulation has $O(n+q)$ inequalities in addition to the prescribed linear constraints. Its encoding length is polynomial in $n,L$ and the encoding length of those additional constraints.
+ \end{lemma}
+ \begin{proof}
+ For each $j$, introduce an integer epigraph variable $y_j$ and impose
+@@ -63,10 +64,10 @@
+  y_j\ge F_j(t)+w_{j,t+1}(z_j-t)\quad(0\le t<m_j),
+  \qquad \sum_{j=1}^q y_j\le b.
+ \]
+-The maximum of the displayed affine functions is the linear interpolation of $F_j$, because its successive slopes are nondecreasing. At an integer $z_j$, it equals $F_j(z_j)$. Hence integer $y$ exists exactly when $F(z)\le b$. Use $z_j=2v_j+\epsilon_j$ to impose parity, replacing the $q$ integer variables $z$ by $q$ integer variables $v$. All coefficients and bounds have polynomial bit length. Convex piecewise-linear epigraph formulations of this kind are standard; see also \cite[Theorem 2]{Bredereck}.
+-\end{proof}
+-
+-Replacing the equality $\gamma^\top z=d$ by $\gamma^\top z\ge d+1$ tests invalidity. If no violation exists, a feasibility test for \eqref{eq:Z} checks support. Coordinate extrema in a nonempty restricted count set are found by binary search on $0,\ldots,m_j$, using $O(\log(n+1))$ such tests.
++The maximum of the displayed affine functions is the linear interpolation of $F_j$, because its successive slopes are nondecreasing. At an integer $z_j$, it equals $F_j(z_j)$. Hence integer $y$ exists exactly when $F(z)\le b$. Use $z_j=2v_j+\epsilon_j$ to impose parity, replacing the $q$ integer variables $z$ by $q$ integer variables $v$. The original rows have polynomial bit length in $n,L$; clearing positive denominators in an additional rational row has polynomial cost in that row's encoding length. The recognition algorithm below uses only integer additional rows. The variables here range over all integers; if a solver requires nonnegative variables, splitting each signed variable into its positive and negative parts still uses only $O(q)$ integer variables. Convex piecewise-linear epigraph formulations of this kind are standard; see also \cite[Theorem 2]{Bredereck}.
++\end{proof}
++
++Replacing the equality $\gamma^\top z=d$ by $\gamma^\top z\ge d+1$ tests invalidity. If no violation exists, a feasibility test for \eqref{eq:Z} checks support. For the reference algorithm used below, coordinate extrema in a nonempty restricted count set are found by a linear threshold scan. For the minimum of coordinate $j$, test $z_j\le t$ in the order $t=0,\ldots,m_j$; for the maximum, test $z_j\ge t$ in the reverse order. The first successful test supplies both the extremum and an attaining profile. There are at most $m_j+1$ calls per scan, hence at most $2(n+q)$ calls for all minima and maxima of one parity class.
+ 
+ \section{Feasible exchanges and component counts}
+ For $r<s$ in class $j$, call $\{r,s\}$ a feasible exchange edge if some $x\in T$ has $x_{i_{jr}}=0$ and $x_{i_{js}}=1$. Exchanging these coordinates preserves $c^\top x$ and does not increase weight. The exchange graph has all $n$ items as vertices, with edges only inside a class. Let its connected components be $B_1,\ldots,B_C$. Define the linear map $A:\R^n\to\R^C$ by
+@@ -161,16 +162,31 @@
+ \end{proof}
+ 
+ \section{The recognition algorithm}
+-We first specify a standard affine-basis subroutine, including its bit complexity.
++We first specify an affine-basis subroutine, including its oracle-call bound and an explicit finite construction of the separating forms.
+ \begin{lemma}\label{lem:basis}
+ An affine basis of a nonempty restricted count set in $\{0,\ldots,n\}^q$, described as in Lemma~\ref{lem:oracle}, can be found using $O(q^2)$ integer-feasibility calls with at most one additional linear inequality per call.
+ \end{lemma}
+ \begin{proof}
+-Find one point $z^0$ and maintain the rational span $W$ of the differences of points collected so far. Compute a basis of $W^\perp$ and scale each vector to an integer vector $v$. For every such $v$, test for a feasible $z$ satisfying either
+-\[
+- v^\top(z-z^0)\ge1\qquad\text{or}\qquad v^\top(z-z^0)\le-1.
+-\]
+-A successful call adds a difference outside $W$; its dimension increases. If all calls fail, every feasible point lies in $z^0+W$, since all scalar products are integers. There are at most $q$ increases and at most $2q$ tests per stage. The collected points number at most $q+1$. Integer normals of polynomial bit length are obtained from rational elimination: the input differences have magnitude at most $n$, and their minors have $O(q\log(q(n+1)))$ bits. Hence all added constraints have polynomial encoding length.
++Maintain a set $B$ of selected count vectors and the rational span $W_B$ of the augmented rows $(1,z)$ for $z\in B$, starting with $B=\varnothing$. Construct $q+1$ integer vectors $v^0,\ldots,v^q\in\Z^{q+1}$, allowing zero or redundant vectors, such that
++\[
++ y\in W_B\quad\Longleftrightarrow\quad
++ (v^j)^\top y=0\quad\text{for every }j.
++\]
++For each $v^j=(v^j_0,\widehat v^j)$, test the two additional inequalities
++\[
++ (\widehat v^j)^\top z\le -v^j_0-1,
++ \qquad
++ (\widehat v^j)^\top z\ge -v^j_0+1.
++\]
++A successful call returns a point whose augmented row lies outside $W_B$; insert it into $B$ and restart. If all calls fail, the integrality of these scalar products implies that every feasible augmented row lies in $W_B$. Each success increases the rank by one. After at most $q+1$ successes the augmented span is the entire ambient space, so no further query is necessary. The selected augmented rows are linearly independent, and their underlying points form an affine basis. Empty input sets instead return $B=\varnothing$. The total number of calls is at most $2(q+1)^2$.
++
++Here is the finite normal construction used in the formalized reference algorithm. Form the integer matrix $M$ with rows $(1,z)$ for $z\in B$. Enumerate a number $r\le q+1$, $r$ row indices, and $r$ distinct column indices. Reject a singular selected minor. For a nonsingular minor, Cramer's rule constructs one integer equation per ambient column for the span of the selected rows. Accept the candidate only if all rows of $M$ satisfy all these equations. The accepted equations describe exactly the row span of $M$: the selected rows belong to that span, and the check gives the reverse inclusion. Some candidate succeeds by choosing a row basis and a nonsingular minor; the case $r=0$ covers the zero span.
++
++At every reached state, $|B|\le q+1$ and the entries of $M$ have magnitude at most $n+1$. The constructed normal coefficients have magnitude at most
++\[
++ 2(q+1)!(n+1)^{q+1},
++\]
++and thus have $O((q+1)\log((q+1)(n+1)))$ bits. There are at most $(q+2)(q+1)^{2(q+1)}$ candidate index lists. Laplace expansion evaluates each needed determinant with $q^{O(q)}$ arithmetic operations; its intermediate sums obey the same polynomial bit-length bound. Candidate checking therefore costs $q^{O(q)}\operatorname{poly}(\log(n+1))$ bit operations per stage. This replaces the rational-elimination implementation of the normal construction in version 0.1; it preserves the $O(q^2)$ feasibility-call bound and the parameterized time bound needed below.
+ \end{proof}
+ 
+ We can now settle the parameterized recognition question.
+@@ -182,9 +198,9 @@
+ time. If the inequality is valid, the algorithm returns the dimension of its tight face, with the convention $\dim\varnothing=-1$. For a nonempty face it can also produce an affine basis of tight binary points.
+ \end{theorem}
+ \begin{proof}
+-Use Lemma~\ref{lem:oracle} to check validity and support. Return the corresponding outcome if the inequality is invalid or the face is empty. In the remaining case, perform the $n-q$ adjacent edge tests of Section 3 and compute the components. Retain their feasible edge directions.
+-
+-For every $\epsilon\in\{0,1\}^q$, check whether $Z_\epsilon$ is nonempty. In each nonempty class compute all coordinate extrema by binary search. Enumerate the cells in \eqref{eq:cells}. Each is described by the original convex-prefix constraints, parity, and coordinate bounds; it has the formulation of Lemma~\ref{lem:oracle}. For each nonempty cell, use Lemma~\ref{lem:basis} to find an affine basis $z^0,\ldots,z^s$, with $s\le q$, and retain the tight binary prefixes $p(z^0),\ldots,p(z^s)$.
++Use Lemma~\ref{lem:oracle} to check validity and support. Return the corresponding outcome if the inequality is invalid or the face is empty. In the remaining case, perform the $n-q$ adjacent edge tests of Section 3. Retain a tight witness and its exchanged point for every successful test. Their difference is the corresponding edge direction. The component partition is used in the correctness argument; it need not be computed by the execution.
++
++For every $\epsilon\in\{0,1\}^q$, check whether $Z_\epsilon$ is nonempty. In each nonempty parity class compute and retain all coordinate extrema and their witnesses by the linear scans specified in Section 2. Enumerate the cells in \eqref{eq:cells}. Each is described by the original convex-prefix constraints, parity, and coordinate bounds; it has the formulation of Lemma~\ref{lem:oracle}. For each nonempty cell, use Lemma~\ref{lem:basis} to find an affine basis $z^0,\ldots,z^s$, with $s\le q$, and retain the tight binary prefixes $p(z^0),\ldots,p(z^s)$.
+ 
+ Let $\mathcal R$ consist of their augmented rows $(1,p(z^i))$, together with the rows $(0,e_r-e_s)$ for feasible adjacent edges. We claim
+ \begin{equation}\label{eq:span}
+@@ -198,13 +214,15 @@
+ \]
+ Hence $p(z)-\sum_i\lambda_i p(z^i)\in\ker A$. This expresses $(1,x)$ in $\spn\mathcal R$ and proves \eqref{eq:span}.
+ 
+-Exact rational elimination now gives $\dim\aff(T)=\operatorname{rank}(\mathcal R)-1$. Facetness is equivalent to this dimension being $n-1$. To return an affine basis of actual tight points, replace every retained edge direction by its witnessing tight point and the point after the exchange. Both points are available from the edge oracle and explicit minimum-cost realization. Their difference is the edge direction. The augmented span remains the full tight-point span, so extracting independent augmented point rows gives the requested basis.
++Equation~\eqref{eq:span} gives $\dim\aff(T)=\operatorname{rank}_{\mathbb Q}(\mathcal R)-1$; the rational and real ranks of an integer matrix agree. Facetness is equivalent to this dimension being $n-1$. To implement both the decision and the returned affine basis, use the retained point family $\mathcal U$ consisting of the selected prefixes and, for every successful adjacent test, its witness and its exchanged point. Each point is tight and feasible. Every direction in $\mathcal R$ is the difference of two rows from $\mathcal U$, so the augmented point rows of $\mathcal U$ have the same full span. Their number is at most $(q+1)6^q+2n$.
++
++Starting with an empty selected family, scan $\mathcal U$ for a point whose insertion increases the exact rational rank of the selected augmented matrix, insert that point, and repeat. Stop when no such point exists or $n+1$ points have been selected. Every successful insertion increases rank, and failure certifies that the selected rows span the full family. Thus the retained points are an affine basis; if their number is $k$, return dimension $k-1$ and declare a facet exactly when $k=n$. The matrices sent to the rank routine have at most $n+2$ rows and $n+1$ columns. A conservative bound on the number of rank evaluations is $O((n+1)((q+1)6^q+n))$. The mathematical correctness of this extraction is distinct from the standard polynomial-time exact-rank algorithm supplied to it.
+ 
+ The number of oracle calls is
+ \[
+- O\bigl(n+2^q q\log(n+1)+6^q(q+1)^2\bigr).
+-\]
+-Every call uses at most $2q$ integer variables and has encoding length polynomial in $n,L$. The fixed-dimensional integer-programming bound makes their total cost $2^{O(q\log(q+1))}\operatorname{poly}(n,L)$. The final matrix has $n+1$ columns and $O(n+(q+1)6^q)$ rows with entries in $\{-1,0,1\}$. Its exact rank, and the bit complexity of all other rational linear algebra, fit within the same parameterized bound. Since $q\le K+1$, the stated running time follows.
++ O\bigl(n+2^q(n+q+1)+6^q(q+1)^2\bigr).
++\]
++This includes one invalidity query, a scan through the parities to check support, and another nonemptiness check for each parity considered in the selection phase. Every formulation uses $2q$ signed integer variables and has encoding length polynomial in $n,L$; the optional signed-to-nonnegative conversion keeps dimension $O(q)$. The fixed-dimensional integer-programming bound makes the total solver cost $2^{O(q\log(q+1))}\operatorname{poly}(n,L)$. The finite normal construction from Lemma~\ref{lem:basis}, preparation of all actual integer rows, and retention of witnesses satisfy the same bound. The exact-rank calls use the binary augmented point matrices just described, and their polynomial input cost also fits that bound. Grouping, sorting, finite-set operations, and restoration of the original item labels are polynomial-time local operations. Their polynomial degrees, and those of the solver and rank bounds, are fixed independently of $q$. Since $q\le K+1$, the stated running time follows.
+ 
+ Zero coefficients require no additional argument: they constitute one class with $\gamma_j=0$, and every exchange, pairing, and formulation above preserves the candidate value in that class too. If $c=0,d=0$, the computed face is all of $P$ and has dimension $n$, so it is correctly rejected as a facet. The cases $c=0,d\ne0$ are handled by the validity and support checks.
+ \end{proof}
+@@ -228,7 +246,7 @@
+ 
+ For every binary $x$, the vector $(x,-1)$ has $\ell_1$ norm at most $n+1$. Thus the transformed instance has exactly the same feasible binary set and exactly the same tight binary set; candidate validity is preserved as well. The tests with unit vectors preserve positivity of $a,b$, nonnegativity of $c$, and its zero entries. The tests with $e_i-e_j$ preserve equality and ordering of candidate coefficients, so the parameter $K$ is unchanged. The tests with $e_i-e_{n+1}$ applied to $(a,b)$ preserve $a_i\le b$.
+ 
+-The total encoding length after compression is $O(n^4)$. Apply Theorem~\ref{thm:main} to that instance. Its bit-operation bound is now $2^{O((K+1)\log(K+2))}\operatorname{poly}(n)$, which also bounds its arithmetic operations. Combining this with the strongly polynomial preprocessing proves the assertion. The rational numbers used during preprocessing have bit lengths polynomial in the original input length, as required by the weight-compression theorem.
++The sum of the signed integer bit lengths of the two compressed vectors is at most $18(n+1)^4$; in particular, their ordinary encoding length is $O(n^4)$. Regroup and sort the compressed instance, then apply Theorem~\ref{thm:main} to it. The equality of feasible and tight binary sets also preserves the original-coordinate affine basis and face dimension. Its bit-operation bound is now $2^{O((K+1)\log(K+2))}\operatorname{poly}(n)$, which also bounds its arithmetic operations. Combining this with the strongly polynomial preprocessing proves the assertion. The rational numbers used during preprocessing have bit lengths polynomial in the original input length, as guaranteed by the external weight-compression theorem. This is a bound on arithmetic operations; it does not assert a bit-time bound independent of the original input length.
+ \end{proof}
+ 
+ \section{Why a single representative per parity is insufficient}
+@@ -244,6 +262,69 @@
+ 
+ \section{Conclusion}
+ We answer the fixed-parameter question for knapsack-facet recognition with few distinct positive candidate coefficients. The method computes the entire tight-face dimension. Its central structural fact is that equal-parity prefix solutions force interior feasible exchanges. Quotienting by those exchanges makes the prefix encoding affine on a parameter-bounded family of count regions, so ordinary fixed-dimensional feasibility replaces integer-point counting. The six-variable example shows why parity compression alone would be insufficient. Determining sharper component bounds or more practical implementations remains a separate algorithmic question.
++
++
++\appendix
++\section{Formalization correspondence and external dependencies}\label{app:lean}
++The Lean development checks the new structural proofs and their applications to the algorithm. The verified source is commit
++\begin{center}\small\nolinkurl{8951a2f5c5a64a477e907991b7653698d11ec440}\end{center}
++in \href{https://github.com/zac682210-commits/mor34_lean}{\texttt{zac682210-commits/mor34\_lean}}, using Lean 4.19.0 and the pinned Mathlib dependency. \href{https://github.com/zac682210-commits/mor34_lean/actions/runs/39146901961}{CI run 39146901961} built the project and checked the transitive axiom lists of 1154 named declarations. Only \lean{propext}, \lean{Classical.choice}, and \lean{Quot.sound} occur; no \lean{sorryAx} or project-specific axiom is allowed. This audit concerns the Lean statements and is not an independent review of their correspondence with informal prose.
++
++\subsection{Objects and theorem correspondence}
++The grouped model is \lean{MOR34.Model}, with the hypotheses of Section 2 in \lean{WellFormed}. Binary points are finite subsets of items, interpreted as indicator vectors. A paper item in position $r$ corresponds to Lean index $r-1$; the integer cut label itself is unchanged, and cut $r$ separates Lean indices below $r$ from those at least $r$. Counts use natural numbers with explicit upper bounds, equivalently the bounded nonnegative integer counts in~\eqref{eq:Z}. \lean{prefixSet}, \lean{Tight}, \lean{Exchange}, and \lean{componentCountMap} represent $p(z)$, $T$, feasible exchange edges, and $A$, respectively. The input candidate coefficient function is often named \lean{v} in the top-level Lean statements; it is the paper's $c$.
++
++\begin{table}[htbp]\centering\small
++\caption{Structural correspondence. All listed names are in namespace \texttt{MOR34}.}\label{tab:structural}
++\begin{tabular}{@{}p{.24\linewidth}p{.71\linewidth}@{}}\toprule
++Paper claim & Principal checked declarations \\ \midrule
++Prefix minimality & \lean{prefixMinimality}; \lean{counts_prefixSet}; \lean{prefix_tight} \\
++Lemma~\ref{lem:oracle} & \lean{prefix_epigraph_iff}; \lean{exact_linear_count_encoding}; \lean{exact_parity_linear_count_encoding} \\
++Lemma~\ref{lem:interval} & \lean{intervalExchange}; \lean{connected_iff_cuts}; \lean{componentLabel_interval} \\
++Lemma~\ref{lem:quotient} & \lean{exchangeDirectionSpan_eq_ker}; \lean{tight_image_eq_prefix_image}; \lean{tight_dimension_quotient} \\
++Lemma~\ref{lem:pair} & \lean{balancedSplit}; \lean{pairingAtCut}; \lean{interiorExchange}; \lean{parity_interior_connected} \\
++Lemma~\ref{lem:affine} & \lean{actual_cell_affine}; \lean{parity_cell_decomposition} \\
++Corollary~\ref{cor:C} & \lean{facet_component_bound}; \lean{raw_facet_component_bound} \\
++\bottomrule\end{tabular}
++\end{table}
++
++The geometric output uses the actual convex hull of feasible binary points. Empty faces are represented by a separate constructor and assigned dimension $-1$, while invalid candidates have no face-dimension output. For a supported face, the returned basis consists of tight points, is affinely independent over $\mathbb R$, spans the tight affine hull, and has cardinality one more than the reported dimension. These requirements are collected in \lean{RawOutput.Correct}. Degenerate coefficient vectors and the zero-coefficient class are included in this contract.
++
++\begin{table}[htbp]\centering\small
++\caption{Algorithmic correspondence. Correctness and costs have explicit local algorithmic premises.}\label{tab:algorithmic}
++\begin{tabular}{@{}p{.24\linewidth}p{.71\linewidth}@{}}\toprule
++Paper claim & Principal checked declarations \\ \midrule
++Lemma~\ref{lem:basis} & \lean{computedCountForms_spec}; \lean{linear_count_basis_correct}; \lean{preparedCellBasis_cost_on_states} \\
++Theorem~\ref{thm:main}, span and dimension & \lean{selected_augmented_span}; \lean{retained_row_span}; \lean{integer_matrix_rank}; \lean{augmentedSpan_finrank} \\
++Theorem~\ref{thm:main}, full output & \lean{weightedNormalizedExecution_correct}; \lean{weightedRawExecution_correct}; \lean{weightedRun_correct} \\
++Theorem~\ref{thm:main}, total cost & \lean{weightedNormalizedExecution_cost}; \lean{weightedRun_sharp}; \lean{complete_compressed_execution} \\
++Corollary~\ref{cor:compression}, preservation & \lean{compression_positive_parameter}; \lean{compression_output}; \lean{compressed_payload_bound} \\
++Corollary~\ref{cor:compression}, operation bound & \lean{chargedCompressionPreparation_strong_cost}; \lean{complete_strongly_polynomial_execution} \\
++\bottomrule\end{tabular}
++\end{table}
++
++The uncompressed core theorem \lean{weightedRun_sharp} bounds a single retained value-and-cost execution, with local costs for the solver, arithmetic, rank, data preparation, and relabeling. With a common coefficient magnitude exponent $\lambda$, its bound is $(q+6)^{C_0(q+1)}(n+\lambda+2)^{e_0}$ for constants $C_0,e_0$ independent of the instance and $q$. The original-input composition \lean{complete_compressed_execution} first performs two compression calls and normalization; it proves a bound of the form $(K+7)^{C_1(K+1)}(n+L_{\mathrm{int}}+2)^{e_1}$, where $L_{\mathrm{int}}$ is the sum of signed bit lengths of $(a,b,c,d)$. This payload is bounded by the usual input length $L$. In the arithmetic-operation variant, the last factor is $(n+2)^{e_1}$. Neither theorem assumes a bound on the entire knapsack procedure as a premise.
++
++Version 0.2 describes the linear coordinate scans, finite augmented-normal construction, and retained-point rank extraction used by this reference execution. The exchange-component map remains a proof object rather than a required computational step. The previous binary-search call count and the previous normal-generation implementation are not claimed as checked implementations. Theorem numbers and the final FPT and component bounds are unchanged. A detailed source-file index and revision patch are in \nolinkurl{docs/PAPER_ALIGNMENT_20261019.md} and \nolinkurl{reference/mor34_v0.2.patch} in the repository.
++
++\subsection{Existing results left as external contracts}
++The top-level algorithm theorems quantify over primitives satisfying the following properties. The Lean development does not construct efficient implementations satisfying these properties or prove the cited algorithmic theorems internally.
++
++\begin{table}[htbp]\centering\small
++\caption{External algorithmic results and their formal interfaces.}\label{tab:external}
++\begin{tabular}{@{}p{.25\linewidth}p{.70\linewidth}@{}}\toprule
++External result & Required property and interface \\ \midrule
++Fixed-dimensional ILP & A correct witness or infeasibility answer on the actual integer rows, and $r^{O(r)}\operatorname{poly}(B)$ cost: \lean{DenseRowSolverSpec}, \lean{DenseSolverCostBound}. See \cite{Lenstra,Kannan,Bredereck}. \\
++Exact rational rank & Correct rank of an integer matrix over $\mathbb Q$ and polynomial input cost: \lean{ExactIntegerRank}, \lean{BinaryRankOperations}, \lean{BinaryRankBounds}. The outer basis-extraction algorithm is proved here. \\
++Frank--Tardos & Small-sign preservation, the coefficient bound, and polynomial bit-time or strongly polynomial arithmetic-operation cost: \lean{CompressionPrimitive}, \lean{PreparationLocalBounds}, \lean{PreparationStrongBounds}. See \cite{FT,EKMR}. \\
++Elementary operations & Polynomial local costs of integer arithmetic, comparison, bounded access, grouping/sorting, set insertion, matrix emission, point construction, and relabeling. Interfaces include \lean{IntegerArithmeticCharge}, \lean{CountMatrixPreparation}, \lean{PointOperations}, \lean{NormalizationPrimitive}, and their local bounds. \\
++\bottomrule\end{tabular}
++\end{table}
++
++For these contracts the project proves the application-specific obligations: exact encodings, witness decoding, variable and row counts, integer operand bounds at reached states, parameter preservation, and composition of the costs of all phases. The existence and complexity of the external primitive implementations enter from the cited results or standard elementary algorithms. Thus a closed theorem asserting the existence of an efficient solver-independent Lean implementation is not part of the formalization. No efficient instance of these contracts is concealed as a project axiom; they remain visible hypotheses.
++
++Standard finite-dimensional linear algebra, convexity, finite-set reasoning, and integer arithmetic identities imported from Mathlib are already formalized results, not unformalized hypotheses. In particular, the project proves its rational-to-real rank bridge and the augmented-rank/affine-dimension relation using those library results. Conversely, the general complexity of an exact-rank algorithm is an external contract even though the algebraic definition of rank is formalized. The general rational-row denominator-clearing cost in Lemma~\ref{lem:oracle} is a standard arithmetic argument; the actual recognition path uses integer rows, whose construction and bounds are checked directly.
++
++The contextual DP-completeness and XP results cited in the introduction, historical novelty claims, and the six-item illustration in Section 6 are not certified by this Lean development. Nor does it prove compiler correctness, a machine operational cost model, or an end-to-end timing claim for Lean-generated code. These exclusions do not remove a structural lemma from Tables~\ref{tab:structural}--\ref{tab:algorithmic}; they specify the boundary of the verification claim.
+ 
+ \begin{thebibliography}{10}\small
+ \bibitem{CZ} R. Chen and H. Zhu, \emph{The Complexity of Recognizing Facets for the Knapsack Polytope}, Mathematics of Operations Research, published online November 17, 2025. \href{https://doi.org/10.1287/moor.2024.0481}{doi:10.1287/moor.2024.0481}. Author manuscript: \href{https://arxiv.org/abs/2211.03311v3}{arXiv:2211.03311v3}, October 20, 2025.

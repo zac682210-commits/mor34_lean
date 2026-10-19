@@ -1,6 +1,6 @@
 # MOR34 Lean formalization
 
-Lean 4.19.0 formalization of *Fixed-Parameter Recognition of Knapsack Facets via Parity and Feasible Exchanges* (Zhiyan Lin, October 13, 2026).
+Lean 4.19.0 formalization of *Fixed-Parameter Recognition of Knapsack Facets via Parity and Feasible Exchanges* (Zhiyan Lin; v0.1 October 13, v0.2 October 19, 2026).
 
 ## Completed scope — October 18, 2026
 
@@ -22,7 +22,13 @@ Nine commands pass; **1154 named declarations** pass the transitive axiom allowl
 
 Start with `MOR34/CompleteCompressedExecution.lean` and `MOR34/StrongPreparationCost.lean`, then follow `docs/source_map.json`. `MOR34/WeightedRunInterface.lean` lists the local primitive contracts. There is no assumption of a total core or whole-program runtime.
 
-The cost model is a mathematical reference algorithm, not verified backend timing. The extrema implementation uses linear scans, preserving the claimed FPT class; it does not claim the manuscript's binary-search call count. The six-item illustrative example is not separately certified. This remains same-session verification, not independent peer review.
+The cost model is a mathematical reference algorithm, not verified backend timing. The extrema implementation uses linear scans, preserving the claimed FPT class; manuscript v0.2 now states those scans, replacing v0.1's binary-search call count. The six-item illustrative example is not separately certified. This remains same-session verification, not independent peer review.
+
+## Manuscript correspondence — October 19, 2026
+
+[Detailed correspondence and unformalized external results (Chinese)](docs/PAPER_ALIGNMENT_20261019.md) · [Machine-readable declaration index](docs/paper_alignment_20261019.json) · [Reproducible manuscript v0.2 patch](reference/mor34_v0.2.patch).
+
+The revised manuscript describes the actual linear extrema scans, finite augmented-normal search and retained-point rank extraction. The main FPT bounds and theorem numbering are unchanged. The original v0.1 files in `reference/` remain frozen snapshots; apply the patch as described in the correspondence report to obtain v0.2. The final theorems remain conditional on explicit established local algorithms; no efficient solver-independent implementation is claimed.
 
 ## Reproduce
 

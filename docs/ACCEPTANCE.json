@@ -208,5 +208,9 @@
   "complete_preprocessing_composition": true,
   "strong_arithmetic_cost_distinguished_from_bit_time": true,
   "whole_program_cost_hypothesis": false,
-  "normal_operand_bounds_on_reached_states": true
+  "normal_operand_bounds_on_reached_states": true,
+  "paper_alignment_document": "docs/PAPER_ALIGNMENT_20261019.md",
+  "paper_revision": "0.2 (2026-10-19); revision patch retains the original reference snapshot",
+  "external_algorithm_instances_constructed_in_lean": false,
+  "formalization_claim": "New structural proofs and conditional algorithmic applications; standard local algorithm existence/correctness/cost contracts are not internally implemented or proved. See paper_alignment_20261019.json."
 }
