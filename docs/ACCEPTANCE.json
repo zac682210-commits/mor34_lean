@@ -212,5 +212,24 @@
   "paper_alignment_document": "docs/PAPER_ALIGNMENT_20261019.md",
   "paper_revision": "0.2 (2026-10-19); revision patch retains the original reference snapshot",
   "external_algorithm_instances_constructed_in_lean": false,
-  "formalization_claim": "New structural proofs and conditional algorithmic applications; standard local algorithm existence/correctness/cost contracts are not internally implemented or proved. See paper_alignment_20261019.json."
+  "formalization_claim": "New structural proofs and conditional algorithmic applications; standard local algorithm existence/correctness/cost contracts are not internally implemented or proved. See paper_alignment_20261019.json.",
+  "documentation_review": {
+    "date": "2026-11-14",
+    "scope": "Status documentation only; Lean source and verification scope unchanged.",
+    "verified_source_commit": "8951a2f5c5a64a477e907991b7653698d11ec440",
+    "completion_record_commit": "e650b8cadeb2c1bcb7081ece132983d18bf7cb1e",
+    "manuscript_alignment_commit": "294158b4a2771580c5c9a0578cb370bd0c10f583",
+    "current_status_branch": "codex/mor34-formalization",
+    "historical_snapshot_note": "README and ACCEPTANCE.json at the verified source commit predate the final status record. Read the current development-branch documentation alongside the frozen source and its CI run.",
+    "validation": "Confirmed successful GitHub Actions run 39146901961, nine zero-exit commands, 1154 distinct names in the retained axiom allowlist, and inclusion of weightedRun_sharp, complete_compressed_execution and complete_strongly_polynomial_execution. The three intervening commits only modify documentation/reference patches/logs. No new Lean build or independent kernel replay was performed for this documentation clarification."
+  },
+  "status_flag_semantics": {
+    "complete_FPT_complexity": "Derived reference-execution FPT bound under the explicit local correctness, growth and cost contracts; not a solver-independent executable runtime theorem.",
+    "new_paper_proofs_complete": "All newly contributed general proof claims and their conditional algorithmic applications in the declared scope; excludes the separately uncertified illustrative example and external algorithm internals.",
+    "complete_algorithm_correctness": "Broader unconditional/solver-independent deliverable; use complete_algorithm_correctness_solver_relative for the completed conditional result.",
+    "complete_paper": "Broader full-paper deliverable, not the new-proofs-only scope; its false value does not negate new_paper_proofs_complete.",
+    "full_self_contained_formalization_complete": "Would also require the external algorithmic foundations; remains outside the declared completed scope.",
+    "compiled_runtime_model_verified": "Machine/compiler/backend operational-cost verification; not established by the reference-budget theorems.",
+    "kernel_checked_project_theorems": "Historical field name: counts named declarations checked by the transitive axiom audit, not independent paper theorems or a completion percentage."
+  }
 }
